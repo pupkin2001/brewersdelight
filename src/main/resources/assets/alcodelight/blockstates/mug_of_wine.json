@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "alcodelight:block/mug_of_wine" },
+    "facing=east": { "model": "alcodelight:block/mug_of_wine", "y": 90 },
+    "facing=south": { "model": "alcodelight:block/mug_of_wine", "y": 180 },
+    "facing=west": { "model": "alcodelight:block/mug_of_wine", "y": 270 }
+  }
+}
