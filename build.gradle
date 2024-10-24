@@ -152,7 +152,7 @@ dependencies {
 	
 	implementation fg.deobf("curse.maven:alcocraft-847059:${alcocraftplus_version}")
 	implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-	
+	runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 	
 	// Real mod deobf dependency examples - these get remapped to your current mappings
 	// compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
