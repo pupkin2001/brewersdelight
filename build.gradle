@@ -29,9 +29,9 @@ mixin {
 	config 'mixins.alcodelight.json'
 	
 	// Specify options for dev run configs
-	debug.verbose = true
-	debug.export = true
-	dumpTargetOnFailure = true
+	//debug.verbose = true
+	//debug.export = true
+	//dumpTargetOnFailure = true
 }
 
 minecraft {
