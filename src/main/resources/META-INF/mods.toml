@@ -1,31 +1,31 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
-modLoader="javafml"
+modLoader = "javafml"
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 # Forge for 1.18.2 is version 40
-loaderVersion="[40,)"
+loaderVersion = "[38,41)"
 # The license for you mod.
-license="MIT License"
+license = "MIT License"
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="https://github.com/pupkin2001/alcodelight/issues"
+issueTrackerURL = "https://github.com/pupkin2001/brewersdelight/issues"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]]
 # The modid of the mod
-modId="alcodelight"
+modId = "brewersdelight"
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
-version="${file.jarVersion}"
- # A display name for the mod
-displayName="Alco Delight"
+version = "${file.jarVersion}"
+# A display name for the mod
+displayName = "Brewer's Delight"
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" 
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="https://github.com/pupkin2001/alcodelight"
+displayURL = "https://github.com/pupkin2001/brewersdelight"
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="assets/alcodelight/textures/logo.png"
+logoFile = "assets/brewersdelight/textures/logo.png"
 # A text fields displayed in the mod UI
-credits="Some palettes and texture shapes were closely inspired by both required mods to better match it visually." 
-authors="pupkin2001" 
+credits = "Some palettes and texture shapes were closely inspired by both required mods to better match it visually."
+authors = "pupkin2001"
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
 # IGNORE_SERVER_VERSION means that your mod will not cause a red X if it's present on the server but not on the client. This is what you should use if you're a server only mod.
@@ -35,41 +35,40 @@ authors="pupkin2001"
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified ()
 
 # The description text for the mod
-description='''
-Alco Delight is an add-on for Farmer's Delight that adds compatibility with AlcoCraft+.
+description = '''
+Brewer's Delight is an add-on for Farmer's Delight and Brewin' and Chewin' that adds more types of alcohol.
 '''
 # A dependency - use the . to indicate dependency for a specific modid.
-[[dependencies.alcodelight]]
-    # the modid of the dependency
-    modId="minecraft"
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true
-    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.18, 1.19)"
-    ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
+[[dependencies.brewersdelight]]
+# the modid of the dependency
+modId = "minecraft"
+# Does this dependency have to exist - if not, ordering below must be specified
+mandatory = true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+versionRange = "[1.18, 1.19)"
+ordering = "NONE"
+# Side this dependency is applied on - BOTH, CLIENT or SERVER
+side = "BOTH"
 
-[[dependencies.alcodelight]]
-    modId="forge"
-    mandatory=true
-    # The version range of the dependency
-    versionRange="[40,)"
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.brewersdelight]]
+modId = "forge"
+mandatory = true
+# The version range of the dependency
+versionRange = "[38,41)"
+# An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+ordering = "NONE"
+side = "BOTH"
 
-    
-[[dependencies.alcodelight]]
-    modId="farmersdelight"
-    mandatory=true
-    versionRange="[1.0.0,)"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.brewersdelight]]
+modId = "farmersdelight"
+mandatory = true
+versionRange = "[1.0.4,)"
+ordering = "NONE"
+side = "BOTH"
 
-[[dependencies.alcodelight]]
-    modId="alcocraftplus"
-    mandatory=true
-versionRange="[1.0.0,)"
-    ordering="NONE"
-    side="BOTH"
+[[dependencies.brewersdelight]]
+modId = "brewinandchewin"
+mandatory = true
+versionRange = "[1.0.0,)"
+ordering = "NONE"
+side = "BOTH"

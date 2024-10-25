@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "pupkin.alcodelight.mixin",
+  "package": "pupkin.brewersdelight.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "alcodelight.refmap.json",
+  "refmap": "brewersdelight.refmap.json",
   "mixins": [
   ],
   "client": [

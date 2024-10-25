@@ -25,8 +25,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 mixin {
 	// MixinGradle Settings
-	add sourceSets.main, 'mixins.alcodelight.refmap.json'
-	config 'mixins.alcodelight.json'
+	add sourceSets.main, 'mixins.brewersdelight.refmap.json'
+	config 'mixins.brewersdelight.json'
 	
 	// Specify options for dev run configs
 	//debug.verbose = true
@@ -52,10 +52,10 @@ minecraft {
 			property 'forge.logging.console.level', 'debug'
 			
 			// Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-			property 'forge.enabledGameTestNamespaces', 'alcodelight'
+			property 'forge.enabledGameTestNamespaces', 'brewersdelight'
 			
 			mods {
-				alcodelight {
+				brewersdelight {
 					source sourceSets.main
 				}
 			}
@@ -69,10 +69,10 @@ minecraft {
 			property 'forge.logging.console.level', 'debug'
 			
 			// Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-			property 'forge.enabledGameTestNamespaces', 'alcodelight'
+			property 'forge.enabledGameTestNamespaces', 'brewersdelight'
 			
 			mods {
-				alcodelight {
+				brewersdelight {
 					source sourceSets.main
 				}
 			}
@@ -97,10 +97,10 @@ minecraft {
 			property 'forge.logging.console.level', 'debug'
 			
 			// Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-			property 'forge.enabledGameTestNamespaces', 'alcodelight'
+			property 'forge.enabledGameTestNamespaces', 'brewersdelight'
 			
 			mods {
-				alcodelight {
+				brewersdelight {
 					source sourceSets.main
 				}
 			}
@@ -114,12 +114,12 @@ minecraft {
 			property 'forge.logging.console.level', 'debug'
 			
 			// Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-			args '--mod', 'alcodelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+			args '--mod', 'brewersdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 			
 			environment 'target', 'fmluserdevdata'
 			
 			mods {
-				alcodelight {
+				brewersdelight {
 					source sourceSets.main
 				}
 			}
@@ -133,6 +133,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
 	// Put repositories for dependencies here
 	// ForgeGradle automatically adds the Forge maven and Maven Central for you
+	maven {
+		name = "Progwml6 maven"
+		url = "https://dvs1.progwml6.com/files/maven/"
+	}
+	
 	maven { url "https://www.cursemaven.com" }
 	
 	// If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
@@ -150,9 +155,10 @@ dependencies {
 	// Apply Mixin AP
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
-	implementation fg.deobf("curse.maven:alcocraft-847059:${alcocraftplus_version}")
 	implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-	runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
+	implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewinandchewin_version}")
+	
+	runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 	
 	// Real mod deobf dependency examples - these get remapped to your current mappings
 	// compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
