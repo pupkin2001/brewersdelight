@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "liquid": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": {
+    "item": "brewersdelight:gin"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 12000,
+  "temperature": 3,
+  "recipe_book_tab": "drinks"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "liquid": {
+    "item": "brewinandchewin:beer"
+  },
+  "result": {
+    "item": "brewersdelight:sbiten"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 24000,
+  "temperature": 4,
+  "recipe_book_tab": "drinks"
+}

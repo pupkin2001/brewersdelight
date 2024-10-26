@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "liquid": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": {
+    "item": "brewersdelight:brandy"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 12000,
+  "temperature": 3,
+  "recipe_book_tab": "drinks"
+}

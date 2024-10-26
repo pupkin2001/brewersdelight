@@ -11,12 +11,13 @@ import pupkin.brewersdelight.item.BrewersItems;
 public class BrewersDelight
 {
 	public static final String MOD_ID = "brewersdelight";
-	
-	public BrewersDelight( )
+
+	public BrewersDelight()
 	{
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
 		BrewersItems.register(eventBus);
-		
+
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 }
