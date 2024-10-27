@@ -1,0 +1,46 @@
+name: Build
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            .gradle
+          key: ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
+
+      - name: Grant permissions to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Initialize gradlew
+        run: ./gradlew
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Capture build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brewersdelight
+          path: |
+            build/libs/
