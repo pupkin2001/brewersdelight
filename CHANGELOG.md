@@ -57,3 +57,10 @@
     - Sake - removed liquid requirement.
 - ### Translations:
   - Русскій дореформенный (Россійская имперія).
+#
+# Version 0.3
+
+- ## Changes:
+- ### Code:
+  - #### Class name changes:
+    - AlcoholProperties -> BeverageProperties.

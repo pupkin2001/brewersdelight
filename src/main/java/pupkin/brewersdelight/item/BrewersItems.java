@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import pupkin.brewersdelight.BrewersDelight;
-import pupkin.brewersdelight.misc.AlcoholProperties;
+import pupkin.brewersdelight.misc.BeverageProperties;
 import pupkin.brewersdelight.misc.BrewersDelightTab;
 
 public class BrewersItems
@@ -18,27 +18,27 @@ public class BrewersItems
 
 	// Farmers Delight
 	public static final RegistryObject<Item> BRAGA = ITEMS.register("braga",
-	                                                                () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.BRAGA)));
+	                                                                () -> new BoozeItem(1, 4, foodItem(BeverageProperties.BRAGA)));
 	public static final RegistryObject<Item> BRANDY = ITEMS.register("brandy",
-	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.BRANDY)));
+	                                                                 () -> new BoozeItem(1, 4, foodItem(BeverageProperties.BRANDY)));
 	public static final RegistryObject<Item> CIDER = ITEMS.register("cider",
-	                                                                () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CIDER)));
+	                                                                () -> new BoozeItem(1, 4, foodItem(BeverageProperties.CIDER)));
 	public static final RegistryObject<Item> GIN = ITEMS.register("gin",
-	                                                              () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.GIN)));
+	                                                              () -> new BoozeItem(1, 4, foodItem(BeverageProperties.GIN)));
 	public static final RegistryObject<Item> KVASS = ITEMS.register("kvass",
-	                                                                () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.KVASS)));
+	                                                                () -> new BoozeItem(1, 4, foodItem(BeverageProperties.KVASS)));
 	public static final RegistryObject<Item> LIQUEUR = ITEMS.register("liqueur",
-	                                                                  () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.LIQUEUR)));
+	                                                                  () -> new BoozeItem(1, 4, foodItem(BeverageProperties.LIQUEUR)));
 	public static final RegistryObject<Item> MARTINI = ITEMS.register("martini",
-	                                                                  () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.MARTINI)));
+	                                                                  () -> new BoozeItem(1, 4, foodItem(BeverageProperties.MARTINI)));
 	public static final RegistryObject<Item> MELON_SCHNAPPS = ITEMS.register("melon_schnapps",
-	                                                                         () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.MELON_SCHNAPPS)));
+	                                                                         () -> new BoozeItem(1, 4, foodItem(BeverageProperties.MELON_SCHNAPPS)));
 	public static final RegistryObject<Item> SAKE = ITEMS.register("sake",
-	                                                               () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.SAKE)));
+	                                                               () -> new BoozeItem(1, 4, foodItem(BeverageProperties.SAKE)));
 	public static final RegistryObject<Item> SBITEN = ITEMS.register("sbiten",
-	                                                                 () -> new BoozeItem(3, 4, foodItem(AlcoholProperties.SBITEN)));
+	                                                                 () -> new BoozeItem(3, 4, foodItem(BeverageProperties.SBITEN)));
 	public static final RegistryObject<Item> WHISKY = ITEMS.register("whisky",
-	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.WHISKY)));
+	                                                                 () -> new BoozeItem(1, 4, foodItem(BeverageProperties.WHISKY)));
 
 	// Note to self: Brewin' and Chewin' handles compatibility by... not giving a damn.
 	// Kombucha throws an error loading recipe if farmers respite isn't loaded, which disables the recipe.
@@ -46,19 +46,19 @@ public class BrewersItems
 
 	// Corn Delight
 	public static final RegistryObject<Item> BOURBON = ITEMS.register("bourbon",
-	                                                                  () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.BOURBON)));
+	                                                                  () -> new BoozeItem(1, 4, foodItem(BeverageProperties.BOURBON)));
 	public static final RegistryObject<Item> CORN_WHISKY = ITEMS.register("corn_whisky",
-	                                                                      () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CORN_WHISKY)));
+	                                                                      () -> new BoozeItem(1, 4, foodItem(BeverageProperties.CORN_WHISKY)));
 	public static final RegistryObject<Item> MOONSHINE = ITEMS.register("moonshine",
-	                                                                    () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.MOONSHINE)));
+	                                                                    () -> new BoozeItem(1, 4, foodItem(BeverageProperties.MOONSHINE)));
 
 	// Italian Delight
 	public static final RegistryObject<Item> CAHORS = ITEMS.register("cahors",
-	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CAHORS)));
+	                                                                 () -> new BoozeItem(1, 4, foodItem(BeverageProperties.CAHORS)));
 	public static final RegistryObject<Item> CHAMPAGNE = ITEMS.register("champagne",
-	                                                                    () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CHAMPAGNE)));
+	                                                                    () -> new BoozeItem(1, 4, foodItem(BeverageProperties.CHAMPAGNE)));
 	public static final RegistryObject<Item> COGNAC = ITEMS.register("cognac",
-	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.COGNAC)));
+	                                                                 () -> new BoozeItem(1, 4, foodItem(BeverageProperties.COGNAC)));
 
 	public static Item.Properties foodItem(FoodProperties food)
 	{
