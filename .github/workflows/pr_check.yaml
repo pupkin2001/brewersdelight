@@ -29,6 +29,9 @@ jobs:
             ${{ runner.os }}-gradle-PR${{github.event.number}}-
             ${{ runner.os }}-gradle-
 
+      - name: Grant permissions to gradlew
+        run: chmod +x ./gradlew
+
       - name: Initialize gradlew
         run: ./gradlew
 
