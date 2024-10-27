@@ -2,7 +2,7 @@
 
 # Welcome to Brewer's Delight repository.
 
-**Brewer's Delight** is an add-on for **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and **[Brewin' and Chewin'](https://github.com/Umpaz/BrewinAndChewin)** that adds more types of alcohol.
+**Brewer's Delight** is an add-on for **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and **[Brewin' and Chewin'](https://github.com/Umpaz/BrewinAndChewin)** that adds more beverages.
 
 ### Credits
 
