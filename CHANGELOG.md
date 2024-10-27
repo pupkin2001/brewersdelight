@@ -82,3 +82,5 @@
   - Cahors.
   - Champagne.
   - Cognac.
+- ### Misc:
+  - Added mod's logo to readme.
