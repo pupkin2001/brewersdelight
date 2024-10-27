@@ -4,8 +4,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
-public class AlcoholProperties
-{
+public class BeverageProperties
+{   // TODO: Set unique effects for every beverage.
 	// Farmers Delight
 	public static final FoodProperties BRAGA = new FoodProperties.Builder()
 			.nutrition(0)
@@ -84,7 +84,7 @@ public class AlcoholProperties
 			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
 			.build();
 
-	// Corn Delight TODO
+	// Corn Delight
 	public static final FoodProperties BOURBON = new FoodProperties.Builder()
 			.nutrition(0)
 			.saturationMod(0.5f)
@@ -104,7 +104,7 @@ public class AlcoholProperties
 			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
 			.build();
 
-	// Italian Delight TODO
+	// Italian Delight
 	public static final FoodProperties CAHORS = new FoodProperties.Builder()
 			.nutrition(0)
 			.saturationMod(0.5f)

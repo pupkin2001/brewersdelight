@@ -57,3 +57,28 @@
     - Sake - removed liquid requirement.
 - ### Translations:
   - Русскій дореформенный (Россійская имперія).
+#
+# Version 0.3
+
+## Changes:
+- ### Code:
+  - #### Class name changes:
+    - AlcoholProperties -> BeverageProperties.
+- ### Textures:
+  - Braga.
+  - Brandy.
+  - Cider
+  - Gin.
+  - Kvass.
+  - Liqueur.
+  - Martini.
+  - Melon schnapps.
+  - Sake.
+  - Sbiten.
+  - Whiskey.
+  - Bourbon.
+  - Corn whisky.
+  - Moonshine.
+  - Cahors.
+  - Champagne.
+  - Cognac.
