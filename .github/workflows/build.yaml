@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: [ 'stable' ]
 
 jobs:
   check:
@@ -25,9 +25,9 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
             .gradle
-          key: ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', '**/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', '**/gradle-wrapper.properties', 'gradle.properties') }}
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
