@@ -23,11 +23,9 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
             .gradle
-          key: ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('**/build.gradle', 'gradle/gradle-wrapper.properties', '**/gradle.properties') }}
+          key: ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-${{ hashFiles('gradle/gradle-wrapper.properties', 'settings.gradle.kts', '**/build.gradle.kts', '**/gradle.properties') }}
-            ${{ runner.os }}-gradle-PR${{github.event.number}}-
-            ${{ runner.os }}-gradle-
+            ${{ runner.os }}-gradle-PR${{github.event.number}}-${{ hashFiles('build.gradle', 'gradle/gradle-wrapper.properties', 'gradle.properties') }}
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
