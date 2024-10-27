@@ -17,21 +17,30 @@ jobs:
           java-version: '17'
 
       - name: Cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-            .gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', '**/gradle-wrapper.properties', 'gradle.properties') }}
+            ~/.gradle
+            ~/gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', '**/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
 
       - name: Initialize gradlew
+        if: steps.cache.outputs.cache-hit != 'true'
         run: ./gradlew
 
       - name: Build
         run: ./gradlew build
+
+      - name: Capture build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brewersdelight
+          path: build/libs/
+          retention-days: 1
