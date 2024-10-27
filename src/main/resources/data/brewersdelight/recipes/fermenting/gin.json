@@ -2,20 +2,20 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:wheat_seeds"
+      "tag": "forge:seeds/wheat"
     },
     {
-      "item": "minecraft:wheat_seeds"
+      "tag": "forge:seeds/wheat"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     }
   ],
   "liquid": {
-    "item": "minecraft:water_bucket"
+    "item": "brewinandchewin:vodka"
   },
   "result": {
     "item": "brewersdelight:gin"

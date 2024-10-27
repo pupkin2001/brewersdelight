@@ -15,6 +15,7 @@ buildscript {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'org.spongepowered.mixin'
 
 version = "${mc_version}-${mod_version}"
@@ -151,8 +152,14 @@ dependencies {
 	// Apply Mixin AP
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 	
+	// Hard dependencies
 	implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
 	implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewinandchewin_version}")
+	
+	// Soft dependencies
+	implementation fg.deobf("curse.maven:corn-delight-577805:${corn_delight_version}")
+	implementation fg.deobf("curse.maven:mysterious-mountain-lib-368098:${mmlib_version}")
+	implementation fg.deobf("curse.maven:italians-delight-669167:${italian_delight_version}")
 	
 	runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 	

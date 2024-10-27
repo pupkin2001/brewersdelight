@@ -2,20 +2,20 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "tag": "forge:grain/wheat"
+      "item": "italian_delight:grape_bunch"
     },
     {
-      "tag": "forge:bread/wheat"
+      "item": "italian_delight:grape_bunch"
     },
     {
-      "item": "minecraft:honeycomb"
+      "item": "italian_delight:grape_bunch"
+    },
+    {
+      "item": "italian_delight:grape_bunch"
     }
   ],
-  "liquid": {
-    "item": "minecraft:water_bucket"
-  },
   "result": {
-    "item": "brewersdelight:kvass"
+    "item": "brewersdelight:cahors"
   },
   "container": {
     "item": "brewinandchewin:tankard"

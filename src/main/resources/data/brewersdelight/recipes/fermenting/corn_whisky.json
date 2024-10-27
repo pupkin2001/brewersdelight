@@ -2,20 +2,23 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "tag": "forge:grain/wheat"
+      "tag": "forge:vegetables/corn"
     },
     {
-      "tag": "forge:bread/wheat"
+      "tag": "forge:vegetables/corn"
     },
     {
-      "item": "minecraft:honeycomb"
+      "tag": "forge:vegetables/corn"
+    },
+    {
+      "tag": "forge:vegetables/corn"
     }
   ],
   "liquid": {
     "item": "minecraft:water_bucket"
   },
   "result": {
-    "item": "brewersdelight:kvass"
+    "item": "brewersdelight:corn_whisky"
   },
   "container": {
     "item": "brewinandchewin:tankard"

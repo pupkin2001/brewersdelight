@@ -85,45 +85,45 @@ public class AlcoholProperties
 			.build();
 
 	// Corn Delight TODO
-	//	public static final FoodProperties BOURBON = new FoodProperties.Builder()
-	//			.nutrition(0)
-	//			.saturationMod(0.5f)
-	//			.alwaysEat()
-	//			.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//			.build();
-	//	public static final FoodProperties CORN_WHISKY = new FoodProperties.Builder()
-	//			.nutrition(0)
-	//			.saturationMod(0.5f)
-	//			.alwaysEat()
-	//			.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//			.build();
-	//	public static final FoodProperties MOONSHINE = new FoodProperties.Builder()
-	//			.nutrition(0)
-	//			.saturationMod(0.5f)
-	//			.alwaysEat()
-	//			.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//			.build();
+	public static final FoodProperties BOURBON = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
+	public static final FoodProperties CORN_WHISKY = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
+	public static final FoodProperties MOONSHINE = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
 
 	// Italian Delight TODO
-	//		public static final FoodProperties CAHORS = new FoodProperties.Builder()
-	//				.nutrition(0)
-	//				.saturationMod(0.5f)
-	//				.alwaysEat()
-	//				.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//				.build();
-	//
-	//		public static final FoodProperties CHAMPAGNE = new FoodProperties.Builder()
-	//				.nutrition(0)
-	//				.saturationMod(0.5f)
-	//				.alwaysEat()
-	//				.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//				.build();
-	//
-	//		public static final FoodProperties COGNAC = new FoodProperties.Builder()
-	//				.nutrition(0)
-	//				.saturationMod(0.5f)
-	//				.alwaysEat()
-	//				.effect(( ) -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
-	//				.build();
+	public static final FoodProperties CAHORS = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
+
+	public static final FoodProperties CHAMPAGNE = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
+
+	public static final FoodProperties COGNAC = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
 
 }

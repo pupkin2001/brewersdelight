@@ -15,7 +15,7 @@
     }
   ],
   "liquid": {
-    "item": "minecraft:water_bucket"
+    "item": "italian_delight:sweet_berry_wine"
   },
   "result": {
     "item": "brewersdelight:martini"

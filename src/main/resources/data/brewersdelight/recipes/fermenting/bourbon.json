@@ -2,20 +2,23 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "tag": "forge:grain/wheat"
+      "tag": "forge:seeds/corn"
     },
     {
-      "tag": "forge:bread/wheat"
+      "tag": "forge:seeds/corn"
     },
     {
-      "item": "minecraft:honeycomb"
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
     }
   ],
   "liquid": {
     "item": "minecraft:water_bucket"
   },
   "result": {
-    "item": "brewersdelight:kvass"
+    "item": "brewersdelight:bourbon"
   },
   "container": {
     "item": "brewinandchewin:tankard"

@@ -8,14 +8,14 @@
       "item": "farmersdelight:melon_juice"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     }
   ],
   "liquid": {
-    "item": "minecraft:water_bucket"
+    "item": "minecraft:honey_bottle"
   },
   "result": {
     "item": "brewersdelight:liqueur"

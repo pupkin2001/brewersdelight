@@ -1,5 +1,6 @@
 {
   "itemGroup.BrewersDelightTab": "Восторг Пивовара",
+
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Бренди",
   "item.brewersdelight.cider": "Сидр",
@@ -10,5 +11,13 @@
   "item.brewersdelight.melon_schnapps": "Арбузный шнапс",
   "item.brewersdelight.sake": "Саке",
   "item.brewersdelight.sbiten": "Сбитень",
-  "item.brewersdelight.whisky": "Виски"
+  "item.brewersdelight.whisky": "Виски",
+
+  "item.brewersdelight.bourbon": "Бурбон",
+  "item.brewersdelight.corn_whisky": "Кукурузное виски",
+  "item.brewersdelight.moonshine": "Самогон",
+
+  "item.brewersdelight.cahors": "Кагор",
+  "item.brewersdelight.champagne": "Шампанское",
+  "item.brewersdelight.cognac": "Коньяк"
 }

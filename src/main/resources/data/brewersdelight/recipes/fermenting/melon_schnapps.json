@@ -8,10 +8,10 @@
       "item": "minecraft:melon_slice"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     }
   ],
   "liquid": {

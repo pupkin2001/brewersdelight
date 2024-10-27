@@ -2,21 +2,18 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "farmersdelight:rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "item": "farmersdelight:rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "item": "farmersdelight:rice"
+      "tag": "forge:grain/rice"
     },
     {
-      "item": "farmersdelight:rice"
+      "tag": "forge:grain/rice"
     }
   ],
-  "liquid": {
-    "item": "minecraft:water_bucket"
-  },
   "result": {
     "item": "brewersdelight:sake"
   },

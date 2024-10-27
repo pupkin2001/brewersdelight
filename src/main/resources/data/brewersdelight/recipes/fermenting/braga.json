@@ -2,16 +2,16 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:bread"
+      "tag": "forge:bread"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "forge:bread"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "forge:bread"
     },
     {
-      "item": "minecraft:bread"
+      "tag": "forge:bread"
     }
   ],
   "liquid": {

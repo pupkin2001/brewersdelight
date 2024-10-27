@@ -43,22 +43,22 @@ public class BrewersItems
 	// Note to self: Brewin' and Chewin' handles compatibility by... not giving a damn.
 	// Kombucha throws an error loading recipe if farmers respite isn't loaded, which disables the recipe.
 	// Not the most elegant solution, but good enough?...
-	
-	// Corn Delight TODO
-	//	public static final RegistryObject<Item> BOURBON = ITEMS.register("bourbon",
-	//	                  ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.BOURBON)));
-	//	public static final RegistryObject<Item> CORN_WHISKY = ITEMS.register("corn_whisky",
-	//	                  ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CORN_WHISKY)));
-	//	public static final RegistryObject<Item> MOONSHINE = ITEMS.register("moonshine",
-	//	                  ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.MOONSHINE)));
 
-	// Italian Delight TODO
-	//	public static final RegistryObject<Item> CAHORS = ITEMS.register("cahors",
-	//	                    ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CAHORS)));
-	//	public static final RegistryObject<Item> CHAMPAGNE = ITEMS.register("champagne",
-	//	                    ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CHAMPAGNE)));
-	//	public static final RegistryObject<Item> COGNAC = ITEMS.register("cognac",
-	//	                    ( ) -> new BoozeItem(1, 4, foodItem(AlcoholProperties.COGNAC)));
+	// Corn Delight
+	public static final RegistryObject<Item> BOURBON = ITEMS.register("bourbon",
+	                                                                  () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.BOURBON)));
+	public static final RegistryObject<Item> CORN_WHISKY = ITEMS.register("corn_whisky",
+	                                                                      () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CORN_WHISKY)));
+	public static final RegistryObject<Item> MOONSHINE = ITEMS.register("moonshine",
+	                                                                    () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.MOONSHINE)));
+
+	// Italian Delight
+	public static final RegistryObject<Item> CAHORS = ITEMS.register("cahors",
+	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CAHORS)));
+	public static final RegistryObject<Item> CHAMPAGNE = ITEMS.register("champagne",
+	                                                                    () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.CHAMPAGNE)));
+	public static final RegistryObject<Item> COGNAC = ITEMS.register("cognac",
+	                                                                 () -> new BoozeItem(1, 4, foodItem(AlcoholProperties.COGNAC)));
 
 	public static Item.Properties foodItem(FoodProperties food)
 	{

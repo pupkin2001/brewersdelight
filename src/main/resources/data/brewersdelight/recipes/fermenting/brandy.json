@@ -2,10 +2,10 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "forge:berries"
     },
     {
       "item": "minecraft:apple"

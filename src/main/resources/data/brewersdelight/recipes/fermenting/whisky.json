@@ -2,16 +2,16 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     },
     {
-      "item": "minecraft:wheat"
+      "tag": "forge:grain/wheat"
     }
   ],
   "liquid": {

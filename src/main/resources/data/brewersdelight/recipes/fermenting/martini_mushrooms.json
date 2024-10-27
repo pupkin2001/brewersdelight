@@ -2,10 +2,10 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:brown_mushroom"
+      "tag": "forge:mushrooms"
     },
     {
-      "item": "minecraft:brown_mushroom"
+      "tag": "forge:mushrooms"
     },
     {
       "item": "minecraft:sugar"
@@ -15,7 +15,7 @@
     }
   ],
   "liquid": {
-    "item": "minecraft:water_bucket"
+    "item": "italian_delight:sweet_berry_wine"
   },
   "result": {
     "item": "brewersdelight:martini"

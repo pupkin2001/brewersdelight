@@ -72,3 +72,17 @@ mandatory = true
 versionRange = "[1.0.0,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.brewersdelight]]
+modId = "corn_delight"
+mandatory = false
+versionRange = "[1.0.0,)"
+ordering = "BEFORE"
+side = "BOTH"
+
+[[dependencies.brewersdelight]]
+modId = "italian_delight"
+mandatory = false
+versionRange = "[1.0.0,)"
+ordering = "BEFORE"
+side = "BOTH"
