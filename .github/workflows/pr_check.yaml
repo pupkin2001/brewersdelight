@@ -3,7 +3,7 @@ name: Pull Request Check
 on: [ pull_request, push ]
 
 jobs:
-  skip_check:
+  pre_check:
     runs-on: ubuntu-latest
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
@@ -14,7 +14,8 @@ jobs:
           concurrent_skipping: 'same_content_newer'
 
   pr_check:
-    if: !skip_check.outputs.should_skip == 'true'
+    needs: pre_check
+    if: needs.pre_check.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
