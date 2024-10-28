@@ -45,14 +45,6 @@ jobs:
       - name: Build
         run: ./gradlew build
 
-      - name: Capture build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: brewersdelight
-          path: build/libs/
-          if-no-files-found: error
-          retention-days: 5
-
       - name: Get Version
         id: version
         uses: actions/github-script@v6
@@ -63,15 +55,9 @@ jobs:
             let ref = '${{ github.ref }}';
             return ref.startsWith('refs/tags/v') ? ref.replace('refs/tags/v', '') : 'indev';
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: brewersdelight
-
-      - name: Extract and Find JAR File
+      - name: Get File Name
         run: |
-          unzip ./brewersdelight.zip -d .
-          FILE_NAME=$(find . -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
+          FILE_NAME=$(find build/libs/ -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
           echo "FILE_NAME=${FILE_NAME}" >> $GITHUB_ENV
 
       - name: Generate Release Notes
