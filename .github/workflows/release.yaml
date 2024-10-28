@@ -46,6 +46,15 @@ jobs:
       - name: Build
         run: ./gradlew build
 
+
+      - name: Capture build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brewersdelight
+          path: build/libs/
+          if-no-files-found: error
+          retention-days: 3
+
       - name: Get Version
         id: version
         uses: actions/github-script@v6
@@ -61,14 +70,9 @@ jobs:
           FILE_NAME=$(find build/libs/ -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
           echo "FILE_NAME=${FILE_NAME}" >> $GITHUB_ENV
 
-      - name: Generate Release Notes
-        uses: CSchoel/release-notes-from-changelog@v1
-        with:
-          version: "${{ steps.version.outputs.result }}"
-          working-directory: .
-
       - name: Create GitHub Release
         id: create_release
+        if: github.ref == 'refs/heads/stable'
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -80,6 +84,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
+        if: github.ref == 'refs/heads/stable' && steps.create_release.outputs.upload_url != ''
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
