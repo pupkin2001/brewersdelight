@@ -2,9 +2,25 @@
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Logo to readme.
+- Added logo to readme.
+- Replaced placeholder texture in logo.
+- Textures:
+  - Brandy.
+  - Cider.
+  - Gin.
+  - Kvass.
+  - Liqueur.
+  - Martini.
+  - Melon schnapps.
+  - Sake.
+  - Whisky.
+  - Bourbon.
+  - Corn whisky.
+  - Moonshine.
+  - Cahors.
+  - Cognac.
 
 ## [0.3] - 2024/10/28
 
@@ -14,7 +30,7 @@
 - Textures:
   - Braga.
   - Brandy.
-  - Cider
+  - Cider.
   - Gin.
   - Kvass.
   - Liqueur.
@@ -67,7 +83,7 @@
 - Beverages:
   - Braga.
   - Brandy.
-  - Cider
+  - Cider.
   - Gin.
   - Kvass.
   - Liqueur.
