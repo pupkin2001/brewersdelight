@@ -1,4 +1,4 @@
-name: Release
+name: Build and Release
 
 on:
   push:
@@ -6,12 +6,57 @@ on:
       - 'v*'
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
 
     env:
       MC_VERSION: 1.18.2
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Cache Gradle
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle
+            ~/gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-
+
+      - name: Grant permissions to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Initialize gradlew
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: ./gradlew
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Capture build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: brewersdelight
+          path: build/libs/
+          if-no-files-found: error
+          retention-days: 5
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -30,7 +75,7 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: brewersdelight.zip
+          name: brewersdelight
           path: ./build-artifacts
 
       - name: Extract and Find JAR File
