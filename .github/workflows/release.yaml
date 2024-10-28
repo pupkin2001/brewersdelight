@@ -70,8 +70,8 @@ jobs:
 
       - name: Extract and Find JAR File
         run: |
-          unzip ./build-artifacts/brewersdelight.zip -d ./build-artifacts
-          FILE_NAME=$(find ./build-artifacts -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
+          unzip ./brewersdelight.zip -d .
+          FILE_NAME=$(find . -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
           echo "FILE_NAME=${FILE_NAME}" >> $GITHUB_ENV
 
       - name: Generate Release Notes
