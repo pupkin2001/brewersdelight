@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      MC_VERSION: 1.18.2
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get Version
+        id: version
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script: |
+            let ref = '${{ github.ref }}';
+            return ref.startsWith('refs/tags/v') ? ref.replace('refs/tags/v', '') : 'indev';
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: brewersdelight
+          path: ./build-artifacts
+
+      - name: Extract and Find JAR File
+        run: |
+          unzip ./build-artifacts/brewersdelight.zip -d ./build-artifacts
+          FILE_NAME=$(find ./build-artifacts -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
+          echo "FILE_NAME=${FILE_NAME}" >> $GITHUB_ENV
+
+      - name: Generate Release Notes
+        uses: CSchoel/release-notes-from-changelog@v1
+        with:
+          version: "${{ steps.version.outputs.result }}"
+          working-directory: .
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: "Release ${{ github.ref_name }}"
+          body_path: RELEASE.md
+          draft: true
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.FILE_NAME }}
+          asset_name: $(basename "${{ env.FILE_NAME }}")
+          asset_content_type: application/java-archive

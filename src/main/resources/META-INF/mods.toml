@@ -24,7 +24,7 @@ displayURL = "https://github.com/pupkin2001/brewersdelight"
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile = "assets/brewersdelight/textures/logo.png"
 # A text fields displayed in the mod UI
-credits = "Some palettes and texture shapes were closely inspired by both required mods to better match it visually."
+credits = "Parts of the code, as well as some palettes and texture shapes have been used or inspired by both required modifications to better match them functionally and visually."
 authors = "pupkin2001"
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
@@ -36,7 +36,7 @@ authors = "pupkin2001"
 
 # The description text for the mod
 description = '''
-Brewer's Delight is an add-on for Farmer's Delight and Brewin' and Chewin' that adds more types of alcohol.
+Brewer's Delight is an add-on for Farmer's Delight and Brewin' and Chewin' that adds more beverages.
 '''
 # A dependency - use the . to indicate dependency for a specific modid.
 [[dependencies.brewersdelight]]
