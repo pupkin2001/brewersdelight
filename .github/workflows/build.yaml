@@ -5,7 +5,7 @@ on:
     branches: [ 'stable' ]
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
