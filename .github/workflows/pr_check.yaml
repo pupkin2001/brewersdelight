@@ -14,6 +14,7 @@ jobs:
           concurrent_skipping: 'same_content_newer'
 
   pr_check:
+    if: !skip_check.outputs.should_skip == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
