@@ -37,6 +37,8 @@ public class BrewersItems
 	                                                               () -> new BoozeItem(1, 4, foodItem(BeverageProperties.SAKE)));
 	public static final RegistryObject<Item> SBITEN = ITEMS.register("sbiten",
 	                                                                 () -> new BoozeItem(3, 4, foodItem(BeverageProperties.SBITEN)));
+	public static final RegistryObject<Item> TEQUILA = ITEMS.register("tequila",
+	                                                                  () -> new BoozeItem(1, 4, foodItem(BeverageProperties.TEQUILA)));
 	public static final RegistryObject<Item> WHISKY = ITEMS.register("whisky",
 	                                                                 () -> new BoozeItem(1, 4, foodItem(BeverageProperties.WHISKY)));
 

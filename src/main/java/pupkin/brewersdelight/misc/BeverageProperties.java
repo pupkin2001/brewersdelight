@@ -77,6 +77,13 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
 			.build();
 
+	public static final FoodProperties TEQUILA = new FoodProperties.Builder()
+			.nutrition(0)
+			.saturationMod(0.5f)
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1600, 1), 1.0f)
+			.build();
+
 	public static final FoodProperties WHISKY = new FoodProperties.Builder()
 			.nutrition(0)
 			.saturationMod(0.5f)

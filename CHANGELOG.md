@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Tequila
+
 ## [v0.4] - 2024/10/28
 
 ### Changed
