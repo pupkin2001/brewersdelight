@@ -66,7 +66,7 @@ public class BrewersItems
 
 	public static Item.@NotNull Properties foodItem(FoodProperties food)
 	{
-		return new Item.Properties().tab(BrewersDelightTab.CREATIVE_MODE_TAB);
+		return new Item.Properties().food(food).stacksTo(16).craftRemainder(BCItems.TANKARD.get()).tab(BrewersDelightTab.CREATIVE_MODE_TAB);
 	}
 
 	public static void register(IEventBus eventBus)

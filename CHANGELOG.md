@@ -24,6 +24,12 @@
 - Potion effect given by drinking champagne to jump boost.
 - Potion effect given by drinking cognac to resistance.
 
+### Fixed
+
+- Beverages not giving appropriate potion effects after drinking.
+- Beverages stacking up to 64 instead of 16.
+- Beverages not giving empty tankard back after drinking.
+
 ## [v0.4] - 2024/10/28
 
 ### Changed
