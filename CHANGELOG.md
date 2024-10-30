@@ -6,6 +6,24 @@
 
 - Tequila
 
+### Changed
+
+- Potion effect given by drinking braga to strength and speed.
+- Potion effect given by drinking brandy to water breathing.
+- Potion effect given by drinking cider to instant health.
+- Potion effect given by drinking gin to speed.
+- Potion effect given by drinking liqueur to regeneration.
+- Potion effect given by drinking martini to comfort.
+- Potion effect given by drinking melon schnapps to blindness and strength 2.
+- Potion effect given by drinking sake to absorption.
+- Potion effect given by drinking whisky to strength 2.
+- Potion effect given by drinking bourbon to fire resistance.
+- Potion effect given by drinking corn whisky to fire resistance.
+- Potion effect given by drinking moonshine to health boost.
+- Potion effect given by drinking cahors to invisibility and strength.
+- Potion effect given by drinking champagne to jump boost.
+- Potion effect given by drinking cognac to resistance.
+
 ## [v0.4] - 2024/10/28
 
 ### Changed
