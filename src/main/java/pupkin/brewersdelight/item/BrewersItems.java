@@ -11,9 +11,9 @@ import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.misc.BeverageProperties;
 import pupkin.brewersdelight.misc.BrewersDelightTab;
 
+@SuppressWarnings("unused")
 public class BrewersItems
 {
-	@SuppressWarnings("unused")
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID);
 
 	// Farmers Delight
