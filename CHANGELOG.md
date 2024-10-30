@@ -8,6 +8,9 @@
 
 ### Changed
 
+- Recipes:
+  - Sake - added 'minecraft:water_bucket' liquid requirement.
+  - Cahors - added 'italian_delight:sweet_berry_wine' liquid requirement.
 - Potion effect given by drinking braga to strength and speed.
 - Potion effect given by drinking brandy to water breathing.
 - Potion effect given by drinking cider to instant health.
