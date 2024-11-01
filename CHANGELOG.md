@@ -1,11 +1,19 @@
 # Changelog
 
-## [v0.5] - 2024/11/01
+## [Unreleased]
+
+### Added
+
+- Achievement for brewing any beverage.
+- Achievement for brewing every beverage.
+
+## [v0.5.0] - 2024/11/01
 
 ### Added
 
 - Tequila
 - Cheese Stout
+- Achievement for brewing cheese stout.
 
 ### Changed
 
@@ -56,7 +64,7 @@
 - Beverages stacking up to 64 instead of 16.
 - Beverages not giving empty tankard back after drinking.
 
-## [v0.4] - 2024/10/28
+## [v0.4.0] - 2024/10/28
 
 ### Changed
 
@@ -78,7 +86,7 @@
   - Cahors.
   - Cognac.
 
-## [0.3] - 2024/10/28
+## [0.3.0] - 2024/10/28
 
 ### Changed
 
@@ -102,7 +110,7 @@
   - Champagne.
   - Cognac.
 
-## [0.2] - 2024/10/27
+## [0.2.0] - 2024/10/27
 
 ### Added
 
@@ -131,7 +139,7 @@
 - Translations:
   - Русскій дореформенный (Россійская имперія).
 
-## [0.1] - 2024/10/26
+## [0.1.0] - 2024/10/26
 
 ### Added
 
