@@ -2,10 +2,10 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     },
     {
       "tag": "minecraft:flowers"

@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import pupkin.brewersdelight.item.BrewersItems;
+import pupkin.brewersdelight.misc.BrewersDelightTab;
 
 @Mod(BrewersDelight.MOD_ID)
 @Mod.EventBusSubscriber(modid = BrewersDelight.MOD_ID)
@@ -17,6 +18,7 @@ public class BrewersDelight
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		BrewersItems.register(eventBus);
+		BrewersDelightTab.CREATIVE_TABS.register(eventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}

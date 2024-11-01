@@ -2,20 +2,20 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits/grape"
     }
   ],
   "liquid": {
-    "item": "italian_delight:sweet_berry_wine"
+    "tag": "forge:wine"
   },
   "result": {
     "item": "brewersdelight:cahors"

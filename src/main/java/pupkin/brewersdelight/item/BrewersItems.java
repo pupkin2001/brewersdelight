@@ -1,7 +1,7 @@
 package pupkin.brewersdelight.item;
 
-import com.brewinandchewin.common.item.BoozeItem;
-import com.brewinandchewin.core.registry.BCItems;
+import umpaz.brewinandchewin.common.item.BoozeItem;
+import umpaz.brewinandchewin.common.registry.BCItems;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,7 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.misc.BeverageProperties;
-import pupkin.brewersdelight.misc.BrewersDelightTab;
 
 @SuppressWarnings("unused")
 public class BrewersItems
@@ -58,7 +57,7 @@ public class BrewersItems
 	public static final RegistryObject<Item> MOONSHINE = ITEMS.register("moonshine",
 	       () -> new BoozeItem(3, 20, foodItem(BeverageProperties.MOONSHINE)));
 
-	// Grapes (Italian Delight)
+	// Grapes
 	public static final RegistryObject<Item> CAHORS = ITEMS.register("cahors",
 	       () -> new BoozeItem(1, 1, foodItem(BeverageProperties.CAHORS)));
 	public static final RegistryObject<Item> CHAMPAGNE = ITEMS.register("champagne",
@@ -68,7 +67,7 @@ public class BrewersItems
 
 	public static Item.@NotNull Properties foodItem(FoodProperties food)
 	{
-		return new Item.Properties().food(food).stacksTo(16).craftRemainder(BCItems.TANKARD.get()).tab(BrewersDelightTab.CREATIVE_MODE_TAB);
+		return new Item.Properties().food(food).stacksTo(16).craftRemainder(BCItems.TANKARD.get());
 	}
 
 	public static void register(IEventBus eventBus)
