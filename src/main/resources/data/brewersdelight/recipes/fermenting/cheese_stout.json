@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "item": "brewinandchewin:flaxen_cheese_wedge"
+    },
+    {
+      "item": "brewinandchewin:flaxen_cheese_wedge"
+    },
+    {
+      "tag": "forge:grain"
+    },
+    {
+      "tag": "minecraft:mushrooms"
+    }
+  ],
+  "liquid": {
+    "item": "minecraft:milk_bucket"
+  },
+  "result": {
+    "item": "brewersdelight:cheese_stout"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 12000,
+  "temperature": 3,
+  "recipe_book_tab": "drinks"
+}

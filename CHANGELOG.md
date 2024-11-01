@@ -5,6 +5,7 @@
 ### Added
 
 - Tequila
+- Cheese Stout
 
 ### Changed
 

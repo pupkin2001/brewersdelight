@@ -73,6 +73,19 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 8400, 1), 1.0f)
 			.build();
 
+	public static final FoodProperties CHEESE_STOUT = new FoodProperties.Builder()
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.UNLUCK, 8400, 0), 1.0f)
+			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 8400, 5), 0.8f)
+			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 4200, 0), 0.8f)
+			.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 4200, 0), 0.5f)
+			.effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 4200, 0), 0.5f)
+			.effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.25f)
+			.effect(() -> new MobEffectInstance(MobEffects.POISON, 2100, 0), 0.25f)
+			.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2100, 1), 0.1f)
+			.nutrition(4).saturationMod(0.4F)
+			.build();
+
 	// Corn
 	public static final FoodProperties BOURBON = new FoodProperties.Builder()
 			.alwaysEat()

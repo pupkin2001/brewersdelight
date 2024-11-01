@@ -43,6 +43,8 @@ public class BrewersItems
 	       () -> new BoozeItem(2, 14, foodItem(BeverageProperties.TEQUILA)));
 	public static final RegistryObject<Item> WHISKY = ITEMS.register("whisky",
 	       () -> new BoozeItem(3, 19, foodItem(BeverageProperties.WHISKY)));
+	public static final RegistryObject<Item> CHEESE_STOUT = ITEMS.register("cheese_stout",
+	       () -> new BoozeItem(1, 6, foodItem(BeverageProperties.CHEESE_STOUT)));
 
 	// Note to self: Brewin' and Chewin' handles compatibility by... not giving a damn.
 	// Kombucha throws an error loading recipe if farmers respite isn't loaded, which disables the recipe.

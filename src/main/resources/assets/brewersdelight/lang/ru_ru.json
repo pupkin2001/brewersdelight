@@ -1,6 +1,9 @@
 {
   "itemGroup.BrewersDelightTab": "Восторг Пивовара",
 
+  "advancements.cheese_stout.title": "Зачем вы сварили *это*?!",
+  "advancements.cheese_stout.description": "Сварите сырный стаут - своеобразный и исключительный напиток, если вам удастся его сдержать, конечно.",
+
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Бренди",
   "item.brewersdelight.cider": "Сидр",
@@ -13,6 +16,7 @@
   "item.brewersdelight.sbiten": "Сбитень",
   "item.brewersdelight.tequila": "Текила",
   "item.brewersdelight.whisky": "Виски",
+  "item.brewersdelight.cheese_stout": "Сырный Стаут",
 
   "item.brewersdelight.bourbon": "Бурбон",
   "item.brewersdelight.corn_whisky": "Кукурузное виски",

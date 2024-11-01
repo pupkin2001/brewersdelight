@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:cheese_stout"
+    },
+    "title": {
+      "translate": "advancements.cheese_stout.title"
+    },
+    "description": {
+      "translate": "advancements.cheese_stout.description"
+    },
+    "background": "minecraft:textures/block/stone.png",
+    "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cheese_stout"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
