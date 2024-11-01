@@ -2,23 +2,20 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "italian_delight:grape_bunch"
+      "item": "minecraft:cactus"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "item": "minecraft:cactus"
     },
     {
-      "item": "italian_delight:grape_bunch"
-    },
-    {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:fruits"
     }
   ],
   "liquid": {
-    "item": "italian_delight:sweet_berry_wine"
+    "item": "brewinandchewin:vodka"
   },
   "result": {
-    "item": "brewersdelight:cahors"
+    "item": "brewersdelight:tequila"
   },
   "container": {
     "item": "brewinandchewin:tankard"

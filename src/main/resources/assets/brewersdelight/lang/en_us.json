@@ -1,6 +1,9 @@
 {
   "itemGroup.BrewersDelightTab": "Brewer's Delight",
 
+  "advancements.cheese_stout.title": "Why did you brew *that*?!",
+  "advancements.cheese_stout.description": "Brew a cheese stout - a distinctive and exceptional drink, if you can manage to keep it down, that is.",
+
   "item.brewersdelight.braga": "Braga",
   "item.brewersdelight.brandy": "Brandy",
   "item.brewersdelight.cider": "Cider",
@@ -11,7 +14,9 @@
   "item.brewersdelight.melon_schnapps": "Melon schnapps",
   "item.brewersdelight.sake": "Sake",
   "item.brewersdelight.sbiten": "Sbiten",
+  "item.brewersdelight.tequila": "Tequila",
   "item.brewersdelight.whisky": "Whisky",
+  "item.brewersdelight.cheese_stout": "Cheese Stout",
 
   "item.brewersdelight.bourbon": "Bourbon",
   "item.brewersdelight.corn_whisky": "Corn whisky",

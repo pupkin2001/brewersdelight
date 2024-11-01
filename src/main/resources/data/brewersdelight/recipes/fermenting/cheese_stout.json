@@ -2,23 +2,23 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "italian_delight:grape_bunch"
+      "item": "brewinandchewin:flaxen_cheese_wedge"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "item": "brewinandchewin:flaxen_cheese_wedge"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "forge:grain"
     },
     {
-      "item": "italian_delight:grape_bunch"
+      "tag": "minecraft:mushrooms"
     }
   ],
   "liquid": {
-    "item": "italian_delight:sweet_berry_wine"
+    "item": "minecraft:milk_bucket"
   },
   "result": {
-    "item": "brewersdelight:cahors"
+    "item": "brewersdelight:cheese_stout"
   },
   "container": {
     "item": "brewinandchewin:tankard"
