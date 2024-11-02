@@ -14,10 +14,11 @@
       "tag": "forge:fruits/grape"
     }
   ],
-  "liquid": {
+  "fluiditem": {
     "tag": "forge:wine"
   },
   "result": {
+    "count": 2,
     "item": "brewersdelight:cahors"
   },
   "container": {
@@ -25,6 +26,6 @@
   },
   "experience": 0.6,
   "fermentingtime": 12000,
-  "temperature": 3,
+  "temperature": "warm",
   "recipe_book_tab": "drinks"
 }

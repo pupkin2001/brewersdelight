@@ -11,10 +11,11 @@
       "item": "minecraft:honeycomb"
     }
   ],
-  "liquid": {
+  "fluiditem": {
     "item": "minecraft:water_bucket"
   },
   "result": {
+    "count": 4,
     "item": "brewersdelight:kvass"
   },
   "container": {
@@ -22,6 +23,6 @@
   },
   "experience": 0.6,
   "fermentingtime": 12000,
-  "temperature": 3,
+  "temperature": "warm",
   "recipe_book_tab": "drinks"
 }

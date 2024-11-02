@@ -7,6 +7,12 @@
 - Achievement for brewing any beverage.
 - Achievement for brewing every beverage.
 
+### Changed
+
+- **(1.20.1 only)** Increased temperature for most fermenting recipes to 'warm'.
+- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else 2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in one.
+- **(1.20.1 only)** Sbiten ingredient requirements set to honey block and wheat instead of two honey bottles.
+
 ### Fixed
 
 - **(1.20.1 only)** Fermenting recipes not loading properly.
