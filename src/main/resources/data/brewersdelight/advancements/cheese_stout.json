@@ -9,9 +9,10 @@
     "description": {
       "translate": "advancements.cheese_stout.description"
     },
-    "background": "minecraft:textures/block/stone.png",
+    "frame": "challenge",
     "hidden": true
   },
+  "parent": "brewersdelight:root",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -25,5 +26,11 @@
         ]
       }
     }
+  },
+  "rewards": {
+    "recipes": [
+      "brewersdelight:cheese_stout"
+    ],
+    "experience": 50
   }
 }
