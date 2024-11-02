@@ -1,8 +1,5 @@
 {
-  "itemGroup.brewersdelight.BrewersDelightTab": "Brewer's Delight",
-
-  "advancements.cheese_stout.title": "Why did you brew *that*?!",
-  "advancements.cheese_stout.description": "Brew a cheese stout - a distinctive and exceptional drink, if you can manage to keep it down, that is.",
+  "itemgroup.brewersdelight.BrewersDelightTab": "Brewer's Delight",
 
   "item.brewersdelight.braga": "Braga",
   "item.brewersdelight.brandy": "Brandy",
@@ -10,13 +7,14 @@
   "item.brewersdelight.gin": "Gin",
   "item.brewersdelight.kvass": "Kvass",
   "item.brewersdelight.liqueur": "Liqueur",
-  "item.brewersdelight.martini": "Martini",
   "item.brewersdelight.melon_schnapps": "Melon schnapps",
   "item.brewersdelight.sake": "Sake",
   "item.brewersdelight.sbiten": "Sbiten",
   "item.brewersdelight.tequila": "Tequila",
   "item.brewersdelight.whisky": "Whisky",
-  "item.brewersdelight.cheese_stout": "Cheese Stout",
+
+  "item.brewersdelight.flaxen_cheese_stout": "Flaxen Cheese Stout",
+  "item.brewersdelight.scarlet_cheese_stout": "Scarlet Cheese Stout",
 
   "item.brewersdelight.bourbon": "Bourbon",
   "item.brewersdelight.corn_whisky": "Corn whisky",
@@ -24,5 +22,19 @@
 
   "item.brewersdelight.cahors": "Cahors",
   "item.brewersdelight.champagne": "Champagne",
-  "item.brewersdelight.cognac": "Cognac"
+  "item.brewersdelight.cognac": "Cognac",
+  "item.brewersdelight.martini": "Martini",
+
+  "advancements.root.title": "On the Brew Wave",
+  "advancements.root.description": "Brew your first beer.",
+  "advancements.every_beverage.title": "Master brewer",
+  "advancements.every_beverage.description": "Brew every possible beverage.",
+  "advancements.any_challenge_beverage.title": "Exquisite Elixir",
+  "advancements.any_challenge_beverage.description": "Brew your first challenge beverage.",
+  "advancements.flaxen_cheese_stout.title": "Why did you brew *that*?!",
+  "advancements.flaxen_cheese_stout.description": "Brew a Flaxen Cheese Stout - a distinctive and exceptional drink, if you can manage to keep it down, that is.",
+  "advancements.scarlet_cheese_stout.title": "Inferior alchemy",
+  "advancements.scarlet_cheese_stout.description": "Brew a Crimson Cheese Stout – a bold, fiery twist on the cheesy brew, daring even the bravest to take a sip.",
+  "advancements.every_challenge_beverage.title": "Legendary brewer",
+  "advancements.every_challenge_beverage.description": "Brew every possible challenge beverage."
 }

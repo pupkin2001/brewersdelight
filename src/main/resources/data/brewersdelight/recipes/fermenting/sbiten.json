@@ -2,16 +2,17 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "minecraft:honey_bottle"
+      "item": "minecraft:honey_block"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "tag": "forge:grain/wheat"
     }
   ],
-  "liquid": {
+  "fluiditem": {
     "item": "brewinandchewin:beer"
   },
   "result": {
+    "count": 2,
     "item": "brewersdelight:sbiten"
   },
   "container": {
@@ -19,6 +20,6 @@
   },
   "experience": 0.6,
   "fermentingtime": 24000,
-  "temperature": 4,
+  "temperature": "hot",
   "recipe_book_tab": "drinks"
 }

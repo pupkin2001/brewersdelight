@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:scarlet_cheese_stout"
+    },
+    "title": {
+      "translate": "advancements.scarlet_cheese_stout.title"
+    },
+    "description": {
+      "translate": "advancements.scarlet_cheese_stout.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "brewersdelight:any_challenge_beverage",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}

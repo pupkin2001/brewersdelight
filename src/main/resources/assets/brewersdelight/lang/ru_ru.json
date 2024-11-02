@@ -1,8 +1,5 @@
 {
-  "itemGroup.brewersdelight.BrewersDelightTab": "Восторг Пивовара",
-
-  "advancements.cheese_stout.title": "Зачем вы сварили *это*?!",
-  "advancements.cheese_stout.description": "Сварите сырный стаут - своеобразный и исключительный напиток, если вам удастся его сдержать, конечно.",
+  "itemgroup.brewersdelight.BrewersDelightTab": "Восторг Пивовара",
 
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Бренди",
@@ -10,13 +7,14 @@
   "item.brewersdelight.gin": "Джин",
   "item.brewersdelight.kvass": "Квас",
   "item.brewersdelight.liqueur": "Ликёр",
-  "item.brewersdelight.martini": "Мартини",
   "item.brewersdelight.melon_schnapps": "Арбузный шнапс",
   "item.brewersdelight.sake": "Саке",
   "item.brewersdelight.sbiten": "Сбитень",
   "item.brewersdelight.tequila": "Текила",
   "item.brewersdelight.whisky": "Виски",
-  "item.brewersdelight.cheese_stout": "Сырный Стаут",
+
+  "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаут",
+  "item.brewersdelight.scarlet_cheese_stout": "Алый Сырный Стаут",
 
   "item.brewersdelight.bourbon": "Бурбон",
   "item.brewersdelight.corn_whisky": "Кукурузное виски",
@@ -24,5 +22,19 @@
 
   "item.brewersdelight.cahors": "Кагор",
   "item.brewersdelight.champagne": "Шампанское",
-  "item.brewersdelight.cognac": "Коньяк"
+  "item.brewersdelight.cognac": "Коньяк",
+  "item.brewersdelight.martini": "Мартини",
+
+  "advancements.root.title": "На пивной волне",
+  "advancements.root.description": "Сварите ваше первое пиво.",
+  "advancements.every_beverage.title": "Мастер пивовар",
+  "advancements.every_beverage.description": "Сварите все возможные напитки.",
+  "advancements.any_challenge_beverage.title": "Изысканный эликсир",
+  "advancements.any_challenge_beverage.description": "Приготовьте ваш первый исключительный напиток.",
+  "advancements.flaxen_cheese_stout.title": "Зачем вы сварили *это*?!",
+  "advancements.flaxen_cheese_stout.description": "Сварите Льняной Сырный Стаут - своеобразный и исключительный напиток, если вам удастся его сдержать, конечно.",
+  "advancements.scarlet_cheese_stout.title": "Низшая алхимия",
+  "advancements.scarlet_cheese_stout.description": "Сварите Алый Сырный Стаут – дерзкий и огненный вариант сырного напитка, на глоток которого отважится не каждый.",
+  "advancements.every_challenge_beverage.title": "Легендарный пивовар",
+  "advancements.every_challenge_beverage.description": "Приготовьте все возможные исключительные напитки."
 }

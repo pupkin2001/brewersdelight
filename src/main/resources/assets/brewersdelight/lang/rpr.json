@@ -1,8 +1,5 @@
 {
-  "itemGroup.brewersdelight.BrewersDelightTab": "Въстъргъ Пивовара",
-
-  "advancements.cheese_stout.title": "Зачемъ вы сварiли *это*?!",
-  "advancements.cheese_stout.description": "Сварiтѣ сырный стаутъ - своеобразный и исключитѣльный напитокъ, если вамъ удастся аго сдѣржать, конѣчно.",
+  "itemgroup.brewersdelight.BrewersDelightTab": "Въстъргъ Пивовара",
 
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Брѣнди",
@@ -10,13 +7,14 @@
   "item.brewersdelight.gin": "Джинъ",
   "item.brewersdelight.kvass": "Квасъ",
   "item.brewersdelight.liqueur": "Ликёръ",
-  "item.brewersdelight.martini": "Мартинi",
   "item.brewersdelight.melon_schnapps": "Арбузный шнапсъ",
   "item.brewersdelight.sake": "Сакѣ",
   "item.brewersdelight.sbiten": "Перевар",
   "item.brewersdelight.tequila": "Тѣкила",
   "item.brewersdelight.whisky": "Виски",
-  "item.brewersdelight.cheese_stout": "Сырный Стаутъ",
+
+  "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
+  "item.brewersdelight.scarlet_cheese_stout": "Алый Сырный Стаутъ",
 
   "item.brewersdelight.bourbon": "Бурбонъ",
   "item.brewersdelight.corn_whisky": "Кукурузное виски",
@@ -24,5 +22,19 @@
 
   "item.brewersdelight.cahors": "Кагоръ",
   "item.brewersdelight.champagne": "Шампанское",
-  "item.brewersdelight.cognac": "Коньякъ"
+  "item.brewersdelight.cognac": "Коньякъ",
+  "item.brewersdelight.martini": "Мартинi",
+
+  "advancements.root.title": "На пивной волнѣ",
+  "advancements.root.description": "Сварiтѣ ваше пѣрвое пиво.",
+  "advancements.every_beverage.title": "Мастѣръ пивоваръ",
+  "advancements.every_beverage.description": "Сварiтѣ всѣ возможные напитки.",
+  "advancements.any_challenge_beverage.title": "Изысканный эликсиръ",
+  "advancements.any_challenge_beverage.description": "Прiготовьтѣ вашъ пѣрвый исключитѣльный напитокъ.",
+  "advancements.flaxen_cheese_stout.title": "Зачемъ вы сварiли *это*?!",
+  "advancements.flaxen_cheese_stout.description": "Сварiтѣ Сырный Стаутъ - своеобразный и исключитѣльный напитокъ, если вамъ удастся аго сдѣржать, конѣчно.",
+  "advancements.scarlet_cheese_stout.title": "Низшыя алхимiя",
+  "advancements.scarlet_cheese_stout.description": "Сварiтѣ Алый Сырный Стаутъ – дѣрзкiй и огнѣнный варiантъ сырнаго напитка, на глотокъ котораго отважится не каждый.",
+  "advancements.every_challenge_beverage.title": "Лѣгендарный пивоваръ",
+  "advancements.every_challenge_beverage.description": "Прiготовьтѣ всѣ возможные исключитѣльные напитки."
 }

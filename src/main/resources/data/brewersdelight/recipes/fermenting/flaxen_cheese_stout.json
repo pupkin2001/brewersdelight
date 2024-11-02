@@ -11,20 +11,21 @@
       "tag": "forge:grain"
     },
     {
-      "tag": "minecraft:mushrooms"
+      "tag": "forge:mushrooms"
     }
   ],
-  "liquid": {
-    "item": "minecraft:milk_bucket"
+  "fluiditem": {
+    "item": "brewinandchewin:vodka"
   },
   "result": {
-    "item": "brewersdelight:cheese_stout"
+    "count": 1,
+    "item": "brewersdelight:flaxen_cheese_stout"
   },
   "container": {
     "item": "brewinandchewin:tankard"
   },
   "experience": 0.6,
   "fermentingtime": 12000,
-  "temperature": 3,
+  "temperature": "warm",
   "recipe_book_tab": "drinks"
 }

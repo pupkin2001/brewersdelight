@@ -14,10 +14,11 @@
       "tag": "forge:berries"
     }
   ],
-  "liquid": {
+  "fluiditem": {
     "item": "brewinandchewin:vodka"
   },
   "result": {
+    "count": 2,
     "item": "brewersdelight:gin"
   },
   "container": {
@@ -25,6 +26,6 @@
   },
   "experience": 0.6,
   "fermentingtime": 12000,
-  "temperature": 3,
+  "temperature": "warm",
   "recipe_book_tab": "drinks"
 }

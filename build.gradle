@@ -22,7 +22,7 @@ mixin {
 }
 
 base {
-	archivesName = "${mod_id}-${minecraft_version}"
+	archivesName = "${mod_name}-${minecraft_version}"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -146,6 +146,7 @@ tasks.named('processResources', ProcessResources).configure {
 			forge_version_range          : forge_version_range,
 			mod_id                       : mod_id,
 			mod_name                     : mod_name,
+			mod_displayName              : mod_displayName,
 			mod_license                  : mod_license,
 			mod_version                  : mod_version,
 			mod_authors                  : mod_authors,

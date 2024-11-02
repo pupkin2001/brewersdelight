@@ -2,24 +2,24 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "tag": "forge:seeds/corn"
+      "item": "brewinandchewin:scarlet_cheese_wedge"
     },
     {
-      "tag": "forge:seeds/corn"
+      "item": "brewinandchewin:scarlet_cheese_wedge"
     },
     {
-      "item": "minecraft:apple"
+      "item": "minecraft:nether_wart"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:mushrooms"
     }
   ],
   "fluiditem": {
-    "item": "minecraft:water_bucket"
+    "item": "brewinandchewin:vodka"
   },
   "result": {
-    "count": 4,
-    "item": "brewersdelight:bourbon"
+    "count": 1,
+    "item": "brewersdelight:scarlet_cheese_stout"
   },
   "container": {
     "item": "brewinandchewin:tankard"

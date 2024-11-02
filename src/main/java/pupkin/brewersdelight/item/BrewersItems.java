@@ -17,7 +17,7 @@ public class BrewersItems
 {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID);
 
-	// Farmers Delight
+	// Basic (Farmers Delight)
 	public static final RegistryObject<Item> BRAGA = ITEMS.register("braga",
 	       () -> new BoozeItem(1, 2, foodItem(BeverageProperties.BRAGA)));
 	public static final RegistryObject<Item> BRANDY = ITEMS.register("brandy",
@@ -30,8 +30,6 @@ public class BrewersItems
 	       () -> new BoozeItem(0, 0, foodItem(BeverageProperties.KVASS)));
 	public static final RegistryObject<Item> LIQUEUR = ITEMS.register("liqueur",
 	       () -> new BoozeItem(3, 4, foodItem(BeverageProperties.LIQUEUR)));
-	public static final RegistryObject<Item> MARTINI = ITEMS.register("martini",
-	       () -> new BoozeItem(2, 2, foodItem(BeverageProperties.MARTINI)));
 	public static final RegistryObject<Item> MELON_SCHNAPPS = ITEMS.register("melon_schnapps",
 	       () -> new BoozeItem(2, 15, foodItem(BeverageProperties.MELON_SCHNAPPS)));
 	public static final RegistryObject<Item> SAKE = ITEMS.register("sake",
@@ -42,8 +40,12 @@ public class BrewersItems
 	       () -> new BoozeItem(2, 14, foodItem(BeverageProperties.TEQUILA)));
 	public static final RegistryObject<Item> WHISKY = ITEMS.register("whisky",
 	       () -> new BoozeItem(3, 19, foodItem(BeverageProperties.WHISKY)));
-	public static final RegistryObject<Item> CHEESE_STOUT = ITEMS.register("cheese_stout",
-	       () -> new BoozeItem(1, 6, foodItem(BeverageProperties.CHEESE_STOUT)));
+
+	// Challenge beverages
+	public static final RegistryObject<Item> FLAXEN_CHEESE_STOUT = ITEMS.register("flaxen_cheese_stout",
+	                                                                              () -> new BoozeItem(1, 6, foodItem(BeverageProperties.FLAXEN_CHEESE_STOUT)));
+	public static final RegistryObject<Item> SCARLET_CHEESE_STOUT = ITEMS.register("scarlet_cheese_stout",
+	                                                                               () -> new BoozeItem(1, 6, foodItem(BeverageProperties.SCARLET_CHEESE_STOUT)));
 
 	// Note to self: Brewin' and Chewin' handles compatibility by... not giving a damn.
 	// Kombucha throws an error loading recipe if farmers respite isn't loaded, which disables the recipe.
@@ -64,6 +66,8 @@ public class BrewersItems
 	       () -> new BoozeItem(1, 1, foodItem(BeverageProperties.CHAMPAGNE)));
 	public static final RegistryObject<Item> COGNAC = ITEMS.register("cognac",
 	       () -> new BoozeItem(2, 17, foodItem(BeverageProperties.COGNAC)));
+	public static final RegistryObject<Item> MARTINI = ITEMS.register("martini",
+	       () -> new BoozeItem(2, 2, foodItem(BeverageProperties.MARTINI)));
 
 	public static Item.@NotNull Properties foodItem(FoodProperties food)
 	{

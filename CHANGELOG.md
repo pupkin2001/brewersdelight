@@ -1,11 +1,38 @@
 # Changelog
 
-## [v0.5] - 2024/11/01
+## [v0.5.1] - 2024/11/02
+
+### Added
+
+- Achievement for brewing any beverage.
+- Achievement for brewing every beverage.
+- **(1.20.1 only)** Scarlet Cheese Stout.
+- **(1.20.1 only)** Achievement for brewing any challenge beverage.
+- **(1.20.1 only)** Achievement for brewing Scarlet Cheese Stout.
+- **(1.20.1 only)** Achievement for brewing every challenge beverage.
+
+### Changed
+
+- **(1.20.1 only)** Increased temperature for most fermenting recipes to 'warm'.
+- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else 2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in one.
+- **(1.20.1 only)** Sbiten ingredient requirements set to honey block and wheat instead of two honey bottles.
+- **(1.20.1 only)** Cheese Stout renamed to Flaxen Cheese Stout.
+- **(1.20.1 only)** Flaxen Cheese Stout liquid requirement changed to vodka instead of milk.
+- **(1.20.1 only)** Achievement 'All beverages' changed to 'Every beverage'.
+- **(1.20.1 only)** Achievement 'Cheese Stout' changed to 'Flaxen Cheese Stout'.
+
+### Fixed
+
+- **(1.20.1 only)** Fermenting recipes not loading properly.
+- **(1.20.1 only)** Creative mod tab localisation displaying as raw string.
+
+## [v0.5.0] - 2024/11/01
 
 ### Added
 
 - Tequila
 - Cheese Stout
+- Achievement for brewing cheese stout.
 
 ### Changed
 
@@ -56,7 +83,7 @@
 - Beverages stacking up to 64 instead of 16.
 - Beverages not giving empty tankard back after drinking.
 
-## [v0.4] - 2024/10/28
+## [v0.4.0] - 2024/10/28
 
 ### Changed
 
@@ -78,7 +105,7 @@
   - Cahors.
   - Cognac.
 
-## [0.3] - 2024/10/28
+## [0.3.0] - 2024/10/28
 
 ### Changed
 
@@ -102,7 +129,7 @@
   - Champagne.
   - Cognac.
 
-## [0.2] - 2024/10/27
+## [0.2.0] - 2024/10/27
 
 ### Added
 
@@ -131,7 +158,7 @@
 - Translations:
   - Русскій дореформенный (Россійская имперія).
 
-## [0.1] - 2024/10/26
+## [0.1.0] - 2024/10/26
 
 ### Added
 
