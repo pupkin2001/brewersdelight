@@ -1,11 +1,15 @@
 # Changelog
 
-## [Unreleased]
+## [v0.5.1] - 2024/11/02
 
 ### Added
 
 - Achievement for brewing any beverage.
 - Achievement for brewing every beverage.
+
+### Fixed
+
+- **(1.20.1 only)** Fermenting recipes not loading properly.
 
 ## [v0.5.0] - 2024/11/01
 
