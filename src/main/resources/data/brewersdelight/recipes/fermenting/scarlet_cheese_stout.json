@@ -2,30 +2,30 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "brewinandchewin:flaxen_cheese_wedge"
+      "item": "brewinandchewin:scarlet_cheese_wedge"
     },
     {
-      "item": "brewinandchewin:flaxen_cheese_wedge"
+      "item": "brewinandchewin:scarlet_cheese_wedge"
     },
     {
-      "tag": "forge:grain"
+      "item": "minecraft:nether_wart"
     },
     {
-      "tag": "minecraft:mushrooms"
+      "tag": "forge:mushrooms"
     }
   ],
   "fluiditem": {
-    "item": "minecraft:milk_bucket"
+    "item": "brewinandchewin:vodka"
   },
   "result": {
     "count": 1,
-    "item": "brewersdelight:cheese_stout"
+    "item": "brewersdelight:scarlet_cheese_stout"
   },
   "container": {
     "item": "brewinandchewin:tankard"
   },
   "experience": 0.6,
   "fermentingtime": 12000,
-  "temperature": "hot",
+  "temperature": "warm",
   "recipe_book_tab": "drinks"
 }

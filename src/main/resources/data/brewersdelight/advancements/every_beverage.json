@@ -4,25 +4,16 @@
       "item": "brewersdelight:whisky"
     },
     "title": {
-      "translate": "advancements.all_beverages.title"
+      "translate": "advancements.every_beverage.title"
     },
     "description": {
-      "translate": "advancements.all_beverages.description"
+      "translate": "advancements.every_beverage.description"
     },
-    "frame": "goal"
+    "frame": "goal",
+    "hidden": false
   },
   "parent": "brewersdelight:root",
   "criteria": {
-    "bourbon": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:bourbon"
-          }
-        ]
-      }
-    },
     "braga": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -38,27 +29,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:brandy"
-          }
-        ]
-      }
-    },
-    "cahors": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:cahors"
-          }
-        ]
-      }
-    },
-    "champagne": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:champagne"
+            "items": [
+              "brewersdelight:brandy"
+            ]
           }
         ]
       }
@@ -68,27 +41,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:cider"
-          }
-        ]
-      }
-    },
-    "cognac": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:cognac"
-          }
-        ]
-      }
-    },
-    "corn_whisky": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:corn_whisky"
+            "items": [
+              "brewersdelight:cider"
+            ]
           }
         ]
       }
@@ -98,7 +53,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:gin"
+            "items": [
+              "brewersdelight:gin"
+            ]
           }
         ]
       }
@@ -108,7 +65,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:kvass"
+            "items": [
+              "brewersdelight:kvass"
+            ]
           }
         ]
       }
@@ -118,17 +77,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:liqueur"
-          }
-        ]
-      }
-    },
-    "martini": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:martini"
+            "items": [
+              "brewersdelight:liqueur"
+            ]
           }
         ]
       }
@@ -138,17 +89,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:melon_schnapps"
-          }
-        ]
-      }
-    },
-    "moonshine": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "brewersdelight:moonshine"
+            "items": [
+              "brewersdelight:melon_schnapps"
+            ]
           }
         ]
       }
@@ -158,7 +101,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:sake"
+            "items": [
+              "brewersdelight:sake"
+            ]
           }
         ]
       }
@@ -168,7 +113,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:sbiten"
+            "items": [
+              "brewersdelight:sbiten"
+            ]
           }
         ]
       }
@@ -178,7 +125,9 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:tequila"
+            "items": [
+              "brewersdelight:tequila"
+            ]
           }
         ]
       }
@@ -188,68 +137,98 @@
       "conditions": {
         "items": [
           {
-            "item": "brewersdelight:whisky"
+            "items": [
+              "brewersdelight:whisky"
+            ]
+          }
+        ]
+      }
+    },
+    "bourbon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:bourbon"
+            ]
+          }
+        ]
+      }
+    },
+    "corn_whisky": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:corn_whisky"
+            ]
+          }
+        ]
+      }
+    },
+    "moonshine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:moonshine"
+            ]
+          }
+        ]
+      }
+    },
+    "cahors": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cahors"
+            ]
+          }
+        ]
+      }
+    },
+    "champagne": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:champagne"
+            ]
+          }
+        ]
+      }
+    },
+    "cognac": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cognac"
+            ]
+          }
+        ]
+      }
+    },
+    "martini": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:martini"
+            ]
           }
         ]
       }
     }
   },
-  "requirements": [
-    [
-      "bourbon"
-    ],
-    [
-      "braga"
-    ],
-    [
-      "brandy"
-    ],
-    [
-      "cahors"
-    ],
-    [
-      "champagne"
-    ],
-    [
-      "cider"
-    ],
-    [
-      "cognac"
-    ],
-    [
-      "corn_whisky"
-    ],
-    [
-      "gin"
-    ],
-    [
-      "kvass"
-    ],
-    [
-      "liqueur"
-    ],
-    [
-      "martini"
-    ],
-    [
-      "melon_schnapps"
-    ],
-    [
-      "moonshine"
-    ],
-    [
-      "sake"
-    ],
-    [
-      "sbiten"
-    ],
-    [
-      "tequila"
-    ],
-    [
-      "whisky"
-    ]
-  ],
   "rewards": {
     "experience": 100
   }

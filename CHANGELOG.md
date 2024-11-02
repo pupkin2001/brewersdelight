@@ -6,12 +6,20 @@
 
 - Achievement for brewing any beverage.
 - Achievement for brewing every beverage.
+- **(1.20.1 only)** Scarlet Cheese Stout.
+- **(1.20.1 only)** Achievement for brewing any challenge beverage.
+- **(1.20.1 only)** Achievement for brewing Scarlet Cheese Stout.
+- **(1.20.1 only)** Achievement for brewing every challenge beverage.
 
 ### Changed
 
 - **(1.20.1 only)** Increased temperature for most fermenting recipes to 'warm'.
 - **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else 2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in one.
 - **(1.20.1 only)** Sbiten ingredient requirements set to honey block and wheat instead of two honey bottles.
+- **(1.20.1 only)** Cheese Stout renamed to Flaxen Cheese Stout.
+- **(1.20.1 only)** Flaxen Cheese Stout liquid requirement changed to vodka instead of milk.
+- **(1.20.1 only)** Achievement 'All beverages' changed to 'Every beverage'.
+- **(1.20.1 only)** Achievement 'Cheese Stout' changed to 'Flaxen Cheese Stout'.
 
 ### Fixed
 
