@@ -10,6 +10,7 @@
 ### Fixed
 
 - **(1.20.1 only)** Fermenting recipes not loading properly.
+- **(1.20.1 only)** Creative mod tab localisation displaying as raw string.
 
 ## [v0.5.0] - 2024/11/01
 
