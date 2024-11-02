@@ -1,6 +1,10 @@
 {
   "itemGroup.BrewersDelightTab": "Восторг Пивовара",
 
+  "advancements.root.title": "На пивной волне",
+  "advancements.root.description": "Сварите ваше первое пиво.",
+  "advancements.all_beverages.title": "Легендарный пивовар",
+  "advancements.all_beverages.description": "Сварите все возможные напитки.",
   "advancements.cheese_stout.title": "Зачем вы сварили *это*?!",
   "advancements.cheese_stout.description": "Сварите сырный стаут - своеобразный и исключительный напиток, если вам удастся его сдержать, конечно.",
 

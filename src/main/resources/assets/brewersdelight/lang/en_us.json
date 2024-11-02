@@ -1,6 +1,10 @@
 {
   "itemGroup.BrewersDelightTab": "Brewer's Delight",
 
+  "advancements.root.title": "On the Brew Wave",
+  "advancements.root.description": "Brew your first beer.",
+  "advancements.all_beverages.title": "Legendary brewer",
+  "advancements.all_beverages.description": "Brew every possible beverage.",
   "advancements.cheese_stout.title": "Why did you brew *that*?!",
   "advancements.cheese_stout.description": "Brew a cheese stout - a distinctive and exceptional drink, if you can manage to keep it down, that is.",
 
