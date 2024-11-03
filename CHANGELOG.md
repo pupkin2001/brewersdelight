@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.5.2] - 2024/11/03
+
+### Changed
+
+- Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe Stout and Withering Dross count as challenging beverages.
+
 ## [v0.5.1] - 2024/11/02
 
 ### Added

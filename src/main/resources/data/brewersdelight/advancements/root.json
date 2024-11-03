@@ -12,6 +12,186 @@
     "background": "minecraft:textures/block/stone.png"
   },
   "criteria": {
+    "bc_beer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:beer"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_vodka": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vodka"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_mead": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:mead"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_rice_wine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:rice_wine"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_egg_grog": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:egg_grog"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_strongroot_ale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:strongroot_ale"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_saccharine_rum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:saccharine_rum"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_pale_jane": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pale_jane"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_dread_nog": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:dread_nog"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_salty_folly": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:salty_folly"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_steel_toe_stout": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:steel_toe_stout"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_glittering_grenadine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:glittering_grenadine"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_bloody_mary": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:bloody_mary"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_red_rum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:red_rum"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_withering_dross": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:withering_dross"
+            ]
+          }
+        ]
+      }
+    },
     "braga": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -255,6 +435,21 @@
   },
   "requirements": [
     [
+      "bc_beer",
+      "bc_vodka",
+      "bc_mead",
+      "bc_rice_wine",
+      "bc_egg_grog",
+      "bc_strongroot_ale",
+      "bc_saccharine_rum",
+      "bc_pale_jane",
+      "bc_dread_nog",
+      "bc_salty_folly",
+      "bc_steel_toe_stout",
+      "bc_glittering_grenadine",
+      "bc_bloody_mary",
+      "bc_red_rum",
+      "bc_withering_dross",
       "braga",
       "brandy",
       "cider",
