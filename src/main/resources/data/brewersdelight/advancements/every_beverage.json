@@ -14,6 +14,150 @@
   },
   "parent": "brewersdelight:root",
   "criteria": {
+    "bc_beer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:beer"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_vodka": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vodka"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_mead": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:mead"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_rice_wine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:rice_wine"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_egg_grog": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:egg_grog"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_strongroot_ale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:strongroot_ale"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_saccharine_rum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:saccharine_rum"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_pale_jane": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pale_jane"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_salty_folly": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:salty_folly"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_glittering_grenadine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:glittering_grenadine"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_bloody_mary": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:bloody_mary"
+            ]
+          }
+        ]
+      }
+    },
+    "bc_red_rum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:red_rum"
+            ]
+          }
+        ]
+      }
+    },
     "braga": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
