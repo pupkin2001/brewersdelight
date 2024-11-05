@@ -5,6 +5,38 @@ on:
     branches: [ '1.*.x', '1.*.x' ]
 
 jobs:
+  build-dep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: 'https://github.com/j-cob44/BrewinAndChewin'
+
+      - name: Checkout hash files
+        uses: actions/checkout@v4
+        with:
+          path: '.\hashFiles'
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Cache
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/build/libs/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-
+
   build:
     if: github.ref_type != 'tag'
     runs-on: ubuntu-latest
