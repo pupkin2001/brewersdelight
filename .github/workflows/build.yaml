@@ -6,6 +6,7 @@ on:
 jobs:
   build-dependency:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout Dependency repository
         uses: actions/checkout@v4
@@ -25,10 +26,10 @@ jobs:
           path: |
             ~/.gradle
             ~/gradle
-          key: ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          key: ${{ runner.os }}-dep-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
-            ${{ runner.os }}-gradle-dep-
+            ${{ runner.os }}-dep-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-dep-gradle-
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
@@ -45,20 +46,19 @@ jobs:
         with:
           path: main-repo
 
-      - name: Cache Built Dependency Artifact
+      - name: Cache Dependency Artifact
         uses: actions/cache@v4
         with:
           path: build/libs/
-          key: ${{ runner.os }}-gradle-dep-libs-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
+          key: ${{ runner.os }}-dep-libs-gradle-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-dep-libs-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
-            ${{ runner.os }}-gradle-dep-libs-
+            ${{ runner.os }}-dep-libs-gradle-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
+            ${{ runner.os }}-dep-libs-gradle-
 
-  build:
+  cache:
     if: github.ref_type != 'tag'
-    needs: build-dependency
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -81,13 +81,46 @@ jobs:
             ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
             ${{ runner.os }}-gradle-
 
-      - name: Restore Dependency Artifact from Cache
+      - name: Grant permissions to gradlew
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: chmod +x ./gradlew
+
+      - name: Initialize gradlew
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: ./gradlew
+
+  build:
+    if: github.ref_type != 'tag'
+    needs: [ build-dependency, cache ]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Restore Gradle Cache
+        id: cache
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ~/.gradle
+            ~/gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          fail-on-cache-miss: true
+
+      - name: Restore Dependency Artifact Cache
         id: restore-dep
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: ./libs
-          key: ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
-        continue-on-error: false
+          key: ${{ runner.os }}-dep-libs-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          fail-on-cache-miss: true
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
