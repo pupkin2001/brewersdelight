@@ -2,23 +2,15 @@ name: Build
 
 on:
   push:
-    branches: [ '1.*.x', '1.*.x' ]
 
 jobs:
-  build-dep:
+  build-dependency:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
     steps:
-      - name: Checkout repository
+      - name: Checkout Dependency repository
         uses: actions/checkout@v4
         with:
-          repository: 'https://github.com/j-cob44/BrewinAndChewin'
-
-      - name: Checkout hash files
-        uses: actions/checkout@v4
-        with:
-          path: '.\hashFiles'
+          repository: j-cob44/BrewinAndChewin
 
       - name: Setup JDK
         uses: actions/setup-java@v4
@@ -26,22 +18,47 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Cache
-        id: cache
+      - name: Cache Dependency Gradle
+        id: cache-dep
         uses: actions/cache@v4
         with:
           path: |
-            ~/build/libs/
-          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ~/.gradle
+            ~/gradle
+          key: ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
-            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
-            ${{ runner.os }}-gradle-
+            ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+            ${{ runner.os }}-gradle-dep-
+
+      - name: Grant permissions to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Initialize Dependency gradlew
+        if: steps.cache-dep.outputs.cache-hit != 'true'
+        run: ./gradlew
+
+      - name: Build Dependency
+        run: ./gradlew build
+
+      - name: Checkout repository for cache key
+        uses: actions/checkout@v4
+        with:
+          path: main-repo
+
+      - name: Cache Built Dependency Artifact
+        uses: actions/cache@v4
+        with:
+          path: build/libs/
+          key: ${{ runner.os }}-gradle-dep-libs-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-dep-libs-${{ hashFiles('main-repo/build.gradle', 'main-repo/gradle/wrapper/gradle-wrapper.properties', 'main-repo/gradle.properties') }}
+            ${{ runner.os }}-gradle-dep-libs-
 
   build:
     if: github.ref_type != 'tag'
+    needs: build-dependency
     runs-on: ubuntu-latest
     timeout-minutes: 10
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,7 +69,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Cache
+      - name: Cache Gradle
         id: cache
         uses: actions/cache@v4
         with:
@@ -63,6 +80,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
             ${{ runner.os }}-gradle-
+
+      - name: Restore Dependency Artifact from Cache
+        id: restore-dep
+        uses: actions/cache@v4
+        with:
+          path: ./libs
+          key: ${{ runner.os }}-gradle-dep-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+        continue-on-error: false
 
       - name: Grant permissions to gradlew
         run: chmod +x ./gradlew
