@@ -2,6 +2,10 @@ name: Build
 
 on:
   push:
+    tags:
+      - 'v*'
+    branches:
+      - '1.*.x'
 
 jobs:
   build-dependency:
@@ -136,9 +140,10 @@ jobs:
 
   release:
     name: Release
-    if: github.ref_type != 'tag'
+    if: github.ref == 'refs/heads/1.*.x'
     needs: [ build ]
-    permissions: write-all
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -169,7 +174,6 @@ jobs:
 
       - name: Create GitHub Release
         id: create_release
-        if: startsWith(github.ref, 'refs/heads/1.') && endsWith(github.ref, '.x')
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -181,7 +185,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
-        if: startsWith(github.ref, 'refs/heads/1.') && endsWith(github.ref, '.x') && steps.create_release.outputs.upload_url != ''
+        if: steps.create_release.outputs.upload_url != ''
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
