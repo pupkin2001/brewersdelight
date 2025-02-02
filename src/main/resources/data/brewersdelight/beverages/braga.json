@@ -1,0 +1,19 @@
+{
+    "id": "braga",
+    "potency": 1,
+    "durationSeconds": 2,
+    "nutrition": 0,
+    "saturation": 0.0,
+    "effects": [
+        {
+            "type": "minecraft:strength",
+            "durationSeconds": 2400,
+            "amplifier": 0
+        },
+        {
+            "type": "minecraft:speed",
+            "durationSeconds": 3600,
+            "amplifier": 1
+        }
+    ]
+}

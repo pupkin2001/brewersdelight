@@ -1,0 +1,17 @@
+{
+  "id": "braga",
+  "effects": [
+    {
+      "type": "DAMAGE_BOOST",
+      "duration": 2400,
+      "amplifier": 0
+    },
+    {
+      "type": "MOVEMENT_SPEED",
+      "duration": 3600,
+      "amplifier": 1
+    }
+  ],
+  "alcohol_level": 1,
+  "saturation": 2
+}

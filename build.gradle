@@ -1,14 +1,11 @@
 plugins {
 	id 'eclipse'
+	id 'com.diffplug.eclipse.apt' version '4.1.0'
 	id 'idea'
 	id 'maven-publish'
 	id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 	id 'org.spongepowered.mixin' version '0.7.+'
 }
-
-version = mod_version
-group = mod_group_id
-
 
 mixin {
 	// MixinGradle Settings
@@ -148,7 +145,7 @@ tasks.named('processResources', ProcessResources).configure {
 			mod_name                     : mod_name,
 			mod_displayName              : mod_displayName,
 			mod_license                  : mod_license,
-			mod_version                  : mod_version,
+			mod_version                  : mod_version + "-" + minecraft_version,
 			mod_authors                  : mod_authors,
 			mod_url                      : mod_url,
 			mod_description              : mod_description,

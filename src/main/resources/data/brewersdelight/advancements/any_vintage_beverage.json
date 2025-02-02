@@ -1,0 +1,69 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:sbiten"
+    },
+    "title": {
+      "translate": "advancements.any_vintage_beverage.title"
+    },
+    "description": {
+      "translate": "advancements.any_vintage_beverage.description"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "brewersdelight:root",
+  "criteria": {
+    "sbiten": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      }
+    },
+    "syta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      }
+    },
+    "vzvar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "sbiten",
+      "syta",
+      "vzvar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "brewersdelight:sbiten",
+      "brewersdelight:syta",
+      "brewersdelight:vzvar"
+    ],
+    "experience": 50
+  }
+}

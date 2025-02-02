@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:sbiten"
+    },
+    "title": {
+      "translate": "advancements.sbiten.title"
+    },
+    "description": {
+      "translate": "advancements.sbiten.description"
+    },
+    "frame": "challenge",
+    "hidden": false
+  },
+  "parent": "brewersdelight:any_vintage_beverage",
+  "criteria": {
+    "sbiten": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}

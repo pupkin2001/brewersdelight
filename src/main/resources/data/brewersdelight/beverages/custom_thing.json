@@ -1,0 +1,19 @@
+{
+  "id": "custom_thing",
+  "potency": 3,
+  "durationSeconds": 5,
+  "nutrition": 1,
+  "saturation": "0.5F",
+  "effects": [
+    {
+      "type": "farmersdelight:nourishment",
+      "durationSeconds": 2400,
+      "amplifier": 1
+    },
+    {
+      "type": "minecraft:strength",
+      "durationSeconds": 2400,
+      "amplifier": 1
+    }
+  ]
+}

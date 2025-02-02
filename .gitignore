@@ -40,6 +40,9 @@ run/
 # Files from Forge MDK
 test/
 forge*changelog.txt
+# Datagen
+**/run-data
+**/resources/.cache
 
 ## Eclipse
 .settings
