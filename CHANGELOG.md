@@ -77,10 +77,6 @@
 ### Fixed
 - Cahors giving impossible invisibility level 2 effect.
 
-### Known Issues
-
-- Most of the new beverages are not properly balanced for survival.
-
 ## [v0.5.2] - 2024/11/03
 
 ### Changed
