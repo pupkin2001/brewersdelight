@@ -17,7 +17,7 @@ jobs:
       - name: Checkout Dependency Repository
         uses: actions/checkout@v4
         with:
-          repository: j-cob44/BrewinAndChewin
+          repository: wiidotmom/BrewinAndChewin
 
       - name: Setup JDK
         uses: actions/setup-java@v4
@@ -126,6 +126,9 @@ jobs:
 
       - name: Grant Permissions to Gradlew
         run: chmod +x ./gradlew
+
+      - name: Generate Resources
+        run: ./gradlew runData
 
       - name: Build
         run: ./gradlew build

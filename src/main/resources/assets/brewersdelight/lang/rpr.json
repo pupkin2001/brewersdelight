@@ -4,17 +4,23 @@
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Брѣнди",
   "item.brewersdelight.cider": "Сидръ",
+  "item.brewersdelight.compote": "Компотъ",
   "item.brewersdelight.gin": "Джинъ",
   "item.brewersdelight.kvass": "Квасъ",
   "item.brewersdelight.liqueur": "Ликёръ",
   "item.brewersdelight.melon_schnapps": "Арбузный шнапсъ",
+  "item.brewersdelight.old_fashion": "Олдъ фешенъ",
   "item.brewersdelight.sake": "Сакѣ",
   "item.brewersdelight.sbiten": "Перевар",
+  "item.brewersdelight.syta": "Сыта",
   "item.brewersdelight.tequila": "Тѣкила",
+  "item.brewersdelight.vzvar": "Взваръ",
   "item.brewersdelight.whisky": "Виски",
 
   "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
   "item.brewersdelight.scarlet_cheese_stout": "Алый Сырный Стаутъ",
+  "item.brewersdelight.flying_dutchman": "Лѣтучiй Голландѣцъ",
+  "item.brewersdelight.gut_wrecker": "Опустошитѣль",
 
   "item.brewersdelight.bourbon": "Бурбонъ",
   "item.brewersdelight.corn_whisky": "Кукурузное виски",
@@ -36,5 +42,13 @@
   "advancements.scarlet_cheese_stout.title": "Низшыя алхимiя",
   "advancements.scarlet_cheese_stout.description": "Сварiтѣ Алый Сырный Стаутъ – дѣрзкiй и огнѣнный варiантъ сырнаго напитка, на глотокъ котораго отважится не каждый.",
   "advancements.every_challenge_beverage.title": "Лѣгендарный пивоваръ",
-  "advancements.every_challenge_beverage.description": "Прiготовьтѣ всѣ возможные исключитѣльные напитки."
+  "advancements.every_challenge_beverage.description": "Прiготовьтѣ всѣ возможные исключитѣльные напитки.",
+  "advancements.any_vintage_beverage.title": "Любой старiнный напитокъ",
+  "advancements.any_vintage_beverage.description": "Прiготовьтѣ вашъ пѣрвый старiнный напитокъ.",
+  "advancements.every_vintage_beverage.title": "Всѣ старiнные напитки",
+  "advancements.every_vintage_beverage.description": "Прiготовьтѣ всѣ возможные старiнные напитки.",
+
+  "brewinandchewin.tooltip.tipsy4": "Опьянѣнiя IV",
+  "brewinandchewin.tooltip.tipsy5": "Опьянѣнiя V",
+  "brewinandchewin.tooltip.tipsy6": "Опьянѣнiя VI"
 }

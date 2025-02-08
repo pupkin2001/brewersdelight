@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "brewinandchewin:withering_dross"
+      "item": "brewersdelight:gut_wrecker"
     },
     "title": {
       "translate": "advancements.every_challenge_beverage.title"
@@ -69,6 +69,30 @@
           {
             "items": [
               "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      }
+    },
+    "flying_dutchman": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      }
+    },
+    "gut_wrecker": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
             ]
           }
         ]
