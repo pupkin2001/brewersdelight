@@ -73,6 +73,30 @@
           }
         ]
       }
+    },
+    "flying_dutchman": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      }
+    },
+    "gut_wrecker": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      }
     }
   },
   "requirements": [
@@ -81,13 +105,17 @@
       "bc_steel_toe_stout",
       "bc_withering_dross",
       "flaxen_cheese_stout",
-      "scarlet_cheese_stout"
+      "scarlet_cheese_stout",
+      "flying_dutchman",
+      "gut_wrecker"
     ]
   ],
   "rewards": {
     "recipes": [
       "brewersdelight:flaxen_cheese_stout",
-      "brewersdelight:scarlet_cheese_stout"
+      "brewersdelight:scarlet_cheese_stout",
+      "brewersdelight:flying_dutchman",
+      "brewersdelight:gut_wrecker"
     ],
     "experience": 50
   }

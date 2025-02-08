@@ -1,0 +1,25 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "fluiditem": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": {
+    "count": 4,
+    "item": "brewersdelight:syta"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 12000,
+  "temperature": "warm",
+  "recipe_book_tab": "drinks"
+}

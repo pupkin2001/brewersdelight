@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "tag": "forge:crops/cinnamon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 4,
+    "item": "brewersdelight:gluhwein"
+  }
+}

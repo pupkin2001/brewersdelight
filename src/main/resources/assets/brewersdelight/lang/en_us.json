@@ -4,17 +4,23 @@
   "item.brewersdelight.braga": "Braga",
   "item.brewersdelight.brandy": "Brandy",
   "item.brewersdelight.cider": "Cider",
+  "item.brewersdelight.compote": "Compote",
   "item.brewersdelight.gin": "Gin",
   "item.brewersdelight.kvass": "Kvass",
   "item.brewersdelight.liqueur": "Liqueur",
   "item.brewersdelight.melon_schnapps": "Melon schnapps",
+  "item.brewersdelight.old_fashion": "Old fashion",
   "item.brewersdelight.sake": "Sake",
   "item.brewersdelight.sbiten": "Sbiten",
+  "item.brewersdelight.syta": "Syta",
   "item.brewersdelight.tequila": "Tequila",
+  "item.brewersdelight.vzvar": "Vzvar",
   "item.brewersdelight.whisky": "Whisky",
 
   "item.brewersdelight.flaxen_cheese_stout": "Flaxen Cheese Stout",
   "item.brewersdelight.scarlet_cheese_stout": "Scarlet Cheese Stout",
+  "item.brewersdelight.flying_dutchman": "Flying Dutchman",
+  "item.brewersdelight.gut_wrecker": "Gut Wrecker",
 
   "item.brewersdelight.bourbon": "Bourbon",
   "item.brewersdelight.corn_whisky": "Corn whisky",
@@ -36,5 +42,13 @@
   "advancements.scarlet_cheese_stout.title": "Inferior alchemy",
   "advancements.scarlet_cheese_stout.description": "Brew a Crimson Cheese Stout – a bold, fiery twist on the cheesy brew, daring even the bravest to take a sip.",
   "advancements.every_challenge_beverage.title": "Legendary brewer",
-  "advancements.every_challenge_beverage.description": "Brew every possible challenge beverage."
+  "advancements.every_challenge_beverage.description": "Brew every possible challenge beverage.",
+  "advancements.any_vintage_beverage.title": "Any vintage beverage",
+  "advancements.any_vintage_beverage.description": "Brew your first vintage beverage.",
+  "advancements.every_vintage_beverage.title": "Every vintage beverage",
+  "advancements.every_vintage_beverage.description": "Brew every possible vintage beverage.",
+
+  "brewinandchewin.tooltip.tipsy4": "Tipsy IV",
+  "brewinandchewin.tooltip.tipsy5": "Tipsy V",
+  "brewinandchewin.tooltip.tipsy6": "Tipsy VI"
 }

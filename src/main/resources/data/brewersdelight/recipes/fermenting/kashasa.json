@@ -1,0 +1,31 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "ingredients": [
+    {
+      "tag": "forge:seeds/corn"
+    },
+    {
+      "tag": "forge:seeds/corn"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "fluiditem": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": {
+    "count": 4,
+    "item": "brewersdelight:kashasa"
+  },
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "experience": 0.6,
+  "fermentingtime": 12000,
+  "temperature": "warm",
+  "recipe_book_tab": "drinks"
+}

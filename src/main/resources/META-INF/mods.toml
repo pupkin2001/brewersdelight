@@ -17,11 +17,11 @@ displayName = "${mod_displayName}"
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="${mod_url}"
+displayURL = "${mod_url}"
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="assets/brewersdelight/textures/logo.png"
+logoFile = "assets/brewersdelight/textures/logo.png"
 # A text field displayed in the mod UI
-credits="${mod_credits}"
+credits = "${mod_credits}"
 # A text field displayed in the mod UI
 authors = "${mod_authors}"
 # Display Test controls the display for your mod in the server connection screen
@@ -30,7 +30,7 @@ authors = "${mod_authors}"
 # IGNORE_ALL_VERSION means that your mod will not cause a red X if it's present on the client or the server. This is a special case and should only be used if your mod has no server component.
 # NONE means that no display test is set on your mod. You need to do this yourself, see IExtensionPoint.DisplayTest for more information. You can define any scheme you wish with this value.
 # IMPORTANT NOTE: this is NOT an instruction as to which environments (CLIENT or DEDICATED SERVER) your mod loads on. Your mod should load (and maybe do nothing!) whereever it finds itself.
-displayTest="MATCH_VERSION"
+displayTest = "MATCH_VERSION"
 
 # The description text for the mod (multi line!)
 description = '''${mod_description}'''

@@ -1,0 +1,57 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:syta"
+    },
+    "title": {
+      "translate": "advancements.every_vintage_beverage.title"
+    },
+    "description": {
+      "translate": "advancements.every_vintage_beverage.description"
+    },
+    "frame": "goal",
+    "hidden": false
+  },
+  "parent": "brewersdelight:any_vintage_beverage",
+  "criteria": {
+    "sbiten": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      }
+    },
+    "syta": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      }
+    },
+    "vzvar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 100
+  }
+}
