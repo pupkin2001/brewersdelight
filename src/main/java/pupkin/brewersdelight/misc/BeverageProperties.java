@@ -93,7 +93,7 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 7200, 1), 1.0f)
 			.build();
 	
-	public static final FoodProperties VZVAR = new FoodProperties.Builder() // TODO
+	public static final FoodProperties VZVAR = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 6400, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 6400, 0), 1.0f)
@@ -111,7 +111,7 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 8400, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties AMARO = new FoodProperties.Builder() // TODO
+	public static final FoodProperties AMARO = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, MEDIUM_DURATION, 0), 1.0f)
@@ -125,7 +125,7 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, PROLONGED_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties APEROL = new FoodProperties.Builder() // TODO
+	public static final FoodProperties APEROL = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.HEAL, 1, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, MEDIUM_DURATION, 0), 1.0f)
@@ -201,7 +201,7 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 22800, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties NEGRONI = new FoodProperties.Builder() // TODO
+	public static final FoodProperties NEGRONI = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.LEVITATION, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
@@ -242,40 +242,40 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 21600, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties SAMBUCA = new FoodProperties.Builder() // TODO
+	public static final FoodProperties SAMBUCA = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties SHERRY = new FoodProperties.Builder() // TODO
+	public static final FoodProperties SHERRY = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.JUMP, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties SOCATA = new FoodProperties.Builder() // TODO
+	public static final FoodProperties SOCATA = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.JUMP, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties SOJU = new FoodProperties.Builder() // TODO
+	public static final FoodProperties SOJU = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.JUMP, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties SOTOL = new FoodProperties.Builder() // TODO
+	public static final FoodProperties SOTOL = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.JUMP, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties TODDY = new FoodProperties.Builder() // TODO
+	public static final FoodProperties TODDY = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, MEDIUM_DURATION, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties TRIPLE_SEC = new FoodProperties.Builder() // TODO
+	public static final FoodProperties TRIPLE_SEC = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, MEDIUM_DURATION, 0), 1.0f)
@@ -289,7 +289,7 @@ public class BeverageProperties
 			.effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 33600, 0), 1.0f)
 			.build();
 	
-	public static final FoodProperties TSUIKE = new FoodProperties.Builder() // TODO
+	public static final FoodProperties TSUIKE = new FoodProperties.Builder()
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.INVISIBILITY, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, MEDIUM_DURATION, 0), 1.0f)
