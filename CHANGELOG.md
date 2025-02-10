@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.6.1] - [Unreleased]
+
+### Added
+
+- Beverage tag, listing every beverage both from Brewers Delight and Brewin' and Chewin'.
+
+### Fixed
+
+- Gut wrecker recipe being inconsistent with the texture.
+- Keg from barrel recipe using minecraft:barrel as tag.
+- Duplicate keg from barrel recipe.
+
 ## [v0.6.0] - 2025/02/08
 
 ### Added
@@ -81,8 +93,7 @@
 
 ### Changed
 
-- Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe
-  Stout and Withering Dross count as challenging beverages.
+- Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe Stout and Withering Dross count as challenging beverages.
 
 ## [v0.5.1] - 2024/11/02
 
@@ -98,9 +109,7 @@
 ### Changed
 
 - **(1.20.1 only)** Increased temperature for most fermenting recipes to 'warm'.
-- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else
-  2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in
-  one.
+- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else 2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in one.
 - **(1.20.1 only)** Sbiten ingredient requirements set to honey block and wheat instead of two honey bottles.
 - **(1.20.1 only)** Cheese Stout renamed to Flaxen Cheese Stout.
 - **(1.20.1 only)** Flaxen Cheese Stout liquid requirement changed to vodka instead of milk.
@@ -116,8 +125,9 @@
 
 ### Added
 
-- Tequila
-- Cheese Stout
+- Beverages:
+  - Tequila.
+  - Cheese Stout.
 - Achievement for brewing cheese stout.
 
 ### Changed
@@ -233,14 +243,11 @@
 - Recipes:
     - Braga - replaced 'minecraft:wheat' item with 'forge:bread' tag.
     - Brandy - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
-    - Gin - replaced 'minecraft:wheat_seeds' item with 'forge:seeds/wheat' tag; 'minecraft:sweet_berries' item with '
-      forge:berries' tag; 'minecraft:water_bucket' with 'brewinandchewin:vodka'.
-    - Kvass - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag; 'minecraft:bread' item with 'forge:
-      bread/wheat' tag.
+    - Gin - replaced 'minecraft:wheat_seeds' item with 'forge:seeds/wheat' tag; 'minecraft:sweet_berries' item with 'forge:berries' tag; 'minecraft:water_bucket' with 'brewinandchewin:vodka'.
+    - Kvass - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag; 'minecraft:bread' item with 'forge:bread/wheat' tag.
     - Liqueur - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
     - Martini from glow berries - replaced 'minecraft:water_bucket' with 'italian_delight:sweet_berry_wine'.
-    - Martini from mushroom - replaced 'minecraft:brown_mushroom' item with 'forge:mushrooms' tag; 'minecraft:
-      water_bucket' with 'italian_delight:sweet_berry_wine'.
+    - Martini from mushroom - replaced 'minecraft:brown_mushroom' item with 'forge:mushrooms' tag; 'minecraft:water_bucket' with 'italian_delight:sweet_berry_wine'.
     - Melon schnapps - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
     - Sake - replaced 'farmersdelight:rice' item with 'forge:grain/rice' tag, removed liquid.
     - Whisky - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
