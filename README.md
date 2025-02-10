@@ -8,7 +8,7 @@
 
 For Minecraft 1.18 recommended version is the original mod, releases of which are available at [Cursforge](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin) or can be built from the sources on [GitHub](https://github.com/Umpaz/BrewinAndChewin).
 Minecraft 1.19 is not supported.
-As Brewin' and Chewin' have not been updated to Minecraft 1.20 and above, it is recommended to use **[this fork by wiidotmom](https://github.com/wiidotmom/BrewinAndChewin)** because some recipes may be impossible while using other forks. You can either build the fork of your choosing from sources or download a build artifact created by any [GitHub Actions](https://github.com/pupkin2001/brewersdelight/actions) workflow run. Keep in mind that build artifacts are only kept for a week after the run is finished, so they might not be available.
+As Brewin' and Chewin' have not been updated to Minecraft 1.20 and above, it is recommended to use **[this fork by wiidotmom](https://github.com/wiidotmom/BrewinAndChewin)** because some recipes may be impossible while using other forks. You can either build the fork of your choosing from sources or download a build artifact created by any [GitHub Actions](https://github.com/pupkin2001/brewersdelight/actions) workflow run. Keep in mind that build artifacts are only kept for a week for test builds and 4 weeks for release builds after the run has finished, so they may not be available.
 The mod should work with most forks of Brewin' and Chewin', so long as they support the Minecraft version you're using.
 
 ### Legal

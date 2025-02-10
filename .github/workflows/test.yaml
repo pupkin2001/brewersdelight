@@ -61,7 +61,7 @@ jobs:
           name: brewinandchewin
           path: build/libs/
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
 
   cache:
     name: Cache
@@ -150,4 +150,4 @@ jobs:
           name: brewersdelight
           path: build/libs/
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 7
