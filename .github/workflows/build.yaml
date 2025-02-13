@@ -55,49 +55,14 @@ jobs:
           if-no-files-found: error
           retention-days: 28
 
-  cache:
-    name: Cache
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache Gradle
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle
-            ~/gradle
-          key: ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
-            ${{ runner.os }}-gradle-
-
-      - name: Grant Permissions to Gradlew
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: chmod +x ./gradlew
-
-      - name: Initialize Gradlew
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: ./gradlew
-
   build:
     name: Build
-    needs: [ build-dependency, cache ]
+    needs: [ build-dependency ]
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup JDK
@@ -129,6 +94,15 @@ jobs:
 
       - name: Generate Resources
         run: ./gradlew runData
+
+      - name: Cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.gradle
+            ~/gradle
+          key: ${{ steps.cache.outputs.cache-primary-key }}
 
       - name: Build
         run: ./gradlew build
@@ -175,7 +149,7 @@ jobs:
           FILE_NAME=$(find build/libs/ -name "brewersdelight-${{ env.MC_VERSION }}-*.jar")
           echo "FILE_NAME=${FILE_NAME}" >> $GITHUB_ENV
 
-      - name: Create GitHub Release
+      - name: Create GitHub Release Draft
         id: create_release
         uses: actions/create-release@v1
         env:
