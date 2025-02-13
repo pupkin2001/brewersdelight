@@ -8,16 +8,11 @@
     "i": {
       "tag": "forge:ingots/iron"
     },
-    "h": [
-      {
-        "tag": "forge:honeycombs"
-      },
-      {
-        "item": "minecraft:honeycomb"
-      }
-    ],
+    "h": {
+      "item": "minecraft:honeycomb"
+    },
     "b": {
-      "item": "minecraft:barrel"
+      "tag": "forge:barrels/wooden"
     }
   },
   "result": {
