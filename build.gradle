@@ -19,7 +19,7 @@ mixin {
 }
 
 base {
-	archivesName = "${mod_name}-${minecraft_version}"
+	archivesName = "${mod_name}-${minecraft_version}-${mod_version}"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
