@@ -12,7 +12,6 @@ import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.tag.BrewersTags;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BCItems;
-import umpaz.brewinandchewin.common.tag.BCTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -29,16 +28,17 @@ public class ItemTags extends ItemTagsProvider
 	@Override
 	protected void addTags(HolderLookup.@NotNull Provider provider)
 	{
+		// Mod Tags
 		BCItems.ITEMS.getEntries().forEach(item -> {
 			assert item.getKey() != null;
 			if (item.get() instanceof BoozeItem) {
-				tag(BrewersTags.BEVERAGE).add(item.getKey());
+				tag(BrewersTags.BEVERAGES).add(item.getKey());
 			}
 		});
 		
 		BrewersItems.ITEMS.getEntries().forEach(item -> {
 			assert item.getKey() != null;
-			tag(BrewersTags.BEVERAGE).add(item.getKey());
+			tag(BrewersTags.BEVERAGES).add(item.getKey());
 		});
 	}
 }
