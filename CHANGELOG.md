@@ -6,6 +6,7 @@
 
 - Tipsy VII-X effect tooltips.
 - Tipsy I-III effect tooltip translations for Russian and Russian pre-reform.
+- Chinese localisation.
 
 ### Changed
 
