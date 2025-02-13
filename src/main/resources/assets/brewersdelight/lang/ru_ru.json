@@ -1,5 +1,5 @@
 {
-  "itemgroup.brewersdelight.BrewersDelightTab": "Восторг Пивовара",
+  "itemgroup.brewersdelight.BrewersDelightTab": "Пивоварский Восторг",
 
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Бренди",
@@ -48,7 +48,14 @@
   "advancements.every_vintage_beverage.title": "Все старинные напитки",
   "advancements.every_vintage_beverage.description": "Приготовьте все возможные старинные напитки.",
 
+  "brewinandchewin.tooltip.tipsy1": "Опьянение I",
+  "brewinandchewin.tooltip.tipsy2": "Опьянение II",
+  "brewinandchewin.tooltip.tipsy3": "Опьянение III",
   "brewinandchewin.tooltip.tipsy4": "Опьянение IV",
   "brewinandchewin.tooltip.tipsy5": "Опьянение V",
-  "brewinandchewin.tooltip.tipsy6": "Опьянение VI"
+  "brewinandchewin.tooltip.tipsy6": "Опьянение VI",
+  "brewinandchewin.tooltip.tipsy7": "Опьянение VII",
+  "brewinandchewin.tooltip.tipsy8": "Опьянение VIII",
+  "brewinandchewin.tooltip.tipsy9": "Опьянение IX",
+  "brewinandchewin.tooltip.tipsy10": "Опьянение X"
 }

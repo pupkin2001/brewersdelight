@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.6.2] - [Unreleased]
+
+### Added
+
+- Tipsy VII-X effect tooltips.
+- Tipsy I-III effect tooltip translations for Russian and Russian pre-reform.
+
+### Changed
+
+- Brewer's Delight tab name updated for Russian and Russian pre-reform to better match Farmer's Delight.
+
 ## [v0.6.1] - 2025/02/13
 
 ### Added
