@@ -16,11 +16,11 @@ import umpaz.brewinandchewin.common.registry.BCItems;
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
-public class ItemTags extends ItemTagsProvider
+public class ModItemTagProvider extends ItemTagsProvider
 {
-	public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
-	                CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
-	                @Nullable ExistingFileHelper existingFileHelper)
+	public ModItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
+	                          CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
+	                          @Nullable ExistingFileHelper existingFileHelper)
 	{
 		super(output, provider, blockTagProvider, BrewersDelight.MOD_ID, existingFileHelper);
 	}
@@ -38,7 +38,9 @@ public class ItemTags extends ItemTagsProvider
 		
 		BrewersItems.ITEMS.getEntries().forEach(item -> {
 			assert item.getKey() != null;
-			tag(BrewersTags.BEVERAGES).add(item.getKey());
+			if (item.get() instanceof BoozeItem) {
+				tag(BrewersTags.BEVERAGES).add(item.getKey());
+			}
 		});
 	}
 }

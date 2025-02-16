@@ -9,9 +9,9 @@ import vectorwing.farmersdelight.FarmersDelight;
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
-public class BlockTags extends BlockTagsProvider
+public class ModBlockTagProvider extends BlockTagsProvider
 {
-	public BlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper)
+	public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper)
 	{
 		super(output, lookupProvider, FarmersDelight.MODID, existingFileHelper);
 	}
