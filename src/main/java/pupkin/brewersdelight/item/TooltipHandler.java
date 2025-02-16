@@ -7,6 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import pupkin.brewersdelight.BrewersDelight;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.utility.BCTextUtils;
 
@@ -23,22 +24,19 @@ public class TooltipHandler
 		
 		if (item instanceof BoozeItem) {
 			try {
-				// Use reflection to get 'potency' and 'duration' values
+				// Use reflection to get 'potency' value
 				Field potencyField = BoozeItem.class.getDeclaredField("potency");
-				Field durationField = BoozeItem.class.getDeclaredField("duration");
 				
 				potencyField.setAccessible(true);
-				durationField.setAccessible(true);
 				
 				int potency = (int) potencyField.get(item);
-				int duration = (int) durationField.get(item);
 				
 				if (potency > 3) {
-					MutableComponent textTipsy = BCTextUtils.getTranslation("tooltip.tipsy" + potency, duration);
+					MutableComponent textTipsy = BCTextUtils.getTranslation("tooltip.tipsy" + potency);
 					event.getToolTip().add(1, textTipsy.withStyle(ChatFormatting.RED));
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				BrewersDelight.LOGGER.error("Failed while trying to modify tooltip for {}", item, e);
 			}
 		}
 	}
