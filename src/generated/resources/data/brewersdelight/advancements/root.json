@@ -1,0 +1,834 @@
+{
+  "criteria": {
+    "bc_beer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:beer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_bloody_mary": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:bloody_mary"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cheese_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheese_pizza"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cheese_pizza_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheese_pizza_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cheesy_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheesy_pasta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cocoa_fudge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cocoa_fudge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_creamy_onion_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:creamy_onion_soup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_dread_nog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:dread_nog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_egg_grog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:egg_grog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_flaxen_cheese_wedge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:flaxen_cheese_wedge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_flaxen_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:flaxen_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_glittering_grenadine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:glittering_grenadine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_ham_and_cheese_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:ham_and_cheese_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_keg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:keg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_kimchi": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kimchi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_kippers": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kippers"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_mead": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:mead"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_pale_jane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pale_jane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_pickled_pickles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pickled_pickles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_red_rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:red_rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_rice_wine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:rice_wine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_saccharine_rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:saccharine_rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_salty_folly": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:salty_folly"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_scarlet_cheese_wedge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_cheese_wedge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_scarlet_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_scarlet_pierogies": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_pierogies"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_steel_toe_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:steel_toe_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_strongroot_ale": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:strongroot_ale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_supreme_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:supreme_pizza"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_supreme_pizza_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:supreme_pizza_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_tankard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:tankard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_unripe_flaxen_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:unripe_flaxen_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_unripe_scarlet_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:unripe_scarlet_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_vegetable_omelet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vegetable_omelet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vodka"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_withering_dross": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:withering_dross"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bourbon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:bourbon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "braga": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:braga"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "brandy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:brandy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cahors": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cahors"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "champagne": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:champagne"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cider": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cider"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cognac": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cognac"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "compote": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:compote"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_whisky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:corn_whisky"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flaxen_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flaxen_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flying_dutchman": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gut_wrecker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kvass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:kvass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liqueur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:liqueur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "martini": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:martini"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "melon_schnapps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:melon_schnapps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "moonshine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:moonshine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "old_fashion": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:old_fashion"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sbiten": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scarlet_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "syta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tequila": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:tequila"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vzvar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "whisky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:whisky"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/stone.png",
+    "description": {
+      "translate": "advancements.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "brewersdelight:braga"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "bc_keg",
+      "bc_unripe_flaxen_cheese_wheel",
+      "bc_flaxen_cheese_wheel",
+      "bc_unripe_scarlet_cheese_wheel",
+      "bc_scarlet_cheese_wheel",
+      "bc_flaxen_cheese_wedge",
+      "bc_scarlet_cheese_wedge",
+      "bc_cheese_pizza",
+      "bc_cheese_pizza_slice",
+      "bc_supreme_pizza",
+      "bc_supreme_pizza_slice",
+      "bc_tankard",
+      "bc_beer",
+      "bc_vodka",
+      "bc_mead",
+      "bc_rice_wine",
+      "bc_egg_grog",
+      "bc_strongroot_ale",
+      "bc_saccharine_rum",
+      "bc_pale_jane",
+      "bc_dread_nog",
+      "bc_salty_folly",
+      "bc_steel_toe_stout",
+      "bc_glittering_grenadine",
+      "bc_bloody_mary",
+      "bc_red_rum",
+      "bc_withering_dross",
+      "bc_kimchi",
+      "bc_pickled_pickles",
+      "bc_kippers",
+      "bc_cocoa_fudge",
+      "bc_ham_and_cheese_sandwich",
+      "bc_vegetable_omelet",
+      "bc_cheesy_pasta",
+      "bc_scarlet_pierogies",
+      "bc_creamy_onion_soup",
+      "braga",
+      "brandy",
+      "cider",
+      "compote",
+      "gin",
+      "kvass",
+      "liqueur",
+      "melon_schnapps",
+      "old_fashion",
+      "sake",
+      "sbiten",
+      "syta",
+      "tequila",
+      "vzvar",
+      "whisky",
+      "bourbon",
+      "corn_whisky",
+      "moonshine",
+      "cahors",
+      "champagne",
+      "cognac",
+      "martini",
+      "flaxen_cheese_stout",
+      "scarlet_cheese_stout",
+      "flying_dutchman",
+      "gut_wrecker"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  },
+  "sends_telemetry_event": true
+}
