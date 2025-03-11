@@ -35,12 +35,25 @@ public class ModItemTagProvider extends ItemTagsProvider
 				tag(BrewersTags.BEVERAGES).add(item.getKey());
 			}
 		});
-		
 		BrewersItems.ITEMS.getEntries().forEach(item -> {
 			assert item.getKey() != null;
 			if (item.get() instanceof BoozeItem) {
 				tag(BrewersTags.BEVERAGES).add(item.getKey());
 			}
 		});
+
+		tag(BrewersTags.CHALLENGE_BEVERAGES)
+				.add(BCItems.DREAD_NOG.get())
+				.add(BCItems.STEEL_TOE_STOUT.get())
+				.add(BCItems.WITHERING_DROSS.get())
+				.add(BrewersItems.FLAXEN_CHEESE_STOUT.get())
+				.add(BrewersItems.SCARLET_CHEESE_STOUT.get())
+				.add(BrewersItems.FLYING_DUTCHMAN.get())
+				.add(BrewersItems.GUT_WRECKER.get());
+
+		tag(BrewersTags.VINTAGE_BEVERAGES)
+				.add(BrewersItems.SBITEN.get())
+				.add(BrewersItems.SYTA.get())
+				.add(BrewersItems.VZVAR.get());
 	}
 }
