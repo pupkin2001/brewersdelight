@@ -26,7 +26,7 @@ public class ModAdvancementProvider extends ForgeAdvancementProvider {
     public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, existingFileHelper, List.of(
                 new RootAdvancementGenerator(),
-                new BeverageAdvancementGenerator()
+                new EveryBeverageAdvancementGenerator()
         ));
     }
 }
@@ -38,7 +38,7 @@ class RootAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGe
     @Override
     public void generate(HolderLookup.@NotNull Provider provider, Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
         List<String> criteriaKeys = new ArrayList<>();
-        Advancement.Builder rootBuilder = Advancement.Builder.advancement()
+        Advancement.Builder builder = Advancement.Builder.advancement()
                 .display(
                         BrewersItems.BRAGA.get(),
                         Component.translatable("advancements.root.title"),
@@ -57,29 +57,29 @@ class RootAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGe
                     ? "bc_" + entry.getId().getPath()
                     : entry.getId().getPath();
             criteriaKeys.add(key);
-            rootBuilder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+            builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
         });
         BrewersItems.ITEMS.getEntries().forEach(entry -> {
             Item item = entry.get();
             String key = entry.getId().getPath();
             criteriaKeys.add(key);
-            rootBuilder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+            builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
         });
-        rootBuilder.requirements(new String[][] { criteriaKeys.toArray(new String[0]) });
+        builder.requirements(new String[][] { criteriaKeys.toArray(new String[0]) });
 
-        ROOT_ADVANCEMENT = rootBuilder.build(new ResourceLocation(BrewersDelight.MOD_ID, "root"));
+        ROOT_ADVANCEMENT = builder.build(new ResourceLocation(BrewersDelight.MOD_ID, "root"));
         consumer.accept(ROOT_ADVANCEMENT);
     }
 }
 
 // every_beverage
-class BeverageAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
+class EveryBeverageAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
     @Override
     public void generate(HolderLookup.@NotNull Provider provider, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
         if (RootAdvancementGenerator.ROOT_ADVANCEMENT == null) {
             throw new IllegalStateException("Root advancement must be generated before beverage advancements!");
         }
-        Advancement.Builder beverageBuilder = Advancement.Builder.advancement()
+        Advancement.Builder builder = Advancement.Builder.advancement()
                 .parent(RootAdvancementGenerator.ROOT_ADVANCEMENT)
                 .display(
                         BrewersItems.WHISKY.get(),
@@ -94,20 +94,20 @@ class BeverageAdvancementGenerator implements ForgeAdvancementProvider.Advanceme
         BCItems.ITEMS.getEntries().forEach(entry -> {
             Item item = entry.get();
             if (item instanceof BoozeItem) {
-                String id = entry.getId().getNamespace().equals("brewinandchewin")
+                String key = entry.getId().getNamespace().equals("brewinandchewin")
                         ? "bc_" + entry.getId().getPath()
                         : entry.getId().getPath();
-                beverageBuilder.addCriterion(id, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+                builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
             }
         });
         BrewersItems.ITEMS.getEntries().forEach(entry -> {
             Item item = entry.get();
             if (item instanceof BoozeItem) {
-                ResourceLocation id = entry.getId();
-                beverageBuilder.addCriterion(id.getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item));
+                ResourceLocation key = entry.getId();
+                builder.addCriterion(key.getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item));
             }
         });
-        beverageBuilder.rewards(AdvancementRewards.Builder.experience(100))
+        builder.rewards(AdvancementRewards.Builder.experience(100))
                 .save(consumer, ResourceLocation.tryParse(BrewersDelight.MOD_ID + ":every_beverage"), existingFileHelper);
     }
 }
