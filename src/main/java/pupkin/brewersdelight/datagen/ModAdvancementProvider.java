@@ -14,8 +14,8 @@ import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
-import umpaz.brewinandchewin.common.registry.BCItems;
 import umpaz.brewinandchewin.common.item.BoozeItem;
+import umpaz.brewinandchewin.common.registry.BCItems;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,20 +59,27 @@ class RootAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGe
             criteriaKeys.add(key);
             builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
         });
-        BrewersItems.ITEMS.getEntries().forEach(entry -> {
-            Item item = entry.get();
-            String key = entry.getId().getPath();
-            criteriaKeys.add(key);
-            builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-        });
-        builder.requirements(new String[][] { criteriaKeys.toArray(new String[0]) });
+        List.of(
+                BrewersItems.BEVERAGES,
+                BrewersItems.CHALLENGE_BEVERAGES,
+                BrewersItems.VINTAGE_BEVERAGES,
+                BrewersItems.COMPAT_BEVERAGES
+        ).forEach(registry ->
+                registry.getEntries().forEach(entry -> {
+                    Item item = entry.get();
+                    String key = entry.getId().getPath();
+                    criteriaKeys.add(key);
+                    builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+                })
+        );
+        builder.requirements(new String[][]{criteriaKeys.toArray(new String[0])});
 
         ROOT_ADVANCEMENT = builder.build(new ResourceLocation(BrewersDelight.MOD_ID, "root"));
         consumer.accept(ROOT_ADVANCEMENT);
     }
 }
 
-// every_beverage
+// every beverage
 class EveryBeverageAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
     @Override
     public void generate(HolderLookup.@NotNull Provider provider, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
@@ -100,13 +107,20 @@ class EveryBeverageAdvancementGenerator implements ForgeAdvancementProvider.Adva
                 builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
             }
         });
-        BrewersItems.ITEMS.getEntries().forEach(entry -> {
-            Item item = entry.get();
-            if (item instanceof BoozeItem) {
-                ResourceLocation key = entry.getId();
-                builder.addCriterion(key.getPath(), InventoryChangeTrigger.TriggerInstance.hasItems(item));
-            }
-        });
+        List.of(
+                BrewersItems.BEVERAGES,
+                BrewersItems.CHALLENGE_BEVERAGES,
+                BrewersItems.VINTAGE_BEVERAGES,
+                BrewersItems.COMPAT_BEVERAGES
+        ).forEach(registry ->
+                registry.getEntries().forEach(entry -> {
+                    Item item = entry.get();
+                    if (item instanceof BoozeItem) {
+                        String key = entry.getId().getPath();
+                        builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+                    }
+                })
+        );
         builder.rewards(AdvancementRewards.Builder.experience(100))
                 .save(consumer, ResourceLocation.tryParse(BrewersDelight.MOD_ID + ":every_beverage"), existingFileHelper);
     }
