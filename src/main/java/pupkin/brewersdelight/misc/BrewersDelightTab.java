@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class BrewersDelightTab {
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BrewersDelight.MOD_ID);
-
+	
 	@SuppressWarnings("unused")
 	public static final RegistryObject<CreativeModeTab> TAB_BREWERSDELIGHT = CREATIVE_TABS.register("brewers_delight_tab", () ->
 			CreativeModeTab.builder()

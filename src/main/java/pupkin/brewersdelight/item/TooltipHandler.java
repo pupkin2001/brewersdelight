@@ -14,11 +14,9 @@ import umpaz.brewinandchewin.common.utility.BCTextUtils;
 import java.lang.reflect.Field;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class TooltipHandler
-{
+public class TooltipHandler {
 	@SubscribeEvent
-	public static void onItemTooltip(ItemTooltipEvent event)
-	{
+	public static void onItemTooltip(ItemTooltipEvent event) {
 		ItemStack stack = event.getItemStack();
 		Item item = stack.getItem();
 		

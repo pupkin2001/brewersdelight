@@ -6,8 +6,7 @@ import net.minecraft.world.food.FoodProperties;
 import umpaz.brewinandchewin.common.registry.BCEffects;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-public class BeverageProperties
-{
+public class BeverageProperties {
 	public static final int BRIEF_DURATION = 600;           // 30 seconds
 	public static final int VERY_SHORT_DURATION = 1200;     // 1 minute
 	public static final int SHORT_DURATION = 2400;          // 2 minutes

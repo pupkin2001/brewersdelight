@@ -11,14 +11,12 @@ import pupkin.brewersdelight.misc.BrewersDelightTab;
 
 @Mod(BrewersDelight.MOD_ID)
 @Mod.EventBusSubscriber(modid = BrewersDelight.MOD_ID)
-public class BrewersDelight
-{
+public class BrewersDelight {
 	public static final String MOD_ID = "brewersdelight";
 	
 	public static final Logger LOGGER = LogUtils.getLogger();
 	
-	public BrewersDelight()
-	{
+	public BrewersDelight() {
 		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		
 		BrewersItems.register(eventBus);
