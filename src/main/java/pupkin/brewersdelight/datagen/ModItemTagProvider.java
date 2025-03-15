@@ -30,23 +30,29 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
-        List<? extends DeferredRegister> beverageRegistries = List.of(
+        List<DeferredRegister<Item>> beverageRegistries = List.of(
                 BCItems.ITEMS,
                 BrewersItems.BEVERAGES,
+                BrewersItems.COMPAT_BEVERAGES,
                 BrewersItems.CHALLENGE_BEVERAGES,
-                BrewersItems.VINTAGE_BEVERAGES,
-                BrewersItems.COMPAT_BEVERAGES
+                BrewersItems.VINTAGE_BEVERAGES
         );
 
         beverageRegistries.forEach(registry ->
                 addBoozeItems(registry, BrewersTags.BEVERAGES)
         );
 
+        assert BCItems.DREAD_NOG.getKey() != null;
+        tag(BrewersTags.CHALLENGE_BEVERAGES).add(BCItems.DREAD_NOG.getKey());
+        assert BCItems.STEEL_TOE_STOUT.getKey() != null;
+        tag(BrewersTags.CHALLENGE_BEVERAGES).add(BCItems.STEEL_TOE_STOUT.getKey());
+        assert BCItems.WITHERING_DROSS.getKey() != null;
+        tag(BrewersTags.CHALLENGE_BEVERAGES).add(BCItems.WITHERING_DROSS.getKey());
         addBoozeItems(BrewersItems.CHALLENGE_BEVERAGES, BrewersTags.CHALLENGE_BEVERAGES);
         addBoozeItems(BrewersItems.VINTAGE_BEVERAGES, BrewersTags.VINTAGE_BEVERAGES);
     }
 
-    private void addBoozeItems(DeferredRegister<Item> registry, TagKey tagKey) {
+    private void addBoozeItems(DeferredRegister<Item> registry, TagKey<Item> tagKey) {
         registry.getEntries().forEach(item -> {
             assert item.getKey() != null;
             if (item.get() instanceof BoozeItem) {

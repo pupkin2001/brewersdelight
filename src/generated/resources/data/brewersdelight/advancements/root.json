@@ -809,10 +809,7 @@
       "melon_schnapps",
       "old_fashion",
       "sake",
-      "sbiten",
-      "syta",
       "tequila",
-      "vzvar",
       "whisky",
       "bourbon",
       "corn_whisky",
@@ -824,7 +821,10 @@
       "flaxen_cheese_stout",
       "scarlet_cheese_stout",
       "flying_dutchman",
-      "gut_wrecker"
+      "gut_wrecker",
+      "sbiten",
+      "syta",
+      "vzvar"
     ]
   ],
   "rewards": {

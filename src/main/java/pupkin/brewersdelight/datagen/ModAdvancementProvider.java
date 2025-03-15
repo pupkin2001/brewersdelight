@@ -61,9 +61,9 @@ class RootAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGe
         });
         List.of(
                 BrewersItems.BEVERAGES,
+                BrewersItems.COMPAT_BEVERAGES,
                 BrewersItems.CHALLENGE_BEVERAGES,
-                BrewersItems.VINTAGE_BEVERAGES,
-                BrewersItems.COMPAT_BEVERAGES
+                BrewersItems.VINTAGE_BEVERAGES
         ).forEach(registry ->
                 registry.getEntries().forEach(entry -> {
                     Item item = entry.get();
@@ -109,9 +109,9 @@ class EveryBeverageAdvancementGenerator implements ForgeAdvancementProvider.Adva
         });
         List.of(
                 BrewersItems.BEVERAGES,
+                BrewersItems.COMPAT_BEVERAGES,
                 BrewersItems.CHALLENGE_BEVERAGES,
-                BrewersItems.VINTAGE_BEVERAGES,
-                BrewersItems.COMPAT_BEVERAGES
+                BrewersItems.VINTAGE_BEVERAGES
         ).forEach(registry ->
                 registry.getEntries().forEach(entry -> {
                     Item item = entry.get();

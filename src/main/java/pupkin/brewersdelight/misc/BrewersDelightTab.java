@@ -23,9 +23,9 @@ public class BrewersDelightTab {
 					.displayItems((displayParams, output) -> {
 						Arrays.asList(
 								BrewersItems.BEVERAGES,
+								BrewersItems.COMPAT_BEVERAGES,
 								BrewersItems.CHALLENGE_BEVERAGES,
-								BrewersItems.VINTAGE_BEVERAGES,
-								BrewersItems.COMPAT_BEVERAGES
+								BrewersItems.VINTAGE_BEVERAGES
 						).forEach(registry ->
 								registry.getEntries().forEach(item -> output.accept(item.get()))
 						);

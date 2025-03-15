@@ -25,10 +25,7 @@
     "brewersdelight:melon_schnapps",
     "brewersdelight:old_fashion",
     "brewersdelight:sake",
-    "brewersdelight:sbiten",
-    "brewersdelight:syta",
     "brewersdelight:tequila",
-    "brewersdelight:vzvar",
     "brewersdelight:whisky",
     "brewersdelight:bourbon",
     "brewersdelight:corn_whisky",
@@ -40,6 +37,9 @@
     "brewersdelight:flaxen_cheese_stout",
     "brewersdelight:scarlet_cheese_stout",
     "brewersdelight:flying_dutchman",
-    "brewersdelight:gut_wrecker"
+    "brewersdelight:gut_wrecker",
+    "brewersdelight:sbiten",
+    "brewersdelight:syta",
+    "brewersdelight:vzvar"
   ]
 }

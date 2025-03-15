@@ -122,24 +122,6 @@ public class BrewersItems {
     //    public static final RegistryObject<Item> VISHINATA = BEVERAGES.register("vishinata",
     //            () -> new BoozeItem(3, VERY_LONG_DURATION, foodItem(BeverageProperties.VISHINATA)));
 
-    // Challenge beverages
-    public static final RegistryObject<Item> FLAXEN_CHEESE_STOUT = CHALLENGE_BEVERAGES.register("flaxen_cheese_stout",
-            () -> new BoozeItem(1, PROLONGED_DURATION, foodItem(BeverageProperties.FLAXEN_CHEESE_STOUT)));
-    public static final RegistryObject<Item> SCARLET_CHEESE_STOUT = CHALLENGE_BEVERAGES.register("scarlet_cheese_stout",
-            () -> new BoozeItem(1, PROLONGED_DURATION + 2, foodItem(BeverageProperties.SCARLET_CHEESE_STOUT)));
-    public static final RegistryObject<Item> FLYING_DUTCHMAN = CHALLENGE_BEVERAGES.register("flying_dutchman",
-            () -> new BoozeItem(2, MEDIUM_DURATION, foodItem(BeverageProperties.FLYING_DUTCHMAN)));
-    public static final RegistryObject<Item> GUT_WRECKER = CHALLENGE_BEVERAGES.register("gut_wrecker",
-            () -> new BoozeItem(5, PROLONGED_DURATION, foodItem(BeverageProperties.GUT_WRECKER)));
-
-    // Vintage beverages
-    public static final RegistryObject<Item> SBITEN = VINTAGE_BEVERAGES.register("sbiten",
-            () -> new BoozeItem(1, BRIEF_DURATION, foodItem(BeverageProperties.SBITEN)));
-    public static final RegistryObject<Item> SYTA = VINTAGE_BEVERAGES.register("syta",
-            () -> new BoozeItem(1, SHORT_DURATION, foodItem(BeverageProperties.SYTA)));
-    public static final RegistryObject<Item> VZVAR = VINTAGE_BEVERAGES.register("vzvar",
-            () -> new BoozeItem(3, VERY_LONG_DURATION, foodItem(BeverageProperties.VZVAR)));
-
     // Compatibility
     // Note to self: Brewin' and Chewin' handles compatibility by... not giving a damn.
     // Kombucha throws an error loading recipe if farmers respite isn't loaded, which disables the recipe.
@@ -162,6 +144,24 @@ public class BrewersItems {
             () -> new BoozeItem(5, VERY_LONG_DURATION, foodItem(BeverageProperties.COGNAC)));
     public static final RegistryObject<Item> MARTINI = COMPAT_BEVERAGES.register("martini",
             () -> new BoozeItem(2, BRIEF_DURATION, foodItem(BeverageProperties.MARTINI)));
+
+    // Challenge beverages
+    public static final RegistryObject<Item> FLAXEN_CHEESE_STOUT = CHALLENGE_BEVERAGES.register("flaxen_cheese_stout",
+            () -> new BoozeItem(1, PROLONGED_DURATION, foodItem(BeverageProperties.FLAXEN_CHEESE_STOUT)));
+    public static final RegistryObject<Item> SCARLET_CHEESE_STOUT = CHALLENGE_BEVERAGES.register("scarlet_cheese_stout",
+            () -> new BoozeItem(1, PROLONGED_DURATION + 2, foodItem(BeverageProperties.SCARLET_CHEESE_STOUT)));
+    public static final RegistryObject<Item> FLYING_DUTCHMAN = CHALLENGE_BEVERAGES.register("flying_dutchman",
+            () -> new BoozeItem(2, MEDIUM_DURATION, foodItem(BeverageProperties.FLYING_DUTCHMAN)));
+    public static final RegistryObject<Item> GUT_WRECKER = CHALLENGE_BEVERAGES.register("gut_wrecker",
+            () -> new BoozeItem(5, PROLONGED_DURATION, foodItem(BeverageProperties.GUT_WRECKER)));
+
+    // Vintage beverages
+    public static final RegistryObject<Item> SBITEN = VINTAGE_BEVERAGES.register("sbiten",
+            () -> new BoozeItem(1, BRIEF_DURATION, foodItem(BeverageProperties.SBITEN)));
+    public static final RegistryObject<Item> SYTA = VINTAGE_BEVERAGES.register("syta",
+            () -> new BoozeItem(1, SHORT_DURATION, foodItem(BeverageProperties.SYTA)));
+    public static final RegistryObject<Item> VZVAR = VINTAGE_BEVERAGES.register("vzvar",
+            () -> new BoozeItem(3, VERY_LONG_DURATION, foodItem(BeverageProperties.VZVAR)));
 
     public static Item.@NotNull Properties foodItem(FoodProperties food) {
         return new Item.Properties().food(food).stacksTo(16).craftRemainder(BCItems.TANKARD.get());
