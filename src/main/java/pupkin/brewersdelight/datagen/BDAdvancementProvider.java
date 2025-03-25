@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class ModAdvancementProvider extends ForgeAdvancementProvider {
-	public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+public class BDAdvancementProvider extends ForgeAdvancementProvider {
+	public BDAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, existingFileHelper, List.of(new BDAdvancementGenerator()));
 	}
 	

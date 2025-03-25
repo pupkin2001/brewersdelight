@@ -10,8 +10,8 @@ import pupkin.brewersdelight.BrewersDelight;
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends BlockTagsProvider {
-	public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+public class BDBlockTagProvider extends BlockTagsProvider {
+	public BDBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, BrewersDelight.MOD_ID, existingFileHelper);
 	}
 	

@@ -20,11 +20,10 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagProvider extends ItemTagsProvider {
-	
-	public ModItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
-	                          CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
-	                          @Nullable ExistingFileHelper existingFileHelper) {
+public class BDItemTagProvider extends ItemTagsProvider {
+	public BDItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider,
+	                         CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider,
+	                         @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, provider, blockTagProvider, BrewersDelight.MOD_ID, existingFileHelper);
 	}
 	
