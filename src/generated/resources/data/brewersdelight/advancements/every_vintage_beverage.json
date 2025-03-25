@@ -1,0 +1,71 @@
+{
+  "parent": "brewersdelight:any_vintage_beverage",
+  "criteria": {
+    "sbiten": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "syta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vzvar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.every_vintage_beverage.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "brewersdelight:vzvar"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.every_vintage_beverage.title"
+    }
+  },
+  "requirements": [
+    [
+      "sbiten"
+    ],
+    [
+      "syta"
+    ],
+    [
+      "vzvar"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

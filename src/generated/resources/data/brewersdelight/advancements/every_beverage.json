@@ -25,6 +25,66 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bc_cheese_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheese_pizza"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cheese_pizza_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheese_pizza_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cheesy_pasta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cheesy_pasta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_cocoa_fudge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:cocoa_fudge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_creamy_onion_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:creamy_onion_soup"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_dread_nog": {
       "conditions": {
         "items": [
@@ -49,12 +109,84 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bc_flaxen_cheese_wedge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:flaxen_cheese_wedge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_flaxen_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:flaxen_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_glittering_grenadine": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewinandchewin:glittering_grenadine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_ham_and_cheese_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:ham_and_cheese_sandwich"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_keg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:keg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_kimchi": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kimchi"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_kippers": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kippers"
             ]
           }
         ]
@@ -79,6 +211,18 @@
           {
             "items": [
               "brewinandchewin:pale_jane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_pickled_pickles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pickled_pickles"
             ]
           }
         ]
@@ -133,6 +277,42 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bc_scarlet_cheese_wedge": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_cheese_wedge"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_scarlet_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_scarlet_pierogies": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:scarlet_pierogies"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_steel_toe_stout": {
       "conditions": {
         "items": [
@@ -151,6 +331,78 @@
           {
             "items": [
               "brewinandchewin:strongroot_ale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_supreme_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:supreme_pizza"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_supreme_pizza_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:supreme_pizza_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_tankard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:tankard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_unripe_flaxen_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:unripe_flaxen_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_unripe_scarlet_cheese_wheel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:unripe_scarlet_cheese_wheel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_vegetable_omelet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vegetable_omelet"
             ]
           }
         ]
@@ -511,6 +763,42 @@
   },
   "requirements": [
     [
+      "bc_keg"
+    ],
+    [
+      "bc_unripe_flaxen_cheese_wheel"
+    ],
+    [
+      "bc_flaxen_cheese_wheel"
+    ],
+    [
+      "bc_unripe_scarlet_cheese_wheel"
+    ],
+    [
+      "bc_scarlet_cheese_wheel"
+    ],
+    [
+      "bc_flaxen_cheese_wedge"
+    ],
+    [
+      "bc_scarlet_cheese_wedge"
+    ],
+    [
+      "bc_cheese_pizza"
+    ],
+    [
+      "bc_cheese_pizza_slice"
+    ],
+    [
+      "bc_supreme_pizza"
+    ],
+    [
+      "bc_supreme_pizza_slice"
+    ],
+    [
+      "bc_tankard"
+    ],
+    [
       "bc_beer"
     ],
     [
@@ -554,6 +842,33 @@
     ],
     [
       "bc_withering_dross"
+    ],
+    [
+      "bc_kimchi"
+    ],
+    [
+      "bc_pickled_pickles"
+    ],
+    [
+      "bc_kippers"
+    ],
+    [
+      "bc_cocoa_fudge"
+    ],
+    [
+      "bc_ham_and_cheese_sandwich"
+    ],
+    [
+      "bc_vegetable_omelet"
+    ],
+    [
+      "bc_cheesy_pasta"
+    ],
+    [
+      "bc_scarlet_pierogies"
+    ],
+    [
+      "bc_creamy_onion_soup"
     ],
     [
       "braga"

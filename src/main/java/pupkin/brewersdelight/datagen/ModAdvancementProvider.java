@@ -11,10 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
-import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BCItems;
 
 import java.util.ArrayList;
@@ -24,104 +25,208 @@ import java.util.function.Consumer;
 
 public class ModAdvancementProvider extends ForgeAdvancementProvider {
 	public ModAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
-		super(output, lookupProvider, existingFileHelper, List.of(
-				new RootAdvancementGenerator(),
-				new EveryBeverageAdvancementGenerator()
-		));
+		super(output, lookupProvider, existingFileHelper, List.of(new BDAdvancementGenerator()));
 	}
-}
-
-// root
-class RootAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
-	public static Advancement ROOT_ADVANCEMENT;
 	
-	@Override
-	public void generate(HolderLookup.@NotNull Provider provider, Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
-		List<String> criteriaKeys = new ArrayList<>();
-		Advancement.Builder builder = Advancement.Builder.advancement()
-				.display(
-						BrewersItems.BRAGA.get(),
-						Component.translatable("advancements.root.title"),
-						Component.translatable("advancements.root.description"),
-						new ResourceLocation("minecraft", "textures/block/stone.png"),
-						FrameType.TASK,
-						true,  // announce_to_chat
-						true,  // show_toast
-						false
-				)
-				.rewards(AdvancementRewards.Builder.experience(50));
-		
-		BCItems.ITEMS.getEntries().forEach(entry -> {
-			Item item = entry.get();
-			String key = entry.getId().getNamespace().equals("brewinandchewin")
-					? "bc_" + entry.getId().getPath()
-					: entry.getId().getPath();
-			criteriaKeys.add(key);
-			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-		});
-		List.of(
+	public static class BDAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
+		private static final List<DeferredRegister<Item>> BEVERAGE_REGISTRIES = List.of(
 				BrewersItems.BEVERAGES,
 				BrewersItems.COMPAT_BEVERAGES,
 				BrewersItems.CHALLENGE_BEVERAGES,
 				BrewersItems.VINTAGE_BEVERAGES
-		).forEach(registry ->
-				registry.getEntries().forEach(entry -> {
-					Item item = entry.get();
-					String key = entry.getId().getPath();
-					criteriaKeys.add(key);
-					builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-				})
 		);
-		builder.requirements(new String[][]{criteriaKeys.toArray(new String[0])});
 		
-		ROOT_ADVANCEMENT = builder.build(new ResourceLocation(BrewersDelight.MOD_ID, "root"));
-		consumer.accept(ROOT_ADVANCEMENT);
-	}
-}
-
-// every beverage
-class EveryBeverageAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
-	@Override
-	public void generate(HolderLookup.@NotNull Provider provider, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
-		if (RootAdvancementGenerator.ROOT_ADVANCEMENT == null) {
-			throw new IllegalStateException("Root advancement must be generated before beverage advancements!");
+		private static ResourceLocation getNameId(String id) {
+			return new ResourceLocation(BrewersDelight.MOD_ID, id);
 		}
-		Advancement.Builder builder = Advancement.Builder.advancement()
-				.parent(RootAdvancementGenerator.ROOT_ADVANCEMENT)
-				.display(
-						BrewersItems.WHISKY.get(),
-						Component.translatable("advancements.every_beverage.title"),
-						Component.translatable("advancements.every_beverage.description"),
-						null,
-						FrameType.GOAL,
-						true,
-						true,
-						false
-				);
-		BCItems.ITEMS.getEntries().forEach(entry -> {
-			Item item = entry.get();
-			if (item instanceof BoozeItem) {
-				String key = entry.getId().getNamespace().equals("brewinandchewin")
-						? "bc_" + entry.getId().getPath()
-						: entry.getId().getPath();
-				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+		
+		/**
+		 * A helper function that generates an advancement.
+		 *
+		 * @param consumer           The consumer to save the advancement.
+		 * @param existingFileHelper The file helper.
+		 * @param advancementId      The advancement’s id.
+		 * @param parent             The parent advancement. This advancement is a root advancement if null.
+		 * @param icon               The item to display as the icon.
+		 * @param name               Advancement name.
+		 * @param criteriaAdder      A lambda which adds criteria and requirements to the builder.
+		 * @param background         Background for use in this advancement. Only used if parent is null.
+		 * @param frame              The frame type for this advancement.
+		 * @param rewards            Rewards for completing this advancement.
+		 * @return The built advancement.
+		 */
+		private Advancement generateAdvancement(Consumer<Advancement> consumer,
+		                                        ExistingFileHelper existingFileHelper,
+		                                        ResourceLocation advancementId,
+		                                        Advancement parent,
+		                                        Item icon,
+		                                        String name,
+		                                        Consumer<Advancement.Builder> criteriaAdder,
+		                                        ResourceLocation background,
+		                                        FrameType frame,
+		                                        AdvancementRewards rewards) {
+			BrewersDelight.LOGGER.info("Generating advancement with id: {}", advancementId);
+			Advancement.Builder builder = Advancement.Builder.advancement();
+			if (parent != null) {
+				builder.parent(parent);
 			}
-		});
-		List.of(
-				BrewersItems.BEVERAGES,
-				BrewersItems.COMPAT_BEVERAGES,
-				BrewersItems.CHALLENGE_BEVERAGES,
-				BrewersItems.VINTAGE_BEVERAGES
-		).forEach(registry ->
-				registry.getEntries().forEach(entry -> {
-					Item item = entry.get();
-					if (item instanceof BoozeItem) {
-						String key = entry.getId().getPath();
-						builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-					}
-				})
-		);
-		builder.rewards(AdvancementRewards.Builder.experience(100))
-				.save(consumer, ResourceLocation.tryParse(BrewersDelight.MOD_ID + ":every_beverage"), existingFileHelper);
+			builder.display(icon,
+					Component.translatable("advancements." + name + ".title"),
+					Component.translatable("advancements." + name + ".description"),
+					parent == null ? background : null,
+					frame, true, true, false);
+			criteriaAdder.accept(builder);
+			builder.rewards(rewards);
+			BrewersDelight.LOGGER.info("Saving advancement with id: {}", advancementId);
+			builder.save(consumer, advancementId, existingFileHelper);
+			return builder.build(advancementId);
+		}
+		
+		@Override
+		public void generate(HolderLookup.@NotNull Provider registries, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper) {
+			// root
+			Advancement root = generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("root"),
+					null,
+					BrewersItems.BRAGA.get(),
+					"root",
+					builder -> {
+						List<String> criteria = new ArrayList<>();
+						addCriteriaFromRegistry(BCItems.ITEMS, builder, criteria, "bc_");
+						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						builder.requirements(new String[][]{criteria.toArray(new String[0])});
+					},
+					new ResourceLocation("minecraft", "textures/block/oak_planks.png"),
+					FrameType.TASK,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+			
+			// every_beverage
+			Advancement everyBeverage = generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("every_beverage"),
+					root,
+					BrewersItems.WHISKY.get(),
+					"every_beverage",
+					builder -> {
+						addCriteriaFromRegistry(BCItems.ITEMS, builder, null, "bc_");
+						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, null, ""));
+					},
+					null,
+					FrameType.GOAL,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+			
+			// any_challenge_beverage
+			Advancement anyChallengeBeverage = generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("any_challenge_beverage"),
+					root,
+					BrewersItems.FLAXEN_CHEESE_STOUT.get(),
+					"any_challenge_beverage",
+					builder -> {
+						List<String> criteria = new ArrayList<>();
+						addCriteriaFromRegistry(BCItems.ITEMS, builder, criteria, "bc_");
+						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						builder.requirements(new String[][]{criteria.toArray(new String[0])});
+					},
+					null,
+					FrameType.CHALLENGE,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+			
+			// every_challenge_beverage
+			generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("every_challenge_beverage"),
+					anyChallengeBeverage,
+					BrewersItems.GUT_WRECKER.get(),
+					"every_challenge_beverage",
+					builder -> {
+						addCriterion(builder, BCItems.DREAD_NOG, "bc_");
+						addCriterion(builder, BCItems.STEEL_TOE_STOUT, "bc_");
+						addCriterion(builder, BCItems.WITHERING_DROSS, "bc_");
+						addCriteriaFromRegistry(BrewersItems.CHALLENGE_BEVERAGES, builder, null);
+					},
+					null,
+					FrameType.GOAL,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+			
+			// any_vintage_beverage
+			Advancement anyVintageBeverage = generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("any_vintage_beverage"),
+					root,
+					BrewersItems.SBITEN.get(),
+					"any_vintage_beverage",
+					builder -> {
+						List<String> criteria = new ArrayList<>();
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_BEVERAGES, builder, criteria);
+						builder.requirements(new String[][]{criteria.toArray(new String[0])});
+					},
+					null,
+					FrameType.CHALLENGE,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+			
+			// every_vintage_beverage
+			generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("every_vintage_beverage"),
+					anyVintageBeverage,
+					BrewersItems.VZVAR.get(),
+					"every_vintage_beverage",
+					builder -> {
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_BEVERAGES, builder, null);
+					},
+					null,
+					FrameType.GOAL,
+					AdvancementRewards.Builder.experience(100).build()
+			);
+		}
+		
+		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList) {
+			registry.getEntries().forEach(entry -> {
+				Item item = entry.get();
+				String key = entry.getId().getPath();
+				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+				BrewersDelight.LOGGER.debug("Adding criterion for item in registry with id : {}", key);
+				if (criteriaList != null) {
+					criteriaList.add(key);
+				}
+			});
+		}
+		
+		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList, String prefix) {
+			registry.getEntries().forEach(entry -> {
+				Item item = entry.get();
+				String key = prefix + entry.getId().getPath();
+				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+				BrewersDelight.LOGGER.debug("Adding criterion for item in registry with id : {} as : {}{}", key, prefix, key);
+				if (criteriaList != null) {
+					criteriaList.add(key);
+				}
+			});
+		}
+		
+		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item) {
+			String key = item.getId().getPath();
+			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
+			BrewersDelight.LOGGER.debug("Adding criterion for item id : {} to advancement builder : {}", key, builder);
+		}
+		
+		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item, String prefix) {
+			String key = prefix + item.getId().getPath();
+			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
+			BrewersDelight.LOGGER.debug("Adding criterion for item id : {} to advancement builder : {} as : {}{}", key, builder, prefix, key);
+		}
 	}
 }

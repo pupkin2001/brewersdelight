@@ -1,4 +1,5 @@
 {
+  "parent": "brewersdelight:root",
   "criteria": {
     "bc_beer": {
       "conditions": {
@@ -747,18 +748,17 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "minecraft:textures/block/oak_planks.png",
     "description": {
-      "translate": "advancements.root.description"
+      "translate": "advancements.any_challenge_beverage.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "brewersdelight:braga"
+      "item": "brewersdelight:flaxen_cheese_stout"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.root.title"
+      "translate": "advancements.any_challenge_beverage.title"
     }
   },
   "requirements": [

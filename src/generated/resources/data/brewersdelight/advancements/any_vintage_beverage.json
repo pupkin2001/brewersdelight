@@ -1,21 +1,7 @@
 {
-  "display": {
-    "icon": {
-      "item": "brewersdelight:sbiten"
-    },
-    "title": {
-      "translate": "advancements.any_vintage_beverage.title"
-    },
-    "description": {
-      "translate": "advancements.any_vintage_beverage.description"
-    },
-    "frame": "challenge",
-    "hidden": true
-  },
   "parent": "brewersdelight:root",
   "criteria": {
     "sbiten": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -24,10 +10,10 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "syta": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -36,10 +22,10 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "vzvar": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -48,7 +34,23 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.any_vintage_beverage.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "brewersdelight:sbiten"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.any_vintage_beverage.title"
     }
   },
   "requirements": [
@@ -59,11 +61,7 @@
     ]
   ],
   "rewards": {
-    "recipes": [
-      "brewersdelight:sbiten",
-      "brewersdelight:syta",
-      "brewersdelight:vzvar"
-    ],
-    "experience": 50
-  }
+    "experience": 100
+  },
+  "sends_telemetry_event": true
 }

@@ -1,0 +1,131 @@
+{
+  "parent": "brewersdelight:any_challenge_beverage",
+  "criteria": {
+    "bc_dread_nog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:dread_nog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_steel_toe_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:steel_toe_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_withering_dross": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:withering_dross"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flaxen_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flaxen_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flying_dutchman": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gut_wrecker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scarlet_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.every_challenge_beverage.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "brewersdelight:gut_wrecker"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.every_challenge_beverage.title"
+    }
+  },
+  "requirements": [
+    [
+      "bc_dread_nog"
+    ],
+    [
+      "bc_steel_toe_stout"
+    ],
+    [
+      "bc_withering_dross"
+    ],
+    [
+      "flaxen_cheese_stout"
+    ],
+    [
+      "scarlet_cheese_stout"
+    ],
+    [
+      "flying_dutchman"
+    ],
+    [
+      "gut_wrecker"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
