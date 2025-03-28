@@ -30,13 +30,6 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 	}
 	
 	public static class BDAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator {
-		private static final List<DeferredRegister<Item>> BEVERAGE_REGISTRIES = List.of(
-				BrewersItems.BEVERAGES,
-				BrewersItems.COMPAT_BEVERAGES,
-				BrewersItems.CHALLENGE_BEVERAGES,
-				BrewersItems.VINTAGE_BEVERAGES
-		);
-		
 		private static ResourceLocation getNameId(String id) {
 			return new ResourceLocation(BrewersDelight.MOD_ID, id);
 		}
@@ -96,7 +89,11 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BCItems.ITEMS, builder, criteria, "bc_");
-						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						
+						List.of(BrewersItems.BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.COMPAT_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.CHALLENGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.VINTAGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][]{criteria.toArray(new String[0])});
 					},
 					new ResourceLocation("minecraft", "textures/block/oak_planks.png"),
@@ -114,7 +111,9 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 					"every_beverage",
 					builder -> {
 						addCriteriaFromRegistry(BCItems.ITEMS, builder, null, "bc_");
-						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, null, ""));
+						List.of(BrewersItems.BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
+						List.of(BrewersItems.COMPAT_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
+						List.of(BrewersItems.VINTAGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 					},
 					null,
 					FrameType.GOAL,
@@ -132,7 +131,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BCItems.ITEMS, builder, criteria, "bc_");
-						BEVERAGE_REGISTRIES.forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.CHALLENGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][]{criteria.toArray(new String[0])});
 					},
 					null,
