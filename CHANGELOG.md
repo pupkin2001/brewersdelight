@@ -4,13 +4,18 @@
 
 ### Added
 
+- Full datagen coverage for advancements with non-specific criteria.
 - Tipsy VII-X effect tooltips.
-- Tipsy I-III effect tooltip translations for Russian and Russian pre-reform.
+- Tipsy I-III effect tooltip translations for Russian and Russian pre-reform locales.
 - Chinese localisation.
 
 ### Changed
 
-- Brewer's Delight tab name updated for Russian and Russian pre-reform to better match Farmer's Delight.
+- Brewer's Delight tab name updated for Russian and Russian pre-reform to better match Farmer's Delight tab name.
+
+### Fixed
+
+- Inconsistencies between advancement names and their criteria.
 
 ## [v0.6.1] - 2025/02/13
 
