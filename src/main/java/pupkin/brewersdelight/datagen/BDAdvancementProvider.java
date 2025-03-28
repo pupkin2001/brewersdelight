@@ -16,6 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
+import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BCItems;
 
 import java.util.ArrayList;
@@ -194,23 +195,19 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 		}
 		
 		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList) {
-			registry.getEntries().forEach(entry -> {
-				Item item = entry.get();
-				String key = entry.getId().getPath();
-				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-				BrewersDelight.LOGGER.debug("Adding criterion for item in registry with id : {}", key);
-				if (criteriaList != null) {
-					criteriaList.add(key);
-				}
-			});
+			addCriteriaFromRegistry(registry, builder, criteriaList, "");
 		}
 		
 		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList, String prefix) {
 			registry.getEntries().forEach(entry -> {
 				Item item = entry.get();
+				if (!(item instanceof BoozeItem)) {
+					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-beverage item : {}", item.getName(item.getDefaultInstance()));
+					return;
+				}
 				String key = prefix + entry.getId().getPath();
+				BrewersDelight.LOGGER.debug("Adding criterion for item : {} from registry : {} with id : {} as : {}{}", item, registry, key, prefix, key);
 				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
-				BrewersDelight.LOGGER.debug("Adding criterion for item in registry with id : {} as : {}{}", key, prefix, key);
 				if (criteriaList != null) {
 					criteriaList.add(key);
 				}
@@ -219,14 +216,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider {
 		
 		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item) {
 			String key = item.getId().getPath();
+			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {}", item, key, builder);
 			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
-			BrewersDelight.LOGGER.debug("Adding criterion for item id : {} to advancement builder : {}", key, builder);
 		}
 		
 		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item, String prefix) {
 			String key = prefix + item.getId().getPath();
+			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {} as : {}{}", item, key, builder, prefix, key);
 			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
-			BrewersDelight.LOGGER.debug("Adding criterion for item id : {} to advancement builder : {} as : {}{}", key, builder, prefix, key);
 		}
 	}
 }
