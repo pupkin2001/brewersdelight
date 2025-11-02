@@ -18,13 +18,40 @@ public class BrewersFluids
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
 	
 	// Braga fluid
-	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0x00FF0000);
+	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xFFFFFFFF);
+	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xFFFFFFFF);
+	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xFFFFFFFF);
+	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xFFFFFFFF);
+	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xFFFFFFFF);
+	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0xFFFFFFFF);
+	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xFFFFFFFF);
+	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0xFFFFFFFF);
+	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0xFFFFFFFF);
+	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0xFFFFFFFF);
+	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xFFFFFFFF);
+	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xFFFFFFFF);
+	
+	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFFFFFFF);
+	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFFFFFFFF);
+	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xFFFFFFFF);
+	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFFFFFFFF);
+	
+	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xFFFFFFFF);
+	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xFFFFFFFF);
+	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0xFFFFFFFF);
+	
+	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0xFFFFFFFF);
+	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0xFFFFFFFF);
+	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xFFFFFFFF);
+	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFFFFFFFF);
+	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0xFFFFFFFF);
+	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0xFFFFFFFF);
+	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xFFFFFFFF);
 	
 	// I really should've copied the fluid registration code from BnC, but I'm in the middle of the sunk cost fallacy
 	// also I don't really want to register each beverage one by one
 	private static FluidRegistryObject registerAlcoholFluid(String name, int tintColor) {
-		RegistryObject<FluidType> fluidType = FLUID_TYPES.register(name + "_type",
-		                                                           () -> new AlcoholFluidType(tintColor));
+		RegistryObject<FluidType> fluidType = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tintColor));
 		
 		// Use RegistryObject references that will be filled later
 		final RegistryObject<FlowingFluid>[] sourceHolder = new RegistryObject[1];
