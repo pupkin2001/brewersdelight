@@ -111,16 +111,13 @@ dependencies {
 	
 	// Hard dependencies
 	implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-	// Brewin' and Chewin' doesn't have a stable release for 1.20.x
-	// Using local 1.20.1 build until released.
-	// implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewinandchewin_version}")
-	implementation fg.deobf("libs:BrewinAndChewin:1.20.1-2.0.1")
+	implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewinandchewin_version}")
 	
 	// Soft dependencies
 	implementation fg.deobf("curse.maven:corn-delight-577805:${corn_delight_version}")
 	runtimeOnly fg.deobf("curse.maven:mysterious-mountain-lib-368098:${mmlib_version}")
 	implementation fg.deobf("curse.maven:croptopia-415438:${cropotopia_version}")
-	runtimeOnly fg.deobf("curse.maven:epherolib-885449:4889101")
+	runtimeOnly fg.deobf("curse.maven:epherolib-885449:${epherolib_version}")
 	
 	runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 	runtimeOnly fg.deobf("curse.maven:appleskin-248787:${appleskin_version}")

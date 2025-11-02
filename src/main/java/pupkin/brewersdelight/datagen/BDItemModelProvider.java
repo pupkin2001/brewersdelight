@@ -6,13 +6,16 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 
-public class BDItemModelProvider extends ItemModelProvider {
-	public BDItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class BDItemModelProvider extends ItemModelProvider
+{
+	public BDItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper)
+	{
 		super(output, BrewersDelight.MOD_ID, existingFileHelper);
 	}
 	
 	@Override
-	protected void registerModels() {
+	protected void registerModels()
+	{
 		BrewersItems.BEVERAGES.getEntries().forEach(item -> {
 			String itemName = item.getId().getPath();
 			

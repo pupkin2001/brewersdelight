@@ -46,13 +46,5 @@
   "advancements.any_vintage_beverage.title": "Any vintage beverage",
   "advancements.any_vintage_beverage.description": "Brew your first vintage beverage.",
   "advancements.every_vintage_beverage.title": "Every vintage beverage",
-  "advancements.every_vintage_beverage.description": "Brew every possible vintage beverage.",
-
-  "brewinandchewin.tooltip.tipsy4": "Tipsy IV",
-  "brewinandchewin.tooltip.tipsy5": "Tipsy V",
-  "brewinandchewin.tooltip.tipsy6": "Tipsy VI",
-  "brewinandchewin.tooltip.tipsy7": "Tipsy VII",
-  "brewinandchewin.tooltip.tipsy8": "Tipsy VIII",
-  "brewinandchewin.tooltip.tipsy9": "Tipsy IX",
-  "brewinandchewin.tooltip.tipsy10": "Tipsy X"
+  "advancements.every_vintage_beverage.description": "Brew every possible vintage beverage."
 }

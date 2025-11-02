@@ -3,10 +3,10 @@ package pupkin.brewersdelight.misc;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import umpaz.brewinandchewin.common.registry.BCEffects;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-public class BeverageProperties {
+public class BeverageProperties
+{
 	public static final int BRIEF_DURATION = 600;           // 30 seconds
 	public static final int VERY_SHORT_DURATION = 1200;     // 1 minute
 	public static final int SHORT_DURATION = 2400;          // 2 minutes
@@ -83,7 +83,7 @@ public class BeverageProperties {
 	
 	public static final FoodProperties SYTA = new FoodProperties.Builder()
 			.alwaysEat()
-			.effect(() -> new MobEffectInstance(BCEffects.SATISFACTION.get(), MODERATE_DURATION, 0), 1.0f)
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 0), 1.0f)
 			.build();
 	
 	public static final FoodProperties TEQUILA = new FoodProperties.Builder()
@@ -357,9 +357,9 @@ public class BeverageProperties {
 			.effect(() -> new MobEffectInstance(MobEffects.LEVITATION, VERY_SHORT_DURATION, 1), 1.0f)
 			.build();
 	public static final FoodProperties MOONSHINE = new FoodProperties.Builder() // Should it require corn?...
-			.alwaysEat()
-			.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, MODERATE_DURATION, 2), 1.0f)
-			.build();
+            .alwaysEat()
+            .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, MODERATE_DURATION, 2), 1.0f)
+            .build();
 	
 	// Grapes (Italian Delight)
 	public static final FoodProperties CAHORS = new FoodProperties.Builder()
@@ -380,6 +380,6 @@ public class BeverageProperties {
 	
 	public static final FoodProperties MARTINI = new FoodProperties.Builder()
 			.alwaysEat()
-			.effect(() -> new MobEffectInstance(BCEffects.SATISFACTION.get(), SHORT_DURATION, 1), 1.0f)
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 1), 1.0f)
 			.build();
 }

@@ -46,16 +46,5 @@
   "advancements.any_vintage_beverage.title": "Любой старiнный напитокъ",
   "advancements.any_vintage_beverage.description": "Прiготовьтѣ вашъ пѣрвый старiнный напитокъ.",
   "advancements.every_vintage_beverage.title": "Всѣ старiнные напитки",
-  "advancements.every_vintage_beverage.description": "Прiготовьтѣ всѣ возможные старiнные напитки.",
-
-  "brewinandchewin.tooltip.tipsy1": "Опьянѣнiя I",
-  "brewinandchewin.tooltip.tipsy2": "Опьянѣнiя II",
-  "brewinandchewin.tooltip.tipsy3": "Опьянѣнiя III",
-  "brewinandchewin.tooltip.tipsy4": "Опьянѣнiя IV",
-  "brewinandchewin.tooltip.tipsy5": "Опьянѣнiя V",
-  "brewinandchewin.tooltip.tipsy6": "Опьянѣнiя VI",
-  "brewinandchewin.tooltip.tipsy7": "Опьянѣнiя VII",
-  "brewinandchewin.tooltip.tipsy8": "Опьянѣнiя VIII",
-  "brewinandchewin.tooltip.tipsy9": "Опьянѣнiя IX",
-  "brewinandchewin.tooltip.tipsy10": "Опьянѣнiя X"
+  "advancements.every_vintage_beverage.description": "Прiготовьтѣ всѣ возможные старiнные напитки."
 }

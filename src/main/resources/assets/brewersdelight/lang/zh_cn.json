@@ -46,16 +46,5 @@
   "advancements.any_vintage_beverage.title": "任意陈年饮品",
   "advancements.any_vintage_beverage.description": "酿造你第一杯陈年饮品。",
   "advancements.every_vintage_beverage.title": "所有陈年饮品",
-  "advancements.every_vintage_beverage.description": "酿造所有可能的陈年饮品。",
-
-  "brewinandchewin.tooltip.tipsy1": "微醺 I",
-  "brewinandchewin.tooltip.tipsy2": "微醺 II",
-  "brewinandchewin.tooltip.tipsy3": "微醺 III",
-  "brewinandchewin.tooltip.tipsy4": "微醺 IV",
-  "brewinandchewin.tooltip.tipsy5": "微醺 V",
-  "brewinandchewin.tooltip.tipsy6": "微醺 VI",
-  "brewinandchewin.tooltip.tipsy7": "微醺 VII",
-  "brewinandchewin.tooltip.tipsy8": "微醺 VIII",
-  "brewinandchewin.tooltip.tipsy9": "微醺 IX",
-  "brewinandchewin.tooltip.tipsy10": "微醺 X"
+  "advancements.every_vintage_beverage.description": "酿造所有可能的陈年饮品。"
 }

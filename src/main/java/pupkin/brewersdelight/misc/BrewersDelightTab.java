@@ -11,25 +11,26 @@ import pupkin.brewersdelight.item.BrewersItems;
 
 import java.util.Arrays;
 
-public class BrewersDelightTab {
+public class BrewersDelightTab
+{
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BrewersDelight.MOD_ID);
 	
 	@SuppressWarnings("unused")
 	public static final RegistryObject<CreativeModeTab> TAB_BREWERSDELIGHT = CREATIVE_TABS.register("brewers_delight_tab", () ->
-			CreativeModeTab.builder()
-					.title(Component.translatable("itemgroup." + BrewersDelight.MOD_ID + ".BrewersDelightTab"))
-					.icon(() -> new ItemStack(BrewersItems.WHISKY.get()))
-					.displayItems((displayParams, output) -> {
-						Arrays.asList(
-								BrewersItems.BEVERAGES,
-								BrewersItems.COMPAT_BEVERAGES,
-								BrewersItems.CHALLENGE_BEVERAGES,
-								BrewersItems.VINTAGE_BEVERAGES
-						).forEach(registry ->
-								registry.getEntries().forEach(item -> output.accept(item.get()))
-						);
-					})
-					.build()
-	);
+                        CreativeModeTab.builder()
+                                       .title(Component.translatable("itemgroup." + BrewersDelight.MOD_ID + ".BrewersDelightTab"))
+                                       .icon(() -> new ItemStack(BrewersItems.BRAGA.get()))
+                                       .displayItems((displayParams, output) -> {
+                                           Arrays.asList(
+                                                   BrewersItems.BEVERAGES,
+                                                   BrewersItems.COMPAT_BEVERAGES,
+                                                   BrewersItems.CHALLENGE_BEVERAGES,
+                                                   BrewersItems.VINTAGE_BEVERAGES
+                                                        ).forEach(registry ->
+                                                                          registry.getEntries().forEach(item -> output.accept(item.get()))
+                                                                 );
+                                       })
+                                       .build()
+               );
 }

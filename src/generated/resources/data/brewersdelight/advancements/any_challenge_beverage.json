@@ -61,6 +61,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bc_kombucha": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kombucha"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_mead": {
       "conditions": {
         "items": [
@@ -180,54 +192,6 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "flaxen_cheese_stout": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:flaxen_cheese_stout"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "flying_dutchman": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:flying_dutchman"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "gut_wrecker": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:gut_wrecker"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "scarlet_cheese_stout": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:scarlet_cheese_stout"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -238,7 +202,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "brewersdelight:flaxen_cheese_stout"
+      "item": "brewersdelight:braga"
     },
     "show_toast": true,
     "title": {
@@ -251,21 +215,18 @@
       "bc_vodka",
       "bc_mead",
       "bc_rice_wine",
-      "bc_egg_grog",
-      "bc_strongroot_ale",
-      "bc_saccharine_rum",
       "bc_pale_jane",
-      "bc_dread_nog",
-      "bc_salty_folly",
-      "bc_steel_toe_stout",
+      "bc_egg_grog",
       "bc_glittering_grenadine",
+      "bc_saccharine_rum",
+      "bc_salty_folly",
       "bc_bloody_mary",
       "bc_red_rum",
+      "bc_strongroot_ale",
+      "bc_steel_toe_stout",
+      "bc_dread_nog",
       "bc_withering_dross",
-      "flaxen_cheese_stout",
-      "scarlet_cheese_stout",
-      "flying_dutchman",
-      "gut_wrecker"
+      "bc_kombucha"
     ]
   ],
   "rewards": {
