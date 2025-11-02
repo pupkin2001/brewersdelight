@@ -15,6 +15,7 @@ import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.tag.BrewersTags;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
+import umpaz.brewinandchewin.common.tag.BnCTags;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -41,7 +42,7 @@ public class BDItemTagProvider extends ItemTagsProvider
 		                                                         );
 		
 		beverageRegistries.forEach(registry ->
-				                           addBoozeItems(registry, BrewersTags.BEVERAGES)
+				                           addBoozeItems(registry, BnCTags.FERMENTED_DRINKS)
 		                          );
 		
 		assert BnCItems.DREAD_NOG.getKey() != null;

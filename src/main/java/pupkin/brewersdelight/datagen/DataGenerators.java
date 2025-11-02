@@ -24,8 +24,9 @@ public class DataGenerators
 		
 		BDBlockTagProvider blockTags = new BDBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
 		generator.addProvider(event.includeServer(), blockTags);
-		generator.addProvider(event.includeServer(), new BDItemTagProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		generator.addProvider(event.includeClient(), new BDItemModelProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeServer(), new BDItemTagProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		generator.addProvider(event.includeServer(), new BDAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(event.includeServer(), new BDKegFermentingRecipeProvider(generator));
 	}
 }

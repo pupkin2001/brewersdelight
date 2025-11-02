@@ -76,5 +76,9 @@
   "advancements.any_vintage_beverage.title": "Любой старинный напиток",
   "advancements.any_vintage_beverage.description": "Приготовьте ваш первый старинный напиток.",
   "advancements.every_vintage_beverage.title": "Все старинные напитки",
-  "advancements.every_vintage_beverage.description": "Приготовьте все возможные старинные напитки."
+  "advancements.every_vintage_beverage.description": "Приготовьте все возможные старинные напитки.",
+
+  "tag.item.brewinandchewin.fermented_drinks": "Ферментитрованные напитки",
+  "tag.item.brewersdelight.challenge_beverages": "Исключительные напитки",
+  "tag.item.brewersdelight.vintage_beverages": "Старинные напитки"
 }
