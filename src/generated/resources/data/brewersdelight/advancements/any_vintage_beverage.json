@@ -1,6 +1,43 @@
 {
   "parent": "brewersdelight:root",
-  "criteria": {},
+  "criteria": {
+    "sbiten": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "syta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vzvar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
   "display": {
     "announce_to_chat": true,
     "description": {
@@ -9,7 +46,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "brewersdelight:braga"
+      "item": "brewersdelight:sbiten"
     },
     "show_toast": true,
     "title": {
@@ -17,7 +54,11 @@
     }
   },
   "requirements": [
-    []
+    [
+      "sbiten",
+      "syta",
+      "vzvar"
+    ]
   ],
   "rewards": {
     "experience": 100

@@ -192,12 +192,312 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bourbon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:bourbon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "braga": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewersdelight:braga"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "brandy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:brandy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cahors": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cahors"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "champagne": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:champagne"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cider": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cider"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cognac": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:cognac"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "compote": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:compote"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_whisky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:corn_whisky"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flaxen_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flaxen_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flying_dutchman": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gut_wrecker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kvass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:kvass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liqueur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:liqueur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "martini": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:martini"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "melon_schnapps": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:melon_schnapps"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "moonshine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:moonshine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "old_fashion": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:old_fashion"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sake": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sbiten": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scarlet_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "syta": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:syta"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tequila": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:tequila"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vzvar": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vzvar"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "whisky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:whisky"
             ]
           }
         ]
@@ -239,7 +539,32 @@
       "bc_dread_nog",
       "bc_withering_dross",
       "bc_kombucha",
-      "braga"
+      "braga",
+      "brandy",
+      "cider",
+      "compote",
+      "gin",
+      "kvass",
+      "liqueur",
+      "melon_schnapps",
+      "old_fashion",
+      "sake",
+      "tequila",
+      "whisky",
+      "bourbon",
+      "corn_whisky",
+      "moonshine",
+      "cahors",
+      "champagne",
+      "cognac",
+      "martini",
+      "flaxen_cheese_stout",
+      "scarlet_cheese_stout",
+      "flying_dutchman",
+      "gut_wrecker",
+      "sbiten",
+      "syta",
+      "vzvar"
     ]
   ],
   "rewards": {

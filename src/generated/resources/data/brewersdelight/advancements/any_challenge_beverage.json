@@ -192,6 +192,54 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "flaxen_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flaxen_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flying_dutchman": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gut_wrecker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scarlet_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -202,7 +250,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "brewersdelight:braga"
+      "item": "brewersdelight:flaxen_cheese_stout"
     },
     "show_toast": true,
     "title": {
@@ -226,7 +274,11 @@
       "bc_steel_toe_stout",
       "bc_dread_nog",
       "bc_withering_dross",
-      "bc_kombucha"
+      "bc_kombucha",
+      "flaxen_cheese_stout",
+      "scarlet_cheese_stout",
+      "flying_dutchman",
+      "gut_wrecker"
     ]
   ],
   "rewards": {
