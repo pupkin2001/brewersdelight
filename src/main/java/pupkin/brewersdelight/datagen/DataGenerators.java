@@ -27,6 +27,6 @@ public class DataGenerators
 		generator.addProvider(event.includeClient(), new BDItemModelProvider(packOutput, existingFileHelper));
 		generator.addProvider(event.includeServer(), new BDItemTagProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		generator.addProvider(event.includeServer(), new BDAdvancementProvider(packOutput, lookupProvider, existingFileHelper));
-		generator.addProvider(event.includeServer(), new BDKegFermentingRecipeProvider(generator));
+		generator.addProvider(event.includeServer(), new BDRecipeProvider(packOutput));
 	}
 }

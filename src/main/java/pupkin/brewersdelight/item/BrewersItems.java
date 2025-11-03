@@ -139,7 +139,7 @@ public class BrewersItems
 	
 	// Compatibility
 	// BnC 3.0 does have a function for registering items with mod dependency: registerWithTab(String name, Item item, @Nullable String requiredMod)
-	// However, mods adding corn or grapes are frequent and you can't account for all of them manually .
+	// However, mods adding corn or grapes are frequent, and you can't account for all of them manually.
 	
 	// Corn
 	public static final RegistryObject<Item> BOURBON = COMPAT_BEVERAGES.register("bourbon",

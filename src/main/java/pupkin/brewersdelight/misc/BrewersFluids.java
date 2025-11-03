@@ -18,35 +18,35 @@ public class BrewersFluids
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
 	
 	// Braga fluid
-	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xFFFFFFFF);
-	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xFFFFFFFF);
-	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xFFFFFFFF);
-	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xFFFFFFFF);
-	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xFFFFFFFF);
-	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0xFFFFFFFF);
-	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xFFFFFFFF);
-	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0xFFFFFFFF);
-	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0xFFFFFFFF);
-	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0xFFFFFFFF);
-	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xFFFFFFFF);
-	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xFFFFFFFF);
+	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xdeddb0d1);
+	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xdb6a00cf);
+	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xffe86aa1);
+	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xffe03cc2);
+	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xdcfaffc2);
+	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0x694800);
+	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xf20000d6);
+	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0xff000047);
+	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0xee80008f);
+	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0xe8e8e870);
+	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xb9d6aab5);
+	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xc44a16d4);
 	
 	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFFFFFFF);
 	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFFFFFFFF);
 	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xFFFFFFFF);
 	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFFFFFFFF);
 	
-	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xFFFFFFFF);
-	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xFFFFFFFF);
-	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0xFFFFFFFF);
+	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xf27c1bc7);
+	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xf27c1bc7);
+	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0x914a20bd);
 	
-	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0xFFFFFFFF);
-	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0xFFFFFFFF);
-	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xFFFFFFFF);
-	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFFFFFFFF);
-	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0xFFFFFFFF);
-	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0xFFFFFFFF);
-	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xFFFFFFFF);
+	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0xcfb70059);
+	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x85480573);
+	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xc1c27fe3);
+	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0x820c0cfc);
+	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0xf5ff003d);
+	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0xbf77108c);
+	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xca6d53e3);
 	
 	// I really should've copied the fluid registration code from BnC, but I'm in the middle of the sunk cost fallacy
 	// also I don't really want to register each beverage one by one

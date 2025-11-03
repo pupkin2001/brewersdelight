@@ -1,0 +1,13 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 250,
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "filling": false,
+  "fluid": "brewersdelight:brandy",
+  "output": {
+    "item": "brewersdelight:brandy"
+  },
+  "strict": false
+}
