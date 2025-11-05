@@ -17,7 +17,6 @@ public class BrewersFluids
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(Keys.FLUID_TYPES, BrewersDelight.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
 	
-	// Braga fluid
 	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xdeddb0d1);
 	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xdb6a00cf);
 	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xffe86aa1);
@@ -47,6 +46,46 @@ public class BrewersFluids
 	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0xf5ff003d);
 	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0xbf77108c);
 	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xca6d53e3);
+	
+	// Bloat
+	public static final FluidRegistryObject ABSINTHE = registerAlcoholFluid("absinthe", 0xFFFFFFFF);
+	public static final FluidRegistryObject AMARO = registerAlcoholFluid("amaro", 0xFFFFFFFF);
+	public static final FluidRegistryObject AMONTILLADO = registerAlcoholFluid("amontillado", 0xFFFFFFFF);
+	public static final FluidRegistryObject APEROL = registerAlcoholFluid("aperol", 0xFFFFFFFF);
+	public static final FluidRegistryObject ARMAGNAC = registerAlcoholFluid("armagnac", 0xFFFFFFFF);
+	public static final FluidRegistryObject BAIJIU = registerAlcoholFluid("baijiu", 0xFFFFFFFF);
+	public static final FluidRegistryObject BECHEROVKA = registerAlcoholFluid("becherovka", 0xFFFFFFFF);
+	public static final FluidRegistryObject BITTER = registerAlcoholFluid("bitter", 0xFFFFFFFF);
+	public static final FluidRegistryObject CALVADOS = registerAlcoholFluid("calvados", 0xFFFFFFFF);
+	public static final FluidRegistryObject CAMPARI = registerAlcoholFluid("campari", 0xFFFFFFFF);
+	public static final FluidRegistryObject CHACHA = registerAlcoholFluid("chacha", 0xFFFFFFFF);
+	public static final FluidRegistryObject FERNET = registerAlcoholFluid("fernet", 0xFFFFFFFF);
+	public static final FluidRegistryObject GLUHWEIN = registerAlcoholFluid("gluhwein", 0xFFFFFFFF);
+	public static final FluidRegistryObject GROG = registerAlcoholFluid("grog", 0xFFFFFFFF);
+	public static final FluidRegistryObject KASHASA = registerAlcoholFluid("kashasa", 0xFFFFFFFF);
+	public static final FluidRegistryObject MEZCAL = registerAlcoholFluid("mezcal", 0xFFFFFFFF);
+	public static final FluidRegistryObject NEGRONI = registerAlcoholFluid("negroni", 0xFFFFFFFF);
+	public static final FluidRegistryObject OUZO = registerAlcoholFluid("ouzo", 0xFFFFFFFF);
+	public static final FluidRegistryObject PASTIS = registerAlcoholFluid("pastis", 0xFFFFFFFF);
+	public static final FluidRegistryObject PUNCH = registerAlcoholFluid("punch", 0xFFFFFFFF);
+	public static final FluidRegistryObject RAKIA = registerAlcoholFluid("rakia", 0xFFFFFFFF);
+	public static final FluidRegistryObject RUM = registerAlcoholFluid("rum", 0xFFFFFFFF);
+	public static final FluidRegistryObject SAMBUCA = registerAlcoholFluid("sambuca", 0xFFFFFFFF);
+	public static final FluidRegistryObject SHERRY = registerAlcoholFluid("sherry", 0xFFFFFFFF);
+	public static final FluidRegistryObject SOCATA = registerAlcoholFluid("socata", 0xFFFFFFFF);
+	public static final FluidRegistryObject SOJU = registerAlcoholFluid("soju", 0xFFFFFFFF);
+	public static final FluidRegistryObject SOTOL = registerAlcoholFluid("sotol", 0xFFFFFFFF);
+	public static final FluidRegistryObject TODDY = registerAlcoholFluid("toddy", 0xFFFFFFFF);
+	public static final FluidRegistryObject TRIPLE_SEC = registerAlcoholFluid("triple-sec", 0xFFFFFFFF);
+	public static final FluidRegistryObject TSIPURO = registerAlcoholFluid("tsipuro", 0xFFFFFFFF);
+	public static final FluidRegistryObject VERMOUTH = registerAlcoholFluid("vermouth", 0xFFFFFFFF);
+	public static final FluidRegistryObject TSUIKE = registerAlcoholFluid("tsuike", 0xFFFFFFFF);
+	public static final FluidRegistryObject VISHINATA = registerAlcoholFluid("vishinata", 0xFFFFFFFF);
+	
+	// Compatibility
+	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFFFFFFFF);
+	
+	
 	
 	// I really should've copied the fluid registration code from BnC, but I'm in the middle of the sunk cost fallacy
 	// also I don't really want to register each beverage one by one

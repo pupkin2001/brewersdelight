@@ -52,72 +52,72 @@ public class BrewersItems
 			() -> new BoozeItem(BrewersFluids.WHISKY.source().get(), foodItem(BeverageProperties.WHISKY)));
 	
 	// Bloat TODO: Commented out due to poor balancing and low texture variety.
-//    public static final RegistryObject<Item> ABSINTHE = BEVERAGES.register("absinthe",
-//            () -> new BoozeItem(BrewersFluids.ABSINTHE.source().get(), foodItem(BeverageProperties.ABSINTHE)));
-//    public static final RegistryObject<Item> AMARO = BEVERAGES.register("amaro",
-//            () -> new BoozeItem(BrewersFluids.AMARO.source().get(), foodItem(BeverageProperties.AMARO)));
-//    public static final RegistryObject<Item> AMONTILLADO = BEVERAGES.register("amontillado",
-//            () -> new BoozeItem(BrewersFluids.AMONTILLADO.source().get(), foodItem(BeverageProperties.AMONTILLADO)));
-//    public static final RegistryObject<Item> APEROL = BEVERAGES.register("aperol",
-//            () -> new BoozeItem(BrewersFluids.APEROL.source().get(), foodItem(BeverageProperties.APEROL)));
-//    public static final RegistryObject<Item> ARMAGNAC = BEVERAGES.register("armagnac",
-//            () -> new BoozeItem(BrewersFluids.ARMAGNAC.source().get(), foodItem(BeverageProperties.ARMAGNAC)));
-//    public static final RegistryObject<Item> BAIJIU = BEVERAGES.register("baijiu",
-//            () -> new BoozeItem(BrewersFluids.BAIJIU.source().get(), foodItem(BeverageProperties.BAIJIU)));
-//    public static final RegistryObject<Item> BECHEROVKA = BEVERAGES.register("becherovka",
-//            () -> new BoozeItem(BrewersFluids.BECHEROVKA.source().get(), foodItem(BeverageProperties.BECHEROVKA)));
-//    public static final RegistryObject<Item> BITTER = BEVERAGES.register("bitter",
-//            () -> new BoozeItem(BrewersFluids.BITTER.source().get(), foodItem(BeverageProperties.BITTER)));
-//    public static final RegistryObject<Item> CALVADOS = BEVERAGES.register("calvados",
-//            () -> new BoozeItem(BrewersFluids.CALVADOS.source().get(), foodItem(BeverageProperties.CALVADOS)));
-//    public static final RegistryObject<Item> CAMPARI = BEVERAGES.register("campari",
-//            () -> new BoozeItem(BrewersFluids.CAMPARI.source().get(), foodItem(BeverageProperties.CAMPARI)));
-//    public static final RegistryObject<Item> CHACHA = BEVERAGES.register("chacha",
-//            () -> new BoozeItem(BrewersFluids.CHACHA.source().get(), foodItem(BeverageProperties.CHACHA)));
-//    public static final RegistryObject<Item> FERNET = BEVERAGES.register("fernet",
-//            () -> new BoozeItem(BrewersFluids.FERNET.source().get(), foodItem(BeverageProperties.FERNET)));
-//    public static final RegistryObject<Item> GLUHWEIN = BEVERAGES.register("gluhwein",
-//            () -> new BoozeItem(BrewersFluids.GLUHWEIN.source().get(), foodItem(BeverageProperties.GLUHWEIN)));
-//    public static final RegistryObject<Item> GROG = BEVERAGES.register("grog",
-//            () -> new BoozeItem(BrewersFluids.GROG.source().get(), foodItem(BeverageProperties.GROG)));
-//    public static final RegistryObject<Item> KASHASA = BEVERAGES.register("kashasa",
-//            () -> new BoozeItem(BrewersFluids.KASHASA.source().get(), foodItem(BeverageProperties.KASHASA)));
-//    public static final RegistryObject<Item> MEZCAL = BEVERAGES.register("mezcal",
-//            () -> new BoozeItem(BrewersFluids.MEZCAL.source().get(), foodItem(BeverageProperties.MEZCAL)));
-//    public static final RegistryObject<Item> NEGRONI = BEVERAGES.register("negroni",
-//            () -> new BoozeItem(BrewersFluids.NEGRONI.source().get(), foodItem(BeverageProperties.NEGRONI)));
-//    public static final RegistryObject<Item> OUZO = BEVERAGES.register("ouzo",
-//            () -> new BoozeItem(BrewersFluids.OUZO.source().get(), foodItem(BeverageProperties.OUZO)));
-//    public static final RegistryObject<Item> PASTIS = BEVERAGES.register("pastis",
-//            () -> new BoozeItem(BrewersFluids.PASTIS.source().get(), foodItem(BeverageProperties.PASTIS)));
-//    public static final RegistryObject<Item> PUNCH = BEVERAGES.register("punch",
-//            () -> new BoozeItem(BrewersFluids.PUNCH.source().get(), foodItem(BeverageProperties.PUNCH)));
-//    public static final RegistryObject<Item> RAKIA = BEVERAGES.register("rakia",
-//            () -> new BoozeItem(BrewersFluids.RAKIA.source().get(), foodItem(BeverageProperties.RAKIA)));
-//    public static final RegistryObject<Item> RUM = BEVERAGES.register("rum",
-//            () -> new BoozeItem(BrewersFluids.RUM.source().get(), foodItem(BeverageProperties.RUM)));
-//    public static final RegistryObject<Item> SAMBUCA = BEVERAGES.register("sambuca",
-//            () -> new BoozeItem(BrewersFluids.SAMBUCA.source().get(), foodItem(BeverageProperties.SAMBUCA)));
-//    public static final RegistryObject<Item> SHERRY = BEVERAGES.register("sherry",
-//            () -> new BoozeItem(BrewersFluids.SHERRY.source().get(), foodItem(BeverageProperties.SHERRY)));
-//    public static final RegistryObject<Item> SOCATA = BEVERAGES.register("socata",
-//            () -> new BoozeItem(BrewersFluids.SOCATA.source().get(), foodItem(BeverageProperties.SOCATA)));
-//    public static final RegistryObject<Item> SOJU = BEVERAGES.register("soju",
-//            () -> new BoozeItem(BrewersFluids.SOJU.source().get(), foodItem(BeverageProperties.SOJU)));
-//    public static final RegistryObject<Item> SOTOL = BEVERAGES.register("sotol",
-//            () -> new BoozeItem(BrewersFluids.SOTOL.source().get(), foodItem(BeverageProperties.SOTOL)));
-//    public static final RegistryObject<Item> TODDY = BEVERAGES.register("toddy",
-//            () -> new BoozeItem(BrewersFluids.TODDY.source().get(), foodItem(BeverageProperties.TODDY)));
-//    public static final RegistryObject<Item> TRIPLE_SEC = BEVERAGES.register("triple-sec",
-//            () -> new BoozeItem(BrewersFluids.TRIPLE_SEC.source().get(), foodItem(BeverageProperties.TRIPLE_SEC)));
-//    public static final RegistryObject<Item> TSIPURO = BEVERAGES.register("tsipuro",
-//            () -> new BoozeItem(BrewersFluids.TSIPURO.source().get(), foodItem(BeverageProperties.TSIPURO)));
-//    public static final RegistryObject<Item> VERMOUTH = BEVERAGES.register("vermouth",
-//            () -> new BoozeItem(BrewersFluids.VERMOUTH.source().get(), foodItem(BeverageProperties.VERMOUTH)));
-//    public static final RegistryObject<Item> TSUIKE = BEVERAGES.register("tsuike",
-//            () -> new BoozeItem(BrewersFluids.TSUIKE.source().get(), foodItem(BeverageProperties.TSUIKE)));
-//    public static final RegistryObject<Item> VISHINATA = BEVERAGES.register("vishinata",
-//            () -> new BoozeItem(BrewersFluids.VISHINATA.source().get(), foodItem(BeverageProperties.VISHINATA)));
+    public static final RegistryObject<Item> ABSINTHE = BEVERAGES.register("absinthe",
+            () -> new BoozeItem(BrewersFluids.ABSINTHE.source().get(), foodItem(BeverageProperties.ABSINTHE)));
+    public static final RegistryObject<Item> AMARO = BEVERAGES.register("amaro",
+            () -> new BoozeItem(BrewersFluids.AMARO.source().get(), foodItem(BeverageProperties.AMARO)));
+    public static final RegistryObject<Item> AMONTILLADO = BEVERAGES.register("amontillado",
+            () -> new BoozeItem(BrewersFluids.AMONTILLADO.source().get(), foodItem(BeverageProperties.AMONTILLADO)));
+    public static final RegistryObject<Item> APEROL = BEVERAGES.register("aperol",
+            () -> new BoozeItem(BrewersFluids.APEROL.source().get(), foodItem(BeverageProperties.APEROL)));
+    public static final RegistryObject<Item> ARMAGNAC = BEVERAGES.register("armagnac",
+            () -> new BoozeItem(BrewersFluids.ARMAGNAC.source().get(), foodItem(BeverageProperties.ARMAGNAC)));
+    public static final RegistryObject<Item> BAIJIU = BEVERAGES.register("baijiu",
+            () -> new BoozeItem(BrewersFluids.BAIJIU.source().get(), foodItem(BeverageProperties.BAIJIU)));
+    public static final RegistryObject<Item> BECHEROVKA = BEVERAGES.register("becherovka",
+            () -> new BoozeItem(BrewersFluids.BECHEROVKA.source().get(), foodItem(BeverageProperties.BECHEROVKA)));
+    public static final RegistryObject<Item> BITTER = BEVERAGES.register("bitter",
+            () -> new BoozeItem(BrewersFluids.BITTER.source().get(), foodItem(BeverageProperties.BITTER)));
+    public static final RegistryObject<Item> CALVADOS = BEVERAGES.register("calvados",
+            () -> new BoozeItem(BrewersFluids.CALVADOS.source().get(), foodItem(BeverageProperties.CALVADOS)));
+    public static final RegistryObject<Item> CAMPARI = BEVERAGES.register("campari",
+            () -> new BoozeItem(BrewersFluids.CAMPARI.source().get(), foodItem(BeverageProperties.CAMPARI)));
+    public static final RegistryObject<Item> CHACHA = BEVERAGES.register("chacha",
+            () -> new BoozeItem(BrewersFluids.CHACHA.source().get(), foodItem(BeverageProperties.CHACHA)));
+    public static final RegistryObject<Item> FERNET = BEVERAGES.register("fernet",
+            () -> new BoozeItem(BrewersFluids.FERNET.source().get(), foodItem(BeverageProperties.FERNET)));
+    public static final RegistryObject<Item> GLUHWEIN = BEVERAGES.register("gluhwein",
+            () -> new BoozeItem(BrewersFluids.GLUHWEIN.source().get(), foodItem(BeverageProperties.GLUHWEIN)));
+    public static final RegistryObject<Item> GROG = BEVERAGES.register("grog",
+            () -> new BoozeItem(BrewersFluids.GROG.source().get(), foodItem(BeverageProperties.GROG)));
+    public static final RegistryObject<Item> KASHASA = BEVERAGES.register("kashasa",
+            () -> new BoozeItem(BrewersFluids.KASHASA.source().get(), foodItem(BeverageProperties.KASHASA)));
+    public static final RegistryObject<Item> MEZCAL = BEVERAGES.register("mezcal",
+            () -> new BoozeItem(BrewersFluids.MEZCAL.source().get(), foodItem(BeverageProperties.MEZCAL)));
+    public static final RegistryObject<Item> NEGRONI = BEVERAGES.register("negroni",
+            () -> new BoozeItem(BrewersFluids.NEGRONI.source().get(), foodItem(BeverageProperties.NEGRONI)));
+    public static final RegistryObject<Item> OUZO = BEVERAGES.register("ouzo",
+            () -> new BoozeItem(BrewersFluids.OUZO.source().get(), foodItem(BeverageProperties.OUZO)));
+    public static final RegistryObject<Item> PASTIS = BEVERAGES.register("pastis",
+            () -> new BoozeItem(BrewersFluids.PASTIS.source().get(), foodItem(BeverageProperties.PASTIS)));
+    public static final RegistryObject<Item> PUNCH = BEVERAGES.register("punch",
+            () -> new BoozeItem(BrewersFluids.PUNCH.source().get(), foodItem(BeverageProperties.PUNCH)));
+    public static final RegistryObject<Item> RAKIA = BEVERAGES.register("rakia",
+            () -> new BoozeItem(BrewersFluids.RAKIA.source().get(), foodItem(BeverageProperties.RAKIA)));
+    public static final RegistryObject<Item> RUM = BEVERAGES.register("rum",
+            () -> new BoozeItem(BrewersFluids.RUM.source().get(), foodItem(BeverageProperties.RUM)));
+    public static final RegistryObject<Item> SAMBUCA = BEVERAGES.register("sambuca",
+            () -> new BoozeItem(BrewersFluids.SAMBUCA.source().get(), foodItem(BeverageProperties.SAMBUCA)));
+    public static final RegistryObject<Item> SHERRY = BEVERAGES.register("sherry",
+            () -> new BoozeItem(BrewersFluids.SHERRY.source().get(), foodItem(BeverageProperties.SHERRY)));
+    public static final RegistryObject<Item> SOCATA = BEVERAGES.register("socata",
+            () -> new BoozeItem(BrewersFluids.SOCATA.source().get(), foodItem(BeverageProperties.SOCATA)));
+    public static final RegistryObject<Item> SOJU = BEVERAGES.register("soju",
+            () -> new BoozeItem(BrewersFluids.SOJU.source().get(), foodItem(BeverageProperties.SOJU)));
+    public static final RegistryObject<Item> SOTOL = BEVERAGES.register("sotol",
+            () -> new BoozeItem(BrewersFluids.SOTOL.source().get(), foodItem(BeverageProperties.SOTOL)));
+    public static final RegistryObject<Item> TODDY = BEVERAGES.register("toddy",
+            () -> new BoozeItem(BrewersFluids.TODDY.source().get(), foodItem(BeverageProperties.TODDY)));
+    public static final RegistryObject<Item> TRIPLE_SEC = BEVERAGES.register("triple-sec",
+            () -> new BoozeItem(BrewersFluids.TRIPLE_SEC.source().get(), foodItem(BeverageProperties.TRIPLE_SEC)));
+    public static final RegistryObject<Item> TSIPURO = BEVERAGES.register("tsipuro",
+            () -> new BoozeItem(BrewersFluids.TSIPURO.source().get(), foodItem(BeverageProperties.TSIPURO)));
+    public static final RegistryObject<Item> VERMOUTH = BEVERAGES.register("vermouth",
+            () -> new BoozeItem(BrewersFluids.VERMOUTH.source().get(), foodItem(BeverageProperties.VERMOUTH)));
+    public static final RegistryObject<Item> TSUIKE = BEVERAGES.register("tsuike",
+            () -> new BoozeItem(BrewersFluids.TSUIKE.source().get(), foodItem(BeverageProperties.TSUIKE)));
+    public static final RegistryObject<Item> VISHINATA = BEVERAGES.register("vishinata",
+            () -> new BoozeItem(BrewersFluids.VISHINATA.source().get(), foodItem(BeverageProperties.VISHINATA)));
 	
 	// Challenge beverages
 	public static final RegistryObject<Item> FLAXEN_CHEESE_STOUT = CHALLENGE_BEVERAGES.register("flaxen_cheese_stout",

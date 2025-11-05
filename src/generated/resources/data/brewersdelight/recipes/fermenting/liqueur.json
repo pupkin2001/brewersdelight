@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "brewinandchewin:honey"
+  },
+  "experience": 1.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "tag": "forge:berries"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 750,
+    "fluid": "brewersdelight:liqueur"
+  },
+  "temperature": 3
+}

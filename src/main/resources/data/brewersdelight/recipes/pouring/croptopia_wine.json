@@ -1,0 +1,10 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 250,
+  "filling": true,
+  "fluid": "brewersdelight:wine",
+  "output": {
+    "item": "croptopia:wine"
+  },
+  "strict": false
+}

@@ -1,5 +1,11 @@
 {
   "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 1000,
+    "fluid": "minecraft:water"
+  },
+  "experience": 1.0,
+  "fermentingtime": 9600,
   "ingredients": [
     [
       {
@@ -16,18 +22,10 @@
       "item": "minecraft:honey_bottle"
     }
   ],
-  "fluiditem": {
-    "item": "minecraft:water_bucket"
-  },
+  "recipe_book_tab": "drinks",
   "result": {
-    "count": 4,
-    "item": "brewersdelight:vzvar"
+    "count": 1000,
+    "fluid": "brewersdelight:vzvar"
   },
-  "container": {
-    "item": "brewinandchewin:tankard"
-  },
-  "experience": 0.6,
-  "fermentingtime": 12000,
-  "temperature": "warm",
-  "recipe_book_tab": "drinks"
+  "temperature": 3
 }

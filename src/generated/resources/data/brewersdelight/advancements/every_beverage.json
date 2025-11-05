@@ -1,6 +1,78 @@
 {
   "parent": "brewersdelight:root",
   "criteria": {
+    "absinthe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:absinthe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "amaro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:amaro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "amontillado": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:amontillado"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "aperol": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:aperol"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "armagnac": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:armagnac"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "baijiu": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:baijiu"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_beer": {
       "conditions": {
         "items": [
@@ -193,6 +265,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "becherovka": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:becherovka"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bitter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:bitter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bourbon": {
       "conditions": {
         "items": [
@@ -235,6 +331,42 @@
           {
             "items": [
               "brewersdelight:cahors"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "calvados": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:calvados"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "campari": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:campari"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chacha": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:chacha"
             ]
           }
         ]
@@ -301,12 +433,60 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "fernet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:fernet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "gin": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewersdelight:gin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gluhwein": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gluhwein"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:grog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kashasa": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:kashasa"
             ]
           }
         ]
@@ -361,12 +541,36 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "mezcal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:mezcal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "moonshine": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewersdelight:moonshine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "negroni": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:negroni"
             ]
           }
         ]
@@ -385,6 +589,66 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "ouzo": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:ouzo"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pastis": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:pastis"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "punch": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:punch"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rakia": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:rakia"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "sake": {
       "conditions": {
         "items": [
@@ -397,12 +661,72 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "sambuca": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sambuca"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "sbiten": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewersdelight:sbiten"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sherry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sherry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "socata": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:socata"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "soju": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:soju"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sotol": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sotol"
             ]
           }
         ]
@@ -427,6 +751,78 @@
           {
             "items": [
               "brewersdelight:tequila"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toddy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:toddy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "triple-sec": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:triple-sec"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tsipuro": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:tsipuro"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tsuike": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:tsuike"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vermouth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vermouth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vishinata": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vishinata"
             ]
           }
         ]
@@ -557,6 +953,105 @@
     ],
     [
       "whisky"
+    ],
+    [
+      "absinthe"
+    ],
+    [
+      "amaro"
+    ],
+    [
+      "amontillado"
+    ],
+    [
+      "aperol"
+    ],
+    [
+      "armagnac"
+    ],
+    [
+      "baijiu"
+    ],
+    [
+      "becherovka"
+    ],
+    [
+      "bitter"
+    ],
+    [
+      "calvados"
+    ],
+    [
+      "campari"
+    ],
+    [
+      "chacha"
+    ],
+    [
+      "fernet"
+    ],
+    [
+      "gluhwein"
+    ],
+    [
+      "grog"
+    ],
+    [
+      "kashasa"
+    ],
+    [
+      "mezcal"
+    ],
+    [
+      "negroni"
+    ],
+    [
+      "ouzo"
+    ],
+    [
+      "pastis"
+    ],
+    [
+      "punch"
+    ],
+    [
+      "rakia"
+    ],
+    [
+      "rum"
+    ],
+    [
+      "sambuca"
+    ],
+    [
+      "sherry"
+    ],
+    [
+      "socata"
+    ],
+    [
+      "soju"
+    ],
+    [
+      "sotol"
+    ],
+    [
+      "toddy"
+    ],
+    [
+      "triple-sec"
+    ],
+    [
+      "tsipuro"
+    ],
+    [
+      "vermouth"
+    ],
+    [
+      "tsuike"
+    ],
+    [
+      "vishinata"
     ],
     [
       "bourbon"

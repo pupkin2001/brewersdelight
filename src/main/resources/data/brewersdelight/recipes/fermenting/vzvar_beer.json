@@ -1,33 +1,29 @@
 {
   "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "minecraft:beer"
+  },
+  "experience": 1.0,
+  "fermentingtime": 4800,
   "ingredients": [
-    [
-      {
-        "tag": "forge:fruits/apple"
-      },
-      {
-        "tag": "forge:fruits/cherry"
-      }
-    ],
     {
-      "tag": "forge:raisins"
+      "tag": "forge:bread"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "forge:bread"
+    },
+    {
+      "tag": "forge:bread"
     }
   ],
-  "fluiditem": {
-    "item": "brewinandchewin:beer"
-  },
+  "recipe_book_tab": "drinks",
   "result": {
-    "count": 4,
-    "item": "brewersdelight:vzvar"
+    "count": 1000,
+    "fluid": "brewersdelight:vzvar"
   },
-  "container": {
-    "item": "brewinandchewin:tankard"
-  },
-  "experience": 0.6,
-  "fermentingtime": 12000,
-  "temperature": "warm",
-  "recipe_book_tab": "drinks"
+  "temperature": 3
 }

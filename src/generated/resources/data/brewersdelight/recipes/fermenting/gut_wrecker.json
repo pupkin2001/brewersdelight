@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "minecraft:milk"
+  },
+  "experience": 2.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "tag": "forge:cattail"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "tag": "forge:vegetables"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1000,
+    "fluid": "brewersdelight:gut_wrecker"
+  },
+  "temperature": 3
+}

@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 250,
+    "fluid": "brewersdelight:braga"
+  },
+  "experience": 1.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    {
+      "tag": "forge:vegetables/corn"
+    },
+    {
+      "tag": "forge:vegetables/corn"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 500,
+    "fluid": "brewersdelight:moonshine"
+  },
+  "temperature": 3
+}

@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 250,
+    "fluid": "minecraft:water"
+  },
+  "experience": 2.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    {
+      "item": "brewinandchewin:scarlet_cheese_wedge"
+    },
+    {
+      "item": "brewinandchewin:scarlet_cheese_wedge"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "tag": "forge:mushrooms"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 250,
+    "fluid": "brewersdelight:scarlet_cheese_stout"
+  },
+  "temperature": 4
+}
