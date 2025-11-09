@@ -386,6 +386,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false,
 		                    false
 		                   );
+		createPouringRecipe(consumer, "compote",
+		                    BrewersFluids.COMPOTE.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.COMPOTE,
+		                    true,
+		                    false
+		                   );
 		createPouringRecipe(consumer, "gin",
 		                    BrewersFluids.GIN.source().get(),
 		                    250,
@@ -416,6 +424,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    BnCItems.TANKARD,
 		                    BrewersItems.MELON_SCHNAPPS,
 		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "old_fashion",
+		                    BrewersFluids.OLD_FASHION.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.OLD_FASHION,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "sake",
@@ -653,6 +669,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    BnCItems.TANKARD,
 		                    BrewersItems.FERNET,
 		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "gluhwein",
+		                    BrewersFluids.GLUHWEIN.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.GLUHWEIN,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "grog",
