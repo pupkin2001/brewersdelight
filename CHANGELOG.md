@@ -1,5 +1,20 @@
 # Changelog
 
+## [v0.7.0-pre] - 2025/11/09
+
+### Added
+
+- Brewin' and Chewin' v3.0 support:
+  - Add fluids for every beverage
+- Recipe datagen
+- Russian translation for tags
+- Croptopia wine support
+- Wine fermenting recipe
+
+### Removed
+
+- Beverages tag in favor of BnC 'Fermented Drinks' tag
+
 ## [v0.6.2] - 2025/03/28
 
 ### Added
