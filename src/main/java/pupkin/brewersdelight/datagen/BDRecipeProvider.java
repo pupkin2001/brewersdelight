@@ -118,7 +118,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, FRIGID_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLYING_DUTCHMAN.source().getId(), 500,
-		                       "forge:fruits/apple", Items.SUGAR, Items.GLOW_INK_SAC, Items.KELP);
+		                       Items.APPLE, Items.SUGAR, Items.GLOW_INK_SAC, Items.KELP);
 		createFermentingRecipe(consumer, "gut_wrecker", "drinks",
 		                       ForgeMod.MILK.get(), 500,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,

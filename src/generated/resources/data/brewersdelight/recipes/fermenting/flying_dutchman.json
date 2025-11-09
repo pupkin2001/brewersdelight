@@ -8,7 +8,7 @@
   "fermentingtime": 9600,
   "ingredients": [
     {
-      "tag": "forge:fruits/apple"
+      "item": "minecraft:apple"
     },
     {
       "item": "minecraft:sugar"
