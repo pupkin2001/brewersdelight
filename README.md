@@ -11,7 +11,7 @@ Brewer's Delight only supports Forge. NeoForge has not been tested but may work 
   <tr>
     <th width="10%">Minecraft</th>
     <th width="20%">Brewer's Delight</th>
-    <th width="70%">Recommended dependencies</th>
+    <th width="70%">Brewin' and Chewin'</th>
   </tr>
   <tr>
     <td>1.18.2</td>
@@ -29,7 +29,7 @@ Brewer's Delight only supports Forge. NeoForge has not been tested but may work 
     <td>These versions were made to work with <a href="https://github.com/wiidotmom/BrewinAndChewin">this fork by wiidotmom</a>, and will not work with the original. You can, however, use any <a href="https://github.com/Umpaz/BrewinAndChewin/forks?include=active&page=1&period=&sort_by=last_updated">fork of the original Github repository updated to 1.20.1</a>.</td>
   </tr>
   <tr>
-    <td>v0.7 and later</td>
+    <td>v0.7.0-pre and later</td>
     <td>Use the original Brewin' and Chewin' mod. Releases are available on <a href="https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin">CurseForge</a> or can be built from the source code in the <a href="https://github.com/MerchantCalico/BrewinAnd-Chewin">GitHub repository</a>.</td>
   </tr>
   <tr>
