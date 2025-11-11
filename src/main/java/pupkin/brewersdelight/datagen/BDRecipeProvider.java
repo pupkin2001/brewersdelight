@@ -53,6 +53,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	private void generateFermentingRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		// Fermenting drinks
+		// Farmer's Delight
 		createFermentingRecipe(consumer, "braga", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -64,9 +65,9 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       BrewersFluids.BRANDY.source().getId(), 1000,
 		                       "forge:berries", "forge:berries", Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "cider", "drinks",
-		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.CIDER.source().getId(), 1000,
+		                       Fluids.WATER, 500,
+		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       BrewersFluids.CIDER.source().getId(), 500,
 		                       Items.APPLE, Items.APPLE, Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "gin", "drinks",
 		                       BnCFluids.VODKA, 1000,
@@ -83,11 +84,33 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.LIQUEUR.source().getId(), 750,
 		                       ModItems.MELON_JUICE, ModItems.MELON_JUICE, "forge:berries", "forge:berries");
-		createFermentingRecipe(consumer, "melon_schnapps", "drinks",
-		                       Fluids.WATER, 1000,
+		createFermentingRecipe(consumer, "martini_glow_berries", "drinks",
+		                       BrewersFluids.WINE.source().get(), 250,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.MELON_SCHNAPPS.source().getId(), 1000,
+		                       BrewersFluids.MARTINI.source().getId(), 500,
+		                       Items.GLOW_BERRIES, Items.GLOW_BERRIES, Items.SUGAR, Items.SUGAR);
+		createFermentingRecipe(consumer, "martini_mushrooms", "drinks",
+		                       BrewersFluids.WINE.source().get(), 250,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       BrewersFluids.MARTINI.source().getId(), 500,
+		                       "forge:mushrooms", "forge:mushrooms", Items.SUGAR, Items.SUGAR);
+		createFermentingRecipe(consumer, "melon_schnapps_from_water", "drinks",
+		                       Fluids.WATER, 500,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       BrewersFluids.MELON_SCHNAPPS.source().getId(), 500,
 		                       Items.MELON_SLICE, Items.MELON_SLICE, "forge:grain/wheat", "forge:grain/wheat");
+		// No clue what to do here - 4 melon slices for 250 mB of melon juice is enough for 1 bucket of melon schnapps
+		// where is the water coming from?
+		createFermentingRecipe(consumer, "melon_schnapps_from_melon_juice", "drinks",
+		                       BrewersFluids.MELON_JUICE.source().getId(), 250,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       BrewersFluids.MELON_SCHNAPPS.source().getId(), 500,
+		                       "forge:grain/wheat");
+		createFermentingRecipe(consumer, "rum", "drinks",
+		                       Fluids.WATER, 1000,
+		                       LONG_FERMENTING, HOT_TEMPERATURE, SMALL_EXP,
+		                       BrewersFluids.RUM.source().getId(), 1000,
+		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
 		createFermentingRecipe(consumer, "sake", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -166,16 +189,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.COGNAC.source().getId(), 500,
 		                       "forge:fruits/grape", "forge:fruits/grape", Items.APPLE, Items.APPLE);
-		createFermentingRecipe(consumer, "martini_glow_berries", "drinks",
-		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.MARTINI.source().getId(), 500,
-		                       Items.GLOW_BERRIES, Items.GLOW_BERRIES, Items.SUGAR, Items.SUGAR);
-		createFermentingRecipe(consumer, "martini_mushrooms", "drinks",
-		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.MARTINI.source().getId(), 500,
-		                       "forge:mushrooms", "forge:mushrooms", Items.SUGAR, Items.SUGAR);
 		
 		// Bloat
 		createFermentingRecipe(consumer, "absinthe_grass", "drinks",
@@ -288,11 +301,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.RAKIA.source().getId(), 1000,
 		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-		createFermentingRecipe(consumer, "rum", "drinks",
-		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.RUM.source().getId(), 1000,
-		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		createFermentingRecipe(consumer, "sambuca", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -362,6 +370,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	private void generatePouringRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		// Pouring drinks
+		// Farmer's Delight
 		createPouringRecipe(consumer, "braga",
 		                    BrewersFluids.BRAGA.source().get(),
 		                    250,
@@ -418,6 +427,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false,
 		                    false
 		                   );
+		createPouringRecipe(consumer, "martini",
+		                    BrewersFluids.MARTINI.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.MARTINI,
+		                    false,
+		                    false
+		                   );
 		createPouringRecipe(consumer, "melon_schnapps",
 		                    BrewersFluids.MELON_SCHNAPPS.source().get(),
 		                    250,
@@ -432,6 +449,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    BnCItems.TANKARD,
 		                    BrewersItems.OLD_FASHION,
 		                    true,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "rum",
+		                    BrewersFluids.RUM.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.RUM,
+		                    false,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "sake",
@@ -459,120 +484,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false
 		                   );
 		
-		createPouringRecipe(consumer, "flaxen_cheese_stout",
-		                    BrewersFluids.FLAXEN_CHEESE_STOUT.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.FLAXEN_CHEESE_STOUT,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "scarlet_cheese_stout",
-		                    BrewersFluids.SCARLET_CHEESE_STOUT.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.SCARLET_CHEESE_STOUT,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "flying_dutchman",
-		                    BrewersFluids.FLYING_DUTCHMAN.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.FLYING_DUTCHMAN,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "gut_wrecker",
-		                    BrewersFluids.GUT_WRECKER.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.GUT_WRECKER,
-		                    false,
-		                    false
-		                   );
-		
-		createPouringRecipe(consumer, "sbiten",
-		                    BrewersFluids.SBITEN.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.SBITEN,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "syta",
-		                    BrewersFluids.SYTA.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.SYTA,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "vzvar",
-		                    BrewersFluids.VZVAR.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.VZVAR,
-		                    false,
-		                    false
-		                   );
-		
-		createPouringRecipe(consumer, "bourbon",
-		                    BrewersFluids.BOURBON.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.BOURBON,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "corn_whisky",
-		                    BrewersFluids.CORN_WHISKY.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.CORN_WHISKY,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "moonshine",
-		                    BrewersFluids.MOONSHINE.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.MOONSHINE,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "cahors",
-		                    BrewersFluids.CAHORS.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.CAHORS,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "champagne",
-		                    BrewersFluids.CHAMPAGNE.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.CHAMPAGNE,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "cognac",
-		                    BrewersFluids.COGNAC.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.COGNAC,
-		                    false,
-		                    false
-		                   );
-		createPouringRecipe(consumer, "martini",
-		                    BrewersFluids.MARTINI.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.MARTINI,
-		                    false,
-		                    false
-		                   );
 		
 		// Bloat
 		createPouringRecipe(consumer, "absinthe",
@@ -743,14 +654,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "rum",
-		                    BrewersFluids.RUM.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.RUM,
-		                    false,
-		                    false
-		                   );
 		createPouringRecipe(consumer, "sambuca",
 		                    BrewersFluids.SAMBUCA.source().get(),
 		                    250,
@@ -836,6 +739,115 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.VISHINATA,
+		                    false,
+		                    false
+		                   );
+		
+		// Challenge beverages
+		createPouringRecipe(consumer, "flaxen_cheese_stout",
+		                    BrewersFluids.FLAXEN_CHEESE_STOUT.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.FLAXEN_CHEESE_STOUT,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "scarlet_cheese_stout",
+		                    BrewersFluids.SCARLET_CHEESE_STOUT.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.SCARLET_CHEESE_STOUT,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "flying_dutchman",
+		                    BrewersFluids.FLYING_DUTCHMAN.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.FLYING_DUTCHMAN,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "gut_wrecker",
+		                    BrewersFluids.GUT_WRECKER.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.GUT_WRECKER,
+		                    false,
+		                    false
+		                   );
+		
+		// Vintage beverages
+		createPouringRecipe(consumer, "sbiten",
+		                    BrewersFluids.SBITEN.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.SBITEN,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "syta",
+		                    BrewersFluids.SYTA.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.SYTA,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "vzvar",
+		                    BrewersFluids.VZVAR.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.VZVAR,
+		                    false,
+		                    false
+		                   );
+		
+		createPouringRecipe(consumer, "bourbon",
+		                    BrewersFluids.BOURBON.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.BOURBON,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "corn_whisky",
+		                    BrewersFluids.CORN_WHISKY.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.CORN_WHISKY,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "moonshine",
+		                    BrewersFluids.MOONSHINE.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.MOONSHINE,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "cahors",
+		                    BrewersFluids.CAHORS.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.CAHORS,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "champagne",
+		                    BrewersFluids.CHAMPAGNE.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.CHAMPAGNE,
+		                    false,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "cognac",
+		                    BrewersFluids.COGNAC.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.COGNAC,
 		                    false,
 		                    false
 		                   );

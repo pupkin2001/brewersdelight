@@ -10,6 +10,7 @@
   "item.brewersdelight.liqueur": "Ликёр",
   "item.brewersdelight.melon_schnapps": "Арбузный шнапс",
   "item.brewersdelight.old_fashion": "Олд фешен",
+  "item.brewersdelight.rum": "Ром",
   "item.brewersdelight.sake": "Саке",
   "item.brewersdelight.sbiten": "Сбитень",
   "item.brewersdelight.syta": "Сыта",
@@ -40,6 +41,7 @@
   "fluid_type.brewersdelight.liqueur": "Ликёр",
   "fluid_type.brewersdelight.melon_schnapps": "Арбузный шнапс",
   "fluid_type.brewersdelight.old_fashion": "Олд фешен",
+  "fluid_type.brewersdelight.rum": "Ром",
   "fluid_type.brewersdelight.sake": "Саке",
   "fluid_type.brewersdelight.sbiten": "Сбитень",
   "fluid_type.brewersdelight.syta": "Сыта",
@@ -79,6 +81,6 @@
   "advancements.every_vintage_beverage.description": "Приготовьте все возможные старинные напитки.",
 
   "tag.item.brewinandchewin.fermented_drinks": "Ферментитрованные напитки",
-  "tag.item.brewersdelight.challenge_beverages": "Исключительные напитки",
-  "tag.item.brewersdelight.vintage_beverages": "Старинные напитки"
+  "tag.item.brewersdelight.challenge_drinks": "Исключительные напитки",
+  "tag.item.brewersdelight.vintage_drinks": "Старинные напитки"
 }

@@ -10,6 +10,7 @@
   "item.brewersdelight.liqueur": "利口酒",
   "item.brewersdelight.melon_schnapps": "蜜瓜烈酒",
   "item.brewersdelight.old_fashion": "老式鸡尾酒",
+  "item.brewersdelight.rum": "Rum",
   "item.brewersdelight.sake": "清酒",
   "item.brewersdelight.sbiten": "斯比滕",
   "item.brewersdelight.syta": "赛塔",
@@ -40,6 +41,7 @@
   "fluid_type.brewersdelight.liqueur": "利口酒",
   "fluid_type.brewersdelight.melon_schnapps": "蜜瓜烈酒",
   "fluid_type.brewersdelight.old_fashion": "老式鸡尾酒",
+  "fluid_type.brewersdelight.rum": "Rum",
   "fluid_type.brewersdelight.sake": "清酒",
   "fluid_type.brewersdelight.sbiten": "斯比滕",
   "fluid_type.brewersdelight.syta": "赛塔",
@@ -76,5 +78,9 @@
   "advancements.any_vintage_beverage.title": "任意陈年饮品",
   "advancements.any_vintage_beverage.description": "酿造你第一杯陈年饮品。",
   "advancements.every_vintage_beverage.title": "所有陈年饮品",
-  "advancements.every_vintage_beverage.description": "酿造所有可能的陈年饮品。"
+  "advancements.every_vintage_beverage.description": "酿造所有可能的陈年饮品。",
+
+  "tag.item.brewinandchewin.fermented_drinks": "发酵饮料",
+  "tag.item.brewersdelight.challenge_drinks": "优质饮品",
+  "tag.item.brewersdelight.vintage_drinks": "复古饮品"
 }

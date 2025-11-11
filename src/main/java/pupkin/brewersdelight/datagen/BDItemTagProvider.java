@@ -35,10 +35,10 @@ public class BDItemTagProvider extends ItemTagsProvider
 	{
 		List<DeferredRegister<Item>> beverageRegistries = List.of(
 				BnCItems.ITEMS,
-				BrewersItems.BEVERAGES,
-				BrewersItems.COMPAT_BEVERAGES,
-				BrewersItems.CHALLENGE_BEVERAGES,
-				BrewersItems.VINTAGE_BEVERAGES
+				BrewersItems.DRINKS,
+				BrewersItems.COMPAT_DRINKS,
+				BrewersItems.CHALLENGE_DRINKS,
+				BrewersItems.VINTAGE_DRINKS
 		                                                         );
 		
 		beverageRegistries.forEach(registry ->
@@ -46,13 +46,13 @@ public class BDItemTagProvider extends ItemTagsProvider
 		                          );
 		
 		assert BnCItems.DREAD_NOG.getKey() != null;
-		tag(BrewersTags.CHALLENGE_BEVERAGES).add(BnCItems.DREAD_NOG.getKey());
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.DREAD_NOG.getKey());
 		assert BnCItems.STEEL_TOE_STOUT.getKey() != null;
-		tag(BrewersTags.CHALLENGE_BEVERAGES).add(BnCItems.STEEL_TOE_STOUT.getKey());
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.STEEL_TOE_STOUT.getKey());
 		assert BnCItems.WITHERING_DROSS.getKey() != null;
-		tag(BrewersTags.CHALLENGE_BEVERAGES).add(BnCItems.WITHERING_DROSS.getKey());
-		addBoozeItems(BrewersItems.CHALLENGE_BEVERAGES, BrewersTags.CHALLENGE_BEVERAGES);
-		addBoozeItems(BrewersItems.VINTAGE_BEVERAGES, BrewersTags.VINTAGE_BEVERAGES);
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.WITHERING_DROSS.getKey());
+		addBoozeItems(BrewersItems.CHALLENGE_DRINKS, BrewersTags.CHALLENGE_DRINKS);
+		addBoozeItems(BrewersItems.VINTAGE_DRINKS, BrewersTags.VINTAGE_DRINKS);
 	}
 	
 	private void addBoozeItems(DeferredRegister<Item> registry, TagKey<Item> tagKey)

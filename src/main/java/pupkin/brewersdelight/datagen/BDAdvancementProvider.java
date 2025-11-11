@@ -96,10 +96,10 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
 						
-						List.of(BrewersItems.BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						List.of(BrewersItems.COMPAT_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						List.of(BrewersItems.CHALLENGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						List.of(BrewersItems.VINTAGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.COMPAT_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.CHALLENGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
 					},
 					new ResourceLocation("minecraft", "textures/block/oak_planks.png"),
@@ -117,9 +117,9 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					"every_beverage",
 					builder -> {
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, null, "bc_");
-						List.of(BrewersItems.BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
-						List.of(BrewersItems.COMPAT_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
-						List.of(BrewersItems.VINTAGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
+						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
+						List.of(BrewersItems.COMPAT_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
+						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 					},
 					null,
 					FrameType.GOAL,
@@ -137,7 +137,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
-						List.of(BrewersItems.CHALLENGE_BEVERAGES).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
+						List.of(BrewersItems.CHALLENGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
 					},
 					null,
@@ -157,7 +157,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						addCriterion(builder, BnCItems.DREAD_NOG, "bc_");
 						addCriterion(builder, BnCItems.STEEL_TOE_STOUT, "bc_");
 						addCriterion(builder, BnCItems.WITHERING_DROSS, "bc_");
-						addCriteriaFromRegistry(BrewersItems.CHALLENGE_BEVERAGES, builder, null);
+						addCriteriaFromRegistry(BrewersItems.CHALLENGE_DRINKS, builder, null);
 					},
 					null,
 					FrameType.GOAL,
@@ -174,7 +174,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					"any_vintage_beverage",
 					builder -> {
 						List<String> criteria = new ArrayList<>();
-						addCriteriaFromRegistry(BrewersItems.VINTAGE_BEVERAGES, builder, criteria);
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, criteria);
 						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
 					},
 					null,
@@ -191,7 +191,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					BrewersItems.VZVAR.get(),
 					"every_vintage_beverage",
 					builder -> {
-						addCriteriaFromRegistry(BrewersItems.VINTAGE_BEVERAGES, builder, null);
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, null);
 					},
 					null,
 					FrameType.GOAL,
@@ -212,6 +212,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-beverage item : {}", item.getName(item.getDefaultInstance()));
 					return;
 				}
+				assert entry.getId() != null;
 				String key = prefix + entry.getId().getPath();
 				BrewersDelight.LOGGER.debug("Adding criterion for item : {} from registry : {} with id : {} as : {}{}", item, registry, key, prefix, key);
 				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
@@ -223,6 +224,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 		
 		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item)
 		{
+			assert item.getId() != null;
 			String key = item.getId().getPath();
 			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {}", item, key, builder);
 			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
@@ -230,6 +232,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 		
 		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item, String prefix)
 		{
+			assert item.getId() != null;
 			String key = prefix + item.getId().getPath();
 			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {} as : {}{}", item, key, builder, prefix, key);
 			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));

@@ -16,25 +16,29 @@ public class BDItemModelProvider extends ItemModelProvider
 	@Override
 	protected void registerModels()
 	{
-		BrewersItems.BEVERAGES.getEntries().forEach(item -> {
+		BrewersItems.DRINKS.getEntries().forEach(item -> {
+			assert item.getId() != null;
 			String itemName = item.getId().getPath();
 			
 			withExistingParent(itemName, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));
 		});
 		
-		BrewersItems.CHALLENGE_BEVERAGES.getEntries().forEach(item -> {
+		BrewersItems.CHALLENGE_DRINKS.getEntries().forEach(item -> {
+			assert item.getId() != null;
 			String itemName = item.getId().getPath();
 			
 			withExistingParent(itemName, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));
 		});
 		
-		BrewersItems.VINTAGE_BEVERAGES.getEntries().forEach(item -> {
+		BrewersItems.VINTAGE_DRINKS.getEntries().forEach(item -> {
+			assert item.getId() != null;
 			String itemName = item.getId().getPath();
 			
 			withExistingParent(itemName, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));
 		});
 		
-		BrewersItems.COMPAT_BEVERAGES.getEntries().forEach(item -> {
+		BrewersItems.COMPAT_DRINKS.getEntries().forEach(item -> {
+			assert item.getId() != null;
 			String itemName = item.getId().getPath();
 			
 			withExistingParent(itemName, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));

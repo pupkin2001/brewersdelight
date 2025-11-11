@@ -4,20 +4,20 @@
     "count": 1000,
     "fluid": "minecraft:water"
   },
-  "experience": 1.0,
-  "fermentingtime": 9600,
+  "experience": 0.5,
+  "fermentingtime": 19200,
   "ingredients": [
     {
-      "tag": "forge:bread"
+      "item": "minecraft:sugar_cane"
     },
     {
-      "tag": "forge:bread"
+      "item": "minecraft:sugar_cane"
     },
     {
-      "tag": "forge:bread"
+      "item": "minecraft:sugar_cane"
     },
     {
-      "tag": "forge:bread"
+      "item": "minecraft:sugar_cane"
     }
   ],
   "recipe_book_tab": "drinks",
@@ -25,5 +25,5 @@
     "count": 1000,
     "fluid": "brewersdelight:rum"
   },
-  "temperature": 3
+  "temperature": 4
 }

@@ -10,6 +10,7 @@
   "item.brewersdelight.liqueur": "Liqueur",
   "item.brewersdelight.melon_schnapps": "Melon schnapps",
   "item.brewersdelight.old_fashion": "Old fashion",
+  "item.brewersdelight.rum": "Rum",
   "item.brewersdelight.sake": "Sake",
   "item.brewersdelight.sbiten": "Sbiten",
   "item.brewersdelight.syta": "Syta",
@@ -40,6 +41,7 @@
   "fluid_type.brewersdelight.liqueur": "Liqueur",
   "fluid_type.brewersdelight.melon_schnapps": "Melon schnapps",
   "fluid_type.brewersdelight.old_fashion": "Old fashion",
+  "fluid_type.brewersdelight.rum": "Rum",
   "fluid_type.brewersdelight.sake": "Sake",
   "fluid_type.brewersdelight.sbiten": "Sbiten",
   "fluid_type.brewersdelight.syta": "Syta",
@@ -76,5 +78,9 @@
   "advancements.any_vintage_beverage.title": "Any vintage beverage",
   "advancements.any_vintage_beverage.description": "Brew your first vintage beverage.",
   "advancements.every_vintage_beverage.title": "Every vintage beverage",
-  "advancements.every_vintage_beverage.description": "Brew every possible vintage beverage."
+  "advancements.every_vintage_beverage.description": "Brew every possible vintage beverage.",
+
+  "tag.item.brewinandchewin.fermented_drinks": "Fermented drinks",
+  "tag.item.brewersdelight.challenge_drinks": "Challenge drinks",
+  "tag.item.brewersdelight.vintage_drinks": "Vintage drinks"
 }

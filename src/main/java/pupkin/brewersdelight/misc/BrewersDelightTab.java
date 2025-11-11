@@ -23,10 +23,10 @@ public class BrewersDelightTab
                                        .icon(() -> new ItemStack(BrewersItems.BRAGA.get()))
                                        .displayItems((displayParams, output) -> {
                                            Arrays.asList(
-                                                   BrewersItems.BEVERAGES,
-                                                   BrewersItems.COMPAT_BEVERAGES,
-                                                   BrewersItems.CHALLENGE_BEVERAGES,
-                                                   BrewersItems.VINTAGE_BEVERAGES
+                                                   BrewersItems.DRINKS,
+                                                   BrewersItems.COMPAT_DRINKS,
+                                                   BrewersItems.CHALLENGE_DRINKS,
+                                                   BrewersItems.VINTAGE_DRINKS
                                                         ).forEach(registry ->
                                                                           registry.getEntries().forEach(item -> output.accept(item.get()))
                                                                  );
