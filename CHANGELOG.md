@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.7.0-rc1] - Unreleased
+
+### Added
+
+
+### Changed
+
+
+### Fixed
+
+
 ## [v0.7.0-pre] - 2025/11/09
 
 ### Added
