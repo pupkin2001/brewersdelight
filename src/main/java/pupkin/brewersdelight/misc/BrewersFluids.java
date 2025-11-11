@@ -17,73 +17,81 @@ public class BrewersFluids
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(Keys.FLUID_TYPES, BrewersDelight.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
 	
-	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xdeddb0d1);
-	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xdb6a00cf);
-	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xffe86aa1);
-	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xffe03cc2);
-	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xdcfaffc2);
-	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0x694800);
-	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xf20000d6);
-	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0xff000047);
-	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0xee80008f);
-	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0xe8e8e870);
-	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xb9d6aab5);
-	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xc44a16d4);
+	// Farmer's delight
+	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xD1B48C5A);
+	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xCFB56B2A);
+	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xA1F5D56B);
+	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xC2D47F2A);
+	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xC2EBF0D1);
+	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0xFF8B4513);
+	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xD6C42B1A);
+	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0x95FF69B4);
+	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0x8FB3592A);
+	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0x70F5F0D7); // Isn't that just rice wine from BnC?
+	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xB5E6D6A0);
+	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xD4A8661E);
 	
-	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFFFFFFF);
-	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFFFFFFFF);
-	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xFFFFFFFF);
-	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFFFFFFFF);
+	// Challenge beverages
+	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFf1c232);
+	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFF990000);
+	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xDA93c47d);
+	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFF38761d);
 	
-	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xf27c1bc7);
-	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xf27c1bc7);
-	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0x914a20bd);
-	
-	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0xcfb70059);
-	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x85480573);
-	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xc1c27fe3);
-	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0x820c0cfc);
-	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0xf5ff003d);
-	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0xbf77108c);
-	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xca6d53e3);
-	
-	// Bloat
-	public static final FluidRegistryObject ABSINTHE = registerAlcoholFluid("absinthe", 0xFFFFFFFF);
-	public static final FluidRegistryObject AMARO = registerAlcoholFluid("amaro", 0xFFFFFFFF);
-	public static final FluidRegistryObject AMONTILLADO = registerAlcoholFluid("amontillado", 0xFFFFFFFF);
-	public static final FluidRegistryObject APEROL = registerAlcoholFluid("aperol", 0xFFFFFFFF);
-	public static final FluidRegistryObject ARMAGNAC = registerAlcoholFluid("armagnac", 0xFFFFFFFF);
-	public static final FluidRegistryObject BAIJIU = registerAlcoholFluid("baijiu", 0xFFFFFFFF);
-	public static final FluidRegistryObject BECHEROVKA = registerAlcoholFluid("becherovka", 0xFFFFFFFF);
-	public static final FluidRegistryObject BITTER = registerAlcoholFluid("bitter", 0xFFFFFFFF);
-	public static final FluidRegistryObject CALVADOS = registerAlcoholFluid("calvados", 0xFFFFFFFF);
-	public static final FluidRegistryObject CAMPARI = registerAlcoholFluid("campari", 0xFFFFFFFF);
-	public static final FluidRegistryObject CHACHA = registerAlcoholFluid("chacha", 0xFFFFFFFF);
-	public static final FluidRegistryObject FERNET = registerAlcoholFluid("fernet", 0xFFFFFFFF);
-	public static final FluidRegistryObject GLUHWEIN = registerAlcoholFluid("gluhwein", 0xFFFFFFFF);
-	public static final FluidRegistryObject GROG = registerAlcoholFluid("grog", 0xFFFFFFFF);
-	public static final FluidRegistryObject KASHASA = registerAlcoholFluid("kashasa", 0xFFFFFFFF);
-	public static final FluidRegistryObject MEZCAL = registerAlcoholFluid("mezcal", 0xFFFFFFFF);
-	public static final FluidRegistryObject NEGRONI = registerAlcoholFluid("negroni", 0xFFFFFFFF);
-	public static final FluidRegistryObject OUZO = registerAlcoholFluid("ouzo", 0xFFFFFFFF);
-	public static final FluidRegistryObject PASTIS = registerAlcoholFluid("pastis", 0xFFFFFFFF);
-	public static final FluidRegistryObject PUNCH = registerAlcoholFluid("punch", 0xFFFFFFFF);
-	public static final FluidRegistryObject RAKIA = registerAlcoholFluid("rakia", 0xFFFFFFFF);
-	public static final FluidRegistryObject RUM = registerAlcoholFluid("rum", 0xFFFFFFFF);
-	public static final FluidRegistryObject SAMBUCA = registerAlcoholFluid("sambuca", 0xFFFFFFFF);
-	public static final FluidRegistryObject SHERRY = registerAlcoholFluid("sherry", 0xFFFFFFFF);
-	public static final FluidRegistryObject SOCATA = registerAlcoholFluid("socata", 0xFFFFFFFF);
-	public static final FluidRegistryObject SOJU = registerAlcoholFluid("soju", 0xFFFFFFFF);
-	public static final FluidRegistryObject SOTOL = registerAlcoholFluid("sotol", 0xFFFFFFFF);
-	public static final FluidRegistryObject TODDY = registerAlcoholFluid("toddy", 0xFFFFFFFF);
-	public static final FluidRegistryObject TRIPLE_SEC = registerAlcoholFluid("triple-sec", 0xFFFFFFFF);
-	public static final FluidRegistryObject TSIPURO = registerAlcoholFluid("tsipuro", 0xFFFFFFFF);
-	public static final FluidRegistryObject VERMOUTH = registerAlcoholFluid("vermouth", 0xFFFFFFFF);
-	public static final FluidRegistryObject TSUIKE = registerAlcoholFluid("tsuike", 0xFFFFFFFF);
-	public static final FluidRegistryObject VISHINATA = registerAlcoholFluid("vishinata", 0xFFFFFFFF);
+	// Vintage beverages
+	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xC7B3471A);
+	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xC7D4A13C);
+	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0xBD9C5A2D);
 	
 	// Compatibility
-	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFFFFFFFF);
+		// Corn
+	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0x59B56B1A);
+	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x739C6B1A);
+	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xE3F0E6D1);
+	
+		// Grapes
+	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFC5A1E1E);
+	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0x3DFFEC8B);
+	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0x8CD4A13C);
+	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xE3E6D6B5);
+	
+		// Other
+	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xFF990012);
+	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFF722f37);
+	
+	// Bloat
+	public static final FluidRegistryObject ABSINTHE = registerAlcoholFluid("absinthe", 0xFF7CFC00);
+	public static final FluidRegistryObject AMARO = registerAlcoholFluid("amaro", 0xFF8B4513);
+	public static final FluidRegistryObject AMONTILLADO = registerAlcoholFluid("amontillado", 0xFFD2B48C);
+	public static final FluidRegistryObject APEROL = registerAlcoholFluid("aperol", 0xFFFF4500);
+	public static final FluidRegistryObject ARMAGNAC = registerAlcoholFluid("armagnac", 0xFFA8661E);
+	public static final FluidRegistryObject BAIJIU = registerAlcoholFluid("baijiu", 0x87F0E6D1);
+	public static final FluidRegistryObject BECHEROVKA = registerAlcoholFluid("becherovka", 0xFFDAA520);
+	public static final FluidRegistryObject BITTER = registerAlcoholFluid("bitter", 0xFF8B0000);
+	public static final FluidRegistryObject CALVADOS = registerAlcoholFluid("calvados", 0xFFE6A866);
+	public static final FluidRegistryObject CAMPARI = registerAlcoholFluid("campari", 0xFFDC143C);
+	public static final FluidRegistryObject CHACHA = registerAlcoholFluid("chacha", 0xFFDFFF00);
+	public static final FluidRegistryObject FERNET = registerAlcoholFluid("fernet", 0xFF2F4F4F);
+	public static final FluidRegistryObject GLUHWEIN = registerAlcoholFluid("gluhwein", 0xFF8B1A1A);
+	public static final FluidRegistryObject GROG = registerAlcoholFluid("grog", 0xFFD2691E);
+	public static final FluidRegistryObject KASHASA = registerAlcoholFluid("kashasa", 0xFFF0E6D1);
+	public static final FluidRegistryObject MEZCAL = registerAlcoholFluid("mezcal", 0xFFE6D6A0);
+	public static final FluidRegistryObject NEGRONI = registerAlcoholFluid("negroni", 0xFF8B0000);
+	public static final FluidRegistryObject OUZO = registerAlcoholFluid("ouzo", 0xFFF5F0D7);
+	public static final FluidRegistryObject PASTIS = registerAlcoholFluid("pastis", 0xFFF5F0A0);
+	public static final FluidRegistryObject PUNCH = registerAlcoholFluid("punch", 0xFFFF6347);
+	public static final FluidRegistryObject RAKIA = registerAlcoholFluid("rakia", 0xFFF0E6D1);
+	public static final FluidRegistryObject RUM = registerAlcoholFluid("rum", 0xFFA8661E);
+	public static final FluidRegistryObject SAMBUCA = registerAlcoholFluid("sambuca", 0xFFF5F0D7);
+	public static final FluidRegistryObject SHERRY = registerAlcoholFluid("sherry", 0xFFD2B48C);
+	public static final FluidRegistryObject SOCATA = registerAlcoholFluid("socata", 0xFFE6D63C);
+	public static final FluidRegistryObject SOJU = registerAlcoholFluid("soju", 0xFFF0E6D1);
+	public static final FluidRegistryObject SOTOL = registerAlcoholFluid("sotol", 0xFFE6D6A0);
+	public static final FluidRegistryObject TODDY = registerAlcoholFluid("toddy", 0xFFD2691E);
+	public static final FluidRegistryObject TRIPLE_SEC = registerAlcoholFluid("triple-sec", 0xFFFFF0A0);
+	public static final FluidRegistryObject TSIPURO = registerAlcoholFluid("tsipuro", 0xFFF5F0D7);
+	public static final FluidRegistryObject VERMOUTH = registerAlcoholFluid("vermouth", 0xFFA020F0);
+	public static final FluidRegistryObject TSUIKE = registerAlcoholFluid("tsuike", 0xFF228B22);
+	public static final FluidRegistryObject VISHINATA = registerAlcoholFluid("vishinata", 0xFFAA4A44);
 	
 	
 	
