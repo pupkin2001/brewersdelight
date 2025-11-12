@@ -67,35 +67,35 @@ public class BrewersFluids
 	public static final FluidRegistryObject TSUIKE = registerAlcoholFluid("tsuike", 0xFF228B22);
 	public static final FluidRegistryObject VISHINATA = registerAlcoholFluid("vishinata", 0xFFAA4A44);
 	
-	// Challenge beverages
-	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFf1c232);
-	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFF990000);
-	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xDA93c47d);
-	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFF38761d);
+	// Compatibility
+		// Farmer's Delight
+	public static final FluidRegistryObject MELON_JUICE = registerAlcoholFluid("melon_juice", 0xFFD20000);
+	//public static final FluidRegistryObject TOMATO_SAUCE = registerAlcoholFluid("tomato_sauce", 0xFFD20000);
+	
+		// Corn
+	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0x59B56B1A);
+	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x739C6B1A);
+	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xE3F0E6D1);
+	
+		// Grapes
+	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFC5A1E1E);
+	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0x3DFFEC8B);
+	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0x8CD4A13C);
+	
+		// Other
+	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xFF990012);
+	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFF722f37);
 	
 	// Vintage beverages
 	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xC7B3471A);
 	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xC7D4A13C);
 	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0xBD9C5A2D);
 	
-	// Compatibility
-	// Farmer's Delight
-	public static final FluidRegistryObject MELON_JUICE = registerAlcoholFluid("melon_juice", 0xFFD20000);
-	//public static final FluidRegistryObject TOMATO_SAUCE = registerAlcoholFluid("tomato_sauce", 0xFFD20000);
-	
-	// Corn
-	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0x59B56B1A);
-	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x739C6B1A);
-	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xE3F0E6D1);
-	
-	// Grapes
-	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFC5A1E1E);
-	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0x3DFFEC8B);
-	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0x8CD4A13C);
-	
-	// Other
-	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xFF990012);
-	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFF722f37);
+	// Challenge beverages
+	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFf1c232);
+	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFF990000);
+	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xDA93c47d);
+	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFF38761d);
 	
 	
 	

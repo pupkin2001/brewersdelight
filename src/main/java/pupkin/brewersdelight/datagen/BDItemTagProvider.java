@@ -34,17 +34,18 @@ public class BDItemTagProvider extends ItemTagsProvider
 	protected void addTags(HolderLookup.@NotNull Provider provider)
 	{
 		List<DeferredRegister<Item>> beverageRegistries = List.of(
-				BnCItems.ITEMS,
+				//BnCItems.ITEMS,
 				BrewersItems.DRINKS,
 				BrewersItems.COMPAT_DRINKS,
-				BrewersItems.CHALLENGE_DRINKS,
-				BrewersItems.VINTAGE_DRINKS
+				BrewersItems.VINTAGE_DRINKS,
+				BrewersItems.CHALLENGE_DRINKS
 		                                                         );
 		
 		beverageRegistries.forEach(registry ->
 				                           addBoozeItems(registry, BnCTags.FERMENTED_DRINKS)
 		                          );
 		
+		addBoozeItems(BrewersItems.VINTAGE_DRINKS, BrewersTags.VINTAGE_DRINKS);
 		assert BnCItems.DREAD_NOG.getKey() != null;
 		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.DREAD_NOG.getKey());
 		assert BnCItems.STEEL_TOE_STOUT.getKey() != null;
@@ -52,7 +53,6 @@ public class BDItemTagProvider extends ItemTagsProvider
 		assert BnCItems.WITHERING_DROSS.getKey() != null;
 		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.WITHERING_DROSS.getKey());
 		addBoozeItems(BrewersItems.CHALLENGE_DRINKS, BrewersTags.CHALLENGE_DRINKS);
-		addBoozeItems(BrewersItems.VINTAGE_DRINKS, BrewersTags.VINTAGE_DRINKS);
 	}
 	
 	private void addBoozeItems(DeferredRegister<Item> registry, TagKey<Item> tagKey)
