@@ -83,8 +83,9 @@ public class BrewersFluids
 	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0x8CD4A13C);
 	
 		// Other
-	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xFF990012);
-	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xFF722f37);
+	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xBE990012);
+	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xBE722f37);
+	public static final FluidRegistryObject WHITE_WINE = registerAlcoholFluid("white_wine", 0xBEEEEDC4);
 	
 	// Vintage beverages
 	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xC7B3471A);
