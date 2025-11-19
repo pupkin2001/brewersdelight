@@ -121,6 +121,7 @@ dependencies {
 	
 	runtimeOnly fg.deobf("curse.maven:jei-238222:${jei_version}")
 	runtimeOnly fg.deobf("curse.maven:appleskin-248787:${appleskin_version}")
+	//runtimeOnly fg.deobf("curse.maven:lmft-656346:4892299")
 	//runtimeOnly fg.deobf("libs:BetterTags:1.20.1")
 	
 	// For more info:
