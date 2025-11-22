@@ -599,6 +599,18 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "whisky_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:whisky_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -655,6 +667,7 @@
       "sake_glass",
       "tequila",
       "whisky",
+      "whisky_glass",
       "bourbon",
       "corn_whisky",
       "moonshine",
