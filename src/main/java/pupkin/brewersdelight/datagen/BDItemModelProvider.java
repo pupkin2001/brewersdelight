@@ -21,6 +21,9 @@ public class BDItemModelProvider extends ItemModelProvider
 			String itemName = item.getId().getPath();
 			
 			withExistingParent(itemName, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));
+			
+			String modelPath = "glass/" + itemName;
+			withExistingParent(modelPath, "farmersdelight:item/mug").texture("layer0", modLoc("item/" + itemName));
 		});
 		
 		BrewersItems.CHALLENGE_DRINKS.getEntries().forEach(item -> {
