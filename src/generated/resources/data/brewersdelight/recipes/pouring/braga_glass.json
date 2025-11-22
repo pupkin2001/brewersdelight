@@ -4,10 +4,10 @@
   "container": {
     "item": "brewinandchewin:tankard"
   },
-  "filling": true,
-  "fluid": "brewersdelight:brandy",
+  "filling": false,
+  "fluid": "brewersdelight:braga",
   "output": {
-    "item": "brewersdelight:brandy"
+    "item": "brewersdelight:braga"
   },
   "strict": false
 }

@@ -217,12 +217,36 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "braga_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:braga_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "brandy": {
       "conditions": {
         "items": [
           {
             "items": [
               "brewersdelight:brandy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "brandy_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:brandy_glass"
             ]
           }
         ]
@@ -313,6 +337,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "gin_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gin_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "kvass": {
       "conditions": {
         "items": [
@@ -331,6 +367,18 @@
           {
             "items": [
               "brewersdelight:liqueur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "liqueur_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:liqueur_glass"
             ]
           }
         ]
@@ -361,6 +409,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "melon_schnapps_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:melon_schnapps_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "moonshine": {
       "conditions": {
         "items": [
@@ -385,6 +445,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "old_fashion_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:old_fashion_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "rum": {
       "conditions": {
         "items": [
@@ -403,6 +475,18 @@
           {
             "items": [
               "brewersdelight:sake"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sake_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:sake_glass"
             ]
           }
         ]
@@ -538,7 +622,13 @@
       "braga"
     ],
     [
+      "braga_glass"
+    ],
+    [
       "brandy"
+    ],
+    [
+      "brandy_glass"
     ],
     [
       "cider"
@@ -550,22 +640,37 @@
       "gin"
     ],
     [
+      "gin_glass"
+    ],
+    [
       "kvass"
     ],
     [
       "liqueur"
     ],
     [
+      "liqueur_glass"
+    ],
+    [
       "melon_schnapps"
     ],
     [
+      "melon_schnapps_glass"
+    ],
+    [
       "old_fashion"
+    ],
+    [
+      "old_fashion_glass"
     ],
     [
       "rum"
     ],
     [
       "sake"
+    ],
+    [
+      "sake_glass"
     ],
     [
       "tequila"

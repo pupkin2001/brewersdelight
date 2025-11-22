@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:item/mug",
   "textures": {
-    "layer0": "brewersdelight:item/tequila"
+    "layer0": "brewersdelight:item/glass/melon_schnapps"
   }
 }

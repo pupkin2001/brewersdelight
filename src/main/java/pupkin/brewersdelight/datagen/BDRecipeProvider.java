@@ -15,8 +15,10 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.misc.BrewersFluids;
+import umpaz.brewinandchewin.BrewinAndChewin;
 import umpaz.brewinandchewin.common.registry.BnCFluids;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -376,115 +378,143 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	{
 		// Pouring drinks
 		// Farmer's Delight
-		createPouringRecipe(consumer, "braga",
+		createPouringRecipes(consumer, "braga",
 		                    BrewersFluids.BRAGA.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.BRAGA,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.BRAGA,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "brandy",
+		createPouringRecipes(consumer, "brandy",
 		                    BrewersFluids.BRANDY.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.BRANDY,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.BRANDY,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "cider",
+		createPouringRecipes(consumer, "cider",
 		                    BrewersFluids.CIDER.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.CIDER,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.CIDER,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "compote",
+		createPouringRecipes(consumer, "compote",
 		                    BrewersFluids.COMPOTE.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.COMPOTE,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.COMPOTE,
 		                    true,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "gin",
+		createPouringRecipes(consumer, "gin",
 		                    BrewersFluids.GIN.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.GIN,
+		                    Items.GLASS_BOTTLE,
+		                    BrewersItems.GIN,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "kvass",
+		createPouringRecipes(consumer, "kvass",
 		                    BrewersFluids.KVASS.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.KVASS,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.KVASS,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "liqueur",
+		createPouringRecipes(consumer, "liqueur",
 		                    BrewersFluids.LIQUEUR.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.LIQUEUR,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.LIQUEUR,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "martini",
+		createPouringRecipes(consumer, "martini",
 		                    BrewersFluids.MARTINI.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.MARTINI,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.MARTINI,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "melon_schnapps",
+		createPouringRecipes(consumer, "melon_schnapps",
 		                    BrewersFluids.MELON_SCHNAPPS.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.MELON_SCHNAPPS,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.MELON_SCHNAPPS,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "old_fashion",
+		createPouringRecipes(consumer, "old_fashion",
 		                    BrewersFluids.OLD_FASHION.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.OLD_FASHION,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.OLD_FASHION,
 		                    true,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "rum",
+		createPouringRecipes(consumer, "rum",
 		                    BrewersFluids.RUM.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.RUM,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.RUM,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "sake",
+		createPouringRecipes(consumer, "sake",
 		                    BrewersFluids.SAKE.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.SAKE,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.SAKE,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "tequila",
+		createPouringRecipes(consumer, "tequila",
 		                    BrewersFluids.TEQUILA.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.TEQUILA,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.TEQUILA,
 		                    false,
 		                    false
 		                   );
-		createPouringRecipe(consumer, "whisky",
+		createPouringRecipes(consumer, "whisky",
 		                    BrewersFluids.WHISKY.source().get(),
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.WHISKY,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.WHISKY,
 		                    false,
 		                    false
 		                   );
@@ -975,7 +1005,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	{
 		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid);
 		if (resultFluidId == null) {
-			throw new IllegalStateException("Liquid is null: " + resultFluid);
+			throw new IllegalStateException("Unable to create fermenting recipe for " + resultFluid + " as it does not exist.");
 		}
 		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
@@ -994,7 +1024,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	{
 		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid.get());
 		if (resultFluidId == null) {
-			throw new IllegalStateException("Liquid is null: " + resultFluid.getId());
+			throw new IllegalStateException("Unable to create fermenting recipe for " + resultFluid + " as it does not exist.");
 		}
 		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
@@ -1060,6 +1090,46 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		});
 	}
 	
+	public void createPouringRecipes(Consumer<FinishedRecipe> consumer, String recipeName,
+	                                Fluid fluid, int fluidAmount,
+	                                @Nullable RegistryObject<Item> containerItem,
+	                                 @Nullable RegistryObject<Item> tankardOutput,
+	                                 @Nullable Item glassContainerItem,
+	                                 @Nullable RegistryObject<Item> glassOutput,
+	                                boolean filling, boolean strict)
+	{
+		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid);
+		
+		if (fluidId == null) {
+			throw new IllegalStateException("Unable to create pouring recipes for " + fluid + " as it does not exist.");
+		}
+		
+		if (tankardOutput != null) {
+			assert containerItem != null;
+			ResourceLocation containerId = containerItem.getId();
+			assert tankardOutput.getId() != null;
+			ResourceLocation tankardOutputId = tankardOutput.getId();
+			createPouringRecipe(consumer, tankardOutput.getId().getPath(),
+			                    fluidId, fluidAmount,
+			                    containerId,
+			                    tankardOutput.getId(),
+			                    true, false);
+		}
+		
+		if (glassOutput != null) {
+			assert containerItem != null;
+			ResourceLocation glassContainerId = containerItem.getId();
+			assert tankardOutput != null;
+			ResourceLocation glassOutputId = tankardOutput.getId();
+			assert glassOutput.getId() != null;
+			createPouringRecipe(consumer, glassOutput.getId().getPath() + "_glass",
+			                    fluidId, fluidAmount,
+			                    glassContainerId,
+			                    glassOutputId,
+			                    filling, strict);
+		}
+	}
+	
 	// Wrapper
 	public void createPouringRecipe(Consumer<FinishedRecipe> consumer, String recipeName,
 	                                Fluid fluid, int fluidAmount,
@@ -1071,31 +1141,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		ResourceLocation outputId = outputItem.getId();
 		
 		if (fluidId == null) {
-			throw new IllegalStateException("Liquid is null: " + fluid);
-		}
-		
-		createPouringRecipe(consumer, recipeName,
-		                    fluidId,
-		                    fluidAmount,
-		                    containerId,
-		                    outputId,
-		                    filling,
-		                    strict
-		                   );
-	}
-	
-	// Wrapper
-	public void createPouringRecipe(Consumer<FinishedRecipe> consumer, String recipeName,
-	                                net.minecraftforge.registries.RegistryObject<? extends Fluid> fluid, int fluidAmount,
-	                                @NotNull RegistryObject<Item> containerItem, @NotNull RegistryObject<Item> outputItem,
-	                                boolean filling, boolean strict)
-	{
-		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid.get());
-		ResourceLocation containerId = containerItem.getId();
-		ResourceLocation outputId = outputItem.getId();
-		
-		if (fluidId == null) {
-			throw new IllegalStateException("Liquid is null: " + fluid.getId());
+			throw new IllegalStateException("Unable to create pouring recipes for " + fluid + " as it does not exist.");
 		}
 		
 		createPouringRecipe(consumer, recipeName,

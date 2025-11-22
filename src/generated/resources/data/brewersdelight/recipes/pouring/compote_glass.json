@@ -5,9 +5,9 @@
     "item": "brewinandchewin:tankard"
   },
   "filling": true,
-  "fluid": "brewersdelight:brandy",
+  "fluid": "brewersdelight:compote",
   "output": {
-    "item": "brewersdelight:brandy"
+    "item": "brewersdelight:compote"
   },
   "strict": false
 }
