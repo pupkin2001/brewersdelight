@@ -12,98 +12,100 @@ import net.minecraftforge.registries.RegistryObject;
 import pupkin.brewersdelight.BrewersDelight;
 import umpaz.brewinandchewin.common.fluid.AlcoholFluidType;
 
+import java.awt.*;
+
 public class BrewersFluids
 {
 	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(Keys.FLUID_TYPES, BrewersDelight.MOD_ID);
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
 	
 	// Farmer's delight
-	public static final FluidRegistryObject BRAGA = registerAlcoholFluid("braga", 0xD1B48C5A);
-	public static final FluidRegistryObject BRANDY = registerAlcoholFluid("brandy", 0xCFB56B2A);
-	public static final FluidRegistryObject CIDER = registerAlcoholFluid("cider", 0xA1F5D56B);
-	public static final FluidRegistryObject COMPOTE = registerAlcoholFluid("compote", 0xC2B19C3D);
-	public static final FluidRegistryObject GIN = registerAlcoholFluid("gin", 0xC2EBF0D1);
-	public static final FluidRegistryObject KVASS = registerAlcoholFluid("kvass", 0xFF8B4513);
-	public static final FluidRegistryObject LIQUEUR = registerAlcoholFluid("liqueur", 0xD6C42B1A);
-	public static final FluidRegistryObject MARTINI = registerAlcoholFluid("martini", 0xE3E6D6B5);
-	public static final FluidRegistryObject MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", 0x95C75949);
-	public static final FluidRegistryObject OLD_FASHION = registerAlcoholFluid("old_fashion", 0x8FB3592A);
-	public static final FluidRegistryObject RUM = registerAlcoholFluid("rum", 0xFFA8661E);
-	public static final FluidRegistryObject SAKE = registerAlcoholFluid("sake", 0x70F5F0D7); // Isn't that just rice wine from BnC?
-	public static final FluidRegistryObject TEQUILA = registerAlcoholFluid("tequila", 0xB5E6D6A0);
-	public static final FluidRegistryObject WHISKY = registerAlcoholFluid("whisky", 0xD4A8661E);
+	public static final FluidRegistryObject
+			BRAGA = registerAlcoholFluid("braga", new Color(180, 140, 90, 209)),
+			BRANDY = registerAlcoholFluid("brandy", new Color(181, 107, 42, 207)),
+			CIDER = registerAlcoholFluid("cider", new Color(245, 213, 107, 161)),
+			COMPOTE = registerAlcoholFluid("compote", new Color(177, 156, 61, 194)),
+			GIN = registerAlcoholFluid("gin", new Color(235, 240, 209, 194)),
+			KVASS = registerAlcoholFluid("kvass", new Color(139, 69, 19, 255)),
+			LIQUEUR = registerAlcoholFluid("liqueur", new Color(196, 43, 26, 214)),
+			MARTINI = registerAlcoholFluid("martini", new Color(230, 214, 181, 227)),
+			MELON_SCHNAPPS = registerAlcoholFluid("melon_schnapps", new Color(199, 89, 73, 149)),
+			OLD_FASHION = registerAlcoholFluid("old_fashion", new Color(179, 89, 42, 143)),
+			RUM = registerAlcoholFluid("rum", new Color(168, 102, 30, 255)),
+			SAKE = registerAlcoholFluid("sake", new Color(245, 240, 215, 112)),
+			TEQUILA = registerAlcoholFluid("tequila", new Color(230, 214, 160, 181)),
+			WHISKY = registerAlcoholFluid("whisky", new Color(168, 102, 30, 212)),
 	
 	// Bloat
-//	public static final FluidRegistryObject ABSINTHE = registerAlcoholFluid("absinthe", 0xFF7CFC00);
-//	public static final FluidRegistryObject AMARO = registerAlcoholFluid("amaro", 0xFF8B4513);
-//	public static final FluidRegistryObject AMONTILLADO = registerAlcoholFluid("amontillado", 0xFFD2B48C);
-//	public static final FluidRegistryObject APEROL = registerAlcoholFluid("aperol", 0xFFFF4500);
-//	public static final FluidRegistryObject ARMAGNAC = registerAlcoholFluid("armagnac", 0xFFA8661E);
-//	public static final FluidRegistryObject BAIJIU = registerAlcoholFluid("baijiu", 0x87F0E6D1);
-//	public static final FluidRegistryObject BECHEROVKA = registerAlcoholFluid("becherovka", 0xFFDAA520);
-//	public static final FluidRegistryObject BITTER = registerAlcoholFluid("bitter", 0xFF8B0000);
-//	public static final FluidRegistryObject CALVADOS = registerAlcoholFluid("calvados", 0xFFE6A866);
-//	public static final FluidRegistryObject CAMPARI = registerAlcoholFluid("campari", 0xFFDC143C);
-//	public static final FluidRegistryObject CHACHA = registerAlcoholFluid("chacha", 0xFFDFFF00);
-//	public static final FluidRegistryObject FERNET = registerAlcoholFluid("fernet", 0xFF2F4F4F);
-//	public static final FluidRegistryObject GLUHWEIN = registerAlcoholFluid("gluhwein", 0xFF8B1A1A);
-//	public static final FluidRegistryObject GROG = registerAlcoholFluid("grog", 0xFFD2691E);
-//	public static final FluidRegistryObject KASHASA = registerAlcoholFluid("kashasa", 0xFFF0E6D1);
-//	public static final FluidRegistryObject MEZCAL = registerAlcoholFluid("mezcal", 0xFFE6D6A0);
-//	public static final FluidRegistryObject NEGRONI = registerAlcoholFluid("negroni", 0xFF8B0000);
-//	public static final FluidRegistryObject OUZO = registerAlcoholFluid("ouzo", 0xFFF5F0D7);
-//	public static final FluidRegistryObject PASTIS = registerAlcoholFluid("pastis", 0xFFF5F0A0);
-//	public static final FluidRegistryObject PUNCH = registerAlcoholFluid("punch", 0xFFFF6347);
-//	public static final FluidRegistryObject RAKIA = registerAlcoholFluid("rakia", 0xFFF0E6D1);
-//	public static final FluidRegistryObject SAMBUCA = registerAlcoholFluid("sambuca", 0xFFF5F0D7);
-//	public static final FluidRegistryObject SHERRY = registerAlcoholFluid("sherry", 0xFFD2B48C);
-//	public static final FluidRegistryObject SOCATA = registerAlcoholFluid("socata", 0xFFE6D63C);
-//	public static final FluidRegistryObject SOJU = registerAlcoholFluid("soju", 0xFFF0E6D1);
-//	public static final FluidRegistryObject SOTOL = registerAlcoholFluid("sotol", 0xFFE6D6A0);
-//	public static final FluidRegistryObject TODDY = registerAlcoholFluid("toddy", 0xFFD2691E);
-//	public static final FluidRegistryObject TRIPLE_SEC = registerAlcoholFluid("triple-sec", 0xFFFFF0A0);
-//	public static final FluidRegistryObject TSIPURO = registerAlcoholFluid("tsipuro", 0xFFF5F0D7);
-//	public static final FluidRegistryObject VERMOUTH = registerAlcoholFluid("vermouth", 0xFFA020F0);
-//	public static final FluidRegistryObject TSUIKE = registerAlcoholFluid("tsuike", 0xFF228B22);
-//	public static final FluidRegistryObject VISHINATA = registerAlcoholFluid("vishinata", 0xFFAA4A44);
+	//	ABSINTHE = registerAlcoholFluid("absinthe", new Color(124, 252, 0, 255)),
+	//			AMARO = registerAlcoholFluid("amaro", new Color(139, 69, 19, 255)),
+	//			AMONTILLADO = registerAlcoholFluid("amontillado", new Color(210, 180, 140, 255)),
+	//			APEROL = registerAlcoholFluid("aperol", new Color(255, 69, 0, 255)),
+	//			ARMAGNAC = registerAlcoholFluid("armagnac", new Color(168, 102, 30, 255)),
+	//			BAIJIU = registerAlcoholFluid("baijiu", new Color(240, 230, 209, 135)),
+	//			BECHEROVKA = registerAlcoholFluid("becherovka", new Color(218, 165, 32, 255)),
+	//			BITTER = registerAlcoholFluid("bitter", new Color(139, 0, 0, 255)),
+	//			CALVADOS = registerAlcoholFluid("calvados", new Color(230, 168, 102, 255)),
+	//			CAMPARI = registerAlcoholFluid("campari", new Color(220, 20, 60, 255)),
+	//			CHACHA = registerAlcoholFluid("chacha", new Color(223, 255, 0, 255)),
+	//			FERNET = registerAlcoholFluid("fernet", new Color(47, 79, 79, 255)),
+	//			GLUHWEIN = registerAlcoholFluid("gluhwein", new Color(139, 26, 26, 255)),
+	//			GROG = registerAlcoholFluid("grog", new Color(210, 105, 30, 255)),
+	//			KASHASA = registerAlcoholFluid("kashasa", new Color(240, 230, 209, 255)),
+	//			MEZCAL = registerAlcoholFluid("mezcal", new Color(230, 214, 160, 255)),
+	//			NEGRONI = registerAlcoholFluid("negroni", new Color(139, 0, 0, 255)),
+	//			OUZO = registerAlcoholFluid("ouzo", new Color(245, 240, 215, 255)),
+	//			PASTIS = registerAlcoholFluid("pastis", new Color(245, 240, 160, 255)),
+	//			PUNCH = registerAlcoholFluid("punch", new Color(255, 99, 71, 255)),
+	//			RAKIA = registerAlcoholFluid("rakia", new Color(240, 230, 209, 255)),
+	//			SAMBUCA = registerAlcoholFluid("sambuca", new Color(245, 240, 215, 255)),
+	//			SHERRY = registerAlcoholFluid("sherry", new Color(210, 180, 140, 255)),
+	//			SOCATA = registerAlcoholFluid("socata", new Color(230, 214, 60, 255)),
+	//			SOJU = registerAlcoholFluid("soju", new Color(240, 230, 209, 255)),
+	//			SOTOL = registerAlcoholFluid("sotol", new Color(230, 214, 160, 255)),
+	//			TODDY = registerAlcoholFluid("toddy", new Color(210, 105, 30, 255)),
+	//			TRIPLE_SEC = registerAlcoholFluid("triple-sec", new Color(255, 240, 160, 255)),
+	//			TSIPURO = registerAlcoholFluid("tsipuro", new Color(245, 240, 215, 255)),
+	//			VERMOUTH = registerAlcoholFluid("vermouth", new Color(160, 32, 240, 255)),
+	//			TSUIKE = registerAlcoholFluid("tsuike", new Color(34, 139, 34, 255)),
+	//			VISHINATA = registerAlcoholFluid("vishinata", new Color(170, 74, 68, 255)),
 	
 	// Compatibility
-		// Farmer's Delight
-	public static final FluidRegistryObject MELON_JUICE = registerAlcoholFluid("melon_juice", 0xFFD20000);
-	//public static final FluidRegistryObject TOMATO_SAUCE = registerAlcoholFluid("tomato_sauce", 0xFFD20000);
+	// Farmer's Delight
+	MELON_JUICE = registerAlcoholFluid("melon_juice", new Color(210, 0, 0, 255)),
+	//TOMATO_SAUCE = registerAlcoholFluid("tomato_sauce", new Color(210, 0, 0, 255)),
 	
-		// Corn
-	public static final FluidRegistryObject BOURBON = registerAlcoholFluid("bourbon", 0x59B56B1A);
-	public static final FluidRegistryObject CORN_WHISKY = registerAlcoholFluid("corn_whisky", 0x739C6B1A);
-	public static final FluidRegistryObject MOONSHINE = registerAlcoholFluid("moonshine", 0xE3F0E6D1);
+	// Corn
+	BOURBON = registerAlcoholFluid("bourbon", new Color(181, 107, 26, 89)),
+			CORN_WHISKY = registerAlcoholFluid("corn_whisky", new Color(156, 107, 26, 115)),
+			MOONSHINE = registerAlcoholFluid("moonshine", new Color(240, 230, 209, 227)),
 	
-		// Grapes
-	public static final FluidRegistryObject CAHORS = registerAlcoholFluid("cahors", 0xFC5A1E1E);
-	public static final FluidRegistryObject CHAMPAGNE = registerAlcoholFluid("champagne", 0x3DFFEC8B);
-	public static final FluidRegistryObject COGNAC = registerAlcoholFluid("cognac", 0x8CD4A13C);
+	// Grapes
+	CAHORS = registerAlcoholFluid("cahors", new Color(90, 30, 30, 252)),
+			CHAMPAGNE = registerAlcoholFluid("champagne", new Color(255, 236, 139, 61)),
+			COGNAC = registerAlcoholFluid("cognac", new Color(212, 161, 60, 140)),
 	
-		// Other
-	public static final FluidRegistryObject RED_WINE = registerAlcoholFluid("red_wine", 0xBE990012);
-	public static final FluidRegistryObject WINE = registerAlcoholFluid("wine", 0xBE722f37);
-	public static final FluidRegistryObject WHITE_WINE = registerAlcoholFluid("white_wine", 0xBEEEEDC4);
+	// Other
+	RED_WINE = registerAlcoholFluid("red_wine", new Color(153, 0, 18, 190)),
+			WINE = registerAlcoholFluid("wine", new Color(114, 47, 55, 190)),
+			WHITE_WINE = registerAlcoholFluid("white_wine", new Color(238, 237, 196, 190)),
 	
 	// Vintage beverages
-	public static final FluidRegistryObject SBITEN = registerAlcoholFluid("sbiten", 0xC7B3471A);
-	public static final FluidRegistryObject SYTA = registerAlcoholFluid("syta", 0xC7D4A13C);
-	public static final FluidRegistryObject VZVAR = registerAlcoholFluid("vzvar", 0xBD9C5A2D);
+	SBITEN = registerAlcoholFluid("sbiten", new Color(179, 71, 26, 199)),
+			SYTA = registerAlcoholFluid("syta", new Color(212, 161, 60, 199)),
+			VZVAR = registerAlcoholFluid("vzvar", new Color(156, 90, 45, 189)),
 	
 	// Challenge beverages
-	public static final FluidRegistryObject FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", 0xFFf1c232);
-	public static final FluidRegistryObject SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", 0xFF990000);
-	public static final FluidRegistryObject FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", 0xDA93c47d);
-	public static final FluidRegistryObject GUT_WRECKER = registerAlcoholFluid("gut_wrecker", 0xFF38761d);
-	
-	
+	FLAXEN_CHEESE_STOUT = registerAlcoholFluid("flaxen_cheese_stout", new Color(241, 194, 50, 255)),
+			SCARLET_CHEESE_STOUT = registerAlcoholFluid("scarlet_cheese_stout", new Color(153, 0, 0, 255)),
+			FLYING_DUTCHMAN = registerAlcoholFluid("flying_dutchman", new Color(147, 196, 125, 218)),
+			GUT_WRECKER = registerAlcoholFluid("gut_wrecker", new Color(56, 118, 29, 255));
 	
 	// I really should've copied the fluid registration code from BnC, but I'm in the middle of the sunk cost fallacy
 	// also I don't really want to register each beverage one by one
-	private static FluidRegistryObject registerAlcoholFluid(String name, int tintColor) {
-		RegistryObject<FluidType> fluidType = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tintColor));
+	private static FluidRegistryObject registerAlcoholFluid(String name, Color tintColor)
+	{
+		RegistryObject<FluidType> fluidType = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tintColor.getRGB()));
 		
 		// Use RegistryObject references that will be filled later
 		final RegistryObject<FlowingFluid>[] sourceHolder = new RegistryObject[1];
