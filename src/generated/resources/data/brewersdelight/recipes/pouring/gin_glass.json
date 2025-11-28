@@ -2,7 +2,7 @@
   "type": "brewinandchewin:keg_pouring",
   "amount": 250,
   "container": {
-    "item": "brewinandchewin:tankard"
+    "item": "minecraft:glass_bottle"
   },
   "filling": false,
   "fluid": "brewersdelight:gin",

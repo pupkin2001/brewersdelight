@@ -1119,8 +1119,8 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		}
 		
 		if (glassOutput != null) {
-			assert containerItem != null;
-			ResourceLocation glassContainerId = containerItem.getId();
+			assert glassContainerItem != null;
+			ResourceLocation glassContainerId = ForgeRegistries.ITEMS.getKey(glassContainerItem);
 			assert tankardOutput != null;
 			ResourceLocation glassOutputId = tankardOutput.getId();
 			assert glassOutput.getId() != null;
