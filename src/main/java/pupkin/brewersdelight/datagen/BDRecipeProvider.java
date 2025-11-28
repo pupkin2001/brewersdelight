@@ -18,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.misc.BrewersFluids;
-import umpaz.brewinandchewin.BrewinAndChewin;
 import umpaz.brewinandchewin.common.registry.BnCFluids;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -28,17 +27,22 @@ import java.util.function.Consumer;
 
 public class BDRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
-	public static final int FAST_FERMENTING = 4800;      // 4 minutes
-	public static final int NORMAL_FERMENTING = 9600;    // 8 minutes
-	public static final int LONG_FERMENTING = 19200;     // 16 minutes
+	public static final int
+			// Duration
+			FAST_FERMENTING = 4800,      // 4 minutes
+			NORMAL_FERMENTING = 9600,    // 8 minutes
+			LONG_FERMENTING = 19200,     // 16 minutes
 	
-	public static final float SMALL_EXP = 0.5F;
-	public static final float MEDIUM_EXP = 1.0F;
-	public static final float LARGE_EXP = 2.0F;
+	// Temperature
+	HOT_TEMPERATURE = 4,
+			WARM_TEMPERATURE = 3,
+			FRIGID_TEMPERATURE = 2;
 	
-	public static final int HOT_TEMPERATURE = 4;
-	public static final int WARM_TEMPERATURE = 3;
-	public static final int FRIGID_TEMPERATURE = 2;
+	// Experience
+	public static final float
+			SMALL_EXP = 0.5F,
+			MEDIUM_EXP = 1.0F,
+			LARGE_EXP = 2.0F;
 	
 	public BDRecipeProvider(PackOutput output)
 	{
@@ -55,7 +59,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	private void generateFermentingRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		// Fermenting drinks
-		// Farmer's Delight
+		// Core
 		createFermentingRecipe(consumer, "braga", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -130,174 +134,173 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat");
 		
 		// Bloat
-//		createFermentingRecipe(consumer, "absinthe_grass", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
-//		                       Items.GRASS, Items.GRASS, Items.GRASS, Items.GRASS);
-//		createFermentingRecipe(consumer, "absinthe_tall_grass", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
-//		                       Items.TALL_GRASS, Items.TALL_GRASS);
-//		createFermentingRecipe(consumer, "amaro", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.AMARO.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "amontillado", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.AMONTILLADO.source().getId(), 1000,
-//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
-//		createFermentingRecipe(consumer, "aperol", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.APEROL.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "armagnac", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.ARMAGNAC.source().getId(), 1000,
-//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
-//		createFermentingRecipe(consumer, "baijiu", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.BAIJIU.source().getId(), 1000,
-//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
-//		createFermentingRecipe(consumer, "becherovka", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.BECHEROVKA.source().getId(), 1000,
-//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
-//		createFermentingRecipe(consumer, "bitter", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.BITTER.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "calvados", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.CALVADOS.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "campari", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.CAMPARI.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "chacha", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.CHACHA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "fernet", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.FERNET.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "gluhwein", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.GLUHWEIN.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "grog", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.GROG.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "kashasa", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.KASHASA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "mezcal", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.MEZCAL.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "negroni", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.NEGRONI.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "ouzo", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.OUZO.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "pastis", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.PASTIS.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "punch", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.PUNCH.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "rakia", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.RAKIA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "sambuca", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.SAMBUCA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "sherry", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.SHERRY.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "socata", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.SOCATA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "soju", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.SOJU.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "sotol", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.SOTOL.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "toddy", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.TODDY.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "triple-sec", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.TRIPLE_SEC.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "tsipuro", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.TSIPURO.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "vermouth", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.VERMOUTH.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "tsuike", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.TSUIKE.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
-//		createFermentingRecipe(consumer, "vishinata", "drinks",
-//		                       Fluids.WATER, 1000,
-//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
-//		                       BrewersFluids.VISHINATA.source().getId(), 1000,
-//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "absinthe_grass", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
+		//		                       Items.GRASS, Items.GRASS, Items.GRASS, Items.GRASS);
+		//		createFermentingRecipe(consumer, "absinthe_tall_grass", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
+		//		                       Items.TALL_GRASS, Items.TALL_GRASS);
+		//		createFermentingRecipe(consumer, "amaro", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.AMARO.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "amontillado", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.AMONTILLADO.source().getId(), 1000,
+		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
+		//		createFermentingRecipe(consumer, "aperol", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.APEROL.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "armagnac", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.ARMAGNAC.source().getId(), 1000,
+		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
+		//		createFermentingRecipe(consumer, "baijiu", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.BAIJIU.source().getId(), 1000,
+		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
+		//		createFermentingRecipe(consumer, "becherovka", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.BECHEROVKA.source().getId(), 1000,
+		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
+		//		createFermentingRecipe(consumer, "bitter", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.BITTER.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "calvados", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.CALVADOS.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "campari", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.CAMPARI.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "chacha", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.CHACHA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "fernet", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.FERNET.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "gluhwein", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.GLUHWEIN.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "grog", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.GROG.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "kashasa", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.KASHASA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "mezcal", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.MEZCAL.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "negroni", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.NEGRONI.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "ouzo", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.OUZO.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "pastis", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.PASTIS.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "punch", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.PUNCH.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "rakia", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.RAKIA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "sambuca", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.SAMBUCA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "sherry", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.SHERRY.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "socata", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.SOCATA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "soju", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.SOJU.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "sotol", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.SOTOL.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "toddy", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.TODDY.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "triple-sec", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.TRIPLE_SEC.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "tsipuro", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.TSIPURO.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "vermouth", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.VERMOUTH.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "tsuike", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.TSUIKE.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		//		createFermentingRecipe(consumer, "vishinata", "drinks",
+		//		                       Fluids.WATER, 1000,
+		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       BrewersFluids.VISHINATA.source().getId(), 1000,
+		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		
-		// Compatibility
-			// Corn
+		// Corn
 		createFermentingRecipe(consumer, "bourbon", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -314,7 +317,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       BrewersFluids.MOONSHINE.source().getId(), 500,
 		                       "forge:vegetables/corn", "forge:vegetables/corn", Items.SUGAR, Items.SUGAR);
 		
-			//Grapes
+		//Grapes
 		createFermentingRecipe(consumer, "cahors", "drinks",
 		                       BrewersFluids.WINE.source().get(), 250,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
@@ -330,14 +333,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.COGNAC.source().getId(), 500,
 		                       "forge:fruits/grape", "forge:fruits/grape", Items.APPLE, Items.APPLE);
-			// Other
+		// Common
 		createFermentingRecipe(consumer, "wine", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WINE.source().getId(), 1000,
 		                       "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape");
 		
-		// Vintage beverages
+		// Vintage
 		createFermentingRecipe(consumer, "sbiten", "drinks",
 		                       BnCFluids.BEER, 500,
 		                       LONG_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
@@ -349,7 +352,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       BrewersFluids.SYTA.source().getId(), 1000,
 		                       Items.HONEY_BOTTLE, Items.HONEY_BOTTLE);
 		
-		// Challenge beverages
+		// Challenge
 		createFermentingRecipe(consumer, "flaxen_cheese_stout", "drinks",
 		                       BnCFluids.VODKA, 250,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
@@ -377,408 +380,407 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	private void generatePouringRecipes(Consumer<FinishedRecipe> consumer)
 	{
 		// Pouring drinks
-		// Farmer's Delight
+		// Core
 		createPouringRecipes(consumer, "braga",
-		                    BrewersFluids.BRAGA.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.BRAGA,
+		                     BrewersFluids.BRAGA.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.BRAGA,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.BRAGA,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "brandy",
-		                    BrewersFluids.BRANDY.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.BRANDY,
+		                     BrewersFluids.BRANDY.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.BRANDY,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.BRANDY,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "cider",
-		                    BrewersFluids.CIDER.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.CIDER,
+		                     BrewersFluids.CIDER.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.CIDER,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.CIDER,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "compote",
-		                    BrewersFluids.COMPOTE.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.COMPOTE,
+		                     BrewersFluids.COMPOTE.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.COMPOTE,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.COMPOTE,
-		                    true,
-		                    false
-		                   );
+		                     true,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "gin",
-		                    BrewersFluids.GIN.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.GIN,
-		                    Items.GLASS_BOTTLE,
-		                    BrewersItems.GIN,
-		                    false,
-		                    false
-		                   );
+		                     BrewersFluids.GIN.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.GIN,
+		                     Items.GLASS_BOTTLE,
+		                     BrewersItems.GIN,
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "kvass",
-		                    BrewersFluids.KVASS.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.KVASS,
+		                     BrewersFluids.KVASS.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.KVASS,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.KVASS,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "liqueur",
-		                    BrewersFluids.LIQUEUR.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.LIQUEUR,
+		                     BrewersFluids.LIQUEUR.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.LIQUEUR,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.LIQUEUR,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "martini",
-		                    BrewersFluids.MARTINI.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.MARTINI,
+		                     BrewersFluids.MARTINI.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.MARTINI,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.MARTINI,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "melon_schnapps",
-		                    BrewersFluids.MELON_SCHNAPPS.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.MELON_SCHNAPPS,
+		                     BrewersFluids.MELON_SCHNAPPS.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.MELON_SCHNAPPS,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.MELON_SCHNAPPS,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "old_fashion",
-		                    BrewersFluids.OLD_FASHION.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.OLD_FASHION,
+		                     BrewersFluids.OLD_FASHION.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.OLD_FASHION,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.OLD_FASHION,
-		                    true,
-		                    false
-		                   );
+		                     true,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "rum",
-		                    BrewersFluids.RUM.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.RUM,
+		                     BrewersFluids.RUM.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.RUM,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.RUM,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "sake",
-		                    BrewersFluids.SAKE.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.SAKE,
+		                     BrewersFluids.SAKE.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.SAKE,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.SAKE,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "tequila",
-		                    BrewersFluids.TEQUILA.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.TEQUILA,
+		                     BrewersFluids.TEQUILA.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.TEQUILA,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.TEQUILA,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		createPouringRecipes(consumer, "whisky",
-		                    BrewersFluids.WHISKY.source().get(),
-		                    250,
-		                    BnCItems.TANKARD,
-		                    BrewersItems.WHISKY,
+		                     BrewersFluids.WHISKY.source().get(),
+		                     250,
+		                     BnCItems.TANKARD,
+		                     BrewersItems.WHISKY,
 		                     Items.GLASS_BOTTLE,
 		                     BrewersItems.WHISKY,
-		                    false,
-		                    false
-		                   );
+		                     false,
+		                     false
+		                    );
 		
 		// Bloat
-//		createPouringRecipe(consumer, "absinthe",
-//		                    BrewersFluids.ABSINTHE.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.ABSINTHE,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "amaro",
-//		                    BrewersFluids.AMARO.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.AMARO,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "amontillado",
-//		                    BrewersFluids.AMONTILLADO.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.AMONTILLADO,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "aperol",
-//		                    BrewersFluids.APEROL.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.APEROL,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "armagnac",
-//		                    BrewersFluids.ARMAGNAC.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.ARMAGNAC,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "baijiu",
-//		                    BrewersFluids.BAIJIU.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.BAIJIU,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "becherovka",
-//		                    BrewersFluids.BECHEROVKA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.BECHEROVKA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "bitter",
-//		                    BrewersFluids.BITTER.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.BITTER,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "calvados",
-//		                    BrewersFluids.CALVADOS.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.CALVADOS,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "campari",
-//		                    BrewersFluids.CAMPARI.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.CAMPARI,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "chacha",
-//		                    BrewersFluids.CHACHA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.CHACHA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "fernet",
-//		                    BrewersFluids.FERNET.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.FERNET,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "gluhwein",
-//		                    BrewersFluids.GLUHWEIN.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.GLUHWEIN,
-//		                    true,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "grog",
-//		                    BrewersFluids.GROG.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.GROG,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "kashasa",
-//		                    BrewersFluids.KASHASA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.KASHASA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "mezcal",
-//		                    BrewersFluids.MEZCAL.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.MEZCAL,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "negroni",
-//		                    BrewersFluids.NEGRONI.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.NEGRONI,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "ouzo",
-//		                    BrewersFluids.OUZO.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.OUZO,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "pastis",
-//		                    BrewersFluids.PASTIS.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.PASTIS,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "punch",
-//		                    BrewersFluids.PUNCH.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.PUNCH,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "rakia",
-//		                    BrewersFluids.RAKIA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.RAKIA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "sambuca",
-//		                    BrewersFluids.SAMBUCA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.SAMBUCA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "sherry",
-//		                    BrewersFluids.SHERRY.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.SHERRY,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "socata",
-//		                    BrewersFluids.SOCATA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.SOCATA,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "soju",
-//		                    BrewersFluids.SOJU.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.SOJU,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "sotol",
-//		                    BrewersFluids.SOTOL.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.SOTOL,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "toddy",
-//		                    BrewersFluids.TODDY.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.TODDY,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "triple-sec",
-//		                    BrewersFluids.TRIPLE_SEC.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.TRIPLE_SEC,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "tsipuro",
-//		                    BrewersFluids.TSIPURO.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.TSIPURO,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "vermouth",
-//		                    BrewersFluids.VERMOUTH.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.VERMOUTH,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "tsuike",
-//		                    BrewersFluids.TSUIKE.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.TSUIKE,
-//		                    false,
-//		                    false
-//		                   );
-//		createPouringRecipe(consumer, "vishinata",
-//		                    BrewersFluids.VISHINATA.source().get(),
-//		                    250,
-//		                    BnCItems.TANKARD,
-//		                    BrewersItems.VISHINATA,
-//		                    false,
-//		                    false
-//		                   );
+		//		createPouringRecipe(consumer, "absinthe",
+		//		                    BrewersFluids.ABSINTHE.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.ABSINTHE,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "amaro",
+		//		                    BrewersFluids.AMARO.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.AMARO,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "amontillado",
+		//		                    BrewersFluids.AMONTILLADO.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.AMONTILLADO,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "aperol",
+		//		                    BrewersFluids.APEROL.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.APEROL,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "armagnac",
+		//		                    BrewersFluids.ARMAGNAC.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.ARMAGNAC,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "baijiu",
+		//		                    BrewersFluids.BAIJIU.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.BAIJIU,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "becherovka",
+		//		                    BrewersFluids.BECHEROVKA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.BECHEROVKA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "bitter",
+		//		                    BrewersFluids.BITTER.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.BITTER,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "calvados",
+		//		                    BrewersFluids.CALVADOS.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.CALVADOS,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "campari",
+		//		                    BrewersFluids.CAMPARI.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.CAMPARI,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "chacha",
+		//		                    BrewersFluids.CHACHA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.CHACHA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "fernet",
+		//		                    BrewersFluids.FERNET.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.FERNET,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "gluhwein",
+		//		                    BrewersFluids.GLUHWEIN.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.GLUHWEIN,
+		//		                    true,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "grog",
+		//		                    BrewersFluids.GROG.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.GROG,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "kashasa",
+		//		                    BrewersFluids.KASHASA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.KASHASA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "mezcal",
+		//		                    BrewersFluids.MEZCAL.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.MEZCAL,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "negroni",
+		//		                    BrewersFluids.NEGRONI.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.NEGRONI,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "ouzo",
+		//		                    BrewersFluids.OUZO.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.OUZO,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "pastis",
+		//		                    BrewersFluids.PASTIS.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.PASTIS,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "punch",
+		//		                    BrewersFluids.PUNCH.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.PUNCH,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "rakia",
+		//		                    BrewersFluids.RAKIA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.RAKIA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "sambuca",
+		//		                    BrewersFluids.SAMBUCA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.SAMBUCA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "sherry",
+		//		                    BrewersFluids.SHERRY.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.SHERRY,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "socata",
+		//		                    BrewersFluids.SOCATA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.SOCATA,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "soju",
+		//		                    BrewersFluids.SOJU.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.SOJU,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "sotol",
+		//		                    BrewersFluids.SOTOL.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.SOTOL,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "toddy",
+		//		                    BrewersFluids.TODDY.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.TODDY,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "triple-sec",
+		//		                    BrewersFluids.TRIPLE_SEC.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.TRIPLE_SEC,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "tsipuro",
+		//		                    BrewersFluids.TSIPURO.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.TSIPURO,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "vermouth",
+		//		                    BrewersFluids.VERMOUTH.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.VERMOUTH,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "tsuike",
+		//		                    BrewersFluids.TSUIKE.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.TSUIKE,
+		//		                    false,
+		//		                    false
+		//		                   );
+		//		createPouringRecipe(consumer, "vishinata",
+		//		                    BrewersFluids.VISHINATA.source().get(),
+		//		                    250,
+		//		                    BnCItems.TANKARD,
+		//		                    BrewersItems.VISHINATA,
+		//		                    false,
+		//		                    false
+		//		                   );
 		
-		// Compatibility
-			// Corn
+		// Corn
 		createPouringRecipe(consumer, "bourbon",
 		                    BrewersFluids.BOURBON.source().get(),
 		                    250,
@@ -804,7 +806,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false
 		                   );
 		
-			// Grapes
+		// Grapes
 		createPouringRecipe(consumer, "cahors",
 		                    BrewersFluids.CAHORS.source().get(),
 		                    250,
@@ -830,7 +832,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false
 		                   );
 		
-		// Vintage beverages
+		// Vintage
 		createPouringRecipe(consumer, "sbiten",
 		                    BrewersFluids.SBITEN.source().get(),
 		                    250,
@@ -856,7 +858,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    false
 		                   );
 		
-		// Challenge beverages
+		// Challenge
 		createPouringRecipe(consumer, "flaxen_cheese_stout",
 		                    BrewersFluids.FLAXEN_CHEESE_STOUT.source().get(),
 		                    250,
@@ -1005,7 +1007,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	{
 		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid);
 		if (resultFluidId == null) {
-			throw new IllegalStateException("Unable to create fermenting recipe for " + resultFluid + " as it does not exist.");
+			throw new IllegalStateException("Unable to create fermenting recipe for fluid " + resultFluid + " as it does not exist.");
 		}
 		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
@@ -1024,7 +1026,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	{
 		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid.get());
 		if (resultFluidId == null) {
-			throw new IllegalStateException("Unable to create fermenting recipe for " + resultFluid + " as it does not exist.");
+			throw new IllegalStateException("Unable to create fermenting recipe for fluid " + resultFluid + " as it does not exist.");
 		}
 		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
@@ -1091,17 +1093,17 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	}
 	
 	public void createPouringRecipes(Consumer<FinishedRecipe> consumer, String recipeName,
-	                                Fluid fluid, int fluidAmount,
-	                                @Nullable RegistryObject<Item> containerItem,
+	                                 Fluid fluid, int fluidAmount,
+	                                 @Nullable RegistryObject<Item> containerItem,
 	                                 @Nullable RegistryObject<Item> tankardOutput,
 	                                 @Nullable Item glassContainerItem,
 	                                 @Nullable RegistryObject<Item> glassOutput,
-	                                boolean filling, boolean strict)
+	                                 boolean filling, boolean strict)
 	{
 		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid);
 		
 		if (fluidId == null) {
-			throw new IllegalStateException("Unable to create pouring recipes for " + fluid + " as it does not exist.");
+			throw new IllegalStateException("Unable to create pouring recipes for fluid " + fluid + " as it does not exist.");
 		}
 		
 		if (tankardOutput != null) {
@@ -1141,7 +1143,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		ResourceLocation outputId = outputItem.getId();
 		
 		if (fluidId == null) {
-			throw new IllegalStateException("Unable to create pouring recipes for " + fluid + " as it does not exist.");
+			throw new IllegalStateException("Unable to create pouring recipes for fluid " + fluid + " as it does not exist.");
 		}
 		
 		createPouringRecipe(consumer, recipeName,

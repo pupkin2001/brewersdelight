@@ -126,6 +126,40 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                                               );
 			
+			// any_vintage_beverage
+			Advancement anyVintageBeverage = generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("any_vintage_beverage"),
+					root,
+					BrewersItems.SBITEN.get(),
+					"any_vintage_beverage",
+					builder -> {
+						List<String> criteria = new ArrayList<>();
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, criteria);
+						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
+					},
+					null,
+					FrameType.CHALLENGE,
+					AdvancementRewards.Builder.experience(100).build()
+			                                                    );
+			
+			// every_vintage_beverage
+			generateAdvancement(
+					consumer,
+					existingFileHelper,
+					getNameId("every_vintage_beverage"),
+					anyVintageBeverage,
+					BrewersItems.VZVAR.get(),
+					"every_vintage_beverage",
+					builder -> {
+						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, null);
+					},
+					null,
+					FrameType.GOAL,
+					AdvancementRewards.Builder.experience(100).build()
+			                   );
+			
 			// any_challenge_beverage
 			Advancement anyChallengeBeverage = generateAdvancement(
 					consumer,
@@ -158,40 +192,6 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						addCriterion(builder, BnCItems.STEEL_TOE_STOUT, "bc_");
 						addCriterion(builder, BnCItems.WITHERING_DROSS, "bc_");
 						addCriteriaFromRegistry(BrewersItems.CHALLENGE_DRINKS, builder, null);
-					},
-					null,
-					FrameType.GOAL,
-					AdvancementRewards.Builder.experience(100).build()
-			                   );
-			
-			// any_vintage_beverage
-			Advancement anyVintageBeverage = generateAdvancement(
-					consumer,
-					existingFileHelper,
-					getNameId("any_vintage_beverage"),
-					root,
-					BrewersItems.SBITEN.get(),
-					"any_vintage_beverage",
-					builder -> {
-						List<String> criteria = new ArrayList<>();
-						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, criteria);
-						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
-					},
-					null,
-					FrameType.CHALLENGE,
-					AdvancementRewards.Builder.experience(100).build()
-			                                                    );
-			
-			// every_vintage_beverage
-			generateAdvancement(
-					consumer,
-					existingFileHelper,
-					getNameId("every_vintage_beverage"),
-					anyVintageBeverage,
-					BrewersItems.VZVAR.get(),
-					"every_vintage_beverage",
-					builder -> {
-						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, null);
 					},
 					null,
 					FrameType.GOAL,

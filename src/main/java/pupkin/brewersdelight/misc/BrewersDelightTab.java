@@ -17,20 +17,21 @@ public class BrewersDelightTab
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BrewersDelight.MOD_ID);
 	
 	@SuppressWarnings("unused")
-	public static final RegistryObject<CreativeModeTab> TAB_BREWERSDELIGHT = CREATIVE_TABS.register("brewers_delight_tab", () ->
-                        CreativeModeTab.builder()
-                                       .title(Component.translatable("itemgroup." + BrewersDelight.MOD_ID + ".BrewersDelightTab"))
-                                       .icon(() -> new ItemStack(BrewersItems.BRAGA.get()))
-                                       .displayItems((displayParams, output) -> {
-                                           Arrays.asList(
-                                                   BrewersItems.DRINKS,
-                                                   BrewersItems.COMPAT_DRINKS,
-                                                   BrewersItems.CHALLENGE_DRINKS,
-                                                   BrewersItems.VINTAGE_DRINKS
-                                                        ).forEach(registry ->
-                                                                          registry.getEntries().forEach(item -> output.accept(item.get()))
-                                                                 );
-                                       })
-                                       .build()
-               );
+	public static final RegistryObject<CreativeModeTab> TAB_BREWERSDELIGHT =
+			CREATIVE_TABS.register("brewers_delight_tab", () ->
+					                       CreativeModeTab.builder()
+					                                      .title(Component.translatable("itemgroup." + BrewersDelight.MOD_ID + ".BrewersDelightTab"))
+					                                      .icon(() -> new ItemStack(BrewersItems.BRAGA.get()))
+					                                      .displayItems((displayParams, output) -> {
+						                                      Arrays.asList(
+								                                      BrewersItems.DRINKS,
+								                                      BrewersItems.COMPAT_DRINKS,
+								                                      BrewersItems.VINTAGE_DRINKS,
+								                                      BrewersItems.CHALLENGE_DRINKS
+						                                                   ).forEach(registry ->
+								                                                             registry.getEntries().forEach(item -> output.accept(item.get()))
+						                                                            );
+					                                      })
+					                                      .build()
+			                      );
 }

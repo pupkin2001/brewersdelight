@@ -432,6 +432,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "martini_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:martini_glass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "melon_schnapps": {
       "conditions": {
         "items": [
@@ -658,6 +670,8 @@
       "kvass",
       "liqueur",
       "liqueur_glass",
+      "martini",
+      "martini_glass",
       "melon_schnapps",
       "melon_schnapps_glass",
       "old_fashion",
@@ -674,7 +688,6 @@
       "cahors",
       "champagne",
       "cognac",
-      "martini",
       "flaxen_cheese_stout",
       "scarlet_cheese_stout",
       "flying_dutchman",

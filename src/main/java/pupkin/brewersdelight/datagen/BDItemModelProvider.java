@@ -22,15 +22,16 @@ public class BDItemModelProvider extends ItemModelProvider
 	{
 		List<DeferredRegister<Item>> registries = List.of(
 				BrewersItems.DRINKS,
-				BrewersItems.CHALLENGE_DRINKS,
+				BrewersItems.COMPAT_DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
-				BrewersItems.COMPAT_DRINKS
+				BrewersItems.CHALLENGE_DRINKS
 		                                                 );
 		
 		registries.forEach(this::processRegistry);
 	}
 	
-	private void processRegistry(DeferredRegister<Item> registry) {
+	private void processRegistry(DeferredRegister<Item> registry)
+	{
 		registry.getEntries().forEach(item -> {
 			assert item.getId() != null;
 			String itemName = item.getId().getPath();
