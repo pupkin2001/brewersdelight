@@ -160,14 +160,24 @@ public class BrewersItems
 			DrinkItem = registry.register(name, () -> new BoozeItem(fluid.source().get(), foodItem(food, BnCItems.TANKARD.get())));
 			
 			if (hasGlassVariant) {
-				registry.register(name + "_glass", () -> new BoozeItem(fluid.source().get(), foodItem(food, Items.GLASS_BOTTLE)));
+				registry.register(name + "_glass", () -> new BoozeItem(fluid.source().get(), foodItem(food, Items.GLASS_BOTTLE)) {
+					@Override
+					public @NotNull String getDescriptionId() {
+						return "item." + BrewersDelight.MOD_ID + "." + name;
+					}
+				});
 			}
 			
 			return DrinkItem;
 		}
 		
 		// If no tankard variant only register the glass one
-		DrinkItem = registry.register(name + "_glass", () -> new BoozeItem(fluid.source().get(), foodItem(food, Items.GLASS_BOTTLE)));
+		DrinkItem = registry.register(name + "_glass", () -> new BoozeItem(fluid.source().get(), foodItem(food, Items.GLASS_BOTTLE)) {
+			@Override
+			public @NotNull String getDescriptionId() {
+				return "item." + BrewersDelight.MOD_ID + "." + name;
+			}
+		});
 		
 		return DrinkItem;
 	}
