@@ -3,6 +3,7 @@ package pupkin.brewersdelight.misc;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import umpaz.brewinandchewin.common.registry.BnCEffects;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class DrinkProperties
@@ -21,19 +22,25 @@ public class DrinkProperties
 	// Core
 	public static final FoodProperties
 			BRAGA = new FoodProperties.Builder()
-					.alwaysEat()
-					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION, 0), 1.0f)
-					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SHORT_DURATION*3/4, 0), 1.0f)
-					.nutrition(6).saturationMod(0.1F)
-					.build(), // This definitely does look weird
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION, 0), 1.0f)
+			.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, SHORT_DURATION * 3 / 4, 0), 1.0f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 4800, 0), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 3600, 0, true, false), 1.0F)
+			.nutrition(6).saturationMod(0.1F)
+			.build(), // This definitely does look weird
 			BRANDY = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, SHORT_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, SHORT_DURATION, 0), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 18000, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 13500, 0, true, false), 1.0F)
 					.build(),
 			CIDER = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, VERY_SHORT_DURATION, 1), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 2400, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 1800, 0, true, false), 1.0F)
 					.build(),
 			COMPOTE = new FoodProperties.Builder()
 					.alwaysEat() // Golden apple, but without the gold?...
@@ -45,7 +52,8 @@ public class DrinkProperties
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, MEDIUM_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, SHORT_DURATION, 0), 0.8f)
-					.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, BRIEF_DURATION, 0), 0.4f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 			KVASS = new FoodProperties.Builder()
 					.alwaysEat()
@@ -56,57 +64,77 @@ public class DrinkProperties
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, SHORT_DURATION, 1), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, SHORT_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 10800, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 8100, 0, true, false), 1.0F)
 					.build(),
 			MARTINI = new FoodProperties.Builder()
 					.alwaysEat()
-					.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 1), 1.0f)
-					.build(),
-			// I *really* want to split martini depending on the recipe used. The thought of beginning to glow after drinking glow berries is funny to me for some reason.
-			MARTINI_GLOW = new FoodProperties.Builder()
-					.alwaysEat()
-					.effect(() -> new MobEffectInstance(MobEffects.GLOWING, MODERATE_DURATION, 0), 0.3f)
-					.effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, MODERATE_DURATION, 0), 0.7f)
 					.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 0), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 7800, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 5850, 0, true, false), 1.0F)
 					.build(),
+	// I *really* want to split martini depending on the recipe used. The thought of beginning to glow after drinking glow berries is funny to me for some reason.
+	MARTINI_GLOW = new FoodProperties.Builder()
+			.alwaysEat()
+			.effect(() -> new MobEffectInstance(MobEffects.GLOWING, MODERATE_DURATION, 0), 0.3f)
+			.effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, MODERATE_DURATION, 0), 0.7f)
+			.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 0), 1.0f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 7800, 0), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 5850, 0, true, false), 1.0F)
+			.build(),
 			MARTINI_MUSHROOM = new FoodProperties.Builder()
 					.alwaysEat()
-			        .effect(() -> new MobEffectInstance(MobEffects.POISON, VERY_SHORT_DURATION, 0), 0.3f)
+					.effect(() -> new MobEffectInstance(MobEffects.POISON, VERY_SHORT_DURATION, 0), 0.3f)
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, SHORT_DURATION, 0), 0.7f)
 					.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), MODERATE_DURATION, 1), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 7800, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 5850, 0, true, false), 1.0F)
 					.build(),
 			MELON_SCHNAPPS = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.HUNGER, BRIEF_DURATION, 0), 0.6f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 18000, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 13500, 0, true, false), 1.0F)
 					.build(),
 			OLD_FASHION = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, EXTENDED_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, SHORT_DURATION, 1), 1.0f)
-					.effect(() -> new MobEffectInstance(MobEffects.LUCK, MEDIUM_DURATION, 0), 0.5f) // hey, it's here if you want it.
+					.effect(() -> new MobEffectInstance(MobEffects.LUCK, MEDIUM_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 			RUM = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, MEDIUM_DURATION, 1), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, SHORT_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, VERY_SHORT_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 21600, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 16200, 0, true, false), 1.0F)
 					.build(),
 			SAKE = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, MEDIUM_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.SATURATION, 1, 0), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 8400, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 6300, 0, true, false), 1.0F)
 					.build(),
 			TEQUILA = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, MEDIUM_DURATION, 1), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.JUMP, SHORT_DURATION, 1), 1.0f)
-					.effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.2f) // Cacti don't, in fact, dissolve in water completely xd
+					.effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.2f) // Cacti don't, in fact, dissolve in water completely. xd
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 			WHISKY = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, SHORT_DURATION, 0), 1.0f)
-					.effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, SHORT_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, SHORT_DURATION, 0), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 	
 	// Bloat
@@ -278,17 +306,23 @@ public class DrinkProperties
 			.alwaysEat()
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, EXTENDED_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, MEDIUM_DURATION, 0), 0.7f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 20400, 0), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 15300, 0, true, false), 1.0F)
 			.build(),
 			CORN_WHISKY = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, MEDIUM_DURATION, 1), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.HUNGER, SHORT_DURATION, 0), 0.8f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 21600, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 16200, 0, true, false), 1.0F)
 					.build(),
 			MOONSHINE = new FoodProperties.Builder()
-                     .alwaysEat()
-                     .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, MODERATE_DURATION, 1), 1.0f)
-                     .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, SHORT_DURATION, 0), 0.9f) // It's called "moonshine" for a reason
-                     .build(),
+					.alwaysEat()
+					.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, MODERATE_DURATION, 1), 1.0f)
+					.effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, SHORT_DURATION, 0), 0.9f) // It's called "moonshine" for a reason
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 26400, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 19800, 0, true, false), 1.0F)
+					.build(),
 	
 	// Grapes
 	CAHORS = new FoodProperties.Builder()
@@ -296,12 +330,16 @@ public class DrinkProperties
 			.effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, MEDIUM_DURATION, 1), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.HEAL, 1, 0), 0.8f) // God heals you, I guess
 			.effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, BRIEF_DURATION, 0), 0.2f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 8640, 0), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 6480, 0, true, false), 1.0F)
 			.build(),
 			CHAMPAGNE = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.JUMP, SHORT_DURATION, 1), 1.0f)
-					.effect(() -> new MobEffectInstance(MobEffects.LUCK, MEDIUM_DURATION, 0), 0.7f)
+					.effect(() -> new MobEffectInstance(MobEffects.LUCK, MEDIUM_DURATION, 0), 0.3f)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, SHORT_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 5760, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 4320, 0, true, false), 1.0F)
 					.build(),
 			COGNAC = new FoodProperties.Builder()
 					.alwaysEat()
@@ -309,6 +347,8 @@ public class DrinkProperties
 					.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, SHORT_DURATION, 0), 0.8f)
 					.effect(() -> new MobEffectInstance(MobEffects.SATURATION, 1, 0), 0.6f)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, BRIEF_DURATION, 0), 0.3f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 	
 	// Vintage
@@ -317,6 +357,8 @@ public class DrinkProperties
 			.effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, EXTENDED_DURATION, 1), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, MEDIUM_DURATION, 0), 1.0f)
 			.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, SHORT_DURATION, 0), 0.7f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 4800, 0), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 3600, 0, true, false), 1.0F)
 			.nutrition(4).saturationMod(0.5F)
 			.build(),
 			SYTA = new FoodProperties.Builder()
@@ -346,6 +388,8 @@ public class DrinkProperties
 			.effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.25f)
 			.effect(() -> new MobEffectInstance(MobEffects.POISON, 2100, 0), 0.25f)
 			.effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 4200, 0), 0.1f)
+			.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 9600, 1), 1.0F)
+			.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 7200, 0, true, false), 1.0F)
 			.nutrition(4).saturationMod(0.4F)
 			.build(),
 			SCARLET_CHEESE_STOUT = new FoodProperties.Builder()
@@ -359,18 +403,24 @@ public class DrinkProperties
 					.effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.25f)
 					.effect(() -> new MobEffectInstance(MobEffects.WITHER, 2100, 0), 0.25f)
 					.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2100, 1), 0.1f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 9600, 1), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 7200, 0, true, false), 1.0F)
 					.nutrition(4).saturationMod(0.4F)
 					.build(),
 			FLYING_DUTCHMAN = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, LONG_DURATION, 0), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.BAD_OMEN, LONG_DURATION, 0), 1.0f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 19200, 0), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 14400, 0, true, false), 1.0F)
 					.build(),
 			GUT_WRECKER = new FoodProperties.Builder()
 					.alwaysEat()
 					.effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, LONG_DURATION, 1), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.CONFUSION, MODERATE_DURATION, 2), 1.0f)
 					.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, MODERATE_DURATION, 0), 0.5f)
+					.effect(() -> new MobEffectInstance(BnCEffects.TIPSY.get(), 38400, 4), 1.0F)
+					.effect(() -> new MobEffectInstance(BnCEffects.INTOXICATION.get(), 28800, 0, true, false), 1.0F)
 					.nutrition(6).saturationMod(2.0F)
 					.build();
 }
