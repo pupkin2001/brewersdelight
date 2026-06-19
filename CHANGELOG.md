@@ -1,15 +1,18 @@
 # Changelog
 
-## [v0.7.0-rc1] - Unreleased
+## [v0.7.0] - Unreleased
 
 ### Added
 
+- Filled missing fluid localization strings
 
 ### Changed
 
+- Replaced every instance of word 'beverage' with more appropriate 'drink'
 
 ### Fixed
 
+- Recipes now display output item icons
 
 ## [v0.7.0-pre] - 2025/11/09
 
