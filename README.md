@@ -2,7 +2,7 @@
 
 # Welcome to the Brewer's Delight repository.
 
-**Brewer's Delight** is an add-on to **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and **[Brewin' and Chewin'](https://github.com/wiidotmom/BrewinAndChewin)**, adding more beverages.
+**Brewer's Delight** is an add-on to **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and **[Brewin' and Chewin'](https://github.com/wiidotmom/BrewinAndChewin)**, adding more drinks.
 
 ### About versions and dependencies
 

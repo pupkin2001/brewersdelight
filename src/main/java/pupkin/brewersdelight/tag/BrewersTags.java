@@ -10,8 +10,8 @@ import pupkin.brewersdelight.BrewersDelight;
 public class BrewersTags
 {
 	public static final TagKey<Item>
-			VINTAGE_DRINKS = modItemTag("vintage_beverages"),
-			CHALLENGE_DRINKS = modItemTag("challenge_beverages");
+			VINTAGE_DRINKS = modItemTag("vintage_drinks"),
+			CHALLENGE_DRINKS = modItemTag("challenge_drinks");
 	
 	private static @NotNull TagKey<Item> modItemTag(String path)
 	{

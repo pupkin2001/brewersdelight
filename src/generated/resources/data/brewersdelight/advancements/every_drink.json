@@ -581,7 +581,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.every_beverage.description"
+      "translate": "advancements.every_drink.description"
     },
     "frame": "goal",
     "hidden": false,
@@ -590,7 +590,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.every_beverage.title"
+      "translate": "advancements.every_drink.title"
     }
   },
   "requirements": [

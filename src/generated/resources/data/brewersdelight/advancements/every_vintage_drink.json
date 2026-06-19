@@ -1,5 +1,5 @@
 {
-  "parent": "brewersdelight:any_vintage_beverage",
+  "parent": "brewersdelight:any_vintage_drink",
   "criteria": {
     "sbiten": {
       "conditions": {
@@ -41,7 +41,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.every_vintage_beverage.description"
+      "translate": "advancements.every_vintage_drink.description"
     },
     "frame": "goal",
     "hidden": false,
@@ -50,7 +50,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.every_vintage_beverage.title"
+      "translate": "advancements.every_vintage_drink.title"
     }
   },
   "requirements": [

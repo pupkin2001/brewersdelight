@@ -1,5 +1,5 @@
 {
-  "parent": "brewersdelight:any_challenge_beverage",
+  "parent": "brewersdelight:any_challenge_drink",
   "criteria": {
     "bc_dread_nog": {
       "conditions": {
@@ -89,7 +89,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.every_challenge_beverage.description"
+      "translate": "advancements.every_challenge_drink.description"
     },
     "frame": "goal",
     "hidden": false,
@@ -98,7 +98,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.every_challenge_beverage.title"
+      "translate": "advancements.every_challenge_drink.title"
     }
   },
   "requirements": [

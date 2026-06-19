@@ -9,8 +9,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
-import pupkin.brewersdelight.misc.DrinkProperties;
 import pupkin.brewersdelight.misc.BrewersFluids;
+import pupkin.brewersdelight.misc.DrinkProperties;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
@@ -25,20 +25,20 @@ public class BrewersItems
 	
 	// Core
 	public static final RegistryObject<Item>
-			BRAGA = registerBeverage(DRINKS, "braga", BrewersFluids.BRAGA, DrinkProperties.BRAGA, true),
-			BRANDY = registerBeverage(DRINKS, "brandy", BrewersFluids.BRANDY, DrinkProperties.BRANDY, true),
-			CIDER = registerBeverage(DRINKS, "cider", BrewersFluids.CIDER, DrinkProperties.CIDER, false),
-			COMPOTE = registerBeverage(DRINKS, "compote", BrewersFluids.COMPOTE, DrinkProperties.COMPOTE),
-			GIN = registerBeverage(DRINKS, "gin", BrewersFluids.GIN, DrinkProperties.GIN, true),
-			KVASS = registerBeverage(DRINKS, "kvass", BrewersFluids.KVASS, DrinkProperties.KVASS, false),
-			LIQUEUR = registerBeverage(DRINKS, "liqueur", BrewersFluids.LIQUEUR, DrinkProperties.LIQUEUR, true),
-			MARTINI = registerBeverage(DRINKS, "martini", BrewersFluids.MARTINI, DrinkProperties.MARTINI, true),
-			MELON_SCHNAPPS = registerBeverage(DRINKS, "melon_schnapps", BrewersFluids.MELON_SCHNAPPS, DrinkProperties.MELON_SCHNAPPS, true),
-			OLD_FASHION = registerBeverage(DRINKS, "old_fashion", BrewersFluids.OLD_FASHION, DrinkProperties.OLD_FASHION, true),
-			RUM = registerBeverage(DRINKS, "rum", BrewersFluids.RUM, DrinkProperties.RUM, false),
-			SAKE = registerBeverage(DRINKS, "sake", BrewersFluids.SAKE, DrinkProperties.SAKE, true),
-			TEQUILA = registerBeverage(DRINKS, "tequila", BrewersFluids.TEQUILA, DrinkProperties.TEQUILA, false),
-			WHISKY = registerBeverage(DRINKS, "whisky", BrewersFluids.WHISKY, DrinkProperties.WHISKY, true),
+			BRAGA = registerDrink(DRINKS, "braga", BrewersFluids.BRAGA, DrinkProperties.BRAGA, true),
+			BRANDY = registerDrink(DRINKS, "brandy", BrewersFluids.BRANDY, DrinkProperties.BRANDY, true),
+			CIDER = registerDrink(DRINKS, "cider", BrewersFluids.CIDER, DrinkProperties.CIDER, false),
+			COMPOTE = registerDrink(DRINKS, "compote", BrewersFluids.COMPOTE, DrinkProperties.COMPOTE),
+			GIN = registerDrink(DRINKS, "gin", BrewersFluids.GIN, DrinkProperties.GIN, true),
+			KVASS = registerDrink(DRINKS, "kvass", BrewersFluids.KVASS, DrinkProperties.KVASS, false),
+			LIQUEUR = registerDrink(DRINKS, "liqueur", BrewersFluids.LIQUEUR, DrinkProperties.LIQUEUR, true),
+			MARTINI = registerDrink(DRINKS, "martini", BrewersFluids.MARTINI, DrinkProperties.MARTINI, true),
+			MELON_SCHNAPPS = registerDrink(DRINKS, "melon_schnapps", BrewersFluids.MELON_SCHNAPPS, DrinkProperties.MELON_SCHNAPPS, true),
+			OLD_FASHION = registerDrink(DRINKS, "old_fashion", BrewersFluids.OLD_FASHION, DrinkProperties.OLD_FASHION, true),
+			RUM = registerDrink(DRINKS, "rum", BrewersFluids.RUM, DrinkProperties.RUM, false),
+			SAKE = registerDrink(DRINKS, "sake", BrewersFluids.SAKE, DrinkProperties.SAKE, true),
+			TEQUILA = registerDrink(DRINKS, "tequila", BrewersFluids.TEQUILA, DrinkProperties.TEQUILA, false),
+			WHISKY = registerDrink(DRINKS, "whisky", BrewersFluids.WHISKY, DrinkProperties.WHISKY, true),
 	
 	// Bloat TODO: Commented out due to poor balancing and low texture variety.
 	//	ABSINTHE = DRINKS.register("absinthe", () -> new BoozeItem(BrewersFluids.ABSINTHE.source().get(), foodItem(DrinkProperties.ABSINTHE))),
@@ -103,7 +103,7 @@ public class BrewersItems
 	/**
 	 * @throws IllegalArgumentException if both hasTankardVariant and hasGlassVariant arguments are false
 	 */
-	public static RegistryObject<Item> registerBeverage(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
+	public static RegistryObject<Item> registerDrink(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
 	                                                    boolean hasTankardVariant, boolean hasGlassVariant)
 	{
 		if (!hasTankardVariant & hasTankardVariant == hasGlassVariant) {
@@ -143,15 +143,15 @@ public class BrewersItems
 		return DrinkItem;
 	}
 	
-	public static RegistryObject<Item> registerBeverage(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
+	public static RegistryObject<Item> registerDrink(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
 	                                                    boolean hasGlassVariant)
 	{
-		return registerBeverage(registry, name, fluid, food, true, hasGlassVariant);
+		return registerDrink(registry, name, fluid, food, true, hasGlassVariant);
 	}
 	
-	public static RegistryObject<Item> registerBeverage(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food)
+	public static RegistryObject<Item> registerDrink(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food)
 	{
-		return registerBeverage(registry, name, fluid, food, true, false);
+		return registerDrink(registry, name, fluid, food, true, false);
 	}
 	
 	public static Item.@NotNull Properties foodItem(FoodProperties food, Item containerItem)

@@ -107,14 +107,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                                      );
 			
-			// every_beverage
-			Advancement everyBeverage = generateAdvancement(
+			// every_drink
+			Advancement everyDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
-					getNameId("every_beverage"),
+					getNameId("every_drink"),
 					root,
 					BrewersItems.WHISKY.get(),
-					"every_beverage",
+					"every_drink",
 					builder -> {
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, null, "bc_");
 						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
@@ -126,14 +126,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                                               );
 			
-			// any_vintage_beverage
-			Advancement anyVintageBeverage = generateAdvancement(
+			// any_vintage_drink
+			Advancement anyVintageDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
-					getNameId("any_vintage_beverage"),
+					getNameId("any_vintage_drink"),
 					root,
 					BrewersItems.SBITEN.get(),
-					"any_vintage_beverage",
+					"any_vintage_drink",
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, criteria);
@@ -144,14 +144,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                                                    );
 			
-			// every_vintage_beverage
+			// every_vintage_drink
 			generateAdvancement(
 					consumer,
 					existingFileHelper,
-					getNameId("every_vintage_beverage"),
-					anyVintageBeverage,
+					getNameId("every_vintage_drink"),
+					anyVintageDrink,
 					BrewersItems.VZVAR.get(),
-					"every_vintage_beverage",
+					"every_vintage_drink",
 					builder -> {
 						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, null);
 					},
@@ -160,14 +160,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                   );
 			
-			// any_challenge_beverage
-			Advancement anyChallengeBeverage = generateAdvancement(
+			// any_challenge_drink
+			Advancement anyChallengeDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
-					getNameId("any_challenge_beverage"),
+					getNameId("any_challenge_drink"),
 					root,
 					BrewersItems.FLAXEN_CHEESE_STOUT.get(),
-					"any_challenge_beverage",
+					"any_challenge_drink",
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
@@ -179,14 +179,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					AdvancementRewards.Builder.experience(100).build()
 			                                                      );
 			
-			// every_challenge_beverage
+			// every_challenge_drink
 			generateAdvancement(
 					consumer,
 					existingFileHelper,
-					getNameId("every_challenge_beverage"),
-					anyChallengeBeverage,
+					getNameId("every_challenge_drink"),
+					anyChallengeDrink,
 					BrewersItems.GUT_WRECKER.get(),
-					"every_challenge_beverage",
+					"every_challenge_drink",
 					builder -> {
 						addCriterion(builder, BnCItems.DREAD_NOG, "bc_");
 						addCriterion(builder, BnCItems.STEEL_TOE_STOUT, "bc_");
@@ -209,7 +209,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 			registry.getEntries().forEach(entry -> {
 				Item item = entry.get();
 				if (!(item instanceof BoozeItem)) {
-					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-beverage item : {}", item.getName(item.getDefaultInstance()));
+					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-drink item : {}", item.getName(item.getDefaultInstance()));
 					return;
 				}
 				assert entry.getId() != null;

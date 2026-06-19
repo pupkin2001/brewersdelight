@@ -101,7 +101,7 @@ public class BrewersFluids
 			GUT_WRECKER = registerAlcoholFluid("gut_wrecker", new Color(56, 118, 29, 255));
 	
 	// I really should've copied the fluid registration code from BnC, but I'm in the middle of the sunk cost fallacy
-	// also I don't really want to register each beverage one by one
+	// also I don't really want to register each drink one by one
 	private static FluidRegistryObject registerAlcoholFluid(String name, Color tintColor)
 	{
 		RegistryObject<FluidType> fluidType = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tintColor.getRGB()));

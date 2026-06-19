@@ -245,7 +245,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.any_challenge_beverage.description"
+      "translate": "advancements.any_challenge_drink.description"
     },
     "frame": "challenge",
     "hidden": false,
@@ -254,7 +254,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.any_challenge_beverage.title"
+      "translate": "advancements.any_challenge_drink.title"
     }
   },
   "requirements": [

@@ -11,7 +11,7 @@
     },
     "frame": "challenge"
   },
-  "parent": "brewersdelight:any_challenge_beverage",
+  "parent": "brewersdelight:any_challenge_drink",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
