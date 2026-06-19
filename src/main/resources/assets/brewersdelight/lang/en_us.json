@@ -32,6 +32,11 @@
   "item.brewersdelight.cognac": "Cognac",
   "item.brewersdelight.martini": "Martini",
 
+  "fluid_type.brewersdelight.melon_juice": "Melon Juice",
+  "fluid_type.brewersdelight.wine": "Wine",
+  "fluid_type.brewersdelight.red_wine": "Red Wine",
+  "fluid_type.brewersdelight.white_wine": "White Wine",
+
   "fluid_type.brewersdelight.braga": "Braga",
   "fluid_type.brewersdelight.brandy": "Brandy",
   "fluid_type.brewersdelight.cider": "Cider",

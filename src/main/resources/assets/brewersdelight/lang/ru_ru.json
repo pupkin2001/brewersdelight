@@ -32,6 +32,11 @@
   "item.brewersdelight.cognac": "Коньяк",
   "item.brewersdelight.martini": "Мартини",
 
+  "fluid_type.brewersdelight.melon_juice": "Арбузный сок",
+  "fluid_type.brewersdelight.wine": "Вино",
+  "fluid_type.brewersdelight.red_wine": "Красное вино",
+  "fluid_type.brewersdelight.white_wine": "Белое вино",
+
   "fluid_type.brewersdelight.braga": "Брага",
   "fluid_type.brewersdelight.brandy": "Бренди",
   "fluid_type.brewersdelight.cider": "Сидр",
