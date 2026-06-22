@@ -60,28 +60,28 @@ side = "BOTH"
 modId = "farmersdelight"
 mandatory = true
 versionRange = "${farmersdelight_version_range}"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.${ mod_id }]]
 modId = "brewinandchewin"
 mandatory = true
 versionRange = "${brewinandchewin_version_range}"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.${ mod_id }]]
 modId = "corn_delight"
 mandatory = false
 versionRange = "${corn_delight_version_range}"
-ordering = "BEFORE"
+ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.${ mod_id }]]
 modId = "cropotopia"
 mandatory = false
 versionRange = "${cropotopia_version_range}"
-ordering = "BEFORE"
+ordering = "AFTER"
 side = "BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
