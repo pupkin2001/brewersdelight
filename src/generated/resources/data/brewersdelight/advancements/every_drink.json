@@ -210,18 +210,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:braga"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "braga_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:braga",
               "brewersdelight:braga_glass"
             ]
           }
@@ -234,18 +223,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:brandy"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "brandy_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:brandy",
               "brewersdelight:brandy_glass"
             ]
           }
@@ -330,18 +308,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:gin"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "gin_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:gin",
               "brewersdelight:gin_glass"
             ]
           }
@@ -366,18 +333,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:liqueur"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "liqueur_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:liqueur",
               "brewersdelight:liqueur_glass"
             ]
           }
@@ -390,18 +346,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:martini"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "martini_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:martini",
               "brewersdelight:martini_glass"
             ]
           }
@@ -414,18 +359,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:melon_schnapps"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "melon_schnapps_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:melon_schnapps",
               "brewersdelight:melon_schnapps_glass"
             ]
           }
@@ -450,18 +384,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:old_fashion"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "old_fashion_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:old_fashion",
               "brewersdelight:old_fashion_glass"
             ]
           }
@@ -486,18 +409,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:sake"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "sake_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:sake",
               "brewersdelight:sake_glass"
             ]
           }
@@ -558,18 +470,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:whisky"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "whisky_glass": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
+              "brewersdelight:whisky",
               "brewersdelight:whisky_glass"
             ]
           }
@@ -646,13 +547,7 @@
       "braga"
     ],
     [
-      "braga_glass"
-    ],
-    [
       "brandy"
-    ],
-    [
-      "brandy_glass"
     ],
     [
       "cider"
@@ -664,34 +559,19 @@
       "gin"
     ],
     [
-      "gin_glass"
-    ],
-    [
       "kvass"
     ],
     [
       "liqueur"
     ],
     [
-      "liqueur_glass"
-    ],
-    [
       "martini"
-    ],
-    [
-      "martini_glass"
     ],
     [
       "melon_schnapps"
     ],
     [
-      "melon_schnapps_glass"
-    ],
-    [
       "old_fashion"
-    ],
-    [
-      "old_fashion_glass"
     ],
     [
       "rum"
@@ -700,16 +580,10 @@
       "sake"
     ],
     [
-      "sake_glass"
-    ],
-    [
       "tequila"
     ],
     [
       "whisky"
-    ],
-    [
-      "whisky_glass"
     ],
     [
       "bourbon"

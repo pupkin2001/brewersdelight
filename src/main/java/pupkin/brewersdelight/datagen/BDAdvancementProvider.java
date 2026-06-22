@@ -4,11 +4,13 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,7 +22,9 @@ import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
@@ -203,19 +207,33 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 		{
 			addCriteriaFromRegistry(registry, builder, criteriaList, "");
 		}
-		
-		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList, String prefix)
+		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder,
+		                                     List<String> criteriaList, String prefix)
 		{
+			// Merge "<name>" and "<name>_glass" into one criterion
+			Map<String, List<ItemLike>> byBaseName = new LinkedHashMap<>();
+			
 			registry.getEntries().forEach(entry -> {
 				Item item = entry.get();
 				if (!(item instanceof BoozeItem)) {
-					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-drink item : {}", item.getName(item.getDefaultInstance()));
+					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-drink item : {}",
+					                            item.getName(item.getDefaultInstance()));
 					return;
 				}
 				assert entry.getId() != null;
-				String key = prefix + entry.getId().getPath();
-				BrewersDelight.LOGGER.debug("Adding criterion for item : {} from registry : {} with id : {} as : {}{}", item, registry, key, prefix, key);
-				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
+				String path = entry.getId().getPath();
+				String base = path.endsWith("_glass")
+						? path.substring(0, path.length() - "_glass".length())
+						: path;
+				byBaseName.computeIfAbsent(base, k -> new ArrayList<>()).add(item);
+			});
+			
+			byBaseName.forEach((base, variants) -> {
+				String key = prefix + base;
+				BrewersDelight.LOGGER.debug("Adding criterion : {} matching {} variant(s)", key, variants.size());
+				builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(
+						ItemPredicate.Builder.item().of(variants.toArray(new ItemLike[0])).build()
+				                                                                         ));
 				if (criteriaList != null) {
 					criteriaList.add(key);
 				}
