@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:liqueur",
   "output": {
-    "item": "brewersdelight:liqueur"
+    "item": "brewersdelight:liqueur_glass"
   },
   "strict": false
 }

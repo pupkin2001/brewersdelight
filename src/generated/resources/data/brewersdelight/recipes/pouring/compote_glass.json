@@ -7,7 +7,7 @@
   "filling": true,
   "fluid": "brewersdelight:compote",
   "output": {
-    "item": "brewersdelight:compote"
+    "item": "brewersdelight:compote_glass"
   },
   "strict": false
 }

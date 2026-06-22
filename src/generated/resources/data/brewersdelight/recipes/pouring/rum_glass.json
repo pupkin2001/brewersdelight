@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:rum",
   "output": {
-    "item": "brewersdelight:rum"
+    "item": "brewersdelight:rum_glass"
   },
   "strict": false
 }

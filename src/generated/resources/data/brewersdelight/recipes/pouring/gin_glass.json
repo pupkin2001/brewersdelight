@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:gin",
   "output": {
-    "item": "brewersdelight:gin"
+    "item": "brewersdelight:gin_glass"
   },
   "strict": false
 }

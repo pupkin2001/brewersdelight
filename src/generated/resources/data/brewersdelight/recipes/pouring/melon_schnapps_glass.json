@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:melon_schnapps",
   "output": {
-    "item": "brewersdelight:melon_schnapps"
+    "item": "brewersdelight:melon_schnapps_glass"
   },
   "strict": false
 }

@@ -16,6 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.misc.BrewersFluids;
 import umpaz.brewinandchewin.common.registry.BnCFluids;
@@ -47,6 +48,10 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	public BDRecipeProvider(PackOutput output)
 	{
 		super(output);
+	}
+	
+	private static ResourceLocation glassVariant(ResourceLocation drinkId) {
+		return new ResourceLocation(drinkId.getNamespace(), drinkId.getPath() + "_glass");
 	}
 	
 	@Override
@@ -387,7 +392,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.BRAGA,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.BRAGA,
 		                     false,
 		                     false
 		                    );
@@ -397,7 +401,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.BRANDY,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.BRANDY,
 		                     false,
 		                     false
 		                    );
@@ -407,7 +410,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.CIDER,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.CIDER,
 		                     false,
 		                     false
 		                    );
@@ -417,7 +419,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.COMPOTE,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.COMPOTE,
 		                     true,
 		                     false
 		                    );
@@ -427,7 +428,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.GIN,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.GIN,
 		                     false,
 		                     false
 		                    );
@@ -437,7 +437,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.KVASS,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.KVASS,
 		                     false,
 		                     false
 		                    );
@@ -447,7 +446,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.LIQUEUR,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.LIQUEUR,
 		                     false,
 		                     false
 		                    );
@@ -457,7 +455,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.MARTINI,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.MARTINI,
 		                     false,
 		                     false
 		                    );
@@ -467,7 +464,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.MELON_SCHNAPPS,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.MELON_SCHNAPPS,
 		                     false,
 		                     false
 		                    );
@@ -477,7 +473,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.OLD_FASHION,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.OLD_FASHION,
 		                     true,
 		                     false
 		                    );
@@ -487,7 +482,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.RUM,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.RUM,
 		                     false,
 		                     false
 		                    );
@@ -497,7 +491,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.SAKE,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.SAKE,
 		                     false,
 		                     false
 		                    );
@@ -507,7 +500,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.TEQUILA,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.TEQUILA,
 		                     false,
 		                     false
 		                    );
@@ -517,7 +509,6 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.WHISKY,
 		                     Items.GLASS_BOTTLE,
-		                     BrewersItems.WHISKY,
 		                     false,
 		                     false
 		                    );
@@ -1097,34 +1088,31 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	                                 @Nullable RegistryObject<Item> containerItem,
 	                                 @Nullable RegistryObject<Item> tankardOutput,
 	                                 @Nullable Item glassContainerItem,
-	                                 @Nullable RegistryObject<Item> glassOutput,
 	                                 boolean filling, boolean strict)
 	{
 		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid);
-		
 		if (fluidId == null) {
 			throw new IllegalStateException("Unable to create pouring recipes for fluid " + fluid + " as it does not exist.");
 		}
 		
+		// Tankard variant
 		if (tankardOutput != null) {
-			assert containerItem != null;
-			ResourceLocation containerId = containerItem.getId();
-			assert tankardOutput.getId() != null;
-			ResourceLocation tankardOutputId = tankardOutput.getId();
+			Objects.requireNonNull(containerItem, "tankard variant needs a container item");
 			createPouringRecipe(consumer, tankardOutput.getId().getPath(),
 			                    fluidId, fluidAmount,
-			                    containerId,
+			                    containerItem.getId(),
 			                    tankardOutput.getId(),
 			                    true, false);
 		}
 		
-		if (glassOutput != null) {
-			assert glassContainerItem != null;
+		// Glass variant — no RegistryObject exists for it, so derive its id
+		if (glassContainerItem != null) {
 			ResourceLocation glassContainerId = ForgeRegistries.ITEMS.getKey(glassContainerItem);
-			assert tankardOutput != null;
-			ResourceLocation glassOutputId = tankardOutput.getId();
-			assert glassOutput.getId() != null;
-			createPouringRecipe(consumer, glassOutput.getId().getPath() + "_glass",
+			ResourceLocation glassOutputId = (tankardOutput != null)
+					? glassVariant(tankardOutput.getId())
+					: new ResourceLocation(BrewersDelight.MOD_ID, recipeName + "_glass");
+			
+			createPouringRecipe(consumer, glassOutputId.getPath(),
 			                    fluidId, fluidAmount,
 			                    glassContainerId,
 			                    glassOutputId,

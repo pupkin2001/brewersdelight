@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:brandy",
   "output": {
-    "item": "brewersdelight:brandy"
+    "item": "brewersdelight:brandy_glass"
   },
   "strict": false
 }

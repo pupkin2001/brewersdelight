@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:braga",
   "output": {
-    "item": "brewersdelight:braga"
+    "item": "brewersdelight:braga_glass"
   },
   "strict": false
 }

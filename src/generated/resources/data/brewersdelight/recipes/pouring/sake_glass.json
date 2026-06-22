@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:sake",
   "output": {
-    "item": "brewersdelight:sake"
+    "item": "brewersdelight:sake_glass"
   },
   "strict": false
 }

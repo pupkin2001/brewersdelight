@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:kvass",
   "output": {
-    "item": "brewersdelight:kvass"
+    "item": "brewersdelight:kvass_glass"
   },
   "strict": false
 }

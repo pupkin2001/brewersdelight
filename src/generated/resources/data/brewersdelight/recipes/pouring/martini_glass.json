@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:martini",
   "output": {
-    "item": "brewersdelight:martini"
+    "item": "brewersdelight:martini_glass"
   },
   "strict": false
 }

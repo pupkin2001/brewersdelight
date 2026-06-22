@@ -7,7 +7,7 @@
   "filling": false,
   "fluid": "brewersdelight:cider",
   "output": {
-    "item": "brewersdelight:cider"
+    "item": "brewersdelight:cider_glass"
   },
   "strict": false
 }

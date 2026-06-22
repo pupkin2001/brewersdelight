@@ -7,7 +7,7 @@
   "filling": true,
   "fluid": "brewersdelight:old_fashion",
   "output": {
-    "item": "brewersdelight:old_fashion"
+    "item": "brewersdelight:old_fashion_glass"
   },
   "strict": false
 }
