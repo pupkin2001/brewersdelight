@@ -1102,7 +1102,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 			                    fluidId, fluidAmount,
 			                    containerItem.getId(),
 			                    tankardOutput.getId(),
-			                    true, false);
+			                    filling, strict);
 		}
 		
 		// Glass variant — no RegistryObject exists for it, so derive its id

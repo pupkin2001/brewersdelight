@@ -4,7 +4,7 @@
   "container": {
     "item": "brewinandchewin:tankard"
   },
-  "filling": true,
+  "filling": false,
   "fluid": "brewersdelight:kvass",
   "output": {
     "item": "brewersdelight:kvass"
