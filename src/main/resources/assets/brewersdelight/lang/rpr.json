@@ -8,20 +8,13 @@
   "item.brewersdelight.gin": "Можжевѣловая водка",
   "item.brewersdelight.kvass": "Квасъ хлѣбный",
   "item.brewersdelight.liqueur": "Сладкая настойка",
+  "item.brewersdelight.martini": "Италiйская горькая",
   "item.brewersdelight.melon_schnapps": "Арбузная водка",
   "item.brewersdelight.old_fashion": "Старомодный напитокъ",
   "item.brewersdelight.rum": "Тростниковая водка",
   "item.brewersdelight.sake": "Рисовая водка",
-  "item.brewersdelight.sbiten": "Переваръ",
-  "item.brewersdelight.syta": "Сыта мѣдовая",
   "item.brewersdelight.tequila": "Текила",
-  "item.brewersdelight.vzvar": "Взваръ",
   "item.brewersdelight.whisky": "Висковая водка",
-
-  "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
-  "item.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
-  "item.brewersdelight.flying_dutchman": "Лѣтучiй Голландецъ",
-  "item.brewersdelight.gut_wrecker": "Душегубъ",
 
   "item.brewersdelight.bourbon": "Бурбонъ",
   "item.brewersdelight.corn_whisky": "Кукурузное Виски",
@@ -30,7 +23,17 @@
   "item.brewersdelight.cahors": "Кагоръ",
   "item.brewersdelight.champagne": "Игристое вино",
   "item.brewersdelight.cognac": "Коньячная водка",
-  "item.brewersdelight.martini": "Италiйская горькая",
+
+  "item.brewersdelight.sbiten": "Переваръ",
+  "item.brewersdelight.syta": "Сыта мѣдовая",
+  "item.brewersdelight.vzvar": "Взваръ",
+
+  "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
+  "item.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
+  "item.brewersdelight.flying_dutchman": "Лѣтучiй Голландецъ",
+  "item.brewersdelight.gut_wrecker": "Душегубъ",
+
+  "fluid_type.brewersdelight.melon_juice": "Арбузный сокъ",
 
   "fluid_type.brewersdelight.braga": "Сбродъ хлѣбный",
   "fluid_type.brewersdelight.brandy": "Гроздовая водка",
@@ -39,20 +42,13 @@
   "fluid_type.brewersdelight.gin": "Можжевѣловая водка",
   "fluid_type.brewersdelight.kvass": "Квасъ хлѣбный",
   "fluid_type.brewersdelight.liqueur": "Сладкая настойка",
+  "fluid_type.brewersdelight.martini": "Италiйская горькая",
   "fluid_type.brewersdelight.melon_schnapps": "Арбузная водка",
   "fluid_type.brewersdelight.old_fashion": "Старомодный напитокъ",
   "fluid_type.brewersdelight.rum": "Тростниковая водка",
   "fluid_type.brewersdelight.sake": "Рисовая водка",
-  "fluid_type.brewersdelight.sbiten": "Переваръ",
-  "fluid_type.brewersdelight.syta": "Сыта мѣдовая",
   "fluid_type.brewersdelight.tequila": "Текила",
-  "fluid_type.brewersdelight.vzvar": "Взваръ",
   "fluid_type.brewersdelight.whisky": "Висковая водка",
-
-  "fluid_type.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
-  "fluid_type.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
-  "fluid_type.brewersdelight.flying_dutchman": "Лѣтучiй Голландецъ",
-  "fluid_type.brewersdelight.gut_wrecker": "Душегубъ",
 
   "fluid_type.brewersdelight.bourbon": "Бурбонъ",
   "fluid_type.brewersdelight.corn_whisky": "Кукурузное Виски",
@@ -61,7 +57,19 @@
   "fluid_type.brewersdelight.cahors": "Кагоръ",
   "fluid_type.brewersdelight.champagne": "Игристое вино",
   "fluid_type.brewersdelight.cognac": "Коньячная водка",
-  "fluid_type.brewersdelight.martini": "Италiйская горькая",
+
+  "fluid_type.brewersdelight.wine": "Вино",
+  "fluid_type.brewersdelight.red_wine": "Виноградное вино",
+  "fluid_type.brewersdelight.white_wine": "Рейнские вина",
+
+  "fluid_type.brewersdelight.sbiten": "Переваръ",
+  "fluid_type.brewersdelight.syta": "Сыта мѣдовая",
+  "fluid_type.brewersdelight.vzvar": "Взваръ",
+
+  "fluid_type.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
+  "fluid_type.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
+  "fluid_type.brewersdelight.flying_dutchman": "Лѣтучiй Голландецъ",
+  "fluid_type.brewersdelight.gut_wrecker": "Душегубъ",
 
   "advancements.root.title": "По части питiя",
   "advancements.root.description": "Сварiтѣ ваше первое пиво.",
