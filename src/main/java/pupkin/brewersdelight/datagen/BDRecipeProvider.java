@@ -35,9 +35,11 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 			LONG_FERMENTING = 19200,     // 16 minutes
 	
 	// Temperature
-	HOT_TEMPERATURE = 4,
-			WARM_TEMPERATURE = 3,
-			FRIGID_TEMPERATURE = 2;
+	HOT_TEMPERATURE = 5,
+			WARM_TEMPERATURE = 4,
+			NORMAL_TEMPERATURE = 3,
+			COLD_TEMPERATURE = 2,
+			FRIGID_TEMPERATURE = 1;
 	
 	// Experience
 	public static final float
@@ -67,315 +69,315 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		// Core
 		createFermentingRecipe(consumer, "braga", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BRAGA.source().getId(), 1000,
 		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		createFermentingRecipe(consumer, "brandy", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BRANDY.source().getId(), 1000,
 		                       "forge:berries", "forge:berries", Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "cider", "drinks",
 		                       Fluids.WATER, 500,
-		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       LONG_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CIDER.source().getId(), 500,
 		                       Items.APPLE, Items.APPLE, Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "gin", "drinks",
 		                       BnCFluids.VODKA, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.GIN.source().getId(), 1000,
 		                       "forge:seeds/wheat", "forge:seeds/wheat", "forge:berries", "forge:berries");
 		createFermentingRecipe(consumer, "kvass", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.KVASS.source().getId(), 1000,
 		                       "forge:grain/wheat", "forge:grain/wheat", Items.HONEYCOMB);
 		createFermentingRecipe(consumer, "liqueur", "drinks",
 		                       BnCFluids.HONEY_FLUID, 500,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.LIQUEUR.source().getId(), 750,
 		                       ModItems.MELON_JUICE, ModItems.MELON_JUICE, "forge:berries", "forge:berries");
 		createFermentingRecipe(consumer, "martini_glow_berries", "drinks",
 		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.MARTINI.source().getId(), 500,
 		                       Items.GLOW_BERRIES, Items.GLOW_BERRIES, Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "martini_mushrooms", "drinks",
 		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.MARTINI.source().getId(), 500,
 		                       "forge:mushrooms", "forge:mushrooms", Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "melon_schnapps_from_water", "drinks",
 		                       Fluids.WATER, 500,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.MELON_SCHNAPPS.source().getId(), 500,
 		                       Items.MELON_SLICE, Items.MELON_SLICE, "forge:grain/wheat", "forge:grain/wheat");
 		// No clue what to do here - 4 melon slices for 250 mB of melon juice is enough for 1 bucket of melon schnapps
 		// where is the water coming from?
 		createFermentingRecipe(consumer, "melon_schnapps_from_melon_juice", "drinks",
 		                       BrewersFluids.MELON_JUICE.source().getId(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.MELON_SCHNAPPS.source().getId(), 500,
 		                       "forge:grain/wheat");
 		createFermentingRecipe(consumer, "rum", "drinks",
 		                       Fluids.WATER, 1000,
-		                       LONG_FERMENTING, HOT_TEMPERATURE, SMALL_EXP,
+		                       LONG_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.RUM.source().getId(), 1000,
 		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
 		createFermentingRecipe(consumer, "sake", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.SAKE.source().getId(), 1000,
 		                       "forge:grain/rice", "forge:grain/rice", "forge:grain/rice", "forge:grain/rice");
 		createFermentingRecipe(consumer, "tequila", "drinks",
 		                       BnCFluids.VODKA, 500,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.TEQUILA.source().getId(), 1000,
 		                       Items.CACTUS, Items.CACTUS, "forge:fruits");
 		createFermentingRecipe(consumer, "whisky", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WHISKY.source().getId(), 1000,
 		                       "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat");
 		
 		// Bloat
 		//		createFermentingRecipe(consumer, "absinthe_grass", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       LONG_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
 		//		                       Items.GRASS, Items.GRASS, Items.GRASS, Items.GRASS);
 		//		createFermentingRecipe(consumer, "absinthe_tall_grass", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.ABSINTHE.source().getId(), 1000,
 		//		                       Items.TALL_GRASS, Items.TALL_GRASS);
 		//		createFermentingRecipe(consumer, "amaro", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.AMARO.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "amontillado", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.AMONTILLADO.source().getId(), 1000,
 		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
 		//		createFermentingRecipe(consumer, "aperol", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.APEROL.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "armagnac", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.ARMAGNAC.source().getId(), 1000,
 		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
 		//		createFermentingRecipe(consumer, "baijiu", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.BAIJIU.source().getId(), 1000,
 		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
 		//		createFermentingRecipe(consumer, "becherovka", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.BECHEROVKA.source().getId(), 1000,
 		//		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
 		//		createFermentingRecipe(consumer, "bitter", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.BITTER.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "calvados", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.CALVADOS.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "campari", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.CAMPARI.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "chacha", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.CHACHA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "fernet", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.FERNET.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "gluhwein", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.GLUHWEIN.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "grog", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.GROG.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "kashasa", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.KASHASA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "mezcal", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.MEZCAL.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "negroni", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.NEGRONI.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "ouzo", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.OUZO.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "pastis", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.PASTIS.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "punch", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.PUNCH.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "rakia", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.RAKIA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "sambuca", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.SAMBUCA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "sherry", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.SHERRY.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "socata", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.SOCATA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "soju", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.SOJU.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "sotol", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.SOTOL.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "toddy", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.TODDY.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "triple-sec", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.TRIPLE_SEC.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "tsipuro", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.TSIPURO.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "vermouth", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.VERMOUTH.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "tsuike", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.TSUIKE.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		//		createFermentingRecipe(consumer, "vishinata", "drinks",
 		//		                       Fluids.WATER, 1000,
-		//		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		//		                       BrewersFluids.VISHINATA.source().getId(), 1000,
 		//		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
 		
 		// Corn
 		createFermentingRecipe(consumer, "bourbon", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BOURBON.source().getId(), 1000,
 		                       "forge:seeds/corn", "forge:seeds/corn", Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "corn_whisky", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CORN_WHISKY.source().getId(), 1000,
 		                       "forge:vegetables/corn", "forge:vegetables/corn", "forge:vegetables/corn", "forge:vegetables/corn");
 		createFermentingRecipe(consumer, "moonshine", "drinks",
 		                       BrewersFluids.BRAGA.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.MOONSHINE.source().getId(), 500,
 		                       "forge:vegetables/corn", "forge:vegetables/corn", Items.SUGAR, Items.SUGAR);
 		
 		//Grapes
 		createFermentingRecipe(consumer, "cahors", "drinks",
 		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CAHORS.source().getId(), 500,
 		                       "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape");
 		createFermentingRecipe(consumer, "champagne", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CHAMPAGNE.source().getId(), 1000,
 		                       "forge:fruits/grape", "forge:fruits/grape", "minecraft:flowers", "minecraft:flowers");
 		createFermentingRecipe(consumer, "cognac", "drinks",
 		                       BrewersFluids.WINE.source().get(), 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.COGNAC.source().getId(), 500,
 		                       "forge:fruits/grape", "forge:fruits/grape", Items.APPLE, Items.APPLE);
 		// Common
 		createFermentingRecipe(consumer, "wine", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WINE.source().getId(), 1000,
 		                       "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape");
 		
 		// Vintage
 		createFermentingRecipe(consumer, "sbiten", "drinks",
 		                       BnCFluids.BEER, 500,
-		                       LONG_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
+		                       LONG_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SBITEN.source().getId(), 1000,
 		                       Items.HONEY_BLOCK, "forge:grain/wheat");
 		createFermentingRecipe(consumer, "syta", "drinks",
 		                       Fluids.WATER, 500,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.SYTA.source().getId(), 1000,
 		                       Items.HONEY_BOTTLE, Items.HONEY_BOTTLE);
 		
 		// Challenge
 		createFermentingRecipe(consumer, "flaxen_cheese_stout", "drinks",
 		                       BnCFluids.VODKA, 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLAXEN_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.FLAXEN_CHEESE_WEDGE, BnCItems.FLAXEN_CHEESE_WEDGE, "forge:grain", "forge:mushrooms");
 		createFermentingRecipe(consumer, "scarlet_cheese_stout", "drinks",
 		                       Fluids.WATER, 250,
-		                       NORMAL_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SCARLET_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "forge:mushrooms");
 		createFermentingRecipe(consumer, "flying_dutchman", "drinks",
 		                       Fluids.WATER, 1000,
-		                       NORMAL_FERMENTING, FRIGID_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, COLD_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLYING_DUTCHMAN.source().getId(), 500,
 		                       Items.APPLE, Items.SUGAR, Items.GLOW_INK_SAC, Items.KELP);
 		createFermentingRecipe(consumer, "gut_wrecker", "drinks",
 		                       ForgeMod.MILK.get(), 500,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.GUT_WRECKER.source().getId(), 1000,
 		                       "forge:raw_fishes", "forge:cattail", Items.SPIDER_EYE, "forge:vegetables");
 		
