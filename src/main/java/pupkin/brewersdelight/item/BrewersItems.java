@@ -30,14 +30,14 @@ public class BrewersItems
 			CIDER = registerDrink(DRINKS, "cider", BrewersFluids.CIDER, DrinkProperties.CIDER, false),
 			COMPOTE = registerDrink(DRINKS, "compote", BrewersFluids.COMPOTE, DrinkProperties.COMPOTE),
 			GIN = registerDrink(DRINKS, "gin", BrewersFluids.GIN, DrinkProperties.GIN, true),
-			KVASS = registerDrink(DRINKS, "kvass", BrewersFluids.KVASS, DrinkProperties.KVASS, false),
+			KVASS = registerDrink(DRINKS, "kvass", BrewersFluids.KVASS, DrinkProperties.KVASS, true),
 			LIQUEUR = registerDrink(DRINKS, "liqueur", BrewersFluids.LIQUEUR, DrinkProperties.LIQUEUR, true),
 			MARTINI = registerDrink(DRINKS, "martini", BrewersFluids.MARTINI, DrinkProperties.MARTINI, true),
 			MELON_SCHNAPPS = registerDrink(DRINKS, "melon_schnapps", BrewersFluids.MELON_SCHNAPPS, DrinkProperties.MELON_SCHNAPPS, true),
 			OLD_FASHION = registerDrink(DRINKS, "old_fashion", BrewersFluids.OLD_FASHION, DrinkProperties.OLD_FASHION, true),
 			RUM = registerDrink(DRINKS, "rum", BrewersFluids.RUM, DrinkProperties.RUM, false),
 			SAKE = registerDrink(DRINKS, "sake", BrewersFluids.SAKE, DrinkProperties.SAKE, true),
-			TEQUILA = registerDrink(DRINKS, "tequila", BrewersFluids.TEQUILA, DrinkProperties.TEQUILA, false),
+			TEQUILA = registerDrink(DRINKS, "tequila", BrewersFluids.TEQUILA, DrinkProperties.TEQUILA, true),
 			WHISKY = registerDrink(DRINKS, "whisky", BrewersFluids.WHISKY, DrinkProperties.WHISKY, true),
 	
 	// Bloat TODO: Commented out due to poor balancing and low texture variety.

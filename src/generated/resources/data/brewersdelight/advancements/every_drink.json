@@ -321,7 +321,8 @@
         "items": [
           {
             "items": [
-              "brewersdelight:kvass"
+              "brewersdelight:kvass",
+              "brewersdelight:kvass_glass"
             ]
           }
         ]
@@ -446,7 +447,8 @@
         "items": [
           {
             "items": [
-              "brewersdelight:tequila"
+              "brewersdelight:tequila",
+              "brewersdelight:tequila_glass"
             ]
           }
         ]
