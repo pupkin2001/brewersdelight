@@ -366,7 +366,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       BrewersFluids.FLAXEN_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.FLAXEN_CHEESE_WEDGE, BnCItems.FLAXEN_CHEESE_WEDGE, "forge:grain", "forge:mushrooms");
 		createFermentingRecipe(consumer, "scarlet_cheese_stout", "drinks",
-		                       Fluids.WATER, 250,
+		                       BnCFluids.BEER, 250,
 		                       NORMAL_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SCARLET_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "forge:mushrooms");
