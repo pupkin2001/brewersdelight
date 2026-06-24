@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:gut_wrecker"
+    },
+    "title": {
+      "translate": "advancements.gut_wrecker.title"
+    },
+    "description": {
+      "translate": "advancements.gut_wrecker.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "brewersdelight:any_challenge_drink",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}
