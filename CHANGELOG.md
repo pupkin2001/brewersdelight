@@ -1,35 +1,91 @@
 # Changelog
 
-## [v0.7.0] - Unreleased
+Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, with optional pre-release tags.
+
+| Segment   | Incremented for                                                                         |
+|:----------|:----------------------------------------------------------------------------------------|
+| **Major** | Complete rewrites                                                                       |
+| **Minor** | Changes breaking compatability (large features, new minecraft version support, etc.)    |
+| **Patch** | Small changes keeping compatability (small features, bug fixes and oprimizations, etc.) |
+
+**Pre-release order** (earliest → stable):
+`-a#` alpha → `-b#` beta → `-rc#` release candidate → stable
+
+> **Example:**
+> `1.20.1-2.0.0-a1` < `1.20.1-2.0.0-b1` < `1.20.1-2.0.0-rc1` < `1.20.1-2.0.0-rc2` < `1.20.1-2.0.0`
+
+---
+
+# Changelog
+
+## [v0.7.0-b1] — 2026-06-25
 
 ### Added
 
-- Filled missing fluid localization strings
+- Drinks now give tipsy and intoxication effects where applicable
+- Translation strings for melon juice and three wine liquids for Русскій дореформенный (rpr) locale
+- Advancements for obtaining challenge drinks:
+  - Flying Dutchman
+  - Gut Wrecker
+- Old fashion glass variant crafting recipe
+- Glass variants for drinks:
+  - Kvass
+  - Tequila
+- Rum from croptopia molasses fermenting recipe
+- Croptopia water bottle pouring recipe
 
 ### Changed
 
-- Replaced every instance of word 'beverage' with more appropriate 'drink'
+- Replaced every instance of 'beverage' with more appropriate 'drink'
+- Advancements to require either tankard or glass variant, not both
+- Русскій дореформенный (rpr) mostly rewritten to remove hypercorrection and provide better overall styling for its time period
+- Increased fermenting temperatures:
+  - Rum (WARM → HOT) 
+  - Flaxen Cheese Stout (NORMAL → WARM)
+  - Scarlet Cheese Stout (WARM → HOT)
+  - Gut Wrecker (NORMAL → WARM)
+- Recipe costs:
+  - Compote (TODO: How much?)
+  - Rum (4 Sugar Cane → 3 Sugar Cane)
+  - Scarlet Cheese Stout (Water → Beer)
+- Rebalanced some drinks (TODO: Which ones?)
+- Brandy tankard texture to add more colour variety, similar to its glass variant
+- Glass variant textures for drinks to add more depth:
+  - Braga
+  - Melon Schnapps
+  - Sake
 
 ### Fixed
 
-- Recipes now display output item icons
+- Game crashing due to missing registry entries when forge decides to load Brewin' and Chewin' or Farmer's Delight after Brewer's Delight
+- Pouring recipes not displaying output item icons
+- Missing translation strings for mod melon juice and three wine liquids
+- Pouring into glass bottles giving tankard drink variants
+- Glass drink variants never being able to refill kegs
+- Fermenting recipes not loading:
+  - Compote
+  - Vzvar from beer
+- Vzvar recipe using incorrect ingredients (TODO: How it is now?)
+- Incorrect fluid colours (Hex colour code ordering ARGB → RGBA)
+- Drinks without fermenting recipes missing pouring recipe
+- Flying Dutchman recipe requiring items with non-existent fruits/apple tag instead of apples
 
-## [v0.7.0-pre] - 2025/11/09
+## [v0.7.0-a1] (former v0.7.0-pre) — 2025-11-09
 
 ### Added
 
-- Brewin' and Chewin' v3.0 support:
-  - Add fluids for every beverage
+- Fluids for every beverage (Brewin' and Chewin' v3.0 support)
+- Glass variants for some beverages (TODO: Which ones?)
 - Recipe datagen
-- Russian translation for tags
+- Russian translation for all tags
 - Croptopia wine support
 - Wine fermenting recipe
 
 ### Removed
 
-- Beverages tag in favor of BnC 'Fermented Drinks' tag
+- Beverages tag in favour of Brewin' and Chewin' "Fermented Drinks" tag
 
-## [v0.6.2] - 2025/03/28
+## [v0.6.2] — 2025-03-28
 
 ### Added
 
@@ -46,7 +102,7 @@
 
 - Inconsistencies between advancement names and their criteria.
 
-## [v0.6.1] - 2025/02/13
+## [v0.6.1] — 2025-02-13
 
 ### Added
 
@@ -58,7 +114,7 @@
 - Keg from barrel recipe using minecraft:barrel as tag.
 - Duplicate keg from barrel recipe.
 
-## [v0.6.0] - 2025/02/08
+## [v0.6.0] — 2025-02-08
 
 ### Added
 
@@ -135,13 +191,13 @@
 ### Fixed
 - Cahors giving impossible invisibility level 2 effect.
 
-## [v0.5.2] - 2024/11/03
+## [v0.5.2] — 2024-11-03
 
 ### Changed
 
 - Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe Stout and Withering Dross count as challenging beverages.
 
-## [v0.5.1] - 2024/11/02
+## [v0.5.1] — 2024-11-02
 
 ### Added
 
@@ -167,7 +223,7 @@
 - **(1.20.1 only)** Fermenting recipes not loading properly.
 - **(1.20.1 only)** Creative mod tab localisation displaying as raw string.
 
-## [v0.5.0] - 2024/11/01
+## [v0.5.0] — 2024-11-01
 
 ### Added
 
@@ -225,7 +281,7 @@
 - Beverages stacking up to 64 instead of 16.
 - Beverages not giving empty tankard back after drinking.
 
-## [v0.4.0] - 2024/10/28
+## [v0.4.0] — 2024-10-28
 
 ### Changed
 
@@ -247,7 +303,7 @@
     - Cahors.
     - Cognac.
 
-## [0.3.0] - 2024/10/28
+## [0.3.0] — 2024-10-28
 
 ### Changed
 
@@ -271,7 +327,7 @@
     - Champagne.
     - Cognac.
 
-## [0.2.0] - 2024/10/27
+## [0.2.0] — 2024-10-27
 
 ### Added
 
@@ -300,7 +356,7 @@
 - Translations:
     - Русскій дореформенный (Россійская имперія).
 
-## [0.1.0] - 2024/10/26
+## [0.1.0] — 2024-10-26
 
 ### Added
 
