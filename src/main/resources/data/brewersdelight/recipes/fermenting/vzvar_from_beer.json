@@ -2,7 +2,7 @@
   "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 250,
-    "fluid": "minecraft:beer"
+    "fluid": "brewinandchewin:beer"
   },
   "experience": 1.0,
   "fermentingtime": 4800,
