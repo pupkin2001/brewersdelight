@@ -143,7 +143,7 @@ tasks.named('processResources', ProcessResources).configure {
 			mod_name                     : mod_name,
 			mod_displayName              : mod_displayName,
 			mod_license                  : mod_license,
-			mod_version                  : mod_version + "-" + minecraft_version,
+			mod_version                  : minecraft_version + "-" + mod_version,
 			mod_authors                  : mod_authors,
 			mod_url                      : mod_url,
 			mod_description              : mod_description,
