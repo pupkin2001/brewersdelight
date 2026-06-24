@@ -4,7 +4,7 @@
   "container": {
     "item": "brewinandchewin:tankard"
   },
-  "filling": false,
+  "filling": true,
   "fluid": "brewersdelight:cahors",
   "output": {
     "item": "brewersdelight:cahors"

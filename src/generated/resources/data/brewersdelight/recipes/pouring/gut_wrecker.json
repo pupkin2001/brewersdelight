@@ -4,7 +4,7 @@
   "container": {
     "item": "brewinandchewin:tankard"
   },
-  "filling": false,
+  "filling": true,
   "fluid": "brewersdelight:gut_wrecker",
   "output": {
     "item": "brewersdelight:gut_wrecker"

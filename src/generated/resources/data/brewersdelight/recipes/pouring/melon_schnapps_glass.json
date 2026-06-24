@@ -4,7 +4,7 @@
   "container": {
     "item": "minecraft:glass_bottle"
   },
-  "filling": false,
+  "filling": true,
   "fluid": "brewersdelight:melon_schnapps",
   "output": {
     "item": "brewersdelight:melon_schnapps_glass"

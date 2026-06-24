@@ -4,7 +4,7 @@
   "container": {
     "item": "brewinandchewin:tankard"
   },
-  "filling": false,
+  "filling": true,
   "fluid": "brewersdelight:flaxen_cheese_stout",
   "output": {
     "item": "brewersdelight:flaxen_cheese_stout"

@@ -394,7 +394,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.BRAGA,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "brandy",
@@ -403,7 +403,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.BRANDY,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "cider",
@@ -412,7 +412,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.CIDER,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "compote",
@@ -430,7 +430,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.GIN,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "kvass",
@@ -439,7 +439,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.KVASS,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "liqueur",
@@ -448,7 +448,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.LIQUEUR,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "martini",
@@ -457,7 +457,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.MARTINI,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "melon_schnapps",
@@ -466,7 +466,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.MELON_SCHNAPPS,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "old_fashion",
@@ -484,7 +484,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.RUM,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "sake",
@@ -493,7 +493,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.SAKE,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "tequila",
@@ -502,7 +502,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.TEQUILA,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		createPouringRecipes(consumer, "whisky",
@@ -511,7 +511,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                     BnCItems.TANKARD,
 		                     BrewersItems.WHISKY,
 		                     Items.GLASS_BOTTLE,
-		                     false,
+		                     true,
 		                     false
 		                    );
 		
@@ -521,7 +521,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.ABSINTHE,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "amaro",
@@ -529,7 +529,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.AMARO,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "amontillado",
@@ -537,7 +537,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.AMONTILLADO,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "aperol",
@@ -545,7 +545,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.APEROL,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "armagnac",
@@ -553,7 +553,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.ARMAGNAC,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "baijiu",
@@ -561,7 +561,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.BAIJIU,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "becherovka",
@@ -569,7 +569,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.BECHEROVKA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "bitter",
@@ -577,7 +577,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.BITTER,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "calvados",
@@ -585,7 +585,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.CALVADOS,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "campari",
@@ -593,7 +593,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.CAMPARI,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "chacha",
@@ -601,7 +601,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.CHACHA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "fernet",
@@ -609,7 +609,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.FERNET,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "gluhwein",
@@ -625,7 +625,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.GROG,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "kashasa",
@@ -633,7 +633,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.KASHASA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "mezcal",
@@ -641,7 +641,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.MEZCAL,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "negroni",
@@ -649,7 +649,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.NEGRONI,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "ouzo",
@@ -657,7 +657,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.OUZO,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "pastis",
@@ -665,7 +665,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.PASTIS,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "punch",
@@ -673,7 +673,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.PUNCH,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "rakia",
@@ -681,7 +681,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.RAKIA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "sambuca",
@@ -689,7 +689,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.SAMBUCA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "sherry",
@@ -697,7 +697,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.SHERRY,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "socata",
@@ -705,7 +705,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.SOCATA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "soju",
@@ -713,7 +713,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.SOJU,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "sotol",
@@ -721,7 +721,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.SOTOL,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "toddy",
@@ -729,7 +729,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.TODDY,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "triple-sec",
@@ -737,7 +737,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.TRIPLE_SEC,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "tsipuro",
@@ -745,7 +745,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.TSIPURO,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "vermouth",
@@ -753,7 +753,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.VERMOUTH,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "tsuike",
@@ -761,7 +761,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.TSUIKE,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		//		createPouringRecipe(consumer, "vishinata",
@@ -769,7 +769,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		//		                    250,
 		//		                    BnCItems.TANKARD,
 		//		                    BrewersItems.VISHINATA,
-		//		                    false,
+		//		                    true,
 		//		                    false
 		//		                   );
 		
@@ -779,7 +779,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.BOURBON,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "corn_whisky",
@@ -787,7 +787,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.CORN_WHISKY,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "moonshine",
@@ -795,7 +795,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.MOONSHINE,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		
@@ -805,7 +805,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.CAHORS,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "champagne",
@@ -813,7 +813,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.CHAMPAGNE,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "cognac",
@@ -821,7 +821,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.COGNAC,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		
@@ -831,7 +831,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.SBITEN,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "syta",
@@ -839,7 +839,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.SYTA,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "vzvar",
@@ -847,7 +847,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.VZVAR,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		
@@ -857,7 +857,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.FLAXEN_CHEESE_STOUT,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "scarlet_cheese_stout",
@@ -865,7 +865,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.SCARLET_CHEESE_STOUT,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "flying_dutchman",
@@ -873,7 +873,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.FLYING_DUTCHMAN,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		createPouringRecipe(consumer, "gut_wrecker",
@@ -881,7 +881,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.GUT_WRECKER,
-		                    false,
+		                    true,
 		                    false
 		                   );
 		
