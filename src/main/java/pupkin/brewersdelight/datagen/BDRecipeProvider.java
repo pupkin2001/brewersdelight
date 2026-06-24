@@ -121,7 +121,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       "forge:grain/wheat");
 		createFermentingRecipe(consumer, "rum", "drinks",
 		                       Fluids.WATER, 1000,
-		                       LONG_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
+		                       LONG_FERMENTING, HOT_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.RUM.source().getId(), 1000,
 		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
 		createFermentingRecipe(consumer, "sake", "drinks",
@@ -362,12 +362,12 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		// Challenge
 		createFermentingRecipe(consumer, "flaxen_cheese_stout", "drinks",
 		                       BnCFluids.VODKA, 250,
-		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLAXEN_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.FLAXEN_CHEESE_WEDGE, BnCItems.FLAXEN_CHEESE_WEDGE, "forge:grain", "forge:mushrooms");
 		createFermentingRecipe(consumer, "scarlet_cheese_stout", "drinks",
 		                       Fluids.WATER, 250,
-		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SCARLET_CHEESE_STOUT.source().getId(), 250,
 		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "forge:mushrooms");
 		createFermentingRecipe(consumer, "flying_dutchman", "drinks",
@@ -377,7 +377,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       Items.APPLE, Items.SUGAR, Items.GLOW_INK_SAC, Items.KELP);
 		createFermentingRecipe(consumer, "gut_wrecker", "drinks",
 		                       ForgeMod.MILK.get(), 500,
-		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, LARGE_EXP,
+		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.GUT_WRECKER.source().getId(), 1000,
 		                       "forge:raw_fishes", "forge:cattail", Items.SPIDER_EYE, "forge:vegetables");
 		
