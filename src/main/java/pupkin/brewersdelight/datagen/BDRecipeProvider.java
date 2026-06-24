@@ -123,7 +123,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       Fluids.WATER, 1000,
 		                       LONG_FERMENTING, HOT_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.RUM.source().getId(), 1000,
-		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
+		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
 		createFermentingRecipe(consumer, "sake", "drinks",
 		                       Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
