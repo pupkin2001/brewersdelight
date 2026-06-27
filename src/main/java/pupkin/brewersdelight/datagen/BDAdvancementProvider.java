@@ -39,7 +39,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 	{
 		private static ResourceLocation getNameId(String id)
 		{
-			return new ResourceLocation(BrewersDelight.MOD_ID, id);
+			return ResourceLocation.fromNamespaceAndPath(BrewersDelight.MOD_ID, id);
 		}
 		
 		/**
@@ -106,7 +106,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
 					},
-					new ResourceLocation("minecraft", "textures/block/oak_planks.png"),
+					ResourceLocation.withDefaultNamespace("textures/block/oak_planks.png"),
 					FrameType.TASK,
 					AdvancementRewards.Builder.experience(100).build()
 			                                      );

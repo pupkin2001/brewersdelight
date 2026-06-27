@@ -15,6 +15,6 @@ public class BrewersTags
 	
 	private static @NotNull TagKey<Item> modItemTag(String path)
 	{
-		return ItemTags.create(new ResourceLocation(BrewersDelight.MOD_ID, path));
+		return ItemTags.create(ResourceLocation.fromNamespaceAndPath(BrewersDelight.MOD_ID, path));
 	}
 }
