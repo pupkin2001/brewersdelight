@@ -128,7 +128,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					null,
 					FrameType.GOAL,
 					AdvancementRewards.Builder.experience(100).build()
-			                                               );
+			                                            );
 			
 			// any_vintage_drink
 			Advancement anyVintageDrink = generateAdvancement(
@@ -146,7 +146,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					null,
 					FrameType.CHALLENGE,
 					AdvancementRewards.Builder.experience(100).build()
-			                                                    );
+			                                                 );
 			
 			// every_vintage_drink
 			generateAdvancement(
@@ -181,7 +181,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					null,
 					FrameType.CHALLENGE,
 					AdvancementRewards.Builder.experience(100).build()
-			                                                      );
+			                                                   );
 			
 			// every_challenge_drink
 			generateAdvancement(
@@ -207,6 +207,7 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 		{
 			addCriteriaFromRegistry(registry, builder, criteriaList, "");
 		}
+		
 		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder,
 		                                     List<String> criteriaList, String prefix)
 		{

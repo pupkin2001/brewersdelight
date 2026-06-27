@@ -39,11 +39,11 @@ public class BDItemTagProvider extends ItemTagsProvider
 				BrewersItems.COMPAT_DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
 				BrewersItems.CHALLENGE_DRINKS
-		                                                         );
+		                                                      );
 		
 		drinkRegistries.forEach(registry ->
-				                           addBoozeItems(registry, BnCTags.FERMENTED_DRINKS)
-		                          );
+				                        addBoozeItems(registry, BnCTags.FERMENTED_DRINKS)
+		                       );
 		
 		addBoozeItems(BrewersItems.VINTAGE_DRINKS, BrewersTags.VINTAGE_DRINKS);
 		assert BnCItems.DREAD_NOG.getKey() != null;

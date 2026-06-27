@@ -104,7 +104,7 @@ public class BrewersItems
 	 * @throws IllegalArgumentException if both hasTankardVariant and hasGlassVariant arguments are false
 	 */
 	public static RegistryObject<Item> registerDrink(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
-	                                                    boolean hasTankardVariant, boolean hasGlassVariant)
+	                                                 boolean hasTankardVariant, boolean hasGlassVariant)
 	{
 		if (!hasTankardVariant & hasTankardVariant == hasGlassVariant) {
 			throw new IllegalArgumentException("Unable to register item " + name + " as it does not have a tankard or glass variant.");
@@ -144,7 +144,7 @@ public class BrewersItems
 	}
 	
 	public static RegistryObject<Item> registerDrink(DeferredRegister<Item> registry, String name, BrewersFluids.FluidRegistryObject fluid, FoodProperties food,
-	                                                    boolean hasGlassVariant)
+	                                                 boolean hasGlassVariant)
 	{
 		return registerDrink(registry, name, fluid, food, true, hasGlassVariant);
 	}
