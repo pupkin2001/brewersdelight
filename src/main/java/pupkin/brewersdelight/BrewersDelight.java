@@ -18,9 +18,9 @@ public class BrewersDelight
 	
 	public static final Logger LOGGER = LogUtils.getLogger();
 	
-	public BrewersDelight()
+	public BrewersDelight(FMLJavaModLoadingContext context)
 	{
-		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus eventBus = context.getModEventBus();
 		
 		BrewersFluids.register(eventBus);
 		BrewersItems.register(eventBus);
