@@ -1,0 +1,20 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "brewersdelight:rum"
+  },
+  "experience": 0.5,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1000,
+    "fluid": "brewersdelight:grog"
+  },
+  "temperature": 3
+}

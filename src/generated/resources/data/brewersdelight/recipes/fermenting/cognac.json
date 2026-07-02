@@ -1,23 +1,17 @@
 {
   "type": "brewinandchewin:fermenting",
   "basefluid": {
-    "count": 250,
+    "count": 500,
     "fluid": "brewersdelight:wine"
   },
   "experience": 1.0,
-  "fermentingtime": 9600,
+  "fermentingtime": 19200,
   "ingredients": [
     {
       "tag": "forge:fruits/grape"
     },
     {
       "tag": "forge:fruits/grape"
-    },
-    {
-      "item": "minecraft:apple"
-    },
-    {
-      "item": "minecraft:apple"
     }
   ],
   "recipe_book_tab": "drinks",
@@ -25,5 +19,5 @@
     "count": 500,
     "fluid": "brewersdelight:cognac"
   },
-  "temperature": 3
+  "temperature": 4
 }

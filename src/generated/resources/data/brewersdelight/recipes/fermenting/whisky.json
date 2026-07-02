@@ -5,7 +5,7 @@
     "fluid": "minecraft:water"
   },
   "experience": 1.0,
-  "fermentingtime": 9600,
+  "fermentingtime": 19200,
   "ingredients": [
     {
       "tag": "forge:grain/wheat"
@@ -25,5 +25,5 @@
     "count": 1000,
     "fluid": "brewersdelight:whisky"
   },
-  "temperature": 3
+  "temperature": 4
 }

@@ -4,7 +4,7 @@
     "count": 1000,
     "fluid": "minecraft:water"
   },
-  "experience": 1.0,
+  "experience": 0.5,
   "fermentingtime": 9600,
   "ingredients": [
     {

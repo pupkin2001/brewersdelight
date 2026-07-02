@@ -4,16 +4,16 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "tag": "forge:fruits"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:fruits"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:fruits"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:fruits"
     },
     {
       "item": "minecraft:sugar"

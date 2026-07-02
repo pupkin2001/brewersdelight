@@ -101,7 +101,6 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
 						
 						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						List.of(BrewersItems.COMPAT_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						List.of(BrewersItems.CHALLENGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
@@ -122,7 +121,6 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					builder -> {
 						addCriteriaFromRegistry(BnCItems.ITEMS, builder, null, "bc_");
 						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
-						List.of(BrewersItems.COMPAT_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 					},
 					null,

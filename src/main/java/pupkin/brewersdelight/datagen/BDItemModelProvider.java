@@ -22,7 +22,6 @@ public class BDItemModelProvider extends ItemModelProvider
 	{
 		List<DeferredRegister<Item>> registries = List.of(
 				BrewersItems.DRINKS,
-				BrewersItems.COMPAT_DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
 				BrewersItems.CHALLENGE_DRINKS
 		                                                 );

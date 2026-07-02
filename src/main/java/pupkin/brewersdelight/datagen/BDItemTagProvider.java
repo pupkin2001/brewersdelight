@@ -34,9 +34,7 @@ public class BDItemTagProvider extends ItemTagsProvider
 	protected void addTags(HolderLookup.@NotNull Provider provider)
 	{
 		List<DeferredRegister<Item>> drinkRegistries = List.of(
-				//BnCItems.ITEMS,
 				BrewersItems.DRINKS,
-				BrewersItems.COMPAT_DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
 				BrewersItems.CHALLENGE_DRINKS
 		                                                      );

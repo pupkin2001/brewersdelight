@@ -14,10 +14,10 @@
       "tag": "forge:fruits/grape"
     },
     {
-      "tag": "forge:fruits/grape"
+      "item": "minecraft:sugar"
     },
     {
-      "tag": "forge:fruits/grape"
+      "item": "minecraft:sugar"
     }
   ],
   "recipe_book_tab": "drinks",

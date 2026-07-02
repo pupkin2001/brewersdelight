@@ -1,6 +1,18 @@
 {
   "parent": "brewersdelight:root",
   "criteria": {
+    "absinthe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:absinthe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bc_beer": {
       "conditions": {
         "items": [
@@ -193,6 +205,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "bitter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:bitter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "bourbon": {
       "conditions": {
         "items": [
@@ -210,8 +234,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:braga",
-              "brewersdelight:braga_glass"
+              "brewersdelight:braga"
             ]
           }
         ]
@@ -223,8 +246,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:brandy",
-              "brewersdelight:brandy_glass"
+              "brewersdelight:brandy"
             ]
           }
         ]
@@ -237,18 +259,6 @@
           {
             "items": [
               "brewersdelight:cahors"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "champagne": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:champagne"
             ]
           }
         ]
@@ -303,13 +313,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "elderflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:elderflower"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "gin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "brewersdelight:gin",
-              "brewersdelight:gin_glass"
+              "brewersdelight:gin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gluhwein": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gluhwein"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:grog"
             ]
           }
         ]
@@ -321,8 +366,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:kvass",
-              "brewersdelight:kvass_glass"
+              "brewersdelight:kvass"
             ]
           }
         ]
@@ -334,21 +378,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:liqueur",
-              "brewersdelight:liqueur_glass"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "martini": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "brewersdelight:martini",
-              "brewersdelight:martini_glass"
+              "brewersdelight:liqueur"
             ]
           }
         ]
@@ -360,8 +390,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:melon_schnapps",
-              "brewersdelight:melon_schnapps_glass"
+              "brewersdelight:melon_schnapps"
             ]
           }
         ]
@@ -380,13 +409,24 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "old_fashion": {
+    "old_fashioned": {
       "conditions": {
         "items": [
           {
             "items": [
-              "brewersdelight:old_fashion",
-              "brewersdelight:old_fashion_glass"
+              "brewersdelight:old_fashioned"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "punch": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:punch"
             ]
           }
         ]
@@ -410,8 +450,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:sake",
-              "brewersdelight:sake_glass"
+              "brewersdelight:sake"
             ]
           }
         ]
@@ -447,8 +486,43 @@
         "items": [
           {
             "items": [
-              "brewersdelight:tequila",
-              "brewersdelight:tequila_glass"
+              "brewersdelight:tequila"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toddy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:toddy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vermouth_glow_berries": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vermouth_glow_berries"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vermouth_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:vermouth_mushroom"
             ]
           }
         ]
@@ -472,8 +546,7 @@
         "items": [
           {
             "items": [
-              "brewersdelight:whisky",
-              "brewersdelight:whisky_glass"
+              "brewersdelight:whisky"
             ]
           }
         ]
@@ -549,31 +622,70 @@
       "braga"
     ],
     [
+      "grog"
+    ],
+    [
+      "punch"
+    ],
+    [
+      "toddy"
+    ],
+    [
+      "compote"
+    ],
+    [
+      "gluhwein"
+    ],
+    [
+      "kvass"
+    ],
+    [
+      "melon_schnapps"
+    ],
+    [
       "brandy"
     ],
     [
       "cider"
     ],
     [
-      "compote"
+      "corn_whisky"
+    ],
+    [
+      "elderflower"
     ],
     [
       "gin"
     ],
     [
-      "kvass"
+      "vermouth_glow_berries"
+    ],
+    [
+      "vermouth_mushroom"
+    ],
+    [
+      "absinthe"
+    ],
+    [
+      "moonshine"
+    ],
+    [
+      "tequila"
+    ],
+    [
+      "bitter"
+    ],
+    [
+      "bourbon"
+    ],
+    [
+      "cahors"
+    ],
+    [
+      "cognac"
     ],
     [
       "liqueur"
-    ],
-    [
-      "martini"
-    ],
-    [
-      "melon_schnapps"
-    ],
-    [
-      "old_fashion"
     ],
     [
       "rum"
@@ -582,28 +694,10 @@
       "sake"
     ],
     [
-      "tequila"
-    ],
-    [
       "whisky"
     ],
     [
-      "bourbon"
-    ],
-    [
-      "corn_whisky"
-    ],
-    [
-      "moonshine"
-    ],
-    [
-      "cahors"
-    ],
-    [
-      "champagne"
-    ],
-    [
-      "cognac"
+      "old_fashioned"
     ],
     [
       "sbiten"

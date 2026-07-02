@@ -1,19 +1,26 @@
 {
   "itemgroup.brewersdelight.BrewersDelightTab": "Пивоварскiй Развратъ",
 
+  "item.brewersdelight.absinthe": "Абсентъ",
+  "item.brewersdelight.bitter": "Биттеръ",
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.brandy": "Виноградная водка",
   "item.brewersdelight.cider": "Сидръ",
   "item.brewersdelight.compote": "Компотъ",
   "item.brewersdelight.gin": "Можжевѣловая водка",
+  "item.brewersdelight.gluhwein": "Глинтвейнъ",
+  "item.brewersdelight.grog": "Грогъ",
   "item.brewersdelight.kvass": "Квасъ хлѣбный",
   "item.brewersdelight.liqueur": "Сладкая настойка",
-  "item.brewersdelight.martini": "Вермутъ",
   "item.brewersdelight.melon_schnapps": "Арбузная водка",
-  "item.brewersdelight.old_fashion": "Старомодный",
+  "item.brewersdelight.old_fashioned": "Старомодный",
+  "item.brewersdelight.punch": "Пуншъ",
   "item.brewersdelight.rum": "Ромъ",
   "item.brewersdelight.sake": "Рисовая водка",
   "item.brewersdelight.tequila": "Текила",
+  "item.brewersdelight.toddy": "Тодди",
+  "item.brewersdelight.vermouth_glow_berries": "Вермутъ",
+  "item.brewersdelight.vermouth_mushroom": "Вермутъ",
   "item.brewersdelight.whisky": "Виски",
 
   "item.brewersdelight.bourbon": "Бурбонъ",
@@ -21,7 +28,7 @@
   "item.brewersdelight.moonshine": "Самогонная водка",
 
   "item.brewersdelight.cahors": "Кагоръ",
-  "item.brewersdelight.champagne": "Игристое вино",
+  "item.brewersdelight.elderflower": "Бузинный цвѣтъ",
   "item.brewersdelight.cognac": "Коньячная водка",
 
   "item.brewersdelight.sbiten": "Сбитень",
@@ -30,24 +37,32 @@
 
   "item.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
   "item.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
+  "item.brewersdelight.froststone_cheese_stout": "Студёный Сырный Стаутъ",
   "item.brewersdelight.flying_dutchman": "Лѣтучій Голландецъ",
   "item.brewersdelight.gut_wrecker": "Погубитель утробы",
 
   "fluid_type.brewersdelight.melon_juice": "Арбузный сокъ",
 
+  "fluid_type.brewersdelight.absinthe": "Абсентъ",
+  "fluid_type.brewersdelight.bitter": "Биттеръ",
   "fluid_type.brewersdelight.braga": "Брага",
   "fluid_type.brewersdelight.brandy": "Виноградная водка",
   "fluid_type.brewersdelight.cider": "Сидръ",
   "fluid_type.brewersdelight.compote": "Компотъ",
   "fluid_type.brewersdelight.gin": "Можжевѣловая водка",
+  "fluid_type.brewersdelight.gluhwein": "Глинтвейнъ",
+  "fluid_type.brewersdelight.grog": "Грогъ",
   "fluid_type.brewersdelight.kvass": "Квасъ хлѣбный",
   "fluid_type.brewersdelight.liqueur": "Сладкая настойка",
-  "fluid_type.brewersdelight.martini": "Вермутъ",
   "fluid_type.brewersdelight.melon_schnapps": "Арбузная водка",
-  "fluid_type.brewersdelight.old_fashion": "Старомодный",
+  "fluid_type.brewersdelight.old_fashioned": "Старомодный",
+  "fluid_type.brewersdelight.punch": "Пуншъ",
   "fluid_type.brewersdelight.rum": "Ромъ",
   "fluid_type.brewersdelight.sake": "Рисовая водка",
   "fluid_type.brewersdelight.tequila": "Текила",
+  "fluid_type.brewersdelight.toddy": "Тодди",
+  "fluid_type.brewersdelight.vermouth_glow_berries": "Вермутъ",
+  "fluid_type.brewersdelight.vermouth_mushroom": "Вермутъ",
   "fluid_type.brewersdelight.whisky": "Виски",
 
   "fluid_type.brewersdelight.bourbon": "Бурбонъ",
@@ -55,7 +70,7 @@
   "fluid_type.brewersdelight.moonshine": "Самогонная водка",
 
   "fluid_type.brewersdelight.cahors": "Кагоръ",
-  "fluid_type.brewersdelight.champagne": "Игристое вино",
+  "fluid_type.brewersdelight.elderflower": "Бузинный цвѣтъ",
   "fluid_type.brewersdelight.cognac": "Коньячная водка",
 
   "fluid_type.brewersdelight.wine": "Вино",
@@ -68,6 +83,7 @@
 
   "fluid_type.brewersdelight.flaxen_cheese_stout": "Льняной Сырный Стаутъ",
   "fluid_type.brewersdelight.scarlet_cheese_stout": "Червлёный Сырный Стаутъ",
+  "fluid_type.brewersdelight.froststone_cheese_stout": "Студёный Сырный Стаутъ",
   "fluid_type.brewersdelight.flying_dutchman": "Лѣтучій Голландецъ",
   "fluid_type.brewersdelight.gut_wrecker": "Погубитель утробы",
 
@@ -81,6 +97,8 @@
   "advancements.flaxen_cheese_stout.description": "Сварите Льняной Сырный Стаутъ. Сыръ, перебродившій въ водкѣ. Выпейте его, ежели сможете его одолѣть.",
   "advancements.scarlet_cheese_stout.title": "Худое зельеваренье",
   "advancements.scarlet_cheese_stout.description": "Сварите Червлёный Сырный Стаутъ. Сыръ, перебродившій въ пивѣ и приправленный нѣдрскимъ наростомъ. Острота сему напитку нисколько не помогаетъ.",
+  "advancements.froststone_cheese_stout.title": "Froststone Cheese Stout",
+  "advancements.froststone_cheese_stout.description": "Brew a Froststone Cheese Stout. Cheese fermented in something. Lorem ipsum.",
   "advancements.flying_dutchman.title": "Не море ли звало?",
   "advancements.flying_dutchman.description": "Сварите Летучаго Голландца. Вода, перебродившая съ яблокомъ, сахаромъ, сіяющимъ чернильнымъ мѣшкомъ и яханги. Дѣлаетъ изъ васъ отмѣннаго пловца и весьма нежеланнаго гостя.",
   "advancements.gut_wrecker.title": "Доброму молоку переводъ",

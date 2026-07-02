@@ -21,8 +21,6 @@ displayURL = "${mod_url}"
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile = "assets/brewersdelight/textures/logo.png"
 # A text field displayed in the mod UI
-credits = "${mod_credits}"
-# A text field displayed in the mod UI
 authors = "${mod_authors}"
 # Display Test controls the display for your mod in the server connection screen
 # MATCH_VERSION means that your mod will cause a red X if the versions on client and server differ. This is the default behaviour and should be what you choose if you have server and client elements to your mod.
@@ -33,7 +31,7 @@ authors = "${mod_authors}"
 displayTest = "MATCH_VERSION"
 
 # The description text for the mod (multi line!)
-description = '''${mod_description}'''
+description = '''${mod_description}\n\n${mod_credits}'''
 
 [[dependencies.${ mod_id }]]
 modId = "forge"

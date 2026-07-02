@@ -2,7 +2,7 @@
   "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 500,
-    "fluid": "brewinandchewin:vodka"
+    "fluid": "minecraft:water"
   },
   "experience": 1.0,
   "fermentingtime": 9600,
@@ -14,7 +14,10 @@
       "item": "minecraft:cactus"
     },
     {
-      "tag": "forge:fruits"
+      "item": "minecraft:cactus"
+    },
+    {
+      "item": "minecraft:cactus"
     }
   ],
   "recipe_book_tab": "drinks",

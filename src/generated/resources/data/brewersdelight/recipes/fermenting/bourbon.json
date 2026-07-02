@@ -5,19 +5,19 @@
     "fluid": "minecraft:water"
   },
   "experience": 1.0,
-  "fermentingtime": 9600,
+  "fermentingtime": 19200,
   "ingredients": [
     {
-      "tag": "forge:seeds/corn"
+      "tag": "forge:crops/corn"
     },
     {
-      "tag": "forge:seeds/corn"
+      "tag": "forge:crops/corn"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:crops/corn"
     },
     {
-      "item": "minecraft:apple"
+      "tag": "forge:crops/corn"
     }
   ],
   "recipe_book_tab": "drinks",
@@ -25,5 +25,5 @@
     "count": 1000,
     "fluid": "brewersdelight:bourbon"
   },
-  "temperature": 3
+  "temperature": 4
 }

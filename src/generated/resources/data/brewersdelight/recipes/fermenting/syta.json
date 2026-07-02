@@ -5,7 +5,7 @@
     "fluid": "minecraft:water"
   },
   "experience": 0.5,
-  "fermentingtime": 9600,
+  "fermentingtime": 4800,
   "ingredients": [
     {
       "item": "minecraft:honey_bottle"
