@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "minecraft:water"
+  },
+  "experience": 0.5,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "item": "minecraft:melon_slice"
+    },
+    {
+      "item": "minecraft:melon_slice"
+    },
+    {
+      "tag": "forge:grain/wheat"
+    },
+    {
+      "tag": "forge:grain/wheat"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 500,
+    "fluid": "brewersdelight:melon_schnapps"
+  },
+  "temperature": 3
+}

@@ -1,0 +1,288 @@
+{
+  "parent": "brewersdelight:root",
+  "criteria": {
+    "bc_beer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:beer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_bloody_mary": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:bloody_mary"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_dread_nog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:dread_nog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_egg_grog": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:egg_grog"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_glittering_grenadine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:glittering_grenadine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_kombucha": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:kombucha"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_mead": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:mead"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_pale_jane": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:pale_jane"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_red_rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:red_rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_rice_wine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:rice_wine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_saccharine_rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:saccharine_rum"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_salty_folly": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:salty_folly"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_steel_toe_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:steel_toe_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_strongroot_ale": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:strongroot_ale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_vodka": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:vodka"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bc_withering_dross": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:withering_dross"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flaxen_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flaxen_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "flying_dutchman": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "gut_wrecker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:gut_wrecker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scarlet_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:scarlet_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.any_challenge_drink.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "brewersdelight:flaxen_cheese_stout"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.any_challenge_drink.title"
+    }
+  },
+  "requirements": [
+    [
+      "bc_beer",
+      "bc_vodka",
+      "bc_mead",
+      "bc_rice_wine",
+      "bc_pale_jane",
+      "bc_egg_grog",
+      "bc_glittering_grenadine",
+      "bc_saccharine_rum",
+      "bc_salty_folly",
+      "bc_bloody_mary",
+      "bc_red_rum",
+      "bc_strongroot_ale",
+      "bc_steel_toe_stout",
+      "bc_dread_nog",
+      "bc_withering_dross",
+      "bc_kombucha",
+      "flaxen_cheese_stout",
+      "scarlet_cheese_stout",
+      "flying_dutchman",
+      "gut_wrecker"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

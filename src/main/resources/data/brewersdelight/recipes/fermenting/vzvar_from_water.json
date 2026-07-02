@@ -1,0 +1,31 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 750,
+    "fluid": "minecraft:water"
+  },
+  "experience": 1.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    [
+      {
+        "tag": "forge:fruits/apple"
+      },
+      {
+        "tag": "forge:fruits/cherry"
+      }
+    ],
+    {
+      "tag": "forge:raisins"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1000,
+    "fluid": "brewersdelight:vzvar"
+  },
+  "temperature": 3
+}

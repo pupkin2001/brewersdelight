@@ -63,7 +63,8 @@ tmp
 local.properties
 
 ## Intellij Idea
-.idea
+.idea/*
+!.idea/icon.svg
 classes
 out
 *.ipr

@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "brewersdelight:flying_dutchman"
+    },
+    "title": {
+      "translate": "advancements.flying_dutchman.title"
+    },
+    "description": {
+      "translate": "advancements.flying_dutchman.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "brewersdelight:any_challenge_drink",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:flying_dutchman"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 25
+  }
+}

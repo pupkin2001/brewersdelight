@@ -1,0 +1,13 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 250,
+  "container": {
+    "item": "brewinandchewin:tankard"
+  },
+  "filling": true,
+  "fluid": "brewersdelight:vermouth_glow_berries",
+  "output": {
+    "item": "brewersdelight:vermouth_glow_berries"
+  },
+  "strict": false
+}

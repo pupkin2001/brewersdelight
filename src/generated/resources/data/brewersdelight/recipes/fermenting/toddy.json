@@ -1,0 +1,23 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "brewinandchewin:mead"
+  },
+  "experience": 0.5,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "tag": "forge:crops/cinnamon"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 500,
+    "fluid": "brewersdelight:toddy"
+  },
+  "temperature": 4
+}

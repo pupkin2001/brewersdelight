@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 750,
+    "fluid": "brewersdelight:cider"
+  },
+  "experience": 1.0,
+  "fermentingtime": 19200,
+  "ingredients": [
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "tag": "forge:berries"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 500,
+    "fluid": "brewersdelight:brandy"
+  },
+  "temperature": 4
+}

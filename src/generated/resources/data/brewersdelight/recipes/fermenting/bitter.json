@@ -1,0 +1,23 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "brewersdelight:liqueur"
+  },
+  "experience": 1.0,
+  "fermentingtime": 9600,
+  "ingredients": [
+    {
+      "tag": "forge:crops/ginger"
+    },
+    {
+      "tag": "forge:raisins"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 500,
+    "fluid": "brewersdelight:bitter"
+  },
+  "temperature": 3
+}

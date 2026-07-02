@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "brewersdelight:bourbon"
+      },
+      {
+        "item": "brewersdelight:whisky"
+      }
+    ],
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "brewersdelight:bitter"
+    }
+  ],
+  "result": {
+    "item": "brewersdelight:old_fashioned",
+    "count": 2
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "brewersdelight:melon_juice"
+  },
+  "experience": 0.5,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "tag": "forge:grain/wheat"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 750,
+    "fluid": "brewersdelight:melon_schnapps"
+  },
+  "temperature": 3
+}

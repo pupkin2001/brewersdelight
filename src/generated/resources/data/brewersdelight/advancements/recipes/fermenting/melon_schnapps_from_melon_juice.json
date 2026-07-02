@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tankard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewinandchewin:tankard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "brewersdelight:fermenting/melon_schnapps_from_melon_juice"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tankard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "brewersdelight:fermenting/melon_schnapps_from_melon_juice"
+    ]
+  },
+  "sends_telemetry_event": false
+}
