@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=lower": { "model": "brewersdelight:block/cattail_bottom" },
+    "half=upper": { "model": "brewersdelight:block/cattail_top" }
+  }
+}

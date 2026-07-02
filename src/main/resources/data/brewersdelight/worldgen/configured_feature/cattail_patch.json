@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 64,
+    "xz_spread": 8,
+    "y_spread": 4,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "brewersdelight:cattail",
+              "Properties": { "half": "lower", "waterlogged": "true" }
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              { "type": "minecraft:matching_fluids", "fluids": ["minecraft:water"] },
+              { "type": "minecraft:matching_blocks", "blocks": ["minecraft:air"], "offset": [0, 1, 0] }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
