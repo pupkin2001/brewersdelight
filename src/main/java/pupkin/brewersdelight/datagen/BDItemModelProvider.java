@@ -38,10 +38,10 @@ public class BDItemModelProvider extends ItemModelProvider
 			if (itemName.endsWith("_glass")) {
 				String baseName = itemName.substring(0, itemName.length() - 6); // Remove "_glass"
 				withExistingParent(itemName, "farmersdelight:item/mug")
-						.texture("layer0", modLoc("item/glass/" + baseName));
+						.texture("layer0", modLoc("item/drink/glass/" + baseName));
 			} else {
 				withExistingParent(itemName, "farmersdelight:item/mug")
-						.texture("layer0", modLoc("item/" + itemName));
+						.texture("layer0", modLoc("item/drink/" + itemName));
 			}
 		});
 	}

@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:item/mug",
   "textures": {
-    "layer0": "brewersdelight:item/flaxen_cheese_stout"
+    "layer0": "brewersdelight:item/drink/flaxen_cheese_stout"
   }
 }
