@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "brewersdelight:block/cattail_bottom"
+    "layer0": "brewersdelight:item/plant/cattail"
   }
 }
