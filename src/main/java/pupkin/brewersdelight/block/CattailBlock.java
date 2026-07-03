@@ -23,8 +23,7 @@ import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock
-{
+public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
 	public CattailBlock(Properties props) {
@@ -36,7 +35,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
-		super.createBlockStateDefinition(builder); // adds HALF
+		super.createBlockStateDefinition(builder);
 		builder.add(WATERLOGGED);
 	}
 	
@@ -64,7 +63,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	// DoublePlantBlock.setPlacedBy places the UPPER half but doesn't set waterlogged.
 	// Re-derive it from the upper position's fluid (in air → false).
 	@Override
-	public void setPlacedBy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @Nullable LivingEntity placer, @NotNull ItemStack stack) {
+	public void setPlacedBy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull LivingEntity placer, @NotNull ItemStack stack) {
 		if (level.isClientSide) return;
 		BlockPos above = pos.above();
 		boolean water = level.getFluidState(above).getType() == Fluids.WATER;
@@ -74,7 +73,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	}
 	
 	@Override
-	public @NotNull BlockState updateShape(@NotNull BlockState state, @NotNull Direction dir, @NotNull BlockState neighbor,
+	public @NotNull BlockState updateShape(BlockState state, @NotNull Direction dir, @NotNull BlockState neighbor,
 	                                       @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
 		if (state.getValue(WATERLOGGED)) {
 			level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
