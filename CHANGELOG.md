@@ -18,6 +18,16 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 # Changelog
 
+## [v0.7.1] — 2026-07-05
+
+### Added
+
+- Cattails, which generate in river and swamp biomes in shallow water
+
+### Fixed
+
+- Melon slices being added to '#brewersdelight:melons' instead of '#forge:melons' tag
+
 ## [v0.7.0] — 2026-07-03
 
 ### Added
