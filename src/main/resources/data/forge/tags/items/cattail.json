@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
-    "brewersdelight:cattail"
+    "brewersdelight:cattail",
+    "swampier_swamps:cattail",
+    "regions_unexplored:cattail",
+    "skaysflowery:reeds",
+    "skaysflowery:cattail",
+    "biomemakeover:cattail",
+    "wildlands:cattail",
+    "biomeswevegone:cattail_sprout",
+    "swampex:cattail",
+    "swampex:cattail_head",
+    "better_swamps:cattail",
+    "conquest:cattail_reeds"
   ]
 }
