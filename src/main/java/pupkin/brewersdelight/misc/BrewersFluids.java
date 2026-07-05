@@ -75,8 +75,8 @@ public class BrewersFluids
 	// Challenge
 	FLAXEN_CHEESE_STOUT = alcohol("flaxen_cheese_stout", new Color(241, 194, 50, 255)),
 			SCARLET_CHEESE_STOUT = alcohol("scarlet_cheese_stout", new Color(153, 0, 0, 255)),
-	//      FROSTSTONE_CHEESE_STOUT = alcohol("froststone_cheese_stout", new Color(200, 230, 245, 230)), // TODO; placeholder color
-	FLYING_DUTCHMAN = alcohol("flying_dutchman", new Color(147, 196, 125, 218)),
+			FROSTSTONE_CHEESE_STOUT = alcohol("froststone_cheese_stout", new Color(200, 230, 245, 230)), // TODO; placeholder color
+			FLYING_DUTCHMAN = alcohol("flying_dutchman", new Color(147, 196, 125, 218)),
 			GUT_WRECKER = alcohol("gut_wrecker", new Color(56, 118, 29, 255));
 	
 	private static FluidRegistryObject alcohol(String name, Color tint)
