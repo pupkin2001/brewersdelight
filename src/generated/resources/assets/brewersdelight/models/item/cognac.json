@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:item/mug",
   "textures": {
-    "layer0": "brewersdelight:item/cognac"
+    "layer0": "brewersdelight:item/drink/cognac"
   }
 }

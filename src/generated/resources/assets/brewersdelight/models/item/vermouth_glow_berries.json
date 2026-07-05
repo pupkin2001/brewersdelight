@@ -1,6 +1,6 @@
 {
   "parent": "farmersdelight:item/mug",
   "textures": {
-    "layer0": "brewersdelight:item/vermouth_glow_berries"
+    "layer0": "brewersdelight:item/drink/vermouth_glow_berries"
   }
 }

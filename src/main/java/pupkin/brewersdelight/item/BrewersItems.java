@@ -1,6 +1,7 @@
 package pupkin.brewersdelight.item;
 
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -14,16 +15,21 @@ import pupkin.brewersdelight.misc.DrinkProperties;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
+import static pupkin.brewersdelight.block.BrewersBlocks.CATTAIL;
+
 @SuppressWarnings("unused")
 public class BrewersItems
 {
 	public static final DeferredRegister<Item>
+			ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID),
 			DRINKS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID),
 			VINTAGE_DRINKS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID),
 			CHALLENGE_DRINKS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID);
 	
 	public static final RegistryObject<Item>
-			// Bases / fillers
+	CATTAIL_ITEM = ITEMS.register("cattail", () -> new BlockItem(CATTAIL.get(), new Item.Properties())),
+	
+	// Bases / fillers
 			BRAGA = registerDrink(DRINKS, "braga", BrewersFluids.BRAGA, DrinkProperties.BRAGA, false),
 			GROG = registerDrink(DRINKS, "grog", BrewersFluids.GROG, DrinkProperties.GROG, false),
 			PUNCH = registerDrink(DRINKS, "punch", BrewersFluids.PUNCH, DrinkProperties.PUNCH, false),
@@ -146,6 +152,7 @@ public class BrewersItems
 	
 	public static void register(IEventBus eventBus)
 	{
+		ITEMS.register(eventBus);
 		DRINKS.register(eventBus);
 		CHALLENGE_DRINKS.register(eventBus);
 		VINTAGE_DRINKS.register(eventBus);
