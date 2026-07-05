@@ -23,10 +23,12 @@ import net.minecraft.world.level.material.Fluids;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock {
+public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock
+{
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
-	public CattailBlock(Properties props) {
+	public CattailBlock(Properties props)
+	{
 		super(props);
 		this.registerDefaultState(this.stateDefinition.any()
 		                                              .setValue(HALF, DoubleBlockHalf.LOWER)
@@ -34,26 +36,30 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	}
 	
 	@Override
-	protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> builder)
+	{
 		super.createBlockStateDefinition(builder);
 		builder.add(WATERLOGGED);
 	}
 	
 	// No water here on purpose — this is what restricts gen to depth-1 edges.
 	@Override
-	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos)
+	{
 		return state.is(BlockTags.DIRT) || state.is(Blocks.SAND)
 				|| state.is(Blocks.CLAY) || state.is(Blocks.GRAVEL) || state.is(Blocks.MUD);
 	}
 	
 	@Override
-	public @NotNull FluidState getFluidState(BlockState state) {
+	public @NotNull FluidState getFluidState(BlockState state)
+	{
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
 	
 	@Override
 	@Nullable
-	public BlockState getStateForPlacement(@NotNull BlockPlaceContext ctx) {
+	public BlockState getStateForPlacement(@NotNull BlockPlaceContext ctx)
+	{
 		BlockState state = super.getStateForPlacement(ctx); // null if no room above
 		if (state == null) return null;
 		boolean water = ctx.getLevel().getFluidState(ctx.getClickedPos()).getType() == Fluids.WATER;
@@ -63,7 +69,8 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	// DoublePlantBlock.setPlacedBy places the UPPER half but doesn't set waterlogged.
 	// Re-derive it from the upper position's fluid (in air → false).
 	@Override
-	public void setPlacedBy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull LivingEntity placer, @NotNull ItemStack stack) {
+	public void setPlacedBy(Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull LivingEntity placer, @NotNull ItemStack stack)
+	{
 		if (level.isClientSide) return;
 		BlockPos above = pos.above();
 		boolean water = level.getFluidState(above).getType() == Fluids.WATER;
@@ -74,7 +81,8 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	
 	@Override
 	public @NotNull BlockState updateShape(BlockState state, @NotNull Direction dir, @NotNull BlockState neighbor,
-	                                       @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos) {
+	                                       @NotNull LevelAccessor level, @NotNull BlockPos pos, @NotNull BlockPos neighborPos)
+	{
 		if (state.getValue(WATERLOGGED)) {
 			level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
 		}
