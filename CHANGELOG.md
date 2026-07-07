@@ -18,6 +18,17 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 # Changelog
 
+## [v0.7.2] — 2026-07-07
+
+### Added
+
+- Bonemealing an existing cattail occasionally spreads cattails to neighbouring blocks, if cattail can live there
+- Bonemealing ground underwater in swamps and mangrove swamps can naturally spawn cattails with 1/8 chance
+
+### Changed
+
+- Cattails can no longer survive when bottom half is exposed to air or top half is submerged in water
+
 ## [v0.7.1] — 2026-07-05
 
 ### Added
