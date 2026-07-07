@@ -18,12 +18,14 @@ import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.block.CattailBlock;
 
 @Mod.EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class CattailBonemealHandler {
+public class CattailBonemealHandler
+{
 	
 	private static final int GROUND_BONEMEAL_CHANCE = 8; // 1-in-8 per use
 	
 	@SubscribeEvent
-	public static void onBonemeal(BonemealEvent event) {
+	public static void onBonemeal(BonemealEvent event)
+	{
 		Level level = event.getLevel();
 		if (level.isClientSide()) return;
 		
