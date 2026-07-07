@@ -9,6 +9,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
@@ -44,6 +45,16 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
 		return state.is(BlockTags.DIRT) || state.is(Blocks.SAND)
 				|| state.is(Blocks.CLAY) || state.is(Blocks.GRAVEL) || state.is(Blocks.MUD);
+	}
+	
+	@Override
+	public boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
+		if (!super.canSurvive(state, level, pos)) return false;
+		if (state.getValue(HALF) != DoubleBlockHalf.LOWER) return true;
+		
+		FluidState here = level.getFluidState(pos);
+		FluidState above = level.getFluidState(pos.above());
+		return here.getType() == Fluids.WATER && above.getType() != Fluids.WATER;
 	}
 	
 	@Override
