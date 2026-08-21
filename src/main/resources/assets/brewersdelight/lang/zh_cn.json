@@ -1,6 +1,9 @@
 {
   "itemgroup.brewersdelight.BrewersDelightTab": "酿酒师乐事",
   "block.brewersdelight.cattail": "香蒲",
+  "block.brewinandchewin.unripe_froststone_cheese_wheel": "Unripe Froststone Cheese Wheel",
+  "block.brewinandchewin.froststone_cheese_wheel": "Froststone Cheese Wheel",
+  "item.brewinandchewin.froststone_cheese_wedge": "Froststone Cheese Wedge",
   "item.brewersdelight.braga": "布拉加",
   "item.brewersdelight.grog": "格罗格酒",
   "item.brewersdelight.punch": "潘趣酒",

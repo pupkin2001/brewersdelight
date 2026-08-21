@@ -24,7 +24,7 @@ public class BrewersDelightTab
 					                                      .icon(() -> new ItemStack(BrewersItems.BRAGA.get()))
 					                                      .displayItems((displayParams, output) -> {
 						                                      Arrays.asList(
-																	  BrewersItems.ITEMS,
+								                                      BrewersItems.ITEMS,
 								                                      BrewersItems.DRINKS,
 								                                      BrewersItems.VINTAGE_DRINKS,
 								                                      BrewersItems.CHALLENGE_DRINKS
