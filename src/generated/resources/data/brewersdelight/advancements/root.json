@@ -348,6 +348,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "froststone_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:froststone_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "gin": {
       "conditions": {
         "items": [
@@ -664,6 +676,7 @@
       "old_fashioned",
       "flaxen_cheese_stout",
       "scarlet_cheese_stout",
+      "froststone_cheese_stout",
       "flying_dutchman",
       "gut_wrecker",
       "sbiten",
