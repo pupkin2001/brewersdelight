@@ -10,10 +10,12 @@ import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.block.BrewersBlocks;
 
 @Mod.EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class BrewersColorHandlers {
+public class BrewersColorHandlers
+{
 	
 	@SubscribeEvent
-	public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+	public static void registerBlockColors(RegisterColorHandlersEvent.Block event)
+	{
 		event.register(
 				(state, level, pos, tintIndex) -> level != null && pos != null
 						? BiomeColors.getAverageGrassColor(level, pos)

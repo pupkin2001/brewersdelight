@@ -1,5 +1,6 @@
 {
   "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
   "textures": {
     "particle": "#stem",
     "stem": "brewersdelight:block/cattail_top_stem",

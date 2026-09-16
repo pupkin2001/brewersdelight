@@ -37,8 +37,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 		                                              .setValue(WATERLOGGED, false));
 	}
 	
-	// Shared with CattailBonemealHandler below — scatters new lower-half cattails onto nearby
-	// valid shallow-water banks, reusing the exact same canSurvive check as everywhere else.
+	// Shared with CattailBonemealHandler
 	public static void trySpreadNearby(ServerLevel level, RandomSource random, BlockPos origin)
 	{
 		BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
@@ -64,7 +63,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 		builder.add(WATERLOGGED);
 	}
 	
-	// No water here on purpose — this is what restricts gen to depth-1 edges.
+	// No water here to restrict gen to 1 block deep water
 	@Override
 	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos)
 	{
