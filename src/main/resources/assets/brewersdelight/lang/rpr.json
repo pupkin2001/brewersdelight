@@ -1,6 +1,9 @@
 {
   "itemgroup.brewersdelight.BrewersDelightTab": "Пивоварскiй Развратъ",
   "block.brewersdelight.cattail": "Рогозъ",
+  "block.brewinandchewin.unripe_froststone_cheese_wheel": "Unripe Froststone Cheese Wheel",
+  "block.brewinandchewin.froststone_cheese_wheel": "Froststone Cheese Wheel",
+  "item.brewinandchewin.froststone_cheese_wedge": "Froststone Cheese Wedge",
   "item.brewersdelight.braga": "Брага",
   "item.brewersdelight.grog": "Грогъ",
   "item.brewersdelight.punch": "Пуншъ",

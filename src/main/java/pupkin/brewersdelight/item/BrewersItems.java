@@ -10,8 +10,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
+import pupkin.brewersdelight.block.BrewersBlocks;
 import pupkin.brewersdelight.misc.BrewersFluids;
-import pupkin.brewersdelight.misc.DrinkProperties;
+import pupkin.brewersdelight.misc.BrewersProperties;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
@@ -27,64 +28,73 @@ public class BrewersItems
 			CHALLENGE_DRINKS = DeferredRegister.create(ForgeRegistries.ITEMS, BrewersDelight.MOD_ID);
 	
 	public static final RegistryObject<Item>
-	CATTAIL_ITEM = ITEMS.register("cattail", () -> new BlockItem(CATTAIL.get(), new Item.Properties())),
+			CATTAIL_ITEM = ITEMS.register("cattail", () -> new BlockItem(CATTAIL.get(), new Item.Properties())),
+	
+	UNRIPE_FROSTSTONE_CHEESE_WHEEL = ITEMS.register("unripe_froststone_cheese_wheel",
+	                                                () -> new BlockItem(BrewersBlocks.UNRIPE_FROSTSTONE_CHEESE_WHEEL.get(),
+	                                                                    new Item.Properties().stacksTo(16))),
+			FROSTSTONE_CHEESE_WHEEL = ITEMS.register("froststone_cheese_wheel",
+			                                         () -> new BlockItem(BrewersBlocks.FROSTSTONE_CHEESE_WHEEL.get(),
+			                                                             new Item.Properties().stacksTo(16))),
+			FROSTSTONE_CHEESE_WEDGE = ITEMS.register("froststone_cheese_wedge",
+			                                         () -> new Item(new Item.Properties().food(BrewersProperties.FROSTSTONE_CHEESE_WEDGE))),
 	
 	// Bases / fillers
-			BRAGA = registerDrink(DRINKS, "braga", BrewersFluids.BRAGA, DrinkProperties.BRAGA, false),
-			GROG = registerDrink(DRINKS, "grog", BrewersFluids.GROG, DrinkProperties.GROG, false),
-			PUNCH = registerDrink(DRINKS, "punch", BrewersFluids.PUNCH, DrinkProperties.PUNCH, false),
-			TODDY = registerDrink(DRINKS, "toddy", BrewersFluids.TODDY, DrinkProperties.TODDY, false),
+	BRAGA = registerDrink(DRINKS, "braga", BrewersFluids.BRAGA, BrewersProperties.BRAGA, false),
+			GROG = registerDrink(DRINKS, "grog", BrewersFluids.GROG, BrewersProperties.GROG, false),
+			PUNCH = registerDrink(DRINKS, "punch", BrewersFluids.PUNCH, BrewersProperties.PUNCH, false),
+			TODDY = registerDrink(DRINKS, "toddy", BrewersFluids.TODDY, BrewersProperties.TODDY, false),
 	
 	// Utility (no tipsy)
-	COMPOTE = registerDrink(DRINKS, "compote", BrewersFluids.COMPOTE, DrinkProperties.COMPOTE, false),
-			GLUHWEIN = registerDrink(DRINKS, "gluhwein", BrewersFluids.GLUHWEIN, DrinkProperties.GLUHWEIN, false),
-			KVASS = registerDrink(DRINKS, "kvass", BrewersFluids.KVASS, DrinkProperties.KVASS, false),
-			MELON_SCHNAPPS = registerDrink(DRINKS, "melon_schnapps", BrewersFluids.MELON_SCHNAPPS, DrinkProperties.MELON_SCHNAPPS, false),
+	COMPOTE = registerDrink(DRINKS, "compote", BrewersFluids.COMPOTE, BrewersProperties.COMPOTE, false),
+			GLUHWEIN = registerDrink(DRINKS, "gluhwein", BrewersFluids.GLUHWEIN, BrewersProperties.GLUHWEIN, false),
+			KVASS = registerDrink(DRINKS, "kvass", BrewersFluids.KVASS, BrewersProperties.KVASS, false),
+			MELON_SCHNAPPS = registerDrink(DRINKS, "melon_schnapps", BrewersFluids.MELON_SCHNAPPS, BrewersProperties.MELON_SCHNAPPS, false),
 	
 	// Cheap convenience (potion-clones)
-	BRANDY = registerDrink(DRINKS, "brandy", BrewersFluids.BRANDY, DrinkProperties.BRANDY, false),
-			CIDER = registerDrink(DRINKS, "cider", BrewersFluids.CIDER, DrinkProperties.CIDER, false),
-			CORN_WHISKY = DRINKS.register("corn_whisky", () -> new BoozeItem(BrewersFluids.CORN_WHISKY.source().get(), foodItem(DrinkProperties.CORN_WHISKY))), // corn
-			ELDERFLOWER = DRINKS.register("elderflower", () -> new BoozeItem(BrewersFluids.ELDERFLOWER.source().get(), foodItem(DrinkProperties.ELDERFLOWER))),
-			GIN = registerDrink(DRINKS, "gin", BrewersFluids.GIN, DrinkProperties.GIN, false),
-			VERMOUTH_GLOW = registerDrink(DRINKS, "vermouth_glow_berries", BrewersFluids.VERMOUTH_GLOW_BERRIES, DrinkProperties.VERMOUTH_GLOW, false),
-			VERMOUTH_MUSHROOM = registerDrink(DRINKS, "vermouth_mushroom", BrewersFluids.VERMOUTH_MUSHROOM, DrinkProperties.VERMOUTH_MUSHROOM, false),
+	BRANDY = registerDrink(DRINKS, "brandy", BrewersFluids.BRANDY, BrewersProperties.BRANDY, false),
+			CIDER = registerDrink(DRINKS, "cider", BrewersFluids.CIDER, BrewersProperties.CIDER, false),
+			CORN_WHISKY = DRINKS.register("corn_whisky", () -> new BoozeItem(BrewersFluids.CORN_WHISKY.source().get(), foodItem(BrewersProperties.CORN_WHISKY))), // corn
+			ELDERFLOWER = DRINKS.register("elderflower", () -> new BoozeItem(BrewersFluids.ELDERFLOWER.source().get(), foodItem(BrewersProperties.ELDERFLOWER))),
+			GIN = registerDrink(DRINKS, "gin", BrewersFluids.GIN, BrewersProperties.GIN, false),
+			VERMOUTH_GLOW = registerDrink(DRINKS, "vermouth_glow_berries", BrewersFluids.VERMOUTH_GLOW_BERRIES, BrewersProperties.VERMOUTH_GLOW, false),
+			VERMOUTH_MUSHROOM = registerDrink(DRINKS, "vermouth_mushroom", BrewersFluids.VERMOUTH_MUSHROOM, BrewersProperties.VERMOUTH_MUSHROOM, false),
 	
 	// Tradeoff (strong buff + cost)
-	ABSINTHE = registerDrink(DRINKS, "absinthe", BrewersFluids.ABSINTHE, DrinkProperties.ABSINTHE, false),
-			MOONSHINE = DRINKS.register("moonshine", () -> new BoozeItem(BrewersFluids.MOONSHINE.source().get(), foodItem(DrinkProperties.MOONSHINE))), // corn
-			TEQUILA = registerDrink(DRINKS, "tequila", BrewersFluids.TEQUILA, DrinkProperties.TEQUILA, false),
+	ABSINTHE = registerDrink(DRINKS, "absinthe", BrewersFluids.ABSINTHE, BrewersProperties.ABSINTHE, false),
+			MOONSHINE = DRINKS.register("moonshine", () -> new BoozeItem(BrewersFluids.MOONSHINE.source().get(), foodItem(BrewersProperties.MOONSHINE))), // corn
+			TEQUILA = registerDrink(DRINKS, "tequila", BrewersFluids.TEQUILA, BrewersProperties.TEQUILA, false),
 	
 	// Clean buff (no-potion effect + Nourishment)
-	BITTER = registerDrink(DRINKS, "bitter", BrewersFluids.BITTER, DrinkProperties.BITTER, false),
-			BOURBON = DRINKS.register("bourbon", () -> new BoozeItem(BrewersFluids.BOURBON.source().get(), foodItem(DrinkProperties.BOURBON))), // corn
-			CAHORS = DRINKS.register("cahors", () -> new BoozeItem(BrewersFluids.CAHORS.source().get(), foodItem(DrinkProperties.CAHORS))), // grape
-			COGNAC = DRINKS.register("cognac", () -> new BoozeItem(BrewersFluids.COGNAC.source().get(), foodItem(DrinkProperties.COGNAC))), // grape
-			LIQUEUR = registerDrink(DRINKS, "liqueur", BrewersFluids.LIQUEUR, DrinkProperties.LIQUEUR, false),
-			RUM = registerDrink(DRINKS, "rum", BrewersFluids.RUM, DrinkProperties.RUM, false),
-			SAKE = registerDrink(DRINKS, "sake", BrewersFluids.SAKE, DrinkProperties.SAKE, false),
-			WHISKY = registerDrink(DRINKS, "whisky", BrewersFluids.WHISKY, DrinkProperties.WHISKY, false),
+	BITTER = registerDrink(DRINKS, "bitter", BrewersFluids.BITTER, BrewersProperties.BITTER, false),
+			BOURBON = DRINKS.register("bourbon", () -> new BoozeItem(BrewersFluids.BOURBON.source().get(), foodItem(BrewersProperties.BOURBON))), // corn
+			CAHORS = DRINKS.register("cahors", () -> new BoozeItem(BrewersFluids.CAHORS.source().get(), foodItem(BrewersProperties.CAHORS))), // grape
+			COGNAC = DRINKS.register("cognac", () -> new BoozeItem(BrewersFluids.COGNAC.source().get(), foodItem(BrewersProperties.COGNAC))), // grape
+			LIQUEUR = registerDrink(DRINKS, "liqueur", BrewersFluids.LIQUEUR, BrewersProperties.LIQUEUR, false),
+			RUM = registerDrink(DRINKS, "rum", BrewersFluids.RUM, BrewersProperties.RUM, false),
+			SAKE = registerDrink(DRINKS, "sake", BrewersFluids.SAKE, BrewersProperties.SAKE, false),
+			WHISKY = registerDrink(DRINKS, "whisky", BrewersFluids.WHISKY, BrewersProperties.WHISKY, false),
 	
 	// Cocktails
-	OLD_FASHIONED = registerDrink(DRINKS, "old_fashioned", BrewersFluids.OLD_FASHIONED, DrinkProperties.OLD_FASHIONED, false),
+	OLD_FASHIONED = registerDrink(DRINKS, "old_fashioned", BrewersFluids.OLD_FASHIONED, BrewersProperties.OLD_FASHIONED, false),
 	
 	// Vintage
-	SBITEN = VINTAGE_DRINKS.register("sbiten", () -> new BoozeItem(BrewersFluids.SBITEN.source().get(), foodItem(DrinkProperties.SBITEN))),
-			SYTA = VINTAGE_DRINKS.register("syta", () -> new BoozeItem(BrewersFluids.SYTA.source().get(), foodItem(DrinkProperties.SYTA))),
-			VZVAR = VINTAGE_DRINKS.register("vzvar", () -> new BoozeItem(BrewersFluids.VZVAR.source().get(), foodItem(DrinkProperties.VZVAR))),
+	SBITEN = VINTAGE_DRINKS.register("sbiten", () -> new BoozeItem(BrewersFluids.SBITEN.source().get(), foodItem(BrewersProperties.SBITEN))),
+			SYTA = VINTAGE_DRINKS.register("syta", () -> new BoozeItem(BrewersFluids.SYTA.source().get(), foodItem(BrewersProperties.SYTA))),
+			VZVAR = VINTAGE_DRINKS.register("vzvar", () -> new BoozeItem(BrewersFluids.VZVAR.source().get(), foodItem(BrewersProperties.VZVAR))),
 	
 	// Challenge
 	FLAXEN_CHEESE_STOUT = CHALLENGE_DRINKS.register("flaxen_cheese_stout",
-	                                                () -> new BoozeItem(BrewersFluids.FLAXEN_CHEESE_STOUT.source().get(), foodItem(DrinkProperties.FLAXEN_CHEESE_STOUT))),
+	                                                () -> new BoozeItem(BrewersFluids.FLAXEN_CHEESE_STOUT.source().get(), foodItem(BrewersProperties.FLAXEN_CHEESE_STOUT))),
 			SCARLET_CHEESE_STOUT = CHALLENGE_DRINKS.register("scarlet_cheese_stout",
 			                                                 () -> new BoozeItem(BrewersFluids.SCARLET_CHEESE_STOUT.source().get(),
-			                                                                     foodItem(DrinkProperties.SCARLET_CHEESE_STOUT))),
-	//			FROSTSTONE_CHEESE_STOUT = CHALLENGE_DRINKS.register("froststone_cheese_stout",
-	//			                                                    () -> new BoozeItem(BrewersFluids.FROSTSTONE_CHEESE_STOUT.source().get(), foodItem(DrinkProperties
-	//			                                                    .FROSTSTONE_CHEESE_STOUT))), // TODO
-	FLYING_DUTCHMAN = CHALLENGE_DRINKS.register("flying_dutchman",
-	                                            () -> new BoozeItem(BrewersFluids.FLYING_DUTCHMAN.source().get(), foodItem(DrinkProperties.FLYING_DUTCHMAN))),
-			GUT_WRECKER = CHALLENGE_DRINKS.register("gut_wrecker", () -> new BoozeItem(BrewersFluids.GUT_WRECKER.source().get(), foodItem(DrinkProperties.GUT_WRECKER)));
+			                                                                     foodItem(BrewersProperties.SCARLET_CHEESE_STOUT))),
+			FROSTSTONE_CHEESE_STOUT = CHALLENGE_DRINKS.register("froststone_cheese_stout",
+			                                                    () -> new BoozeItem(BrewersFluids.FROSTSTONE_CHEESE_STOUT.source().get(), foodItem(BrewersProperties
+					                                                                                                                                       .FROSTSTONE_CHEESE_STOUT))),
+			FLYING_DUTCHMAN = CHALLENGE_DRINKS.register("flying_dutchman",
+			                                            () -> new BoozeItem(BrewersFluids.FLYING_DUTCHMAN.source().get(), foodItem(BrewersProperties.FLYING_DUTCHMAN))),
+			GUT_WRECKER = CHALLENGE_DRINKS.register("gut_wrecker", () -> new BoozeItem(BrewersFluids.GUT_WRECKER.source().get(), foodItem(BrewersProperties.GUT_WRECKER)));
 	
 	/**
 	 * @throws IllegalArgumentException if both hasTankardVariant and hasGlassVariant arguments are false
