@@ -25,6 +25,9 @@ public class BrewersFluids
 			MELON_JUICE = alcohol("melon_juice", new Color(210, 0, 0, 255)),
 	//TOMATO_SAUCE = alcohol("tomato_sauce", new Color(210, 0, 0, 255)),
 	
+	// Cheese
+	FROSTSTONE_CHEESE = alcohol("froststone_cheese", new Color(82, 114, 128, 255)),
+	
 	// Bases / fillers
 	BRAGA = alcohol("braga", new Color(180, 140, 90, 209)),
 			GROG = alcohol("grog", new Color(205, 132, 66, 200)),
