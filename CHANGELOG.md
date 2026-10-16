@@ -18,6 +18,21 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 # Changelog
 
+## [v0.8.0] — 2026-10-17
+
+### Added
+
+- Snow fungus
+- Froststone cheese
+
+### Changed
+
+- Cattail stem tinting depending on biome foliage colour
+
+### Removed
+
+- Croptopia water bottle pouring recipe
+
 ## [v0.7.2] — 2026-07-07
 
 ### Added
