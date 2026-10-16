@@ -24,7 +24,7 @@ public class BrewersBlocks
 	
 	SNOW_FUNGUS = BLOCKS.register("snow_fungus",
 	                              () -> new SnowFungusBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)
-	                                                                                 .offsetType(BlockBehaviour.OffsetType.XYZ))),
+	                                                                                 .offsetType(BlockBehaviour.OffsetType.NONE))),
 	
 	FROSTSTONE_CHEESE_WHEEL = BLOCKS.register("froststone_cheese_wheel", () -> new
 			CheeseWheelBlock(BrewersItems.FROSTSTONE_CHEESE_WEDGE, Block.Properties.copy(Blocks.CAKE))),
