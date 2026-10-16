@@ -22,6 +22,10 @@ public class BrewersBlocks
 			                          () -> new CattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)
 			                                                                          .offsetType(BlockBehaviour.OffsetType.XYZ))),
 	
+	SNOW_FUNGUS = BLOCKS.register("snow_fungus",
+	                              () -> new SnowFungusBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)
+	                                                                                 .offsetType(BlockBehaviour.OffsetType.XYZ))),
+	
 	FROSTSTONE_CHEESE_WHEEL = BLOCKS.register("froststone_cheese_wheel", () -> new
 			CheeseWheelBlock(BrewersItems.FROSTSTONE_CHEESE_WEDGE, Block.Properties.copy(Blocks.CAKE))),
 	

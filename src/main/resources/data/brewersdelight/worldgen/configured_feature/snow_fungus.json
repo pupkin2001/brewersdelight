@@ -1,0 +1,182 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 8,
+    "xz_spread": 7,
+    "y_spread": 0,
+    "feature": {
+      "feature": {
+        "type": "minecraft:disk",
+        "config": {
+          "radius": 0,
+          "half_height": 0,
+          "target": {
+            "type": "minecraft:true"
+          },
+          "state_provider": {
+            "fallback": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:air"
+              }
+            },
+            "rules": [
+              {
+                "if_true": {
+                  "type": "minecraft:would_survive",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "north"
+                    }
+                  }
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "north"
+                    }
+                  }
+                }
+              },
+              {
+                "if_true": {
+                  "type": "minecraft:would_survive",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "east"
+                    }
+                  }
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "east"
+                    }
+                  }
+                }
+              },
+              {
+                "if_true": {
+                  "type": "minecraft:would_survive",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "south"
+                    }
+                  }
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "south"
+                    }
+                  }
+                }
+              },
+              {
+                "if_true": {
+                  "type": "minecraft:would_survive",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "west"
+                    }
+                  }
+                },
+                "then": {
+                  "type": "minecraft:simple_state_provider",
+                  "state": {
+                    "Name": "brewersdelight:snow_fungus",
+                    "Properties": {
+                      "facing": "west"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:heightmap",
+          "heightmap": "MOTION_BLOCKING_NO_LEAVES"
+        },
+        {
+          "type": "minecraft:random_offset",
+          "xz_spread": 0,
+          "y_spread": {
+            "type": "minecraft:uniform",
+            "value": {
+              "min_inclusive": 0,
+              "max_inclusive": 15
+            }
+          }
+        },
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": [
+                  "minecraft:air"
+                ]
+              },
+              {
+                "type": "minecraft:any_of",
+                "predicates": [
+                  {
+                    "type": "minecraft:would_survive",
+                    "state": {
+                      "Name": "brewersdelight:snow_fungus",
+                      "Properties": {
+                        "facing": "north"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:would_survive",
+                    "state": {
+                      "Name": "brewersdelight:snow_fungus",
+                      "Properties": {
+                        "facing": "east"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:would_survive",
+                    "state": {
+                      "Name": "brewersdelight:snow_fungus",
+                      "Properties": {
+                        "facing": "south"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:would_survive",
+                    "state": {
+                      "Name": "brewersdelight:snow_fungus",
+                      "Properties": {
+                        "facing": "west"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

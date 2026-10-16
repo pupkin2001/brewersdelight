@@ -17,6 +17,7 @@ import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
 import static pupkin.brewersdelight.block.BrewersBlocks.CATTAIL;
+import static pupkin.brewersdelight.block.BrewersBlocks.SNOW_FUNGUS;
 
 @SuppressWarnings("unused")
 public class BrewersItems
@@ -29,6 +30,7 @@ public class BrewersItems
 	
 	public static final RegistryObject<Item>
 			CATTAIL_ITEM = ITEMS.register("cattail", () -> new BlockItem(CATTAIL.get(), new Item.Properties())),
+			SNOW_FUNGUS_ITEM = ITEMS.register("snow_fungus", () -> new BlockItem(SNOW_FUNGUS.get(), new Item.Properties())),
 	
 	UNRIPE_FROSTSTONE_CHEESE_WHEEL = ITEMS.register("unripe_froststone_cheese_wheel",
 	                                                () -> new BlockItem(BrewersBlocks.UNRIPE_FROSTSTONE_CHEESE_WHEEL.get(),
