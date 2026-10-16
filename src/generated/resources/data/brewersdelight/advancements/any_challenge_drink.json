@@ -217,6 +217,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "froststone_cheese_stout": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "brewersdelight:froststone_cheese_stout"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "gut_wrecker": {
       "conditions": {
         "items": [
@@ -277,6 +289,7 @@
       "bc_kombucha",
       "flaxen_cheese_stout",
       "scarlet_cheese_stout",
+      "froststone_cheese_stout",
       "flying_dutchman",
       "gut_wrecker"
     ]

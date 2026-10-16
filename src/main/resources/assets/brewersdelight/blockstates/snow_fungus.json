@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "brewersdelight:block/snow_fungus"
+    },
+    "facing=down": {
+      "model": "brewersdelight:block/snow_fungus",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "brewersdelight:block/snow_fungus",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "brewersdelight:block/snow_fungus",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "brewersdelight:block/snow_fungus",
+      "x": 90,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "brewersdelight:block/snow_fungus",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

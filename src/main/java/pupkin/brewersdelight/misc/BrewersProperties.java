@@ -6,16 +6,22 @@ import net.minecraft.world.food.FoodProperties;
 import umpaz.brewinandchewin.common.registry.BnCEffects;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
-public class DrinkProperties
+public class BrewersProperties
 {
 	public static final int
 			BRIEF_DURATION = 600, VERY_SHORT_DURATION = 1200, SHORT_DURATION = 2400,
 			MEDIUM_DURATION = 3600, MODERATE_DURATION = 6000, EXTENDED_DURATION = 9600,
 			LONG_DURATION = 12000, PROLONGED_DURATION = 14400, VERY_LONG_DURATION = 24000;
 	
-	//  Bases / fillers
+	// Food
 	public static final FoodProperties
-			BRAGA = light(new FoodProperties.Builder().alwaysEat().nutrition(4).saturationMod(0.2F)).build(),
+			FROSTSTONE_CHEESE_WEDGE = (new FoodProperties.Builder())
+			.nutrition(2)
+			.saturationMod(1.0F)
+			.build(),
+	
+	//  Bases / fillers
+	BRAGA = light(new FoodProperties.Builder().alwaysEat().nutrition(4).saturationMod(0.2F)).build(),
 			GROG = light(new FoodProperties.Builder().alwaysEat()).build(),
 			PUNCH = light(new FoodProperties.Builder().alwaysEat()).build(),
 			TODDY = light(new FoodProperties.Builder().alwaysEat()
@@ -108,9 +114,9 @@ public class DrinkProperties
 	
 	// Cocktails
 	OLD_FASHIONED = strong(new FoodProperties.Builder().alwaysEat()
-	                                                 .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, MEDIUM_DURATION, 0), 1.0F)
-	                                                 .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION, 0), 1.0F)
-	                                                 .effect(() -> nourish(MEDIUM_DURATION), 1.0F)).build(),
+	                                                   .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, MEDIUM_DURATION, 0), 1.0F)
+	                                                   .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, SHORT_DURATION, 0), 1.0F)
+	                                                   .effect(() -> nourish(MEDIUM_DURATION), 1.0F)).build(),
 	
 	// Vintage
 	SBITEN = strong(new FoodProperties.Builder().alwaysEat()
@@ -148,22 +154,22 @@ public class DrinkProperties
 			                  .effect(() -> new MobEffectInstance(MobEffects.WITHER, 2100, 0), 0.25F)
 			                  .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2100, 1), 0.1F)
 			                  .nutrition(4).saturationMod(0.4F)).build(),
-	//			FROSTSTONE_CHEESE_STOUT = spirit(new FoodProperties // TODO
-	//					.Builder().alwaysEat()
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 19200, 0), 1.0F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.UNLUCK, 8400, 0), 1.0F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1800, 0), 0.8F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 6000, 1),
-	//			                          0.8F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 6000, 1), 0.5F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.25F)
-	//			                  .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2100, 1), 0.1F)
-	//			                  .nutrition(4).saturationMod(0.4F)).build(),
-	FLYING_DUTCHMAN = strong(new FoodProperties
-			.Builder().alwaysEat()
-	                  .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, LONG_DURATION, 0), 1.0F)
-	                  .effect(() -> new MobEffectInstance(MobEffects.BAD_OMEN, LONG_DURATION, 0),
-	                          1.0F)).build(),
+			FROSTSTONE_CHEESE_STOUT = spirit(new FoodProperties
+					.Builder().alwaysEat()
+			                  .effect(() -> new MobEffectInstance(MobEffects.SLOW_FALLING, 19200, 0), 1.0F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.UNLUCK, 8400, 0), 1.0F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1800, 0), 0.8F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 6000, 1),
+			                          0.8F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 6000, 1), 0.5F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.HARM, 1, 0), 0.25F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2100, 1), 0.1F)
+			                  .nutrition(4).saturationMod(0.4F)).build(),
+			FLYING_DUTCHMAN = strong(new FoodProperties
+					.Builder().alwaysEat()
+			                  .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, LONG_DURATION, 0), 1.0F)
+			                  .effect(() -> new MobEffectInstance(MobEffects.BAD_OMEN, LONG_DURATION, 0),
+			                          1.0F)).build(),
 			GUT_WRECKER = spirit(new FoodProperties
 					.Builder().alwaysEat()
 			                  .effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, LONG_DURATION, 1), 1.0F)

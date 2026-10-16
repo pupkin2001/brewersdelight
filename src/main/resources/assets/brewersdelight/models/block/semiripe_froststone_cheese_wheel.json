@@ -1,0 +1,9 @@
+{
+  "parent": "brewinandchewin:block/cheese_wheel_template",
+  "textures": {
+    "top": "brewersdelight:block/semiripe_froststone_cheese_wheel_top",
+    "side": "brewersdelight:block/semiripe_froststone_cheese_wheel_side",
+    "bottom": "brewersdelight:block/semiripe_froststone_cheese_wheel_bottom",
+    "particle": "brewersdelight:block/semiripe_froststone_cheese_wheel_top"
+  }
+}

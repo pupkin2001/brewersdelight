@@ -1,0 +1,13 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 1000,
+  "container": {
+    "item": "minecraft:honeycomb"
+  },
+  "filling": false,
+  "fluid": "brewersdelight:froststone_cheese",
+  "output": {
+    "item": "brewersdelight:unripe_froststone_cheese_wheel"
+  },
+  "strict": false
+}
