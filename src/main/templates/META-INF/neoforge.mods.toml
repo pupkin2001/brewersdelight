@@ -32,7 +32,7 @@ ${mod_credits}'''
 [[mixins]]
 config = "${mod_id}.mixins.json"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "neoforge"
 # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
 type = "required"
@@ -45,35 +45,35 @@ ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT, or SERVER
 side = "BOTH"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "farmersdelight"
 type = "required"
 versionRange = "${farmersdelight_version_range}"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "brewinandchewin"
 type = "required"
 versionRange = "${brewinandchewin_version_range}"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "corn_delight"
 type = "optional"
 versionRange = "${corn_delight_version_range}"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.${ mod_id }]]
+[[dependencies.${mod_id}]]
 modId = "croptopia"
 type = "optional"
 versionRange = "${croptopia_version_range}"

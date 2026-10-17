@@ -3,6 +3,7 @@
 
   "block.brewersdelight.cattail": "Cattails",
   "block.brewersdelight.snow_fungus": "Snow Fungus",
+
   "block.brewersdelight.unripe_froststone_cheese_wheel": "Unripe Froststone Cheese Wheel",
   "block.brewersdelight.froststone_cheese_wheel": "Froststone Cheese Wheel",
   "item.brewersdelight.froststone_cheese_wedge": "Froststone Cheese Wedge",
@@ -52,6 +53,7 @@
 
   "fluid_type.brewersdelight.melon_juice": "Melon Juice",
   "fluid_type.brewersdelight.froststone_cheese": "Froststone Cheese",
+
   "fluid_type.brewersdelight.braga": "Braga",
   "fluid_type.brewersdelight.grog": "Grog",
   "fluid_type.brewersdelight.punch": "Punch",
@@ -120,7 +122,7 @@
   "advancements.any_vintage_drink.description": "Brew your first vintage drink.",
   "advancements.every_vintage_drink.title": "Every vintage drink",
   "advancements.every_vintage_drink.description": "Brew every possible vintage drink.",
-  
+
   "tag.item.brewinandchewin.fermented_drinks": "Fermented drinks",
   "tag.item.brewersdelight.challenge_drinks": "Challenge drinks",
   "tag.item.brewersdelight.vintage_drinks": "Vintage drinks"

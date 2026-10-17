@@ -12,10 +12,7 @@
             "type": "minecraft:simple_state_provider",
             "state": {
               "Name": "brewersdelight:cattail",
-              "Properties": {
-                "half": "lower",
-                "waterlogged": "true"
-              }
+              "Properties": { "half": "lower", "waterlogged": "true" }
             }
           }
         }
@@ -26,23 +23,8 @@
           "predicate": {
             "type": "minecraft:all_of",
             "predicates": [
-              {
-                "type": "minecraft:matching_fluids",
-                "fluids": [
-                  "minecraft:water"
-                ]
-              },
-              {
-                "type": "minecraft:matching_blocks",
-                "blocks": [
-                  "minecraft:air"
-                ],
-                "offset": [
-                  0,
-                  1,
-                  0
-                ]
-              }
+              { "type": "minecraft:matching_fluids", "fluids": ["minecraft:water"] },
+              { "type": "minecraft:matching_blocks", "blocks": ["minecraft:air"], "offset": [0, 1, 0] }
             ]
           }
         }

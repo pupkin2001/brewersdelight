@@ -19,7 +19,7 @@ public class BrewersFluidRenderers
 	private static final ResourceLocation
 			FLUID_STILL_TEXTURE = ResourceLocation.withDefaultNamespace("block/water_still"),
 			FLUID_FLOWING_TEXTURE = ResourceLocation.withDefaultNamespace("block/water_flow");
-	
+
 	@SubscribeEvent
 	public static void registerClientExtensions(RegisterClientExtensionsEvent event)
 	{
@@ -30,7 +30,7 @@ public class BrewersFluidRenderers
 			}
 		});
 	}
-	
+
 	private static IClientFluidTypeExtensions alcoholExtension(int tintColor)
 	{
 		return new IClientFluidTypeExtensions()
@@ -40,13 +40,13 @@ public class BrewersFluidRenderers
 			{
 				return FLUID_STILL_TEXTURE;
 			}
-			
+
 			@Override
 			public @NotNull ResourceLocation getFlowingTexture()
 			{
 				return FLUID_FLOWING_TEXTURE;
 			}
-			
+
 			@Override
 			public int getTintColor()
 			{
