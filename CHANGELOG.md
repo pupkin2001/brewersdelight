@@ -26,10 +26,6 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 ## [v0.8.1] — 2026-10-17
 
-### Added
-
-- Minecraft 1.21.1 NeoForge support
-
 ### Fixed
 
 - Cattail loot table not loading
@@ -41,6 +37,7 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 ### Added
 
+- Minecraft 1.21.1 NeoForge support
 - Snow fungus
 - Froststone cheese
 
