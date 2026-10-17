@@ -1,0 +1,15 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "container": {
+    "count": 1,
+    "id": "brewinandchewin:tankard"
+  },
+  "fluid": {
+    "amount": 250,
+    "id": "brewersdelight:toddy"
+  },
+  "output": {
+    "count": 1,
+    "id": "brewersdelight:toddy"
+  }
+}

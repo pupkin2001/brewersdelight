@@ -1,0 +1,28 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "#brewinandchewin:vodka"
+    }
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:seeds/wheat"
+    },
+    {
+      "tag": "c:seeds/wheat"
+    },
+    {
+      "tag": "c:foods/berry"
+    },
+    {
+      "tag": "c:foods/berry"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:gin"
+  }
+}

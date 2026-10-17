@@ -1,0 +1,28 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "tag": "#c:honey"
+    }
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "item": "farmersdelight:melon_juice"
+    },
+    {
+      "tag": "c:foods/berry"
+    },
+    {
+      "tag": "c:foods/berry"
+    }
+  ],
+  "result": {
+    "amount": 750,
+    "id": "brewersdelight:liqueur"
+  }
+}

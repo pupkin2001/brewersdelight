@@ -1,0 +1,34 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 250,
+    "ingredient": {
+      "tag": "#brewinandchewin:beer"
+    },
+    "unit": "millibuckets"
+  },
+  "experience": 1.0,
+  "fermenting_time": 4800,
+  "ingredients": [
+    [
+      {
+        "tag": "c:fruits/apple"
+      },
+      {
+        "tag": "c:fruits/cherry"
+      }
+    ],
+    {
+      "tag": "c:raisins"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:vzvar"
+  },
+  "temperature": 3,
+  "unit": "millibuckets"
+}

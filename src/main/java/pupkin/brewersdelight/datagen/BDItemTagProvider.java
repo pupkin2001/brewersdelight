@@ -7,8 +7,8 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
@@ -33,30 +33,26 @@ public class BDItemTagProvider extends ItemTagsProvider
 	@Override
 	protected void addTags(HolderLookup.@NotNull Provider provider)
 	{
-		List<DeferredRegister<Item>> drinkRegistries = List.of(
+		List<DeferredRegister.Items> drinkRegistries = List.of(
 				BrewersItems.DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
 				BrewersItems.CHALLENGE_DRINKS
 		                                                      );
 		
 		drinkRegistries.forEach(registry ->
-				                        addBoozeItems(registry, BnCTags.FERMENTED_DRINKS)
+				                        addBoozeItems(registry, BnCTags.Items.FERMENTED_DRINKS)
 		                       );
 		
 		addBoozeItems(BrewersItems.VINTAGE_DRINKS, BrewersTags.VINTAGE_DRINKS);
-		assert BnCItems.DREAD_NOG.getKey() != null;
-		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.DREAD_NOG.getKey());
-		assert BnCItems.STEEL_TOE_STOUT.getKey() != null;
-		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.STEEL_TOE_STOUT.getKey());
-		assert BnCItems.WITHERING_DROSS.getKey() != null;
-		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.WITHERING_DROSS.getKey());
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.DREAD_NOG);
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.STEEL_TOE_STOUT);
+		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.WITHERING_DROSS);
 		addBoozeItems(BrewersItems.CHALLENGE_DRINKS, BrewersTags.CHALLENGE_DRINKS);
 	}
 	
-	private void addBoozeItems(DeferredRegister<Item> registry, TagKey<Item> tagKey)
+	private void addBoozeItems(DeferredRegister.Items registry, TagKey<Item> tagKey)
 	{
 		registry.getEntries().forEach(item -> {
-			assert item.getKey() != null;
 			if (item.get() instanceof BoozeItem) {
 				tag(tagKey).add(item.getKey());
 			}

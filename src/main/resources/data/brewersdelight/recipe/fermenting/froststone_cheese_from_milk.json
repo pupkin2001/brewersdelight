@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "#c:milk"
+    },
+    "unit": "millibuckets"
+  },
+  "category": "meals",
+  "experience": 1.0,
+  "fermenting_time": 9600,
+  "ingredients": [
+    {
+      "item": "brewersdelight:snow_fungus"
+    },
+    {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:froststone_cheese"
+  },
+  "temperature": 4,
+  "unit": "millibuckets"
+}

@@ -10,14 +10,13 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.event.entity.player.BonemealEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.block.CattailBlock;
 
-@Mod.EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class CattailBonemealHandler
 {
 	
@@ -29,7 +28,7 @@ public class CattailBonemealHandler
 		Level level = event.getLevel();
 		if (level.isClientSide()) return;
 		
-		BlockState ground = event.getBlock();
+		BlockState ground = event.getState();
 		boolean validGround = ground.is(BlockTags.DIRT) || ground.is(Blocks.SAND)
 				|| ground.is(Blocks.CLAY) || ground.is(Blocks.GRAVEL) || ground.is(Blocks.MUD);
 		if (!validGround) return;
@@ -45,6 +44,8 @@ public class CattailBonemealHandler
 		if (random.nextInt(GROUND_BONEMEAL_CHANCE) != 0) return;
 		
 		CattailBlock.trySpreadNearby((ServerLevel) level, random, pos.above());
-		event.setResult(Event.Result.ALLOW);
+		// Cancelling skips vanilla handling, so consume the bone meal here like Forge's Result.ALLOW did
+		event.getStack().shrink(1);
+		event.setSuccessful(true);
 	}
 }

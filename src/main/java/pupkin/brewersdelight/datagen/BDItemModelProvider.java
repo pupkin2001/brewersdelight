@@ -1,10 +1,9 @@
 package pupkin.brewersdelight.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 
@@ -20,7 +19,7 @@ public class BDItemModelProvider extends ItemModelProvider
 	@Override
 	protected void registerModels()
 	{
-		List<DeferredRegister<Item>> registries = List.of(
+		List<DeferredRegister.Items> registries = List.of(
 				BrewersItems.DRINKS,
 				BrewersItems.VINTAGE_DRINKS,
 				BrewersItems.CHALLENGE_DRINKS
@@ -29,10 +28,9 @@ public class BDItemModelProvider extends ItemModelProvider
 		registries.forEach(this::processRegistry);
 	}
 	
-	private void processRegistry(DeferredRegister<Item> registry)
+	private void processRegistry(DeferredRegister.Items registry)
 	{
 		registry.getEntries().forEach(item -> {
-			assert item.getId() != null;
 			String itemName = item.getId().getPath();
 			
 			if (itemName.endsWith("_glass")) {

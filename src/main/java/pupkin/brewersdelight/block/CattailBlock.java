@@ -1,5 +1,6 @@
 package pupkin.brewersdelight.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -26,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedBlock, BonemealableBlock
 {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-	
+	public static final MapCodec<CattailBlock> CODEC = simpleCodec(CattailBlock::new);
 	private static final int SPREAD_ATTEMPTS = 32;
 	
 	public CattailBlock(Properties props)
@@ -54,6 +55,12 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 				}
 			}
 		}
+	}
+	
+	@Override
+	public @NotNull MapCodec<CattailBlock> codec()
+	{
+		return CODEC;
 	}
 	
 	@Override
@@ -122,7 +129,7 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	}
 	
 	@Override
-	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull BlockState state, boolean isClient)
+	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, @NotNull BlockState state)
 	{
 		return true;
 	}

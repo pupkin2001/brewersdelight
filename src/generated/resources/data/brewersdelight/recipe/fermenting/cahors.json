@@ -1,0 +1,28 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 250,
+    "ingredient": {
+      "id": "brewersdelight:wine"
+    }
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:cahors"
+  }
+}

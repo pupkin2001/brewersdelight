@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 250,
+    "ingredient": {
+      "tag": "#c:milk"
+    }
+  },
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fish"
+    },
+    {
+      "tag": "c:cattail"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "tag": "c:foods/vegetable"
+    }
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:gut_wrecker"
+  },
+  "temperature": 4
+}

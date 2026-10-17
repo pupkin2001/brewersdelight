@@ -1,0 +1,44 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "#c:water"
+    }
+  },
+  "experience": 0.5,
+  "fermenting_time": 4800,
+  "ingredients": [
+    [
+      {
+        "tag": "c:foods/fruit"
+      },
+      {
+        "tag": "c:fruits"
+      }
+    ],
+    [
+      {
+        "tag": "c:foods/fruit"
+      },
+      {
+        "tag": "c:fruits"
+      }
+    ],
+    [
+      {
+        "tag": "c:foods/fruit"
+      },
+      {
+        "tag": "c:fruits"
+      }
+    ],
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:punch"
+  }
+}

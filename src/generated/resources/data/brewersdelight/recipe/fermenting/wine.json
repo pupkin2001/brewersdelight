@@ -1,0 +1,28 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "#c:water"
+    }
+  },
+  "experience": 0.5,
+  "ingredients": [
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "tag": "c:fruits/grape"
+    }
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:wine"
+  }
+}

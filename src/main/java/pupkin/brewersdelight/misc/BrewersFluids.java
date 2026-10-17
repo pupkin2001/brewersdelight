@@ -1,24 +1,23 @@
 package pupkin.brewersdelight.misc;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fluids.FluidType;
-import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistries.Keys;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import pupkin.brewersdelight.BrewersDelight;
-import umpaz.brewinandchewin.common.fluid.AlcoholFluidType;
 
 import java.awt.*;
 
 public class BrewersFluids
 {
-	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(Keys.FLUID_TYPES, BrewersDelight.MOD_ID);
-	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, BrewersDelight.MOD_ID);
+	public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, BrewersDelight.MOD_ID);
+	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, BrewersDelight.MOD_ID);
 	
 	// Farmer's Delight compat
 	public static final FluidRegistryObject
@@ -84,13 +83,13 @@ public class BrewersFluids
 	
 	private static FluidRegistryObject alcohol(String name, Color tint)
 	{
-		RegistryObject<FluidType> type = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tint.getRGB()));
-		// Lazy<Properties> resolves on first fluid construction — long after registration,
-		// so the source/flowing forward-reference is never touched too early. No array holder.
-		Lazy<ForgeFlowingFluid.Properties>[] props = new Lazy[1];
-		RegistryObject<FlowingFluid> source = FLUIDS.register(name, () -> new ForgeFlowingFluid.Source(props[0].get()));
-		RegistryObject<FlowingFluid> flowing = FLUIDS.register("flowing_" + name, () -> new ForgeFlowingFluid.Flowing(props[0].get()));
-		props[0] = Lazy.of(() -> new ForgeFlowingFluid.Properties(type, source, flowing));
+		DeferredHolder<FluidType, FluidType> type = FLUID_TYPES.register(name, () -> new AlcoholFluidType(tint.getRGB()));
+		// Holders exist before their values, and Properties only stores the suppliers,
+		// so the source/flowing forward-reference is resolved when the fluids are constructed.
+		BaseFlowingFluid.Properties[] props = new BaseFlowingFluid.Properties[1];
+		DeferredHolder<Fluid, FlowingFluid> source = FLUIDS.register(name, () -> new BaseFlowingFluid.Source(props[0]));
+		DeferredHolder<Fluid, FlowingFluid> flowing = FLUIDS.register("flowing_" + name, () -> new BaseFlowingFluid.Flowing(props[0]));
+		props[0] = new BaseFlowingFluid.Properties(type, source, flowing);
 		return new FluidRegistryObject(type, source, flowing);
 	}
 	
@@ -101,12 +100,12 @@ public class BrewersFluids
 	}
 	
 	public record FluidRegistryObject(
-			RegistryObject<FluidType> type,
-			RegistryObject<FlowingFluid> source,
-			RegistryObject<FlowingFluid> flowing)
+			DeferredHolder<FluidType, FluidType> type,
+			DeferredHolder<Fluid, FlowingFluid> source,
+			DeferredHolder<Fluid, FlowingFluid> flowing)
 	{
 		
-		public net.minecraft.resources.ResourceLocation id()
+		public ResourceLocation id()
 		{
 			return source.getId();
 		}

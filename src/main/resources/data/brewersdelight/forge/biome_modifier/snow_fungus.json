@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#brewersdelight:has_snow_fungus",
-  "features": "brewersdelight:snow_fungus",
-  "step": "vegetal_decoration"
-}

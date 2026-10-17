@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ihi",
+    "ibi"
+  ],
+  "key": {
+    "i": {
+      "tag": "c:ingots/iron"
+    },
+    "h": {
+      "item": "minecraft:honeycomb"
+    },
+    "b": {
+      "tag": "c:barrels/wooden"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "brewinandchewin:keg"
+  }
+}

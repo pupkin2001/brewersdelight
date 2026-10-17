@@ -1,0 +1,23 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "id": "brewersdelight:rum"
+    }
+  },
+  "experience": 0.5,
+  "fermenting_time": 4800,
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    [],
+    [],
+    []
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:grog"
+  }
+}

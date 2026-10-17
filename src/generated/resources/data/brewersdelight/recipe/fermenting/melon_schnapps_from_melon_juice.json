@@ -1,0 +1,23 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "id": "brewersdelight:melon_juice"
+    }
+  },
+  "experience": 0.5,
+  "fermenting_time": 4800,
+  "ingredients": [
+    {
+      "tag": "c:crops/wheat"
+    },
+    [],
+    [],
+    []
+  ],
+  "result": {
+    "amount": 750,
+    "id": "brewersdelight:melon_schnapps"
+  }
+}

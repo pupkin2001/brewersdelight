@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 750,
+    "ingredient": {
+      "id": "brewersdelight:cider"
+    }
+  },
+  "experience": 1.0,
+  "fermenting_time": 19200,
+  "ingredients": [
+    {
+      "tag": "c:foods/berry"
+    },
+    {
+      "tag": "c:foods/berry"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:brandy"
+  },
+  "temperature": 4
+}

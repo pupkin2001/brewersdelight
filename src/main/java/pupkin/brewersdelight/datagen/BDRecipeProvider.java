@@ -1,40 +1,44 @@
 package pupkin.brewersdelight.datagen;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.Fluids;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.neoforged.neoforge.registries.DeferredItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.misc.BrewersFluids;
-import umpaz.brewinandchewin.common.registry.BnCFluids;
+import umpaz.brewinandchewin.client.recipebook.FermentingBookCategory;
 import umpaz.brewinandchewin.common.registry.BnCItems;
+import umpaz.brewinandchewin.common.tag.BnCTags;
+import umpaz.brewinandchewin.data.builder.KegFermentingRecipeBuilder;
+import umpaz.brewinandchewin.data.builder.KegPouringRecipeBuilder;
+import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
-
-import static net.minecraft.data.recipes.RecipeBuilder.ROOT_RECIPE_ADVANCEMENT;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class BDRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
@@ -57,9 +61,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 			MEDIUM_EXP = 1.0F,
 			LARGE_EXP = 2.0F;
 	
-	public BDRecipeProvider(PackOutput output)
+	// 1.21 splits these between NeoForge/Farmer's Delight (c:foods/fruit, c:crops/grain) and Croptopia (c:fruits, c:grain)
+	private static final Ingredient
+			FRUITS = anyTag("c:foods/fruit", "c:fruits"),
+			GRAIN = anyTag("c:crops/grain", "c:grain");
+	
+	public BDRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
 	{
-		super(output);
+		super(output, registries);
 	}
 	
 	private static ResourceLocation glassVariant(ResourceLocation drinkId)
@@ -67,24 +76,36 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		return ResourceLocation.fromNamespaceAndPath(drinkId.getNamespace(), drinkId.getPath() + "_glass");
 	}
 	
-	// Shared ingredient serializer used by fermenting, cooking, and shaped key entries.
-	private static void writeIngredient(JsonObject ingredientJson, Object ingredient)
+	private static TagKey<Item> itemTag(String id)
 	{
-		if (ingredient instanceof Item item) {
-			// Regular item
-			ingredientJson.addProperty("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).toString());
-		} else if (ingredient instanceof net.minecraft.tags.TagKey<?> tagKey) {
+		return TagKey.create(Registries.ITEM, ResourceLocation.parse(id));
+	}
+	
+	private static Ingredient anyTag(String... ids)
+	{
+		return Ingredient.fromValues(Arrays.stream(ids).map(id -> new Ingredient.TagValue(itemTag(id))));
+	}
+	
+	// Shared ingredient conversion used by fermenting and cooking recipes.
+	@SuppressWarnings("unchecked")
+	private static Ingredient toIngredient(Object ingredient)
+	{
+		if (ingredient instanceof Ingredient i) {
+			return i;
+		} else if (ingredient instanceof ItemLike item) {
+			// Regular item, or a DeferredItem
+			return Ingredient.of(item);
+		} else if (ingredient instanceof TagKey<?> tagKey) {
 			// Item tag
-			ingredientJson.addProperty("tag", tagKey.location().toString());
+			return Ingredient.of((TagKey<Item>) tagKey);
 		} else if (ingredient instanceof String s) {
 			// String representation of a tag
-			ingredientJson.addProperty("tag", s);
-		} else if (ingredient instanceof RegistryObject<?> regObj) {
-			// RegistryObject for Item
-			Item item = (Item) regObj.get();
-			ingredientJson.addProperty("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).toString());
+			return Ingredient.of(itemTag(s));
+		} else if (ingredient instanceof Supplier<?> supplier && supplier.get() instanceof ItemLike item) {
+			// Supplier<Item>, e.g. Farmer's Delight items
+			return Ingredient.of(item);
 		} else {
-			throw new IllegalArgumentException("Ingredient must be an Item, TagKey<Item>, String tag representation, or RegistryObject<Item>: " + ingredient);
+			throw new IllegalArgumentException("Ingredient must be an Item, TagKey<Item>, String tag representation, Supplier<Item> or Ingredient: " + ingredient);
 		}
 	}
 	
@@ -100,60 +121,43 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 	@SuppressWarnings("unchecked")
 	private static ItemPredicate toItemPredicate(Object ingredient)
 	{
-		if (ingredient instanceof Item item) {
+		if (ingredient instanceof ItemLike item) {
 			return ItemPredicate.Builder.item().of(item).build();
-		} else if (ingredient instanceof net.minecraft.tags.TagKey<?> tagKey) {
-			return ItemPredicate.Builder.item().of((net.minecraft.tags.TagKey<Item>) tagKey).build();
+		} else if (ingredient instanceof TagKey<?> tagKey) {
+			return ItemPredicate.Builder.item().of((TagKey<Item>) tagKey).build();
 		} else if (ingredient instanceof String s) {
 			// "namespace:path"
-			String[] parts = s.split(":", 2);
-			ResourceLocation tagId = parts.length == 2
-					? ResourceLocation.fromNamespaceAndPath(parts[0], parts[1])
-					: ResourceLocation.fromNamespaceAndPath("minecraft", parts[0]);
-			return ItemPredicate.Builder.item().of(net.minecraft.tags.TagKey.create(Registries.ITEM, tagId)).build();
-		} else if (ingredient instanceof RegistryObject<?> regObj) {
-			return ItemPredicate.Builder.item().of((Item) regObj.get()).build();
+			return ItemPredicate.Builder.item().of(itemTag(s)).build();
+		} else if (ingredient instanceof Supplier<?> supplier && supplier.get() instanceof ItemLike item) {
+			return ItemPredicate.Builder.item().of(item).build();
 		} else {
 			throw new IllegalArgumentException(
-					"Criterion item must be an Item, TagKey<Item>, String tag representation, or RegistryObject<Item>: " + ingredient);
+					"Criterion item must be an Item, TagKey<Item>, String tag representation, or Supplier<Item>: " + ingredient);
 		}
 	}
 	
-	private static Advancement.Builder buildAdvancement(ResourceLocation recipeId, List<UnlockCriterion> unlocks)
+	private static ResourceLocation recipeId(String category, String recipeName)
 	{
-		Advancement.Builder advancement = Advancement.Builder.recipeAdvancement()
-		                                                     .parent(ROOT_RECIPE_ADVANCEMENT)
-		                                                     .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(recipeId))
-		                                                     .rewards(AdvancementRewards.Builder.recipe(recipeId))
-		                                                     .requirements(RequirementsStrategy.OR);
-		for (UnlockCriterion unlock : unlocks) {
-			advancement.addCriterion(unlock.name(), unlock.trigger());
-		}
-		return advancement;
-	}
-	
-	private static ResourceLocation recipeAdvancementId(String category, String recipeName)
-	{
-		return ResourceLocation.fromNamespaceAndPath("brewersdelight", "recipes/" + category + "/" + recipeName);
+		return ResourceLocation.fromNamespaceAndPath(BrewersDelight.MOD_ID, category + "/" + recipeName);
 	}
 	
 	@Override
-	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer)
+	protected void buildRecipes(@NotNull RecipeOutput consumer)
 	{
 		generateFermentingRecipes(consumer);
 		generatePouringRecipes(consumer);
 	}
 	
-	private void generateFermentingRecipes(Consumer<FinishedRecipe> consumer)
+	private void generateFermentingRecipes(RecipeOutput consumer)
 	{
 		// Fermenting drinks
 		// Bases / fillers
 		createFermentingRecipe(consumer, "braga", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BRAGA.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:bread", "forge:bread", "forge:bread", "forge:bread");
+		                       "c:foods/bread", "c:foods/bread", "c:foods/bread", "c:foods/bread");
 		createFermentingRecipe(consumer, "grog", "drinks",
 		                       BrewersFluids.RUM.id(), 500, // watered-down rum
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
@@ -161,55 +165,55 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       Items.SUGAR);
 		createFermentingRecipe(consumer, "punch", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.PUNCH.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:fruits", "forge:fruits", "forge:fruits", Items.SUGAR);
+		                       FRUITS, FRUITS, FRUITS, Items.SUGAR);
 		createFermentingRecipe(consumer, "toddy", "drinks",
-		                       BnCFluids.MEAD, 500,
+		                       BnCTags.Fluids.MEAD, 500,
 		                       FAST_FERMENTING, WARM_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.TODDY.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/cinnamon", Items.HONEY_BOTTLE);
+		                       "c:crops/cinnamon", Items.HONEY_BOTTLE);
 		createFermentingRecipe(consumer, "wine", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.WINE.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape", "forge:fruits/grape");
+		                       "c:fruits/grape", "c:fruits/grape", "c:fruits/grape", "c:fruits/grape");
 		//		createFermentingRecipe(consumer, "red_wine", "drinks", // TODO
-		//		                       Fluids.WATER, 1000,
+		//		                       Tags.Fluids.WATER, 1000,
 		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		//		                       BrewersFluids.RED_WINE.id(), 1000,
 		//		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		//		                       "forge:fruits/grape");
+		//		                       "c:fruits/grape");
 		//		createFermentingRecipe(consumer, "white_wine", "drinks", // TODO
-		//		                       Fluids.WATER, 1000,
+		//		                       Tags.Fluids.WATER, 1000,
 		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		//		                       BrewersFluids.WHITE_WINE.id(), 1000,
 		//		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		//		                       "forge:fruits/grape");
+		//		                       "c:fruits/grape");
 		
 		// Utility
 		createFermentingRecipe(consumer, "kvass", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.KVASS.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:grain/wheat", "forge:grain/wheat", Items.HONEYCOMB);
+		                       "c:crops/wheat", "c:crops/wheat", Items.HONEYCOMB);
 		createFermentingRecipe(consumer, "melon_schnapps_from_melon_juice", "drinks",
 		                       BrewersFluids.MELON_JUICE.id(), 500,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.MELON_SCHNAPPS.id(), 750,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:grain/wheat");
+		                       "c:crops/wheat");
 		createFermentingRecipe(consumer, "melon_schnapps_from_water", "drinks",
-		                       Fluids.WATER, 500,
+		                       Tags.Fluids.WATER, 500,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.MELON_SCHNAPPS.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       Items.MELON_SLICE, Items.MELON_SLICE, "forge:grain/wheat", "forge:grain/wheat");
+		                       Items.MELON_SLICE, Items.MELON_SLICE, "c:crops/wheat", "c:crops/wheat");
 		
 		// Cheap convenience
 		createFermentingRecipe(consumer, "brandy", "drinks",
@@ -217,31 +221,31 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BRANDY.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:berries", "forge:berries", Items.APPLE, Items.APPLE);
+		                       "c:foods/berry", "c:foods/berry", Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "cider", "drinks",
-		                       Fluids.WATER, 500,
+		                       Tags.Fluids.WATER, 500,
 		                       LONG_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.CIDER.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       Items.APPLE, Items.APPLE, Items.APPLE, Items.APPLE);
 		createFermentingRecipe(consumer, "corn_whisky", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.CORN_WHISKY.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/corn", "forge:crops/corn", "forge:crops/corn", "forge:crops/corn");
+		                       "c:crops/corn", "c:crops/corn", "c:crops/corn", "c:crops/corn");
 		createFermentingRecipe(consumer, "elderflower", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, COLD_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.ELDERFLOWER.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       "minecraft:flowers", "minecraft:flowers", Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "gin", "drinks",
-		                       BnCFluids.VODKA, 1000,
+		                       BnCTags.Fluids.VODKA, 1000,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.GIN.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:seeds/wheat", "forge:seeds/wheat", "forge:berries", "forge:berries");
+		                       "c:seeds/wheat", "c:seeds/wheat", "c:foods/berry", "c:foods/berry");
 		createFermentingRecipe(consumer, "vermouth_glow_berries", "drinks",
 		                       BrewersFluids.WINE.id(), 500,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
@@ -253,23 +257,23 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.VERMOUTH_MUSHROOM.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:mushrooms", "forge:mushrooms", Items.SUGAR, Items.SUGAR);
+		                       "c:mushrooms", "c:mushrooms", Items.SUGAR, Items.SUGAR);
 		
 		// Tradeoff
 		createFermentingRecipe(consumer, "absinthe", "drinks",
-		                       BnCFluids.VODKA, 1000,
+		                       BnCTags.Fluids.VODKA, 1000,
 		                       LONG_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.ABSINTHE.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       Items.FERN, Items.FERN, Items.GRASS, Items.GRASS);
+		                       Items.FERN, Items.FERN, Items.SHORT_GRASS, Items.SHORT_GRASS);
 		createFermentingRecipe(consumer, "moonshine", "drinks",
 		                       BrewersFluids.BRAGA.id(), 500,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.MOONSHINE.id(), 750,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/corn", "forge:crops/corn", Items.SUGAR, Items.SUGAR);
+		                       "c:crops/corn", "c:crops/corn", Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "tequila", "drinks",
-		                       Fluids.WATER, 500,
+		                       Tags.Fluids.WATER, 500,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.TEQUILA.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
@@ -279,80 +283,80 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		createFermentingRecipe(consumer, "bitter", "drinks",
 		                       BrewersFluids.LIQUEUR.id(), 500,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
-		                       BrewersFluids.BITTER.source().getId(), 500,
+		                       BrewersFluids.BITTER.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/ginger", "forge:raisins");
+		                       "c:crops/ginger", "c:raisins");
 		createFermentingRecipe(consumer, "bourbon", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       LONG_FERMENTING, WARM_TEMPERATURE,
 		                       MEDIUM_EXP, // the cellar/oak abstraction as the only thing separating bourbon from corn whiskey is aging in charred oak
 		                       BrewersFluids.BOURBON.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/corn", "forge:crops/corn", "forge:crops/corn", "forge:crops/corn");
+		                       "c:crops/corn", "c:crops/corn", "c:crops/corn", "c:crops/corn");
 		createFermentingRecipe(consumer, "cahors", "drinks",
 		                       BrewersFluids.WINE.id(), 250,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CAHORS.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:fruits/grape", "forge:fruits/grape", Items.SUGAR, Items.SUGAR);
+		                       "c:fruits/grape", "c:fruits/grape", Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "cognac", "drinks",
 		                       BrewersFluids.WINE.id(), 500,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP, // oak aging abstractions, see bourbon comment
 		                       BrewersFluids.COGNAC.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:fruits/grape", "forge:fruits/grape");
+		                       "c:fruits/grape", "c:fruits/grape");
 		createFermentingRecipe(consumer, "liqueur", "drinks",
-		                       BnCFluids.HONEY_FLUID, 500,
+		                       Tags.Fluids.HONEY, 500,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.LIQUEUR.id(), 750,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       ModItems.MELON_JUICE, ModItems.MELON_JUICE, "forge:berries", "forge:berries");
+		                       ModItems.MELON_JUICE, ModItems.MELON_JUICE, "c:foods/berry", "c:foods/berry");
 		createFermentingRecipe(consumer, "rum", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       LONG_FERMENTING, HOT_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.RUM.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE, Items.SUGAR_CANE);
 		createFermentingRecipe(consumer, "rum_from_molasses", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, SMALL_EXP, // Croptopia molasses is produced by cooking sugar cane, so molasses doesn't need as high temp
 		                       BrewersFluids.RUM.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:molasses", "forge:molasses", "forge:molasses");
+		                       "c:molasses", "c:molasses", "c:molasses");
 		createFermentingRecipe(consumer, "sake", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, COLD_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.SAKE.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:grain/rice", "forge:grain/rice", "forge:grain/rice", "forge:grain/rice");
+		                       "c:crops/rice", "c:crops/rice", "c:crops/rice", "c:crops/rice");
 		createFermentingRecipe(consumer, "whisky", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WHISKY.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat", "forge:grain/wheat");
+		                       "c:crops/wheat", "c:crops/wheat", "c:crops/wheat", "c:crops/wheat");
 		createFermentingRecipe(consumer, "whisky_from_barley", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WHISKY.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/barley", "forge:crops/barley", "forge:crops/barley");
+		                       "c:crops/barley", "c:crops/barley", "c:crops/barley");
 		
 		// Vintage
 		createFermentingRecipe(consumer, "sbiten", "drinks",
-		                       BnCFluids.BEER, 500,
+		                       BnCTags.Fluids.BEER, 500,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SBITEN.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       Items.HONEY_BLOCK, "forge:grain/wheat");
+		                       Items.HONEY_BLOCK, "c:crops/wheat");
 		createFermentingRecipe(consumer, "sbiten_from_cinnamon", "drinks",
-		                       BnCFluids.BEER, 500,
+		                       BnCTags.Fluids.BEER, 500,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SBITEN.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:crops/cinnamon", "forge:crops/ginger");
+		                       "c:crops/cinnamon", "c:crops/ginger");
 		createFermentingRecipe(consumer, "syta", "drinks",
-		                       Fluids.WATER, 500,
+		                       Tags.Fluids.WATER, 500,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.SYTA.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
@@ -360,40 +364,40 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		
 		// Challenge
 		createFermentingRecipe(consumer, "flaxen_cheese_stout", "drinks",
-		                       BnCFluids.VODKA, 250,
+		                       BnCTags.Fluids.VODKA, 250,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLAXEN_CHEESE_STOUT.id(), 250,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       BnCItems.FLAXEN_CHEESE_WEDGE, BnCItems.FLAXEN_CHEESE_WEDGE, "forge:grain", "forge:mushrooms");
+		                       BnCItems.FLAXEN_CHEESE_WEDGE, BnCItems.FLAXEN_CHEESE_WEDGE, GRAIN, "c:mushrooms");
 		createFermentingRecipe(consumer, "scarlet_cheese_stout", "drinks",
-		                       BnCFluids.BEER, 500,
+		                       BnCTags.Fluids.BEER, 500,
 		                       NORMAL_FERMENTING, HOT_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SCARLET_CHEESE_STOUT.id(), 250, // evaporation or something
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "forge:mushrooms");
+		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "c:mushrooms");
 		//		createFermentingRecipe(consumer, "froststone_stout", "drinks",
-		//		                       Fluids.WATER, 250,
+		//		                       Tags.Fluids.WATER, 250,
 		//		                       LONG_FERMENTING, FRIGID_TEMPERATURE, LARGE_EXP,
-		//		                       BrewersFluids.FROSTSTONE_STOUT.source().getId(), 250,
+		//		                       BrewersFluids.FROSTSTONE_STOUT.id(), 250,
 		//		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		//		                       BrewersItems.FROSTSTONE_CHEESE_WEDGE, BrewersItems.FROSTSTONE_CHEESE_WEDGE, Items.CHARCOAL, "forge:mushrooms"); // TODO: snow fungus
+		//		                       BrewersItems.FROSTSTONE_CHEESE_WEDGE, BrewersItems.FROSTSTONE_CHEESE_WEDGE, Items.CHARCOAL, "c:mushrooms"); // TODO: snow fungus
 		createFermentingRecipe(consumer, "flying_dutchman", "drinks",
-		                       Fluids.WATER, 1000,
+		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, COLD_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.FLYING_DUTCHMAN.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       Items.APPLE, Items.SUGAR, Items.GLOW_INK_SAC, Items.KELP);
 		createFermentingRecipe(consumer, "gut_wrecker", "drinks",
-		                       ForgeMod.MILK.get(), 250,
+		                       Tags.Fluids.MILK, 250,
 		                       NORMAL_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.GUT_WRECKER.id(), 500, // open cattails take up a lot more volume
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "forge:raw_fishes", "forge:cattail", Items.SPIDER_EYE, "forge:vegetables");
+		                       "c:foods/raw_fish", "c:cattail", Items.SPIDER_EYE, "c:foods/vegetable");
 		
 		// Fermenting meals
 	}
 	
-	private void generatePouringRecipes(Consumer<FinishedRecipe> consumer)
+	private void generatePouringRecipes(RecipeOutput consumer)
 	{
 		// Bases / fillers
 		createPouringRecipes(consumer, "braga",
@@ -716,364 +720,168 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		// Pouring meals
 	}
 	
-	private void createFermentingRecipe(@NotNull Consumer<FinishedRecipe> consumer, String recipeName, String recipeBookTab,
+	@SuppressWarnings("unchecked")
+	private void createFermentingRecipe(@NotNull RecipeOutput consumer, String recipeName, String recipeBookTab,
 	                                    Object baseFluid, int baseFluidCount,
 	                                    int fermentingTime, int temperature, float experience,
 	                                    ResourceLocation resultFluid, int resultFluidCount,
 	                                    List<UnlockCriterion> unlocks,
 	                                    Object... ingredients)
 	{
-		consumer.accept(new FinishedRecipe()
-		{
-			@Override
-			public void serializeRecipeData(@NotNull JsonObject json)
-			{
-				JsonObject baseFluidJson = new JsonObject();
-				baseFluidJson.addProperty("count", baseFluidCount);
-				
-				if (baseFluid instanceof Fluid) {
-					// Regular fluid
-					baseFluidJson.addProperty("fluid", Objects.requireNonNull(ForgeRegistries.FLUIDS.getKey((Fluid) baseFluid)).toString());
-				} else if (baseFluid instanceof net.minecraft.tags.TagKey) {
-					// Fluid tag
-					net.minecraft.tags.TagKey<Fluid> tagKey = (net.minecraft.tags.TagKey<Fluid>) baseFluid;
-					baseFluidJson.addProperty("tag", tagKey.location().toString());
-				} else if (baseFluid instanceof String) {
-					// String representation of fluid tag
-					baseFluidJson.addProperty("tag", (String) baseFluid);
-				} else if (baseFluid instanceof ResourceLocation) {
-					// Direct ResourceLocation for fluid
-					baseFluidJson.addProperty("fluid", baseFluid.toString());
-				} else if (baseFluid instanceof RegistryObject<?> regObj) {
-					// RegistryObject for Fluid or FlowingFluid
-					Fluid fluid = (Fluid) regObj.get();
-					baseFluidJson.addProperty("fluid", Objects.requireNonNull(ForgeRegistries.FLUIDS.getKey(fluid)).toString());
-				} else {
-					throw new IllegalArgumentException(
-							"Unable to serialize recipe for " + recipeName + ". Base fluid must be a Fluid, TagKey<Fluid>, String tag representation, ResourceLocation, or "
-									+ "RegistryObject<Fluid>: " + baseFluid.toString());
-				}
-				
-				json.add("basefluid", baseFluidJson);
-				
-				JsonArray ingredientsJson = new JsonArray();
-				for (Object ingredient : ingredients) {
-					JsonObject ingredientJson = new JsonObject();
-					if (ingredient instanceof Item) {
-						// Regular item
-						ingredientJson.addProperty("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey((Item) ingredient)).toString());
-					} else if (ingredient instanceof net.minecraft.tags.TagKey) {
-						// Item tag
-						net.minecraft.tags.TagKey<Item> tagKey = (net.minecraft.tags.TagKey<Item>) ingredient;
-						ingredientJson.addProperty("tag", tagKey.location().toString());
-					} else if (ingredient instanceof String) {
-						// String representation of tag
-						ingredientJson.addProperty("tag", (String) ingredient);
-					} else if (ingredient instanceof RegistryObject<?> regObj) {
-						// RegistryObject for Item
-						Item item = (Item) regObj.get();
-						ingredientJson.addProperty("item", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).toString());
-					} else {
-						if (baseFluid instanceof RegistryObject<?> regObj) {
-							throw new IllegalArgumentException("Unable to serialize recipe for " + recipeName
-									                                   + ". Ingredient must be an Item, TagKey<Item>, String tag representation, or RegistryObject<Item>: "
-									                                   + regObj);
-						}
-					}
-					ingredientsJson.add(ingredientJson);
-				}
-				json.add("ingredients", ingredientsJson);
-				
-				json.addProperty("fermentingtime", fermentingTime);
-				json.addProperty("temperature", temperature);
-				
-				JsonObject resultJson = new JsonObject();
-				resultJson.addProperty("count", resultFluidCount);
-				resultJson.addProperty("fluid", resultFluid.toString());
-				json.add("result", resultJson);
-				
-				json.addProperty("experience", experience);
-				json.addProperty("recipe_book_tab", recipeBookTab);
+		Fluid result = BuiltInRegistries.FLUID.getOptional(resultFluid).orElseThrow(
+				() -> new IllegalStateException("Unable to create fermenting recipe " + recipeName + " for fluid " + resultFluid + " as it does not exist."));
+		FermentingBookCategory tab = Arrays.stream(FermentingBookCategory.values())
+		                                   .filter(category -> category.getSerializedName().equals(recipeBookTab))
+		                                   .findFirst()
+		                                   .orElseThrow(() -> new IllegalArgumentException("Unknown recipe book tab " + recipeBookTab + " for recipe " + recipeName));
+		
+		KegFermentingRecipeBuilder builder = KegFermentingRecipeBuilder.kegFermentingRecipe(tab, result, resultFluidCount,
+		                                                                                    fermentingTime, experience, temperature);
+		
+		if (baseFluid instanceof Fluid fluid) {
+			// Regular fluid
+			builder.addFluidIngredient(fluid, baseFluidCount);
+		} else if (baseFluid instanceof TagKey<?> tagKey) {
+			// Fluid tag
+			builder.addFluidIngredient((TagKey<Fluid>) tagKey, baseFluidCount);
+		} else if (baseFluid instanceof String s) {
+			// String representation of fluid tag
+			builder.addFluidIngredient(TagKey.create(Registries.FLUID, ResourceLocation.parse(s)), baseFluidCount);
+		} else if (baseFluid instanceof ResourceLocation id) {
+			// Direct ResourceLocation for fluid
+			Fluid fluid = BuiltInRegistries.FLUID.getOptional(id).orElseThrow(
+					() -> new IllegalStateException("Unable to create fermenting recipe " + recipeName + " for base fluid " + id + " as it does not exist."));
+			builder.addFluidIngredient(fluid, baseFluidCount);
+		} else if (baseFluid instanceof Supplier<?> supplier && supplier.get() instanceof Fluid fluid) {
+			// DeferredHolder for Fluid or FlowingFluid
+			builder.addFluidIngredient(fluid, baseFluidCount);
+		} else {
+			throw new IllegalArgumentException(
+					"Unable to serialize recipe for " + recipeName + ". Base fluid must be a Fluid, TagKey<Fluid>, String tag representation, ResourceLocation, or "
+							+ "Supplier<Fluid>: " + baseFluid);
+		}
+		
+		for (Object ingredient : ingredients) {
+			builder.addIngredient(toIngredient(ingredient));
+		}
+		
+		if (unlocks != null) {
+			for (UnlockCriterion unlock : unlocks) {
+				builder.unlockedBy(unlock.name(), unlock.trigger());
 			}
-			
-			@Override
-			public @NotNull ResourceLocation getId()
-			{
-				return ResourceLocation.fromNamespaceAndPath("brewersdelight", "fermenting/" + recipeName);
-			}
-			
-			@Override
-			public net.minecraft.world.item.crafting.@NotNull RecipeSerializer<?> getType()
-			{
-				return Objects.requireNonNull(ForgeRegistries.RECIPE_SERIALIZERS.getValue(
-						ResourceLocation.fromNamespaceAndPath("brewinandchewin", "fermenting")));
-			}
-			
-			@Override
-			public JsonObject serializeAdvancement()
-			{
-				if (unlocks == null || unlocks.isEmpty()) {
-					return null; // No advancement
-				}
-				return buildAdvancement(getId(), unlocks).serializeToJson();
-			}
-			
-			@Override
-			public ResourceLocation getAdvancementId()
-			{
-				if (unlocks == null || unlocks.isEmpty()) {
-					return null; // No advancement
-				}
-				return recipeAdvancementId("fermenting", recipeName);
-			}
-		});
+		}
+		
+		// The builder saves the advancement as brewersdelight:recipes/fermenting/<name>
+		builder.build(consumer, recipeId("fermenting", recipeName));
 	}
 	
 	// Wrapper
-	private void createFermentingRecipe(Consumer<FinishedRecipe> consumer, String recipeName, String recipeBookTab,
+	private void createFermentingRecipe(RecipeOutput consumer, String recipeName, String recipeBookTab,
 	                                    Object baseFluid, int baseFluidCount,
 	                                    int fermentingTime, int temperature, float experience,
 	                                    Fluid resultFluid, int resultFluidCount,
 	                                    List<UnlockCriterion> unlocks,
 	                                    Object... ingredients)
 	{
-		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid);
-		if (resultFluidId == null) {
-			throw new IllegalStateException("Unable to create fermenting recipe for fluid " + resultFluid + " as it does not exist.");
-		}
-		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
 		                       baseFluid, baseFluidCount,
 		                       fermentingTime, temperature, experience,
-		                       resultFluidId, resultFluidCount,
+		                       BuiltInRegistries.FLUID.getKey(resultFluid), resultFluidCount,
 		                       unlocks,
 		                       ingredients);
 	}
 	
 	// Wrapper
-	private void createFermentingRecipe(Consumer<FinishedRecipe> consumer, String recipeName, String recipeBookTab,
+	private void createFermentingRecipe(RecipeOutput consumer, String recipeName, String recipeBookTab,
 	                                    Object baseFluid, int baseFluidCount,
 	                                    int fermentingTime, int temperature, float experience,
-	                                    RegistryObject<? extends Fluid> resultFluid, int resultFluidCount,
+	                                    Supplier<? extends Fluid> resultFluid, int resultFluidCount,
 	                                    List<UnlockCriterion> unlocks,
 	                                    Object... ingredients)
 	{
-		ResourceLocation resultFluidId = ForgeRegistries.FLUIDS.getKey(resultFluid.get());
-		if (resultFluidId == null) {
-			throw new IllegalStateException("Unable to create fermenting recipe for fluid " + resultFluid + " as it does not exist.");
-		}
-		
 		createFermentingRecipe(consumer, recipeName, recipeBookTab,
 		                       baseFluid, baseFluidCount,
 		                       fermentingTime, temperature, experience,
-		                       resultFluidId, resultFluidCount,
+		                       resultFluid.get(), resultFluidCount,
 		                       unlocks,
 		                       ingredients);
 	}
 	
-	private void createPouringRecipe(@NotNull Consumer<FinishedRecipe> consumer, String recipeName,
-	                                 ResourceLocation fluid, int fluidAmount,
-	                                 ResourceLocation container, ResourceLocation output,
+	private void createPouringRecipe(@NotNull RecipeOutput consumer, String recipeName,
+	                                 Fluid fluid, int fluidAmount,
+	                                 ItemLike container, ItemLike output,
 	                                 boolean filling, boolean strict)
 	{
-		consumer.accept(new FinishedRecipe()
-		{
-			@Override
-			public void serializeRecipeData(@NotNull JsonObject json)
-			{
-				json.addProperty("type", "brewinandchewin:keg_pouring");
-				json.addProperty("amount", fluidAmount);
-				
-				// Container
-				JsonObject containerJson = new JsonObject();
-				containerJson.addProperty("item", container.toString());
-				json.add("container", containerJson);
-				
-				json.addProperty("filling", filling);
-				json.addProperty("fluid", fluid.toString());
-				
-				// Output
-				JsonObject outputJson = new JsonObject();
-				outputJson.addProperty("item", output.toString());
-				json.add("output", outputJson);
-				
-				json.addProperty("strict", strict);
-			}
-			
-			@Override
-			public @NotNull ResourceLocation getId()
-			{
-				return ResourceLocation.fromNamespaceAndPath("brewersdelight", "pouring/" + recipeName);
-			}
-			
-			@Override
-			public net.minecraft.world.item.crafting.@NotNull RecipeSerializer<?> getType()
-			{
-				return Objects.requireNonNull(ForgeRegistries.RECIPE_SERIALIZERS.getValue(
-						ResourceLocation.fromNamespaceAndPath("brewinandchewin", "keg_pouring")));
-			}
-			
-			@Override
-			public JsonObject serializeAdvancement()
-			{
-				return null; // No advancement
-			}
-			
-			@Override
-			public ResourceLocation getAdvancementId()
-			{
-				return null; // No advancement
-			}
-		});
+		KegPouringRecipeBuilder.kegPouringRecipe(fluid, fluidAmount, new ItemStack(output), strict, filling)
+		                       .withContainer(container)
+		                       .build(consumer, recipeId("pouring", recipeName));
 	}
 	
-	public void createPouringRecipes(Consumer<FinishedRecipe> consumer, String recipeName,
+	public void createPouringRecipes(RecipeOutput consumer, String recipeName,
 	                                 Fluid fluid, int fluidAmount,
-	                                 @Nullable RegistryObject<Item> containerItem,
-	                                 @Nullable RegistryObject<Item> tankardOutput,
+	                                 @Nullable ItemLike containerItem,
+	                                 @Nullable DeferredItem<Item> tankardOutput,
 	                                 @Nullable Item glassContainerItem,
 	                                 boolean filling, boolean strict)
 	{
-		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid);
-		if (fluidId == null) {
-			throw new IllegalStateException("Unable to create pouring recipes for fluid " + fluid + " as it does not exist.");
-		}
-		
 		// Tankard variant
 		if (tankardOutput != null) {
 			Objects.requireNonNull(containerItem, "tankard variant needs a container item");
-			assert tankardOutput.getId() != null;
 			createPouringRecipe(consumer, tankardOutput.getId().getPath(),
-			                    fluidId, fluidAmount,
-			                    containerItem.getId(),
-			                    tankardOutput.getId(),
+			                    fluid, fluidAmount,
+			                    containerItem,
+			                    tankardOutput,
 			                    filling, strict);
 		}
 		
 		// TODO Re-enable for when glass variants are added back
-		// Glass variant — no RegistryObject exists for it, so derive its id
+		// Glass variant — no DeferredItem exists for it, so derive its id
 		//		if (glassContainerItem != null) {
-		//			ResourceLocation glassContainerId = ForgeRegistries.ITEMS.getKey(glassContainerItem);
 		//			ResourceLocation glassOutputId = (tankardOutput != null)
 		//					? glassVariant(tankardOutput.getId())
 		//					: ResourceLocation.fromNamespaceAndPath(BrewersDelight.MOD_ID, recipeName + "_glass");
 		//
 		//			createPouringRecipe(consumer, glassOutputId.getPath(),
-		//			                    fluidId, fluidAmount,
-		//			                    glassContainerId,
-		//			                    glassOutputId,
+		//			                    fluid, fluidAmount,
+		//			                    glassContainerItem,
+		//			                    BuiltInRegistries.ITEM.get(glassOutputId),
 		//			                    filling, strict);
 		//		}
 	}
 	
 	// Wrapper
-	public void createPouringRecipe(Consumer<FinishedRecipe> consumer, String recipeName,
+	public void createPouringRecipe(RecipeOutput consumer, String recipeName,
 	                                Fluid fluid, int fluidAmount,
-	                                @NotNull RegistryObject<Item> containerItem, @NotNull RegistryObject<Item> outputItem,
+	                                @NotNull ItemLike containerItem, @NotNull DeferredItem<Item> outputItem,
 	                                boolean filling, boolean strict)
 	{
-		ResourceLocation fluidId = ForgeRegistries.FLUIDS.getKey(fluid);
-		ResourceLocation containerId = containerItem.getId();
-		ResourceLocation outputId = outputItem.getId();
-		
-		if (fluidId == null) {
-			throw new IllegalStateException("Unable to create pouring recipes for fluid " + fluid + " as it does not exist.");
-		}
-		
 		Objects.requireNonNull(containerItem, "pouring recipe needs a container item");
-		assert outputItem.getId() != null;
 		createPouringRecipe(consumer, outputItem.getId().getPath(),
-		                    fluidId, fluidAmount,
-		                    containerItem.getId(),
-		                    outputItem.getId(),
+		                    fluid, fluidAmount,
+		                    containerItem,
+		                    (ItemLike) outputItem,
 		                    filling, strict);
 	}
 	
-	private void createCookingRecipe(@NotNull Consumer<FinishedRecipe> consumer, String recipeName, String recipeBookTab,
-	                                 ResourceLocation container, int cookingTime, float experience,
-	                                 ResourceLocation result, int resultCount,
+	private void createCookingRecipe(@NotNull RecipeOutput consumer, String recipeName, String recipeBookTab,
+	                                 @Nullable ItemLike container, int cookingTime, float experience,
+	                                 ItemLike result, int resultCount,
 	                                 List<UnlockCriterion> unlocks,
 	                                 Object... ingredients)
 	{
-		consumer.accept(new FinishedRecipe()
-		{
-			@Override
-			public void serializeRecipeData(@NotNull JsonObject json)
-			{
-				// container is optional in Farmer's Delight cooking recipes
-				if (container != null) {
-					JsonObject containerJson = new JsonObject();
-					containerJson.addProperty("item", container.toString());
-					json.add("container", containerJson);
-				}
-				
-				json.addProperty("cookingtime", cookingTime);
-				json.addProperty("experience", experience);
-				
-				JsonArray ingredientsJson = new JsonArray();
-				for (Object ingredient : ingredients) {
-					JsonObject ingredientJson = new JsonObject();
-					writeIngredient(ingredientJson, ingredient);
-					ingredientsJson.add(ingredientJson);
-				}
-				json.add("ingredients", ingredientsJson);
-				
-				json.addProperty("recipe_book_tab", recipeBookTab);
-				
-				JsonObject resultJson = new JsonObject();
-				resultJson.addProperty("item", result.toString());
-				if (resultCount > 1) {
-					resultJson.addProperty("count", resultCount);
-				}
-				json.add("result", resultJson);
+		// container is optional in Farmer's Delight cooking recipes
+		CookingPotRecipeBuilder builder = CookingPotRecipeBuilder.cookingPotRecipe(result, resultCount, cookingTime, experience, container);
+		for (Object ingredient : ingredients) {
+			builder.addIngredient(toIngredient(ingredient));
+		}
+		builder.setRecipeBookTab(CookingPotRecipeBookTab.findByName(recipeBookTab));
+		if (unlocks != null) {
+			for (UnlockCriterion unlock : unlocks) {
+				builder.unlockedBy(unlock.name(), unlock.trigger());
 			}
-			
-			@Override
-			public @NotNull ResourceLocation getId()
-			{
-				return ResourceLocation.fromNamespaceAndPath("brewersdelight", "cooking/" + recipeName);
-			}
-			
-			@Override
-			public net.minecraft.world.item.crafting.@NotNull RecipeSerializer<?> getType()
-			{
-				return Objects.requireNonNull(ForgeRegistries.RECIPE_SERIALIZERS.getValue(
-						ResourceLocation.fromNamespaceAndPath("farmersdelight", "cooking")));
-			}
-			
-			@Override
-			public JsonObject serializeAdvancement()
-			{
-				if (unlocks == null || unlocks.isEmpty()) {
-					return null; // No advancement
-				}
-				return buildAdvancement(getId(), unlocks).serializeToJson();
-			}
-			
-			@Override
-			public ResourceLocation getAdvancementId()
-			{
-				if (unlocks == null || unlocks.isEmpty()) {
-					return null; // No advancement
-				}
-				return recipeAdvancementId("cooking", recipeName);
-			}
-		});
+		}
+		builder.save(consumer, recipeId("cooking", recipeName));
 	}
 	
-	// Wrapper
-	private void createCookingRecipe(Consumer<FinishedRecipe> consumer, String recipeName, String recipeBookTab,
-	                                 RegistryObject<Item> container, int cookingTime, float experience,
-	                                 RegistryObject<Item> result, int resultCount,
-	                                 List<UnlockCriterion> unlocks,
-	                                 Object... ingredients)
-	{
-		createCookingRecipe(consumer, recipeName, recipeBookTab,
-		                    container == null ? null : container.getId(), cookingTime, experience,
-		                    result.getId(), resultCount,
-		                    unlocks,
-		                    ingredients);
-	}
-	
-	private record UnlockCriterion(String name, CriterionTriggerInstance trigger) {}
+	private record UnlockCriterion(String name, Criterion<?> trigger) {}
 }

@@ -1,0 +1,26 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "tag": "#brewinandchewin:mead"
+    }
+  },
+  "experience": 0.5,
+  "fermenting_time": 4800,
+  "ingredients": [
+    {
+      "tag": "c:crops/cinnamon"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    [],
+    []
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:toddy"
+  },
+  "temperature": 4
+}

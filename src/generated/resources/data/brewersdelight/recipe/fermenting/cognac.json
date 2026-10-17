@@ -1,0 +1,26 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "id": "brewersdelight:wine"
+    }
+  },
+  "experience": 1.0,
+  "fermenting_time": 19200,
+  "ingredients": [
+    {
+      "tag": "c:fruits/grape"
+    },
+    {
+      "tag": "c:fruits/grape"
+    },
+    [],
+    []
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:cognac"
+  },
+  "temperature": 4
+}

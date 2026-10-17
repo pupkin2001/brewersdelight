@@ -1,0 +1,26 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "tag": "#brewinandchewin:beer"
+    }
+  },
+  "experience": 2.0,
+  "fermenting_time": 19200,
+  "ingredients": [
+    {
+      "item": "minecraft:honey_block"
+    },
+    {
+      "tag": "c:crops/wheat"
+    },
+    [],
+    []
+  ],
+  "result": {
+    "amount": 1000,
+    "id": "brewersdelight:sbiten"
+  },
+  "temperature": 4
+}

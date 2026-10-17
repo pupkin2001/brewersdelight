@@ -1,0 +1,97 @@
+# Shared build for every Minecraft version branch.
+#
+# This file lives only on the `ci` branch. Each version branch has short
+# build.yaml / test.yaml files that call it with their own Java and Minecraft
+# version, so action versions only ever need updating here.
+
+name: Build Mod
+
+on:
+  workflow_call:
+    inputs:
+      java-version:
+        description: JDK used to run Gradle
+        required: true
+        type: string
+      minecraft-version:
+        description: Minecraft version of the calling branch
+        required: true
+        type: string
+      retention-days:
+        description: Days to keep the uploaded jar
+        required: false
+        type: number
+        default: 7
+      skip-duplicates:
+        description: Skip the build when the same content was already built successfully or is being built
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  duplicate_check:
+    name: Skip Duplicate Actions
+    if: inputs.skip-duplicates
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v5
+        with:
+          concurrent_skipping: 'same_content_newer'
+
+  build:
+    name: Build
+    needs: [ duplicate_check ]
+    # Runs when the duplicate check passed or was turned off (skip-duplicates: false).
+    if: ${{ !cancelled() && needs.duplicate_check.result != 'failure' && needs.duplicate_check.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Setup JDK ${{ inputs.java-version }}
+        uses: actions/setup-java@v6
+        with:
+          distribution: 'temurin'
+          java-version: ${{ inputs.java-version }}
+
+      - name: Restore Gradle Cache
+        id: cache
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            ~/.gradle
+            ~/gradle
+          key: ${{ runner.os }}-gradle-${{ inputs.minecraft-version }}-${{ hashFiles('build.gradle', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-${{ inputs.minecraft-version }}-
+
+      - name: Grant Permissions to Gradlew
+        run: chmod +x ./gradlew
+
+      - name: Generate Resources
+        run: ./gradlew runData
+
+      - name: Save Gradle Cache
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            ~/.gradle
+            ~/gradle
+          key: ${{ steps.cache.outputs.cache-primary-key }}
+
+      - name: Build
+        run: ./gradlew build
+
+      - name: Capture Build Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: brewersdelight
+          path: build/libs/
+          if-no-files-found: error
+          retention-days: ${{ inputs.retention-days }}

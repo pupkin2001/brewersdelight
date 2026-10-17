@@ -1,0 +1,24 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "id": "brewersdelight:liqueur"
+    }
+  },
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:crops/ginger"
+    },
+    {
+      "tag": "c:raisins"
+    },
+    [],
+    []
+  ],
+  "result": {
+    "amount": 500,
+    "id": "brewersdelight:bitter"
+  }
+}

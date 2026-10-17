@@ -1,5 +1,6 @@
 package pupkin.brewersdelight.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -19,12 +20,19 @@ import org.jetbrains.annotations.NotNull;
 public class SnowFungusBlock extends Block implements BonemealableBlock
 {
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
+	public static final MapCodec<SnowFungusBlock> CODEC = simpleCodec(SnowFungusBlock::new);
 	
 	public SnowFungusBlock(Properties props)
 	{
 		super(props);
 		this.registerDefaultState(this.stateDefinition.any()
 		                                              .setValue(FACING, Direction.UP));
+	}
+	
+	@Override
+	public @NotNull MapCodec<SnowFungusBlock> codec()
+	{
+		return CODEC;
 	}
 	
 	@Override
@@ -72,8 +80,7 @@ public class SnowFungusBlock extends Block implements BonemealableBlock
 	@Override
 	public boolean isValidBonemealTarget(@NotNull LevelReader level,
 	                                     @NotNull BlockPos pos,
-	                                     @NotNull BlockState state,
-	                                     boolean isClient)
+	                                     @NotNull BlockState state)
 	{
 		return state.canSurvive(level, pos);
 	}

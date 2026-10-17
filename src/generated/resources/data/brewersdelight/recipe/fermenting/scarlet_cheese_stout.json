@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 500,
+    "ingredient": {
+      "tag": "#brewinandchewin:beer"
+    }
+  },
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "brewinandchewin:scarlet_cheese_wedge"
+    },
+    {
+      "item": "brewinandchewin:scarlet_cheese_wedge"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "tag": "c:mushrooms"
+    }
+  ],
+  "result": {
+    "amount": 250,
+    "id": "brewersdelight:scarlet_cheese_stout"
+  },
+  "temperature": 5
+}

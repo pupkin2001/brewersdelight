@@ -3,12 +3,12 @@ package pupkin.brewersdelight.datagen;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 
@@ -53,9 +53,9 @@ public class BDFluidDisplayProvider implements DataProvider
 		// TreeMap → alphabetical, stable diffs
 		Map<String, JsonElement> entries = new TreeMap<>();
 		
-		for (Fluid fluid : ForgeRegistries.FLUIDS) {
-			ResourceLocation id = ForgeRegistries.FLUIDS.getKey(fluid);
-			if (id == null || !MOD_ID.equals(id.getNamespace())) continue; // only our fluids
+		for (Fluid fluid : BuiltInRegistries.FLUID) {
+			ResourceLocation id = BuiltInRegistries.FLUID.getKey(fluid);
+			if (!MOD_ID.equals(id.getNamespace())) continue; // only our fluids
 			if (!fluid.isSource(fluid.defaultFluidState())) continue; // skip flowing variants
 			String path = id.getPath();
 			if (EXCLUDE.contains(path)) continue;

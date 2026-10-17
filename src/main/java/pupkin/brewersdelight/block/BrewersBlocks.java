@@ -3,10 +3,9 @@ package pupkin.brewersdelight.block;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 import umpaz.brewinandchewin.common.block.CheeseWheelBlock;
@@ -14,23 +13,22 @@ import umpaz.brewinandchewin.common.block.UnripeCheeseWheelBlock;
 
 public class BrewersBlocks
 {
-	public static final DeferredRegister<Block> BLOCKS =
-			DeferredRegister.create(ForgeRegistries.BLOCKS, BrewersDelight.MOD_ID);
+	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(BrewersDelight.MOD_ID);
 	
-	public static final RegistryObject<Block>
+	public static final DeferredBlock<Block>
 			CATTAIL = BLOCKS.register("cattail",
-			                          () -> new CattailBlock(BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)
+			                          () -> new CattailBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS)
 			                                                                          .offsetType(BlockBehaviour.OffsetType.XYZ))),
 	
 	SNOW_FUNGUS = BLOCKS.register("snow_fungus",
-	                              () -> new SnowFungusBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM)
+	                              () -> new SnowFungusBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM)
 	                                                                                 .offsetType(BlockBehaviour.OffsetType.NONE))),
 	
 	FROSTSTONE_CHEESE_WHEEL = BLOCKS.register("froststone_cheese_wheel", () -> new
-			CheeseWheelBlock(BrewersItems.FROSTSTONE_CHEESE_WEDGE, Block.Properties.copy(Blocks.CAKE))),
+			CheeseWheelBlock(BrewersItems.FROSTSTONE_CHEESE_WEDGE, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE))),
 	
 	UNRIPE_FROSTSTONE_CHEESE_WHEEL = BLOCKS.register("unripe_froststone_cheese_wheel", () -> new
-			UnripeCheeseWheelBlock(BrewersBlocks.FROSTSTONE_CHEESE_WHEEL, Block.Properties.copy(Blocks.CAKE)));
+			UnripeCheeseWheelBlock(BrewersBlocks.FROSTSTONE_CHEESE_WHEEL, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
 	
 	public static void register(IEventBus eventBus)
 	{

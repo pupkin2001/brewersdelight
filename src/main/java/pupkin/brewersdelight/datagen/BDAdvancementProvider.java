@@ -1,45 +1,49 @@
 package pupkin.brewersdelight.datagen;
 
-import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.ForgeAdvancementProvider;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.data.AdvancementProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.item.BrewersItems;
 import umpaz.brewinandchewin.common.item.BoozeItem;
 import umpaz.brewinandchewin.common.registry.BnCItems;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class BDAdvancementProvider extends ForgeAdvancementProvider
+public class BDAdvancementProvider extends AdvancementProvider
 {
 	public BDAdvancementProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper)
 	{
 		super(output, lookupProvider, existingFileHelper, List.of(new BDAdvancementGenerator()));
 	}
 	
-	public static class BDAdvancementGenerator implements ForgeAdvancementProvider.AdvancementGenerator
+	public static class BDAdvancementGenerator implements AdvancementProvider.AdvancementGenerator
 	{
 		private static ResourceLocation getNameId(String id)
 		{
 			return ResourceLocation.fromNamespaceAndPath(BrewersDelight.MOD_ID, id);
+		}
+		
+		// Brewin' and Chewin' registers its items directly now, so there is no DeferredRegister to walk
+		private static List<Item> bncDrinks()
+		{
+			return BuiltInRegistries.ITEM.stream()
+			                             .filter(item -> BuiltInRegistries.ITEM.getKey(item).getNamespace().equals("brewinandchewin"))
+			                             .toList();
 		}
 		
 		/**
@@ -57,16 +61,16 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 		 * @param rewards            Rewards for completing this advancement.
 		 * @return The built advancement.
 		 */
-		private Advancement generateAdvancement(Consumer<Advancement> consumer,
-		                                        ExistingFileHelper existingFileHelper,
-		                                        ResourceLocation advancementId,
-		                                        Advancement parent,
-		                                        Item icon,
-		                                        String name,
-		                                        Consumer<Advancement.Builder> criteriaAdder,
-		                                        ResourceLocation background,
-		                                        FrameType frame,
-		                                        AdvancementRewards rewards)
+		private AdvancementHolder generateAdvancement(Consumer<AdvancementHolder> consumer,
+		                                              ExistingFileHelper existingFileHelper,
+		                                              ResourceLocation advancementId,
+		                                              AdvancementHolder parent,
+		                                              Item icon,
+		                                              String name,
+		                                              Consumer<Advancement.Builder> criteriaAdder,
+		                                              ResourceLocation background,
+		                                              AdvancementType frame,
+		                                              AdvancementRewards rewards)
 		{
 			BrewersDelight.LOGGER.info("Generating advancement with id: {}", advancementId);
 			Advancement.Builder builder = Advancement.Builder.advancement();
@@ -81,15 +85,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 			criteriaAdder.accept(builder);
 			builder.rewards(rewards);
 			BrewersDelight.LOGGER.info("Saving advancement with id: {}", advancementId);
-			builder.save(consumer, advancementId, existingFileHelper);
-			return builder.build(advancementId);
+			return builder.save(consumer, advancementId, existingFileHelper);
 		}
 		
 		@Override
-		public void generate(HolderLookup.@NotNull Provider registries, @NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper existingFileHelper)
+		public void generate(HolderLookup.@NotNull Provider registries, @NotNull Consumer<AdvancementHolder> consumer, @NotNull ExistingFileHelper existingFileHelper)
 		{
 			// root
-			Advancement root = generateAdvancement(
+			AdvancementHolder root = generateAdvancement(
 					consumer,
 					existingFileHelper,
 					getNameId("root"),
@@ -98,20 +101,20 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					"root",
 					builder -> {
 						List<String> criteria = new ArrayList<>();
-						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
+						addCriteria(bncDrinks(), builder, criteria, "bc_");
 						
 						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						List.of(BrewersItems.CHALLENGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
 						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
+						builder.requirements(AdvancementRequirements.anyOf(criteria));
 					},
 					ResourceLocation.withDefaultNamespace("textures/block/oak_planks.png"),
-					FrameType.TASK,
+					AdvancementType.TASK,
 					AdvancementRewards.Builder.experience(100).build()
-			                                      );
+			                                            );
 			
 			// every_drink
-			Advancement everyDrink = generateAdvancement(
+			AdvancementHolder everyDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
 					getNameId("every_drink"),
@@ -119,17 +122,17 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					BrewersItems.WHISKY.get(),
 					"every_drink",
 					builder -> {
-						addCriteriaFromRegistry(BnCItems.ITEMS, builder, null, "bc_");
+						addCriteria(bncDrinks(), builder, null, "bc_");
 						List.of(BrewersItems.DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 						List.of(BrewersItems.VINTAGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, null));
 					},
 					null,
-					FrameType.GOAL,
+					AdvancementType.GOAL,
 					AdvancementRewards.Builder.experience(100).build()
-			                                            );
+			                                                  );
 			
 			// any_vintage_drink
-			Advancement anyVintageDrink = generateAdvancement(
+			AdvancementHolder anyVintageDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
 					getNameId("any_vintage_drink"),
@@ -139,12 +142,12 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					builder -> {
 						List<String> criteria = new ArrayList<>();
 						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, criteria);
-						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
+						builder.requirements(AdvancementRequirements.anyOf(criteria));
 					},
 					null,
-					FrameType.CHALLENGE,
+					AdvancementType.CHALLENGE,
 					AdvancementRewards.Builder.experience(100).build()
-			                                                 );
+			                                                       );
 			
 			// every_vintage_drink
 			generateAdvancement(
@@ -158,12 +161,12 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						addCriteriaFromRegistry(BrewersItems.VINTAGE_DRINKS, builder, null);
 					},
 					null,
-					FrameType.GOAL,
+					AdvancementType.GOAL,
 					AdvancementRewards.Builder.experience(100).build()
 			                   );
 			
 			// any_challenge_drink
-			Advancement anyChallengeDrink = generateAdvancement(
+			AdvancementHolder anyChallengeDrink = generateAdvancement(
 					consumer,
 					existingFileHelper,
 					getNameId("any_challenge_drink"),
@@ -172,14 +175,14 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 					"any_challenge_drink",
 					builder -> {
 						List<String> criteria = new ArrayList<>();
-						addCriteriaFromRegistry(BnCItems.ITEMS, builder, criteria, "bc_");
+						addCriteria(bncDrinks(), builder, criteria, "bc_");
 						List.of(BrewersItems.CHALLENGE_DRINKS).forEach(reg -> addCriteriaFromRegistry(reg, builder, criteria));
-						builder.requirements(new String[][] { criteria.toArray(new String[0]) });
+						builder.requirements(AdvancementRequirements.anyOf(criteria));
 					},
 					null,
-					FrameType.CHALLENGE,
+					AdvancementType.CHALLENGE,
 					AdvancementRewards.Builder.experience(100).build()
-			                                                   );
+			                                                         );
 			
 			// every_challenge_drink
 			generateAdvancement(
@@ -196,31 +199,29 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 						addCriteriaFromRegistry(BrewersItems.CHALLENGE_DRINKS, builder, null);
 					},
 					null,
-					FrameType.GOAL,
+					AdvancementType.GOAL,
 					AdvancementRewards.Builder.experience(100).build()
 			                   );
 		}
 		
-		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder, List<String> criteriaList)
+		private void addCriteriaFromRegistry(DeferredRegister.Items registry, Advancement.Builder builder, List<String> criteriaList)
 		{
-			addCriteriaFromRegistry(registry, builder, criteriaList, "");
+			addCriteria(registry.getEntries().stream().<Item>map(DeferredHolder::get).toList(), builder, criteriaList, "");
 		}
 		
-		private void addCriteriaFromRegistry(DeferredRegister<Item> registry, Advancement.Builder builder,
-		                                     List<String> criteriaList, String prefix)
+		private void addCriteria(Collection<Item> items, Advancement.Builder builder,
+		                         List<String> criteriaList, String prefix)
 		{
 			// Merge "<name>" and "<name>_glass" into one criterion
 			Map<String, List<ItemLike>> byBaseName = new LinkedHashMap<>();
 			
-			registry.getEntries().forEach(entry -> {
-				Item item = entry.get();
+			items.forEach(item -> {
 				if (!(item instanceof BoozeItem)) {
 					BrewersDelight.LOGGER.debug("Skipping adding criterion for non-drink item : {}",
 					                            item.getName(item.getDefaultInstance()));
 					return;
 				}
-				assert entry.getId() != null;
-				String path = entry.getId().getPath();
+				String path = BuiltInRegistries.ITEM.getKey(item).getPath();
 				String base = path.endsWith("_glass")
 						? path.substring(0, path.length() - "_glass".length())
 						: path;
@@ -239,20 +240,16 @@ public class BDAdvancementProvider extends ForgeAdvancementProvider
 			});
 		}
 		
-		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item)
+		private void addCriterion(Advancement.Builder builder, Item item)
 		{
-			assert item.getId() != null;
-			String key = item.getId().getPath();
-			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {}", item, key, builder);
-			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
+			addCriterion(builder, item, "");
 		}
 		
-		private void addCriterion(Advancement.Builder builder, RegistryObject<Item> item, String prefix)
+		private void addCriterion(Advancement.Builder builder, Item item, String prefix)
 		{
-			assert item.getId() != null;
-			String key = prefix + item.getId().getPath();
-			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {} as : {}{}", item, key, builder, prefix, key);
-			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item.get().asItem()));
+			String key = prefix + BuiltInRegistries.ITEM.getKey(item).getPath();
+			BrewersDelight.LOGGER.debug("Adding criterion for item : {} with id : {} to advancement builder : {}", item, key, builder);
+			builder.addCriterion(key, InventoryChangeTrigger.TriggerInstance.hasItems(item));
 		}
 	}
 }

@@ -1,0 +1,15 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "container": {
+    "count": 1,
+    "id": "brewinandchewin:tankard"
+  },
+  "fluid": {
+    "amount": 250,
+    "id": "brewersdelight:vermouth_mushroom"
+  },
+  "output": {
+    "count": 1,
+    "id": "brewersdelight:vermouth_mushroom"
+  }
+}
