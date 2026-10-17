@@ -1,6 +1,7 @@
 {
   "itemgroup.brewersdelight.BrewersDelightTab": "Пивоварскiй Развратъ",
   "block.brewersdelight.cattail": "Рогозъ",
+  "block.brewersdelight.snow_fungus": "Снежный грибъ",
   "block.brewersdelight.unripe_froststone_cheese_wheel": "Незрелый студёный сырный круг",
   "block.brewersdelight.froststone_cheese_wheel": "Студёный сырный круг",
   "item.brewersdelight.froststone_cheese_wedge": "Ломтик студёного сыра",
@@ -40,6 +41,7 @@
   "item.brewersdelight.flying_dutchman": "Лѣтучій Голландецъ",
   "item.brewersdelight.gut_wrecker": "Погубитель утробы",
   "fluid_type.brewersdelight.melon_juice": "Арбузный сокъ",
+  "fluid_type.brewersdelight.froststone_cheese": "Студёный сыр",
   "fluid_type.brewersdelight.braga": "Брага",
   "fluid_type.brewersdelight.grog": "Грогъ",
   "fluid_type.brewersdelight.punch": "Пуншъ",

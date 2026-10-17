@@ -1,6 +1,7 @@
 {
   "itemgroup.brewersdelight.BrewersDelightTab": "酿酒师乐事",
   "block.brewersdelight.cattail": "香蒲",
+  "block.brewersdelight.snow_fungus": "Snow Fungus",
   "block.brewersdelight.unripe_froststone_cheese_wheel": "Unripe Froststone Cheese Wheel",
   "block.brewersdelight.froststone_cheese_wheel": "Froststone Cheese Wheel",
   "item.brewersdelight.froststone_cheese_wedge": "Froststone Cheese Wedge",
@@ -40,6 +41,7 @@
   "item.brewersdelight.flying_dutchman": "飞翔的荷兰人",
   "item.brewersdelight.gut_wrecker": "破肠者",
   "fluid_type.brewersdelight.melon_juice": "蜜瓜汁",
+  "fluid_type.brewersdelight.froststone_cheese": "Froststone Cheese",
   "fluid_type.brewersdelight.braga": "布拉加",
   "fluid_type.brewersdelight.grog": "格罗格酒",
   "fluid_type.brewersdelight.punch": "潘趣酒",

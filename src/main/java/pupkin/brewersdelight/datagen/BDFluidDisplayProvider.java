@@ -25,6 +25,7 @@ public class BDFluidDisplayProvider implements DataProvider
 			MOD_ID + "/brewinandchewin/fluid_item_displays/brewers_displays.json";
 	private static final Map<String, Display> OVERRIDES = Map.of(
 			"melon_juice", new Display("farmersdelight:melon_juice", false),
+			"froststone_cheese", new Display(MOD_ID + ":unripe_froststone_cheese_wheel", false),
 			"wine", new Display("croptopia:wine", true),
 			"red_wine", new Display("croptopia:wine", true),
 			"white_wine", new Display("croptopia:wine", true)
