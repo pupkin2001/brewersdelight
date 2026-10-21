@@ -18,11 +18,16 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 # Changelog
 
+## [v0.8.1.1-1.20.1] — 2026-10-22
+
+### Fixed
+
+- Game crashing without Croptopia installed
+- Froststone cheese liquid display pointing at a missing item
+- `#forge:cattail` failing to load unless every listed mod was installed
+- Croptopia wine and rum pouring recipes logging errors without Croptopia installed
+
 ## [v0.8.1] — 2026-10-17
-
-### Added
-
-- Minecraft 1.21.1 NeoForge support
 
 ### Fixed
 
@@ -30,12 +35,12 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 - Snow fungus and unripe froststone cheese wheel missing loot tables
 - Froststone cheese liquid display missing texture
 - Snow fungus and froststone cheese fluid missing locale strings
-- Sake item using glass variant texture
 
 ## [v0.8.0] — 2026-10-17
 
 ### Added
 
+- Minecraft 1.21.1 NeoForge support
 - Snow fungus
 - Froststone cheese
 
