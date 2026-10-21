@@ -25,14 +25,11 @@ public class BDFluidDisplayProvider implements DataProvider
 			MOD_ID + "/brewinandchewin/fluid_item_displays/brewers_displays.json";
 	private static final Map<String, Display> OVERRIDES = Map.of(
 			"melon_juice", new Display("farmersdelight:melon_juice", false),
-			"froststone_cheese", new Display(MOD_ID + ":unripe_froststone_cheese_wheel", false),
-			"wine", new Display("croptopia:wine", true),
-			"red_wine", new Display("croptopia:wine", true),
-			"white_wine", new Display("croptopia:wine", true)
+			"froststone_cheese", new Display(MOD_ID + ":unripe_froststone_cheese_wheel", false)
 	                                                            );
-	// Source fluids that should get NO display entry in case that's ever needed (nothing in BnC does that)
+	// Source fluids that should get NO display entry (BnC then falls back to the fluid's pouring recipe output)
 	private static final Set<String> EXCLUDE = Set.of(
-			// "undefined_cheese"
+			"wine", "red_wine", "white_wine"
 	                                                 );
 	private final PackOutput output;
 	
