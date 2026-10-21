@@ -1,5 +1,11 @@
 {
   "type": "brewinandchewin:keg_pouring",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "croptopia"
+    }
+  ],
   "amount": 250,
   "filling": true,
   "fluid": "brewersdelight:rum",

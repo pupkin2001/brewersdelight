@@ -2,16 +2,49 @@
   "replace": false,
   "values": [
     "brewersdelight:cattail",
-    "swampier_swamps:cattail",
-    "regions_unexplored:cattail",
-    "skaysflowery:reeds",
-    "skaysflowery:cattail",
-    "biomemakeover:cattail",
-    "wildlands:cattail",
-    "biomeswevegone:cattail_sprout",
-    "swampex:cattail",
-    "swampex:cattail_head",
-    "better_swamps:cattail",
-    "conquest:cattail_reeds"
+    {
+      "id": "swampier_swamps:cattail",
+      "required": false
+    },
+    {
+      "id": "regions_unexplored:cattail",
+      "required": false
+    },
+    {
+      "id": "skaysflowery:reeds",
+      "required": false
+    },
+    {
+      "id": "skaysflowery:cattail",
+      "required": false
+    },
+    {
+      "id": "biomemakeover:cattail",
+      "required": false
+    },
+    {
+      "id": "wildlands:cattail",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:cattail_sprout",
+      "required": false
+    },
+    {
+      "id": "swampex:cattail",
+      "required": false
+    },
+    {
+      "id": "swampex:cattail_head",
+      "required": false
+    },
+    {
+      "id": "better_swamps:cattail",
+      "required": false
+    },
+    {
+      "id": "conquest:cattail_reeds",
+      "required": false
+    }
   ]
 }
