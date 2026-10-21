@@ -12,7 +12,7 @@
   "brewersdelight:elderflower": "brewersdelight:elderflower",
   "brewersdelight:flaxen_cheese_stout": "brewersdelight:flaxen_cheese_stout",
   "brewersdelight:flying_dutchman": "brewersdelight:flying_dutchman",
-  "brewersdelight:froststone_cheese": "brewersdelight:froststone_cheese",
+  "brewersdelight:froststone_cheese": "brewersdelight:unripe_froststone_cheese_wheel",
   "brewersdelight:froststone_cheese_stout": "brewersdelight:froststone_cheese_stout",
   "brewersdelight:gin": "brewersdelight:gin",
   "brewersdelight:gluhwein": "brewersdelight:gluhwein",
@@ -35,9 +35,5 @@
   "brewersdelight:vermouth_glow_berries": "brewersdelight:vermouth_glow_berries",
   "brewersdelight:vermouth_mushroom": "brewersdelight:vermouth_mushroom",
   "brewersdelight:vzvar": "brewersdelight:vzvar",
-  "brewersdelight:whisky": "brewersdelight:whisky",
-  "brewersdelight:wine": {
-    "id": "croptopia:wine",
-    "optional": true
-  }
+  "brewersdelight:whisky": "brewersdelight:whisky"
 }
