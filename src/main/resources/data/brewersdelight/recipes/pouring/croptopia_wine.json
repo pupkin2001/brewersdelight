@@ -1,16 +1,16 @@
 {
-  "type": "brewinandchewin:keg_pouring",
+  "amount": 250,
   "conditions": [
     {
-      "type": "forge:mod_loaded",
-      "modid": "croptopia"
+      "modid": "croptopia",
+      "type": "forge:mod_loaded"
     }
   ],
-  "amount": 250,
   "filling": true,
   "fluid": "brewersdelight:wine",
   "output": {
     "item": "croptopia:wine"
   },
-  "strict": false
+  "strict": false,
+  "type": "brewinandchewin:keg_pouring"
 }

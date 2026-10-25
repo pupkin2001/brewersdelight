@@ -1,5 +1,4 @@
 {
-  "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 1000,
     "fluid": "minecraft:milk"
@@ -22,5 +21,6 @@
     "count": 1000,
     "fluid": "brewersdelight:froststone_cheese"
   },
-  "temperature": 4
+  "temperature": 4,
+  "type": "brewinandchewin:fermenting"
 }

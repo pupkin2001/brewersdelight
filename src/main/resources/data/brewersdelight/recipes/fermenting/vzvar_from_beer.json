@@ -1,5 +1,4 @@
 {
-  "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 250,
     "fluid": "brewinandchewin:beer"
@@ -27,5 +26,6 @@
     "count": 500,
     "fluid": "brewersdelight:vzvar"
   },
-  "temperature": 3
+  "temperature": 3,
+  "type": "brewinandchewin:fermenting"
 }

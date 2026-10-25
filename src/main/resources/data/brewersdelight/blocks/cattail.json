@@ -1,23 +1,23 @@
 {
-  "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "brewersdelight:cattail"
-        }
-      ],
       "conditions": [
         {
-          "condition": "minecraft:block_state_property",
           "block": "brewersdelight:cattail",
+          "condition": "minecraft:block_state_property",
           "properties": {
             "half": "lower"
           }
         }
-      ]
+      ],
+      "entries": [
+        {
+          "name": "brewersdelight:cattail",
+          "type": "minecraft:item"
+        }
+      ],
+      "rolls": 1
     }
-  ]
+  ],
+  "type": "minecraft:block"
 }

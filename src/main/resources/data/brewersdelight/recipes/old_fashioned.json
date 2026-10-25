@@ -1,5 +1,4 @@
 {
-  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     [
       {
@@ -17,7 +16,8 @@
     }
   ],
   "result": {
-    "item": "brewersdelight:old_fashioned",
-    "count": 2
-  }
+    "count": 2,
+    "item": "brewersdelight:old_fashioned"
+  },
+  "type": "minecraft:crafting_shapeless"
 }

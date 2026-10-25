@@ -1,5 +1,4 @@
 {
-  "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
     "p": {
@@ -13,5 +12,6 @@
   "result": {
     "item": "brewersdelight:froststone_cheese_wheel"
   },
-  "show_notification": true
+  "show_notification": true,
+  "type": "minecraft:crafting_shaped"
 }

@@ -1,9 +1,9 @@
 {
   "parent": "brewinandchewin:block/cheese_wheel_template",
   "textures": {
-    "top": "brewersdelight:block/unripe_froststone_cheese_wheel_top",
-    "side": "brewersdelight:block/unripe_froststone_cheese_wheel_side",
     "bottom": "brewersdelight:block/unripe_froststone_cheese_wheel_bottom",
-    "particle": "brewersdelight:block/unripe_froststone_cheese_wheel_top"
+    "particle": "brewersdelight:block/unripe_froststone_cheese_wheel_top",
+    "side": "brewersdelight:block/unripe_froststone_cheese_wheel_side",
+    "top": "brewersdelight:block/unripe_froststone_cheese_wheel_top"
   }
 }

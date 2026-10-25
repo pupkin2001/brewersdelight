@@ -1,5 +1,4 @@
 {
-  "type": "farmersdelight:cutting",
   "ingredients": [
     {
       "item": "brewersdelight:froststone_cheese_wheel"
@@ -15,5 +14,6 @@
   ],
   "tool": {
     "tag": "c:tools/knife"
-  }
+  },
+  "type": "farmersdelight:cutting"
 }
