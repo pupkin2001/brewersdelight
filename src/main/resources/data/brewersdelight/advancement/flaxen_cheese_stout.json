@@ -1,20 +1,6 @@
 {
-  "display": {
-    "icon": {
-      "id": "brewersdelight:flaxen_cheese_stout"
-    },
-    "title": {
-      "translate": "advancements.flaxen_cheese_stout.title"
-    },
-    "description": {
-      "translate": "advancements.flaxen_cheese_stout.description"
-    },
-    "frame": "challenge"
-  },
-  "parent": "brewersdelight:any_challenge_drink",
   "criteria": {
     "requirement": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -23,9 +9,23 @@
             ]
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
+  "display": {
+    "description": {
+      "translate": "advancements.flaxen_cheese_stout.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "brewersdelight:flaxen_cheese_stout"
+    },
+    "title": {
+      "translate": "advancements.flaxen_cheese_stout.title"
+    }
+  },
+  "parent": "brewersdelight:any_challenge_drink",
   "rewards": {
     "experience": 25
   }

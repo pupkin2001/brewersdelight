@@ -9,7 +9,7 @@ import net.neoforged.neoforge.fluids.FluidType;
 public class AlcoholFluidType extends FluidType
 {
 	private final int tintColor;
-
+	
 	public AlcoholFluidType(int tintColor)
 	{
 		super(Properties.create()
@@ -18,7 +18,7 @@ public class AlcoholFluidType extends FluidType
 		                .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));
 		this.tintColor = tintColor;
 	}
-
+	
 	public int getTintColor()
 	{
 		return tintColor;

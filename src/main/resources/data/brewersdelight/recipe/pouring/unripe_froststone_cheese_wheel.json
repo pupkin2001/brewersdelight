@@ -1,5 +1,4 @@
 {
-  "type": "brewinandchewin:keg_pouring",
   "can_fill": false,
   "container": {
     "count": 1,
@@ -13,5 +12,6 @@
     "count": 1,
     "id": "brewersdelight:unripe_froststone_cheese_wheel"
   },
+  "type": "brewinandchewin:keg_pouring",
   "unit": "millibuckets"
 }

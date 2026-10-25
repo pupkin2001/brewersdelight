@@ -1,10 +1,8 @@
 {
-  "type": "farmersdelight:cooking",
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
-      "type": "neoforge:compound",
       "children": [
         {
           "tag": "c:foods/fruit"
@@ -12,10 +10,10 @@
         {
           "tag": "c:fruits"
         }
-      ]
+      ],
+      "type": "neoforge:compound"
     },
     {
-      "type": "neoforge:compound",
       "children": [
         {
           "tag": "c:foods/fruit"
@@ -23,10 +21,10 @@
         {
           "tag": "c:fruits"
         }
-      ]
+      ],
+      "type": "neoforge:compound"
     },
     {
-      "type": "neoforge:compound",
       "children": [
         {
           "tag": "c:foods/fruit"
@@ -34,10 +32,10 @@
         {
           "tag": "c:fruits"
         }
-      ]
+      ],
+      "type": "neoforge:compound"
     },
     {
-      "type": "neoforge:compound",
       "children": [
         {
           "tag": "c:foods/fruit"
@@ -45,7 +43,8 @@
         {
           "tag": "c:fruits"
         }
-      ]
+      ],
+      "type": "neoforge:compound"
     },
     {
       "item": "minecraft:sugar"
@@ -55,5 +54,6 @@
   "result": {
     "count": 4,
     "id": "brewersdelight:compote"
-  }
+  },
+  "type": "farmersdelight:cooking"
 }

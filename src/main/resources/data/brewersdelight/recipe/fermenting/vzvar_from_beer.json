@@ -1,5 +1,4 @@
 {
-  "type": "brewinandchewin:fermenting",
   "base_fluid": {
     "amount": 250,
     "ingredient": {
@@ -30,5 +29,6 @@
     "id": "brewersdelight:vzvar"
   },
   "temperature": 3,
+  "type": "brewinandchewin:fermenting",
   "unit": "millibuckets"
 }

@@ -1,11 +1,4 @@
 {
-  "type": "brewinandchewin:keg_pouring",
-  "neoforge:conditions": [
-    {
-      "type": "neoforge:mod_loaded",
-      "modid": "croptopia"
-    }
-  ],
   "container": {
     "count": 1,
     "id": "minecraft:glass_bottle"
@@ -14,9 +7,16 @@
     "amount": 250,
     "id": "brewersdelight:rum"
   },
+  "neoforge:conditions": [
+    {
+      "modid": "croptopia",
+      "type": "neoforge:mod_loaded"
+    }
+  ],
   "output": {
     "count": 1,
     "id": "croptopia:rum"
   },
+  "type": "brewinandchewin:keg_pouring",
   "unit": "millibuckets"
 }

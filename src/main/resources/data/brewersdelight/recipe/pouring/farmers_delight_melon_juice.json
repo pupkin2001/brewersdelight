@@ -1,5 +1,4 @@
 {
-  "type": "brewinandchewin:keg_pouring",
   "fluid": {
     "amount": 250,
     "id": "brewersdelight:melon_juice"
@@ -8,5 +7,6 @@
     "count": 1,
     "id": "farmersdelight:melon_juice"
   },
+  "type": "brewinandchewin:keg_pouring",
   "unit": "millibuckets"
 }
