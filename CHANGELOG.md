@@ -1,24 +1,28 @@
 # Changelog
 
-Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, with optional pre-release tags.
+Versions follow the format **`<Minecraft_Version>-v<Major>.<Minor>.<Feature>.<Patch>`**, with optional pre-release tags.
 
-| Segment   | Incremented for                                                                         |
-|:----------|:----------------------------------------------------------------------------------------|
-| **Major** | Complete rewrites                                                                       |
-| **Minor** | Changes breaking compatability (large features, new minecraft version support, etc.)    |
-| **Patch** | Small changes keeping compatability (small features, bug fixes and optimizations, etc.) |
+*Note: Releases before v0.8.1.1 use  **`<Minecraft_Version>-v<Major>.<Minor>.<Patch>`**, merging Feature and Patch
+numbers.*
+
+| Segment     | Incremented for                                                         |
+|:------------|:------------------------------------------------------------------------|
+| **Major**   | Complete rewrites                                                       |
+| **Minor**   | New Minecraft version support, large features, or save-breaking changes |
+| **Feature** | Added or reworked features that keep compatibility                      |
+| **Patch**   | Small bug fixes and optimizations                                       |
 
 **Pre-release order** (earliest → stable):
 `-a#` alpha → `-b#` beta → `-rc#` release candidate → stable
 
 > **Example:**
-> `1.20.1-2.0.0-a1` < `1.20.1-2.0.0-b1` < `1.20.1-2.0.0-rc1` < `1.20.1-2.0.0-rc2` < `1.20.1-2.0.0`
+> `1.20.1-2.0.0.0-a1` < `1.20.1-2.0.0.0-b1` < `1.20.1-2.0.0.0-rc1` < `1.20.1-2.0.0.0-rc2` < `1.20.1-2.0.0.0`
 
 ---
 
 # Changelog
 
-## [v0.8.1.1-1.20.1] — 2026-10-22
+## [1.20.1-v0.8.1.1] — 2026-10-22
 
 ### Fixed
 
@@ -40,7 +44,10 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 ### Added
 
-- Minecraft 1.21.1 NeoForge support
+- Minecraft 1.21.1 NeoForge support **(1.21.1 only)**:
+  - Snow fungus now also generates in the three windswept biomes
+  - Elderflower can also be fermented with chorus flowers and spore blossoms
+  - Gut Wrecker can also be fermented with pufferfish
 - Snow fungus
 - Froststone cheese
 
@@ -126,7 +133,8 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
   - Scarlet Cheese Stout (Confusion 8400t → 1800t, Blindness 4200t → 1200t)
   - Gut Wrecker (Confusion 6000t → 3600t)
 - Recipes:
-  - Bourbon (Water 1000 mB, 8 min, normal temp, seeds/corn ×2 + apple ×2 → Water 1000 mB, 16 min, warm temp, crops/corn ×4)
+  - Bourbon (Water 1000 mB, 8 min, normal temp, seeds/corn ×2 + apple ×2 → Water 1000 mB, 16 min, warm temp,
+    crops/corn ×4)
   - Brandy (Water 1000 mB, 8 min, normal temp → Cider 750 mB, 16 min, warm temp; output 1000 mB → 500 mB)
   - Cahors (Wine 250 mB, grape ×4 → grape ×2 + sugar ×2)
   - Cognac (Wine 250 mB, 8 min, normal temp, grape ×2 + apple ×2 → Wine 500 mB, 16 min, warm temp, grape ×2)
@@ -137,7 +145,8 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
   - Gut wrecker (Milk 500 mB, normal temp → 250 mB, warm temp; output 1000 mB → 500 mB)
   - Melon schnapps, melon juice (250 mB, 8 min → 500 mB → 500 mB, 4 min → 750 mB)
   - Melon schnapps, water (8 min → 4 min)
-  - Moonshine (Braga 250 mB, 8 min, vegetables/corn ×2 + sugar ×2 → 500 mB → Braga 500 mB, 4 min, crops/corn ×2 + sugar ×2 → 750 mB)
+  - Moonshine (Braga 250 mB, 8 min, vegetables/corn ×2 + sugar ×2 → 500 mB → Braga 500 mB, 4 min, crops/corn ×2 +
+    sugar ×2 → 750 mB)
   - Old-fashioned (Vodka + Bourbon + Tequila + Whisky → 4 → Bourbon or Whisky + Sugar + Bitter → 2)
   - Sake (normal temp → cold temp)
   - Scarlet cheese stout (Water 250 mB → Beer 500 mB)
@@ -208,9 +217,10 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 - Replaced every instance of 'beverage' with more appropriate 'drink'
 - Advancements to require either tankard or glass variant, not both
-- Русскій дореформенный (rpr) mostly rewritten to remove hypercorrection and provide better overall styling for its time period
+- Русскій дореформенный (rpr) mostly rewritten to remove hypercorrection and provide better overall styling for its time
+  period
 - Increased fermenting temperatures:
-  - Rum (WARM → HOT) 
+  - Rum (WARM → HOT)
   - Flaxen Cheese Stout (NORMAL → WARM)
   - Scarlet Cheese Stout (WARM → HOT)
   - Gut Wrecker (NORMAL → WARM)
@@ -227,7 +237,8 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 ### Fixed
 
-- Game crashing due to missing registry entries when forge decides to load Brewin' and Chewin' or Farmer's Delight after Brewer's Delight
+- Game crashing due to missing registry entries when forge decides to load Brewin' and Chewin' or Farmer's Delight after
+  Brewer's Delight
 - Pouring recipes not displaying output item icons
 - Missing translation strings for mod melon juice and three wine liquids
 - Pouring into glass bottles giving tankard drink variants
@@ -303,8 +314,10 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 ### Changed
 
 - Effects:
-  - Kvass now increases duration of tipsy effect if it is already applied (spam healing with it while under effects of other beverages now has consequences).
-  - Level and duration of speed effect given by braga reduced to level 1 and 2 minutes (because it was a cheap speed 2 potion).
+  - Kvass now increases duration of tipsy effect if it is already applied (spam healing with it while under effects of
+    other beverages now has consequences).
+  - Level and duration of speed effect given by braga reduced to level 1 and 2 minutes (because it was a cheap speed 2
+    potion).
   - Duration of strength effect given by braga reduced to 1 minute (because it was a cheap strength potion).
   - Level of speed given by gin reduced to 2.
   - Duration of strength given by melon schnapps reduced to 1 minute (overshadowed strength potions).
@@ -325,13 +338,15 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 - Amount of experience given by scarlet cheese stout advancement reduced from 50 to 25.
 
 ### Fixed
+
 - Cahors giving impossible invisibility level 2 effect.
 
 ## [v0.5.2] — 2024-11-03
 
 ### Changed
 
-- Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe Stout and Withering Dross count as challenging beverages.
+- Achievements 'Any beverage' and 'Every beverage' now also count Brewin' and Chewin' beverages. Dread Nog, Steel Toe
+  Stout and Withering Dross count as challenging beverages.
 
 ## [v0.5.1] — 2024-11-02
 
@@ -347,7 +362,9 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 ### Changed
 
 - **(1.20.1 only)** Increased temperature for most fermenting recipes to 'warm'.
-- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else 2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in one.
+- **(1.20.1 only)** Increased result of fermenting recipes - everything using water or milk results in 4, anything else
+  2, except sbiten (because of its expensive recipe) that results in four and challenge beverages that only result in
+  one.
 - **(1.20.1 only)** Sbiten ingredient requirements set to honey block and wheat instead of two honey bottles.
 - **(1.20.1 only)** Cheese Stout renamed to Flaxen Cheese Stout.
 - **(1.20.1 only)** Flaxen Cheese Stout liquid requirement changed to vodka instead of milk.
@@ -371,45 +388,45 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 ### Changed
 
 - Recipes:
-    - Sake - added 'minecraft:water_bucket' liquid requirement.
-    - Cahors - added 'italian_delight:sweet_berry_wine' liquid requirement.
+  - Sake - added 'minecraft:water_bucket' liquid requirement.
+  - Cahors - added 'italian_delight:sweet_berry_wine' liquid requirement.
 - Beverages:
-    - Braga's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Braga's effect set to strength for 2 minutes, speed 2 for 3 minutes.
-    - Brandy's tipsy effect strength set to 2, duration set to 4 minutes.
-    - Brandy's effect set to water breathing for 3 minutes.
-    - Cider's tipsy effect strength set to 2, duration set to 3 minutes.
-    - Cider's effect set to regeneration 2 for 3 minutes.
-    - Gin's tipsy effect strength set to 3, duration set to 1 minute.
-    - Gin's effect set to speed 3 for 4 minutes.
-    - Kvass' tipsy effect strength set to 0.
-    - Kvass' effect set to instant health.
-    - Kvass' nutrition set to 3, saturation to 1.
-    - Liqueur's tipsy effect strength set to 3, duration set to 4 minutes.
-    - Liqueur's effect set to regeneration 2 for 4 minutes.
-    - Martini's tipsy effect strength set to 2, duration set to 2 minutes.
-    - Martini's effect set to comfort for 2 minutes.
-    - Melon schnapps' tipsy effect strength set to 2, duration set to 15 minutes.
-    - Melon schnapps' effect set to blindness for 3 minutes, strength 2 for 3 minutes.
-    - Sake's tipsy effect strength set to 1, duration set to 4 minutes.
-    - Sake's effect set to absorption 3 for 8 minutes.
-    - Sbiten's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Sbiten's effect set to haste 2 for 8 minutes.
-    - Sbiten's nutrition set to 6, saturation to 3.
-    - Whisky's tipsy effect strength set to 3, duration set to 19 minutes.
-    - Whisky's effect set to strength 2 for 7 minutes.
-    - Bourbon's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Bourbon's effect set to fire resistance for 8 minutes.
-    - Corn whisky's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Corn whisky's effect set to levitation 2 for 1 minute.
-    - Moonshine's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Moonshine's effect set to health boost 3 for 5 minutes.
-    - Cahor's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Cahor's effect set to invisibility for 2 minutes, regeneration 3 for 2 minutes.
-    - Champagne's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Champagne's effect set to jump boost 2 for 3 minutes.
-    - Cognac's tipsy effect strength set to 1, duration set to 2 minutes.
-    - Cognac's effect set to resistance 3 for 4 minutes.
+  - Braga's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Braga's effect set to strength for 2 minutes, speed 2 for 3 minutes.
+  - Brandy's tipsy effect strength set to 2, duration set to 4 minutes.
+  - Brandy's effect set to water breathing for 3 minutes.
+  - Cider's tipsy effect strength set to 2, duration set to 3 minutes.
+  - Cider's effect set to regeneration 2 for 3 minutes.
+  - Gin's tipsy effect strength set to 3, duration set to 1 minute.
+  - Gin's effect set to speed 3 for 4 minutes.
+  - Kvass' tipsy effect strength set to 0.
+  - Kvass' effect set to instant health.
+  - Kvass' nutrition set to 3, saturation to 1.
+  - Liqueur's tipsy effect strength set to 3, duration set to 4 minutes.
+  - Liqueur's effect set to regeneration 2 for 4 minutes.
+  - Martini's tipsy effect strength set to 2, duration set to 2 minutes.
+  - Martini's effect set to comfort for 2 minutes.
+  - Melon schnapps' tipsy effect strength set to 2, duration set to 15 minutes.
+  - Melon schnapps' effect set to blindness for 3 minutes, strength 2 for 3 minutes.
+  - Sake's tipsy effect strength set to 1, duration set to 4 minutes.
+  - Sake's effect set to absorption 3 for 8 minutes.
+  - Sbiten's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Sbiten's effect set to haste 2 for 8 minutes.
+  - Sbiten's nutrition set to 6, saturation to 3.
+  - Whisky's tipsy effect strength set to 3, duration set to 19 minutes.
+  - Whisky's effect set to strength 2 for 7 minutes.
+  - Bourbon's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Bourbon's effect set to fire resistance for 8 minutes.
+  - Corn whisky's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Corn whisky's effect set to levitation 2 for 1 minute.
+  - Moonshine's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Moonshine's effect set to health boost 3 for 5 minutes.
+  - Cahor's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Cahor's effect set to invisibility for 2 minutes, regeneration 3 for 2 minutes.
+  - Champagne's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Champagne's effect set to jump boost 2 for 3 minutes.
+  - Cognac's tipsy effect strength set to 1, duration set to 2 minutes.
+  - Cognac's effect set to resistance 3 for 4 minutes.
 
 ### Fixed
 
@@ -424,72 +441,75 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 - Added logo to readme.
 - Replaced placeholder texture in logo.
 - Textures:
-    - Brandy.
-    - Cider.
-    - Gin.
-    - Kvass.
-    - Liqueur.
-    - Martini.
-    - Melon schnapps.
-    - Sake.
-    - Whisky.
-    - Bourbon.
-    - Corn whisky.
-    - Moonshine.
-    - Cahors.
-    - Cognac.
+  - Brandy.
+  - Cider.
+  - Gin.
+  - Kvass.
+  - Liqueur.
+  - Martini.
+  - Melon schnapps.
+  - Sake.
+  - Whisky.
+  - Bourbon.
+  - Corn whisky.
+  - Moonshine.
+  - Cahors.
+  - Cognac.
 
 ## [0.3.0] — 2024-10-28
 
 ### Changed
 
 - Textures:
-    - Braga.
-    - Brandy.
-    - Cider.
-    - Gin.
-    - Kvass.
-    - Liqueur.
-    - Martini.
-    - Melon schnapps.
-    - Sake.
-    - Sbiten.
-    - Whiskey.
-    - Bourbon.
-    - Corn whisky.
-    - Moonshine.
-    - Cahors.
-    - Champagne.
-    - Cognac.
+  - Braga.
+  - Brandy.
+  - Cider.
+  - Gin.
+  - Kvass.
+  - Liqueur.
+  - Martini.
+  - Melon schnapps.
+  - Sake.
+  - Sbiten.
+  - Whiskey.
+  - Bourbon.
+  - Corn whisky.
+  - Moonshine.
+  - Cahors.
+  - Champagne.
+  - Cognac.
 
 ## [0.2.0] — 2024-10-27
 
 ### Added
 
 - Corn Delight compatibility beverages:
-    - Bourbon.
-    - Corn whisky.
-    - Moonshine.
+  - Bourbon.
+  - Corn whisky.
+  - Moonshine.
 - Italian Delight:
-    - Cahors.
-    - Champagne.
-    - Cognac.
+  - Cahors.
+  - Champagne.
+  - Cognac.
 
 ### Changed
 
 - Recipes:
-    - Braga - replaced 'minecraft:wheat' item with 'forge:bread' tag.
-    - Brandy - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
-    - Gin - replaced 'minecraft:wheat_seeds' item with 'forge:seeds/wheat' tag; 'minecraft:sweet_berries' item with 'forge:berries' tag; 'minecraft:water_bucket' with 'brewinandchewin:vodka'.
-    - Kvass - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag; 'minecraft:bread' item with 'forge:bread/wheat' tag.
-    - Liqueur - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
-    - Martini from glow berries - replaced 'minecraft:water_bucket' with 'italian_delight:sweet_berry_wine'.
-    - Martini from mushroom - replaced 'minecraft:brown_mushroom' item with 'forge:mushrooms' tag; 'minecraft:water_bucket' with 'italian_delight:sweet_berry_wine'.
-    - Melon schnapps - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
-    - Sake - replaced 'farmersdelight:rice' item with 'forge:grain/rice' tag, removed liquid.
-    - Whisky - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
+  - Braga - replaced 'minecraft:wheat' item with 'forge:bread' tag.
+  - Brandy - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
+  - Gin - replaced 'minecraft:wheat_seeds' item with 'forge:seeds/wheat' tag; 'minecraft:sweet_berries' item with '
+    forge:berries' tag; 'minecraft:water_bucket' with 'brewinandchewin:vodka'.
+  - Kvass - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag; 'minecraft:bread' item with 'forge:
+    bread/wheat' tag.
+  - Liqueur - replaced 'minecraft:sweet_berries' item with 'forge:berries' tag.
+  - Martini from glow berries - replaced 'minecraft:water_bucket' with 'italian_delight:sweet_berry_wine'.
+  - Martini from mushroom - replaced 'minecraft:brown_mushroom' item with 'forge:mushrooms' tag; 'minecraft:
+    water_bucket' with 'italian_delight:sweet_berry_wine'.
+  - Melon schnapps - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
+  - Sake - replaced 'farmersdelight:rice' item with 'forge:grain/rice' tag, removed liquid.
+  - Whisky - replaced 'minecraft:wheat' item with 'forge:grain/wheat' tag.
 - Translations:
-    - Русскій дореформенный (Россійская имперія).
+  - Русскій дореформенный (Россійская имперія).
 
 ## [0.1.0] — 2024-10-26
 
@@ -497,18 +517,18 @@ Versions follow the format **`<Minecraft_Version>-<Major>.<Minor>.<Patch>`**, wi
 
 - Brewer's Delight creative tab (group).
 - Beverages:
-    - Braga.
-    - Brandy.
-    - Cider.
-    - Gin.
-    - Kvass.
-    - Liqueur.
-    - Martini.
-    - Melon schnapps.
-    - Sake.
-    - Sbiten.
-    - Whiskey.
+  - Braga.
+  - Brandy.
+  - Cider.
+  - Gin.
+  - Kvass.
+  - Liqueur.
+  - Martini.
+  - Melon schnapps.
+  - Sake.
+  - Sbiten.
+  - Whiskey.
 - Translations:
-    - English (United States).
-    - Русский (Россия).
-    - Русскій дореформенный (Россійская имперія).
+  - English (United States).
+  - Русский (Россия).
+  - Русскій дореформенный (Россійская имперія).
