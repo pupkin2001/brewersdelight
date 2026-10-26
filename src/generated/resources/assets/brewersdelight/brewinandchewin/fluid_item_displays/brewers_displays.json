@@ -35,9 +35,5 @@
   "brewersdelight:vermouth_glow_berries": "brewersdelight:vermouth_glow_berries",
   "brewersdelight:vermouth_mushroom": "brewersdelight:vermouth_mushroom",
   "brewersdelight:vzvar": "brewersdelight:vzvar",
-  "brewersdelight:whisky": "brewersdelight:whisky",
-  "brewersdelight:wine": {
-    "id": "croptopia:wine",
-    "optional": true
-  }
+  "brewersdelight:whisky": "brewersdelight:whisky"
 }
