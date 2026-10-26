@@ -2,7 +2,8 @@
 
 # Welcome to the Brewer's Delight repository.
 
-**Brewer's Delight** is an add-on to **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and **[Brewin' and Chewin'](https://github.com/wiidotmom/BrewinAndChewin)**, adding more drinks.
+**Brewer's Delight** is an add-on to **[Farmer's Delight](https://github.com/vectorwing/FarmersDelight)** and
+**[Brewin' and Chewin'](https://github.com/wiidotmom/BrewinAndChewin)**, adding more drinks.
 
 ### About versions and dependencies
 
@@ -45,5 +46,7 @@ Licensed under the [MIT License](LICENSE.md).
 
 ### Acknowledgments
 
-Parts of the code, as well as some palettes and texture shapes were used or inspired by both required modifications to better match them functionally and visually.
-All modification material has been used in accordance with the MIT licence requirements, which are applicable to both required modifications.
+Parts of the code, as well as some palettes and texture shapes were used or inspired by both required modifications to
+better match them functionally and visually.
+All modification material has been used in accordance with the MIT licence requirements, which are applicable to both
+required modifications.
