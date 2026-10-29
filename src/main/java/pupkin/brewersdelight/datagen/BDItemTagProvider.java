@@ -48,6 +48,10 @@ public class BDItemTagProvider extends ItemTagsProvider
 		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.STEEL_TOE_STOUT);
 		tag(BrewersTags.CHALLENGE_DRINKS).add(BnCItems.WITHERING_DROSS);
 		addBoozeItems(BrewersItems.CHALLENGE_DRINKS, BrewersTags.CHALLENGE_DRINKS);
+		
+		tag(BnCTags.Items.FOOD_CHEESE_WEDGE).add(BrewersItems.FROSTSTONE_CHEESE_WEDGE.get());
+		tag(BnCTags.Items.CHEESE_WHEELS_RIPE).add(BrewersItems.FROSTSTONE_CHEESE_WHEEL.get());
+		tag(BnCTags.Items.CHEESE_WHEELS_UNRIPE).add(BrewersItems.UNRIPE_FROSTSTONE_CHEESE_WHEEL.get());
 	}
 	
 	private void addBoozeItems(DeferredRegister.Items registry, TagKey<Item> tagKey)
