@@ -11,7 +11,7 @@ import pupkin.brewersdelight.BrewersDelight;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BrewersDelight.MOD_ID)
 public class DataGenerators
 {
 	@SubscribeEvent

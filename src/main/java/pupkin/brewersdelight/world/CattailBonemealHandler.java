@@ -16,7 +16,7 @@ import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.block.CattailBlock;
 
-@EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BrewersDelight.MOD_ID)
 public class CattailBonemealHandler
 {
 	

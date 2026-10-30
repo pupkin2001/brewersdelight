@@ -9,7 +9,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import pupkin.brewersdelight.BrewersDelight;
 import pupkin.brewersdelight.block.BrewersBlocks;
 
-@EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BrewersDelight.MOD_ID, value = Dist.CLIENT)
 public class BrewersColorHandlers
 {
 	

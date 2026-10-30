@@ -13,7 +13,7 @@ import pupkin.brewersdelight.misc.AlcoholFluidType;
 import pupkin.brewersdelight.misc.BrewersFluids;
 
 // Replaces FluidType#initializeClient, which NeoForge removed: tinted water textures for every alcohol fluid.
-@EventBusSubscriber(modid = BrewersDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BrewersDelight.MOD_ID, value = Dist.CLIENT)
 public class BrewersFluidRenderers
 {
 	private static final ResourceLocation
