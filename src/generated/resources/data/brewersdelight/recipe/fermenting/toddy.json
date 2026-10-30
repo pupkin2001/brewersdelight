@@ -9,14 +9,9 @@
   "experience": 0.5,
   "fermenting_time": 4800,
   "ingredients": [
-    [
-      {
-        "tag": "c:crops/cinnamon"
-      },
-      {
-        "tag": "c:cinnamon"
-      }
-    ],
+    {
+      "tag": "c:crops/cinnamon"
+    },
     {
       "item": "minecraft:honey_bottle"
     },

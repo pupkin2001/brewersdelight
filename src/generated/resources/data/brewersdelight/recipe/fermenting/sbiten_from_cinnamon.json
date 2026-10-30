@@ -9,14 +9,9 @@
   "experience": 2.0,
   "fermenting_time": 19200,
   "ingredients": [
-    [
-      {
-        "tag": "c:crops/cinnamon"
-      },
-      {
-        "tag": "c:cinnamon"
-      }
-    ],
+    {
+      "tag": "c:crops/cinnamon"
+    },
     [
       {
         "tag": "c:crops/ginger"

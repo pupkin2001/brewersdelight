@@ -13,14 +13,9 @@
         "tag": "c:grapes"
       }
     ],
-    [
-      {
-        "tag": "c:crops/cinnamon"
-      },
-      {
-        "tag": "c:cinnamon"
-      }
-    ],
+    {
+      "tag": "c:crops/cinnamon"
+    },
     {
       "item": "minecraft:sugar"
     },
