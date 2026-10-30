@@ -8,6 +8,7 @@ import pupkin.brewersdelight.block.BrewersBlocks;
 import pupkin.brewersdelight.item.BrewersItems;
 import pupkin.brewersdelight.misc.BrewersDelightTab;
 import pupkin.brewersdelight.misc.BrewersFluids;
+import pupkin.brewersdelight.misc.BrewersRecipes;
 
 @Mod(BrewersDelight.MOD_ID)
 public class BrewersDelight
@@ -21,6 +22,7 @@ public class BrewersDelight
 		BrewersBlocks.register(eventBus);
 		BrewersFluids.register(eventBus);
 		BrewersItems.register(eventBus);
+		BrewersRecipes.register(eventBus);
 		BrewersDelightTab.CREATIVE_TABS.register(eventBus);
 	}
 }

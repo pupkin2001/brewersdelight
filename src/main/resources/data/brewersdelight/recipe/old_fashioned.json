@@ -20,5 +20,5 @@
     "count": 2,
     "id": "brewersdelight:old_fashioned"
   },
-  "type": "minecraft:crafting_shapeless"
+  "type": "brewersdelight:cocktail"
 }
