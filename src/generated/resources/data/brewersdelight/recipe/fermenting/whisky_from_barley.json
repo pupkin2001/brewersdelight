@@ -9,15 +9,39 @@
   "experience": 1.0,
   "fermenting_time": 19200,
   "ingredients": [
-    {
-      "tag": "c:crops/barley"
-    },
-    {
-      "tag": "c:crops/barley"
-    },
-    {
-      "tag": "c:crops/barley"
-    },
+    [
+      {
+        "tag": "c:crops/barley"
+      },
+      {
+        "tag": "c:grain/barley"
+      },
+      {
+        "tag": "c:barley"
+      }
+    ],
+    [
+      {
+        "tag": "c:crops/barley"
+      },
+      {
+        "tag": "c:grain/barley"
+      },
+      {
+        "tag": "c:barley"
+      }
+    ],
+    [
+      {
+        "tag": "c:crops/barley"
+      },
+      {
+        "tag": "c:grain/barley"
+      },
+      {
+        "tag": "c:barley"
+      }
+    ],
     []
   ],
   "result": {

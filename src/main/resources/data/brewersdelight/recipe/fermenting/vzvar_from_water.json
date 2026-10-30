@@ -18,6 +18,12 @@
       },
       {
         "tag": "c:fruits/cherry"
+      },
+      {
+        "tag": "c:crops/cherry"
+      },
+      {
+        "tag": "c:cherries"
       }
     ],
     {

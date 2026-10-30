@@ -8,18 +8,50 @@
   },
   "experience": 0.5,
   "ingredients": [
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:fruits/grape"
-    }
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ]
   ],
   "result": {
     "amount": 1000,

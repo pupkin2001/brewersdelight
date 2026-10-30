@@ -8,12 +8,28 @@
   },
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:fruits/grape"
-    },
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
     {
       "item": "minecraft:sugar"
     },

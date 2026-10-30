@@ -61,10 +61,12 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 			MEDIUM_EXP = 1.0F,
 			LARGE_EXP = 2.0F;
 	
-	// 1.21 splits these between NeoForge/Farmer's Delight (c:foods/fruit, c:crops/grain) and Croptopia (c:fruits, c:grain)
 	private static final Ingredient
 			FRUITS = anyTag("c:foods/fruit", "c:fruits"),
-			GRAIN = anyTag("c:crops/grain", "c:grain");
+			GRAIN = anyTag("c:crops/grain", "c:grain"),
+			GRAPES = anyTag("c:fruits/grape", "c:crops/grape", "c:grapes"),
+			GINGER = anyTag("c:crops/ginger", "c:vegetables/ginger", "c:gingers"),
+			BARLEY = anyTag("c:crops/barley", "c:grain/barley");
 	
 	public BDRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries)
 	{
@@ -181,7 +183,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
 		                       BrewersFluids.WINE.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:fruits/grape", "c:fruits/grape", "c:fruits/grape", "c:fruits/grape");
+		                       GRAPES, GRAPES, GRAPES, GRAPES);
 		//		createFermentingRecipe(consumer, "red_wine", "drinks", // TODO
 		//		                       Tags.Fluids.WATER, 1000,
 		//		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,
@@ -285,7 +287,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.BITTER.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:crops/ginger", "c:raisins");
+		                       GINGER, "c:raisins");
 		createFermentingRecipe(consumer, "bourbon", "drinks",
 		                       Tags.Fluids.WATER, 1000,
 		                       LONG_FERMENTING, WARM_TEMPERATURE,
@@ -298,13 +300,13 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.CAHORS.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:fruits/grape", "c:fruits/grape", Items.SUGAR, Items.SUGAR);
+		                       GRAPES, GRAPES, Items.SUGAR, Items.SUGAR);
 		createFermentingRecipe(consumer, "cognac", "drinks",
 		                       BrewersFluids.WINE.id(), 500,
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP, // oak aging abstractions, see bourbon comment
 		                       BrewersFluids.COGNAC.id(), 500,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:fruits/grape", "c:fruits/grape");
+		                       GRAPES, GRAPES);
 		createFermentingRecipe(consumer, "liqueur", "drinks",
 		                       Tags.Fluids.HONEY, 500,
 		                       NORMAL_FERMENTING, NORMAL_TEMPERATURE, MEDIUM_EXP,
@@ -340,7 +342,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       LONG_FERMENTING, WARM_TEMPERATURE, MEDIUM_EXP,
 		                       BrewersFluids.WHISKY.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:crops/barley", "c:crops/barley", "c:crops/barley");
+		                       BARLEY, BARLEY, BARLEY);
 		
 		// Vintage
 		createFermentingRecipe(consumer, "sbiten", "drinks",
@@ -354,7 +356,7 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       LONG_FERMENTING, WARM_TEMPERATURE, LARGE_EXP,
 		                       BrewersFluids.SBITEN.id(), 1000,
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		                       "c:crops/cinnamon", "c:crops/ginger");
+		                       "c:crops/cinnamon", GINGER);
 		createFermentingRecipe(consumer, "syta", "drinks",
 		                       Tags.Fluids.WATER, 500,
 		                       FAST_FERMENTING, NORMAL_TEMPERATURE, SMALL_EXP,

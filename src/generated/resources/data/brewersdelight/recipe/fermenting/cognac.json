@@ -9,12 +9,28 @@
   "experience": 1.0,
   "fermenting_time": 19200,
   "ingredients": [
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:fruits/grape"
-    },
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
     [],
     []
   ],

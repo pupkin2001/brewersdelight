@@ -8,9 +8,17 @@
   },
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:crops/ginger"
-    },
+    [
+      {
+        "tag": "c:crops/ginger"
+      },
+      {
+        "tag": "c:vegetables/ginger"
+      },
+      {
+        "tag": "c:gingers"
+      }
+    ],
     {
       "tag": "c:raisins"
     },

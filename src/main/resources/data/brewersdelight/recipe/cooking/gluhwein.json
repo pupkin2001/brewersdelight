@@ -2,12 +2,25 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:fruits/grape"
-    },
-    {
-      "tag": "c:crops/cinnamon"
-    },
+    [
+      {
+        "tag": "c:fruits/grape"
+      },
+      {
+        "tag": "c:crops/grape"
+      },
+      {
+        "tag": "c:grapes"
+      }
+    ],
+    [
+      {
+        "tag": "c:crops/cinnamon"
+      },
+      {
+        "tag": "c:cinnamon"
+      }
+    ],
     {
       "item": "minecraft:sugar"
     },
