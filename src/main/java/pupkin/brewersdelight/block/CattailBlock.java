@@ -75,7 +75,8 @@ public class CattailBlock extends DoublePlantBlock implements SimpleWaterloggedB
 	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos)
 	{
 		return state.is(BlockTags.DIRT) || state.is(Blocks.SAND)
-				|| state.is(Blocks.CLAY) || state.is(Blocks.GRAVEL) || state.is(Blocks.MUD);
+				|| state.is(Blocks.CLAY) || state.is(Blocks.GRAVEL) || state.is(Blocks.MUD)
+				|| state.getBlock() instanceof FarmBlock;
 	}
 	
 	@Override
