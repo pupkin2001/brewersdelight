@@ -375,12 +375,12 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                       BrewersFluids.SCARLET_CHEESE_STOUT.id(), 250, // evaporation or something
 		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
 		                       BnCItems.SCARLET_CHEESE_WEDGE, BnCItems.SCARLET_CHEESE_WEDGE, Items.NETHER_WART, "c:mushrooms");
-		//		createFermentingRecipe(consumer, "froststone_stout", "drinks",
-		//		                       Tags.Fluids.WATER, 250,
-		//		                       LONG_FERMENTING, FRIGID_TEMPERATURE, LARGE_EXP,
-		//		                       BrewersFluids.FROSTSTONE_STOUT.id(), 250,
-		//		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
-		//		                       BrewersItems.FROSTSTONE_CHEESE_WEDGE, BrewersItems.FROSTSTONE_CHEESE_WEDGE, Items.CHARCOAL, "c:mushrooms"); // TODO: snow fungus
+		createFermentingRecipe(consumer, "froststone_cheese_stout", "drinks",
+		                       Tags.Fluids.WATER, 250,
+		                       LONG_FERMENTING, FRIGID_TEMPERATURE, LARGE_EXP,
+		                       BrewersFluids.FROSTSTONE_CHEESE_STOUT.id(), 250,
+		                       List.of(unlock("has_tankard", BnCItems.TANKARD)),
+		                       BrewersItems.FROSTSTONE_CHEESE_WEDGE, BrewersItems.FROSTSTONE_CHEESE_WEDGE, Items.CHARCOAL, BrewersItems.SNOW_FUNGUS_ITEM);
 		createFermentingRecipe(consumer, "flying_dutchman", "drinks",
 		                       Tags.Fluids.WATER, 1000,
 		                       NORMAL_FERMENTING, COLD_TEMPERATURE, LARGE_EXP,
@@ -697,6 +697,14 @@ public class BDRecipeProvider extends RecipeProvider implements IConditionBuilde
 		                    250,
 		                    BnCItems.TANKARD,
 		                    BrewersItems.SCARLET_CHEESE_STOUT,
+		                    true,
+		                    false
+		                   );
+		createPouringRecipe(consumer, "froststone_cheese_stout",
+		                    BrewersFluids.FROSTSTONE_CHEESE_STOUT.source().get(),
+		                    250,
+		                    BnCItems.TANKARD,
+		                    BrewersItems.FROSTSTONE_CHEESE_STOUT,
 		                    true,
 		                    false
 		                   );

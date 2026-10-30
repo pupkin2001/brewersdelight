@@ -1,0 +1,30 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "base_fluid": {
+    "amount": 250,
+    "ingredient": {
+      "tag": "#c:water"
+    }
+  },
+  "experience": 2.0,
+  "fermenting_time": 19200,
+  "ingredients": [
+    {
+      "item": "brewersdelight:froststone_cheese_wedge"
+    },
+    {
+      "item": "brewersdelight:froststone_cheese_wedge"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "brewersdelight:snow_fungus"
+    }
+  ],
+  "result": {
+    "amount": 250,
+    "id": "brewersdelight:froststone_cheese_stout"
+  },
+  "temperature": 1
+}
