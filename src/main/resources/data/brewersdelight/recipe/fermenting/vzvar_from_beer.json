@@ -14,6 +14,9 @@
         "tag": "c:fruits/apple"
       },
       {
+        "item": "minecraft:apple"
+      },
+      {
         "tag": "c:fruits/cherry"
       }
     ],

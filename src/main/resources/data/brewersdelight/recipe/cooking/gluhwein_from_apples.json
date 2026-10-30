@@ -2,12 +2,22 @@
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
-    {
-      "tag": "c:fruits/apple"
-    },
-    {
-      "tag": "c:fruits/apple"
-    },
+    [
+      {
+        "tag": "c:fruits/apple"
+      },
+      {
+        "item": "minecraft:apple"
+      }
+    ],
+    [
+      {
+        "tag": "c:fruits/apple"
+      },
+      {
+        "item": "minecraft:apple"
+      }
+    ],
     {
       "item": "minecraft:sugar"
     },
